@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-class LeetCode009PalindromeNumber {
+public class LeetCode009PalindromeNumber {
 	/*
 	 * Determine whether an integer is a palindrome. Do this without extra space.
 	 * Assume negative numbers are not palindromes.

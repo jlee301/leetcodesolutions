@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-class LeetCode014LongestCommonPrefix {
+public class LeetCode014LongestCommonPrefix {
 	/*
 	 * Write a function to find the longest common prefix string amongst 
 	 * an array of strings.

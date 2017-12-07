@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-class LeetCode020ValidParenthesis {
+public class LeetCode020ValidParenthesis {
 	/*
 	 * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
 	 * determine if the input string is valid. The brackets must close in the correct

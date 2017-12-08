@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-public class LeetCode007ReverseInteger {
+public class LeetCode007 {
 	/*
 	 * Assume we are dealing with an environment which could only hold integers 
 	 * within the 32-bit signed integer range. For the purpose of this problem, 

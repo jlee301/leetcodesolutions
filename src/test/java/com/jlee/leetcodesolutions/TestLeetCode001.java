@@ -1,14 +1,14 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.LeetCode001TwoSum;
+import com.jlee.leetcodesolutions.LeetCode001;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLeetCode001TwoSum {
+public class TestLeetCode001 {
 	
 	@Test
 	public void testBeginOfArray() {
-		LeetCode001TwoSum solution = new LeetCode001TwoSum();
+		LeetCode001 solution = new LeetCode001();
 		int[] nums = new int[] { 2, 7, 11, 15 };
 		int target = 9;
 		int[] result = solution.twoSum(nums, target);
@@ -18,7 +18,7 @@ public class TestLeetCode001TwoSum {
 
 	@Test
 	public void testMiddleOfArray() {
-		LeetCode001TwoSum solution = new LeetCode001TwoSum();
+		LeetCode001 solution = new LeetCode001();
 		int[] nums = new int[] { 11, 2, 7, 15 };
 		int target = 9;
 		int[] result = solution.twoSum(nums, target);
@@ -28,7 +28,7 @@ public class TestLeetCode001TwoSum {
 
 	@Test
 	public void testEndOfArray() {
-		LeetCode001TwoSum solution = new LeetCode001TwoSum();
+		LeetCode001 solution = new LeetCode001();
 		int[] nums = new int[] { 11, 15, 2, 7 };
 		int target = 9;
 		int[] result = solution.twoSum(nums, target);
@@ -38,7 +38,7 @@ public class TestLeetCode001TwoSum {
 
 	@Test (expected = IllegalArgumentException.class)
 	public void testNoneInArray() {
-		LeetCode001TwoSum solution = new LeetCode001TwoSum();
+		LeetCode001 solution = new LeetCode001();
 		int[] nums = new int[] { 11, 15, 16, 17 };
 		int target = 9;
 		int[] result = solution.twoSum(nums, target);
@@ -47,7 +47,7 @@ public class TestLeetCode001TwoSum {
 
 	@Test (expected = IllegalArgumentException.class)
 	public void testNotEnoughInputsInArray() {
-		LeetCode001TwoSum solution = new LeetCode001TwoSum();
+		LeetCode001 solution = new LeetCode001();
 		int[] nums = new int[] { 11 };
 		int target = 9;
 		int[] result = solution.twoSum(nums, target);

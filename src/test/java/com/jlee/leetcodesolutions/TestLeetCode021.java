@@ -1,11 +1,11 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.LeetCode021MergeTwoSortedLists;
+import com.jlee.leetcodesolutions.LeetCode021;
 import com.jlee.leetcodesolutions.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLeetCode021MergeTwoSortedLists {
+public class TestLeetCode021 {
 	@Test
 	public void testBasicMerge() {
 		ListNode l1 = new ListNode(1);
@@ -16,7 +16,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 		l2.next = new ListNode(3);
 		l2.next.next = new ListNode(4);
 		
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(l1, l2);
 		
 		Assert.assertEquals(1, result.val);
@@ -36,7 +36,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 		l2.next = new ListNode(3);
 		l2.next.next = new ListNode(4);
 		
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(l1, l2);
 		
 		Assert.assertEquals(1, result.val);
@@ -54,7 +54,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 		
 		ListNode l2 = new ListNode(1);
 		
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(l1, l2);
 		
 		Assert.assertEquals(1, result.val);
@@ -70,7 +70,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 		l2.next = new ListNode(3);
 		l2.next.next = new ListNode(4);
 		
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(null, l2);
 		
 		Assert.assertEquals(1, result.val);
@@ -85,7 +85,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 		l1.next = new ListNode(2);
 		l1.next.next = new ListNode(4);
 		
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(l1, null);
 		
 		Assert.assertEquals(1, result.val);
@@ -96,7 +96,7 @@ public class TestLeetCode021MergeTwoSortedLists {
 	
 	@Test
 	public void testL1L2Null() {
-		LeetCode021MergeTwoSortedLists solution = new LeetCode021MergeTwoSortedLists();
+		LeetCode021 solution = new LeetCode021();
 		ListNode result = solution.mergeTwoLists(null, null);
 		
 		Assert.assertNull(result);

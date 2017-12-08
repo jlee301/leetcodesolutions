@@ -3,7 +3,7 @@ package com.jlee.leetcodesolutions;
 import com.jlee.leetcodesolutions.ListNode;
 
 
-public class LeetCode021MergeTwoSortedLists {
+public class LeetCode021 {
 	/*
 	 * Merge two sorted linked lists and return it as a new list. 
 	 * The new list should be made by splicing together the nodes 

@@ -27,7 +27,7 @@ public class LeetCode067 {
 		int carry = 0;
 		String result = "";
 		
-		while(aLen >= 0 || bLen >= 0) {
+		while(aLen >= 0 || bLen >= 0 || carry == 1) {
 			data = carry;
 			if(aLen >= 0) {
 				// This check is if aLen > bLen to avoid out of bounds
@@ -43,10 +43,6 @@ public class LeetCode067 {
 			// System.out.println("col: " + col);
 			// System.out.println("carry: " + carry);
 			result = col + result;
-		}
-		if(carry == 1) {
-			// Leftover carry, prepend to result.
-			result = carry + result;
 		}
 		//System.out.println("result: " + result);
 		return result;

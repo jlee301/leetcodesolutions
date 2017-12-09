@@ -36,6 +36,6 @@ public class LeetCode026 {
 			}
 			// Add one because indexOfDupe is the index value
 			return indexOfDupe + 1;
-		}
-	}
+    }
+  }
 }

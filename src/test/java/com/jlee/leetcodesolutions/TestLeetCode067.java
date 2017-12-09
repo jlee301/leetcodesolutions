@@ -113,14 +113,14 @@ public class TestLeetCode067 {
 	@Test
 	public void testNullPlusEmpty() {
 		LeetCode067 solution = new LeetCode067();
-		String result = solution.addBinary("", "");
+		String result = solution.addBinary(null, "");
 		Assert.assertEquals("0", result);
 	}
 
 	@Test
 	public void testEmptyPlusNull() {
 		LeetCode067 solution = new LeetCode067();
-		String result = solution.addBinary("", "");
+		String result = solution.addBinary("", null);
 		Assert.assertEquals("0", result);
 	}
 }

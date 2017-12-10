@@ -21,6 +21,11 @@ public class LeetCode070 {
    * 2. 1 step + 2 step
    * 3. 2 step + 1 step
    * 
+   * https://leetcode.com/problems/climbing-stairs/discuss/
+   * 
+   */
+  
+  /*
    * Input: 4
    * Output: 5
    * 1. 1 step + 1 step + 1 step + 1 step

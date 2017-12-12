@@ -115,6 +115,27 @@ public class TestLeetCode107 {
   }
 
   @Test
+  public void testThreeNode() {
+    TreeNode root = new TreeNode(3);
+    root.left = new TreeNode(9);
+    root.left.left = new TreeNode(10);
+    root.right = new TreeNode(4);
+    root.right.right = new TreeNode(11);
+
+    LeetCode107 solution = new LeetCode107();
+    List<List<Integer>> result = solution.levelOrderBottom(root);
+    Assert.assertEquals(3, result.size());
+    Assert.assertEquals(2, result.get(0).size());
+    Assert.assertEquals(10, (int) result.get(0).get(0));
+    Assert.assertEquals(11, (int) result.get(0).get(1));
+    Assert.assertEquals(2, result.get(1).size());
+    Assert.assertEquals(9, (int) result.get(1).get(0));
+    Assert.assertEquals(4, (int) result.get(1).get(1));
+    Assert.assertEquals(1, result.get(2).size());
+    Assert.assertEquals(3, (int) result.get(2).get(0));
+  }
+
+  @Test
   public void testNull(){
     LeetCode107 solution = new LeetCode107();
     List<List<Integer>> result = solution.levelOrderBottom(null);

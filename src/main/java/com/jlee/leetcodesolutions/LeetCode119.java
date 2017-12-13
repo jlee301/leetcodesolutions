@@ -12,6 +12,8 @@ public class LeetCode119 {
    * 
    * Note:
    * Could you optimize your algorithm to use only O(k) extra space?
+   * 
+   * https://leetcode.com/problems/pascals-triangle-ii/description/
    */
   public List<Integer> getRow(int rowIndex) {
     List<Integer> result = new ArrayList<Integer>();

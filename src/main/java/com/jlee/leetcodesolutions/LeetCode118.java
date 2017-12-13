@@ -16,6 +16,8 @@ public class LeetCode118 {
    *   [1,3,3,1],
    *  [1,4,6,4,1]
    * ]
+   * 
+   * https://leetcode.com/problems/pascals-triangle/description/
    */
   public List<List<Integer>> generate(int numRows) {
     List<List<Integer>> result = new ArrayList<List<Integer>>();

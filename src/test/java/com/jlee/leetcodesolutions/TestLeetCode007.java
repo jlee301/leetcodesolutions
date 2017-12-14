@@ -75,5 +75,4 @@ public class TestLeetCode007 {
     int result = solution.reverse(-2147483648);
     Assert.assertEquals(0, result);
   }
-
 }

@@ -63,4 +63,5 @@ public class TestLeetCode100 {
     LeetCode100 solution = new LeetCode100();
     boolean result = solution.isSameTree(null, null);
     Assert.assertTrue(result);
-  }}
+  }
+}

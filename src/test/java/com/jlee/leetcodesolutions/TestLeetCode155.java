@@ -55,5 +55,8 @@ public class TestLeetCode155 {
     solution.pop();
     Assert.assertEquals(0, solution.top());
     Assert.assertEquals(0, solution.getMin());
+    solution.pop();
+    Assert.assertEquals(0, solution.top());
+    Assert.assertEquals(0, solution.getMin());
   }
 }

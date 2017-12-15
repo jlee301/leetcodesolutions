@@ -25,6 +25,19 @@ public class TestLeetCode160 {
   }
 
   @Test
+  public void testIntersectsOnFirstNode() {
+    ListNode c = new ListNode(10);
+    c.next = new ListNode(11);
+    c.next.next = new ListNode(12);
+    ListNode a = c;
+    ListNode b = c;
+    
+    LeetCode160 solution = new LeetCode160();
+    ListNode result = solution.getIntersectionNode(a, b);
+    Assert.assertEquals(c, result);
+  }
+  
+  @Test
   public void testNoIntersection() {
     ListNode a = new ListNode(1);
     a.next = new ListNode(2);

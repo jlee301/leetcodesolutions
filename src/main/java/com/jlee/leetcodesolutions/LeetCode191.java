@@ -7,6 +7,8 @@ public class LeetCode191 {
    * 
    * For example, the 32-bit integer '11' has binary representation 
    * 0000 0000 0000 0000 0000 0000 0000 1011, so the function should return 3.
+   * 
+   * https://leetcode.com/problems/number-of-1-bits/description/
    */
   public int hammingWeight(int n) {
     int result = 0;

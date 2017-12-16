@@ -44,10 +44,10 @@ public class LeetCode190 {
     for(int i = 0; i < 32; i++) {
       result = result + (n & 1);
 
-      // right shift
+      // unsigned right shift
       //    0000 0010 1001 0100 0001 1110 1001 1100
       // -->0000 0001 0100 1010 0000 1111 0100 1110
-      n = n >> 1;
+      n = n >>> 1;
       if(i < 31) {
         // left shift
         //    0000 0000 0000 0000 0000 0000 0000 0011

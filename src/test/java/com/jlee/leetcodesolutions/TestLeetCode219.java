@@ -78,6 +78,14 @@ public class TestLeetCode219 {
   }
 
   @Test
+  public void testNoDuplicates() {
+    int[] nums = {1, 2, 3, 4};
+    int k = 1;
+    LeetCode219 solution = new LeetCode219();
+    Assert.assertFalse(solution.containsNearbyDuplicate(nums, k));
+  }
+
+  @Test
   public void testOneEntry() {
     int[] nums = {1};
     int k = 1;

@@ -1,5 +1,8 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Arrays;
 
 public class LeetCode242 {
@@ -51,6 +54,34 @@ public class LeetCode242 {
     
     for(int i = 0; i < 26; i++) {
       if(hash[i] != 0)
+        return false;
+    }
+    return true;
+  }
+  
+  public boolean isAnagramOriginal(String s, String t) {
+    if(s == null || t == null || s.length() != t.length())
+      return false;
+   
+    HashMap<Character, Integer> hash = new HashMap<Character, Integer>();
+    for(int i = 0; i < s.length(); i++) {
+      if(hash.containsKey(s.charAt(i))) {
+        hash.put(s.charAt(i), hash.get(s.charAt(i)) + 1);
+      } else {
+        hash.put(s.charAt(i), 1);
+      }
+
+      if(hash.containsKey(t.charAt(i))) {
+        hash.put(t.charAt(i), hash.get(t.charAt(i)) - 1);
+      } else {
+        hash.put(t.charAt(i), -1);
+      }
+    }
+    
+    Collection<Integer> data = hash.values();
+    Iterator<Integer> iter = data.iterator();
+    while(iter.hasNext()) {
+      if(iter.next() != 0)
         return false;
     }
     return true;

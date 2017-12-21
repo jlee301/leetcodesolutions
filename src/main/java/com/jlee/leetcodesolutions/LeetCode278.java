@@ -16,9 +16,9 @@ public class LeetCode278 {
    * 
    * https://leetcode.com/problems/first-bad-version/description/
    */
-  private int[] versions;
+  private final int[] versions;
 
-  LeetCode278(int[] x) {
+  public LeetCode278(int[] x) {
     versions = x;
   }
   

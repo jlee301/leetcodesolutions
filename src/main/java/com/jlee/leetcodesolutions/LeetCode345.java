@@ -1,7 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LeetCode345 {
   /*

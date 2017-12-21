@@ -18,11 +18,10 @@ public class LeetCode345 {
    * 
    * https://leetcode.com/problems/reverse-vowels-of-a-string/description/
    */
-  public String reverseVowels(String s) {
-    if(s == null)
-      return null;
-    
-    ArrayList<Character> vowels = new ArrayList<Character>(10);
+  private final ArrayList<Character> vowels;
+  
+  public LeetCode345() {
+    vowels = new ArrayList<Character>(10);
     vowels.add((Character)'A');
     vowels.add((Character)'a');
     vowels.add((Character)'E');
@@ -33,6 +32,11 @@ public class LeetCode345 {
     vowels.add((Character)'o');
     vowels.add((Character)'U');
     vowels.add((Character)'u');
+  }
+  
+  public String reverseVowels(String s) {
+    if(s == null)
+      return null;
     
     int head = 0;
     int tail = s.length() - 1;

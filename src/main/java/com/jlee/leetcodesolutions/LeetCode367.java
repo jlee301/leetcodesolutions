@@ -28,4 +28,25 @@ public class LeetCode367 {
     }
     return result == num;
   }
+
+  public boolean isPerfectSquareBinary(int num) {
+    if(num <= 0)
+      return false;
+    
+    int low = 1;
+    int high = num;
+    int result = 0;
+    
+    while(low <= high) {
+      int mid = low + ((high - low) / 2);
+      result = mid * mid;
+      if(result < num)
+        low = mid + 1;
+      else if (result > num)
+        high = mid - 1;
+      else
+        break;
+    }
+    return result == num;
+  }
 }

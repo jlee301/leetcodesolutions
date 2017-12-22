@@ -62,7 +62,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testANeg1000B0() {
+  public void testA1000B0() {
     LeetCode371 solution = new LeetCode371();
     int a = 1000;
     int b = 0;

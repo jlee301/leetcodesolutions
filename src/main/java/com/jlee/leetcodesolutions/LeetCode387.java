@@ -10,6 +10,8 @@ public class LeetCode387 {
    * s = "loveleetcode", return 2. 
    * 
    * Note: You may assume the string contain only lowercase letters.
+   * 
+   * https://leetcode.com/problems/first-unique-character-in-a-string/description/
    */
   public int firstUniqChar(String s) {
     if(s == null || s.length() == 0)

@@ -36,7 +36,7 @@ public class LeetCode405 {
     // = 0000 0000 0000 0000 0000 0000 0000 1111 (15)
     while(num != 0) {
       result = hexMap[num & 15] + result;
-      System.out.println(Integer.bitCount(num & 15));
+      // System.out.println(Integer.bitCount(num & 15));
       // This will treat as unsigned and insert four zeroes at the left position.
       num = num >>> 4;
     }

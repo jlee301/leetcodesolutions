@@ -36,22 +36,26 @@ public class LeetCode443 {
       return 0;
 
     int write = 0;
-    int compareChar = 0;
+    int count = 1;
     for(int read = 0; read < chars.length; read++) {
-      if(read + 1 == chars.length || chars[read + 1] != chars[read]) {
-        chars[write] = chars[compareChar];
-        write = write + 1;
-        if(read > compareChar) {
-          // frequency = read pointer - compareChar pointer + 1 (at least 1)
-          String count = Integer.toString(read - compareChar + 1);
-          for(int i = 0; i < count.length(); i++) {
-            chars[write] = count.charAt(i);
-            write = write + 1;
+      if(read + 1 == chars.length || chars[read] != chars[read + 1]) {
+        // Store in the write position the char before (chars[read])
+        chars[write] = chars[read];
+        write++;
+        if(count > 1) {
+          // If count > 1, then we need to store the count in next write position
+          String strCount = Integer.toString(count);
+          for(int i = 0; i < strCount.length(); i++) {
+            chars[write] = strCount.charAt(i);
+            write++;
           }
+          // Here we must reset the count for next char.
+          count = 1;
         }
-        // Move pointer to next starting character
-        compareChar = read + 1;
-      }  
+      } else {
+        // We increment the count as this is chars[read] == chars[read + 1]
+        count++;
+      }
     }
     return write;
   }

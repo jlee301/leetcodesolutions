@@ -30,6 +30,25 @@ public class TestLeetCode438 {
   }
   
   @Test
+  public void testRepeatCharsInP() {
+    String s = "cbaababacd"; 
+    String p = "abca";
+    LeetCode438 solution = new LeetCode438();
+    List<Integer> result = solution.findAnagrams(s, p);
+    Assert.assertEquals(1, result.size());
+    Assert.assertEquals(0, (int)result.get(0));
+  }
+  
+  @Test
+  public void testNoMatch() {
+    String s = "efghijk"; 
+    String p = "abc";
+    LeetCode438 solution = new LeetCode438();
+    List<Integer> result = solution.findAnagrams(s, p);
+    Assert.assertEquals(0, result.size());
+  }
+  
+  @Test
   public void testSEmpty() {
     String s = ""; 
     String p = "abc";

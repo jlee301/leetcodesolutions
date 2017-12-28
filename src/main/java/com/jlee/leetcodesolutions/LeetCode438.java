@@ -49,15 +49,21 @@ public class LeetCode438 {
         if (pList.size() == 0) {
           result.add(i - (defaultPlist.size() - 1));
           pList = new ArrayList<Character>(defaultPlist);
-          // If I have to reset the list, I need to check if the current character is not
-          // part of of p string.
-          pList.remove((Character) s.charAt(i));
+          // If I have to reset the list because of a match, I need to recheck from last
+          // starting index+1:
+          // s="cbaacb" p="abca"
+          // [cbaa]cb
+          // c[baac]b
+          // cb[aacb]
+          i = i - (defaultPlist.size() - 1);
         }
       } else {
+        // If the last character was not removed but is originally part of the
+        // defaultPlist, we move i back the distance that is currently defaultPlist -
+        // pList size.
+        if (defaultPlist.contains((Character) s.charAt(i)))
+          i = i - (defaultPlist.size() - pList.size());
         pList = new ArrayList<Character>(defaultPlist);
-        // If I have to reset the list, I need to check if the current character is not
-        // part of of p string.
-        pList.remove((Character) s.charAt(i));
       }
     }
     return result;

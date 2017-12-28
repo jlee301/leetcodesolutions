@@ -35,9 +35,8 @@ public class TestLeetCode438 {
     String p = "abc";
     LeetCode438 solution = new LeetCode438();
     List<Integer> result = solution.findAnagrams(s, p);
-    Assert.assertEquals(2, result.size());
-    Assert.assertEquals(0, (int)result.get(0));
-    Assert.assertEquals(6, (int)result.get(1));
+    Assert.assertEquals(1, result.size());
+    Assert.assertEquals(1, (int)result.get(0));
   }
   
   @Test

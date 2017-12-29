@@ -41,13 +41,10 @@ public class LeetCode447 {
         map.put(distance, map.getOrDefault(distance, 0) + 1);
       }
       for(int value : map.values()) {
-        // The value must be 2 for distance between i and j is the same as i and k
-        if(value == 2)
-          result = result + value;
+        result = result + (value * (value-1));
       }
       map.clear();
     }
     return result;
   }
-
 }

@@ -24,6 +24,13 @@ public class TestLeetCode447 {
   }
 
   @Test
+  public void testNotUniquePair() {
+    int[][] points = {{1,0},{1,0},{1,0},{1,0}};
+    LeetCode447 solution = new LeetCode447();
+    Assert.assertEquals(24, solution.numberOfBoomerangs(points));
+  }
+
+  @Test
   public void testN2() {
     int[][] points = {{0,0},{1,0}};
     LeetCode447 solution = new LeetCode447();

@@ -23,16 +23,25 @@ public class LeetCode479 {
       return 0;
     
     int a = (int) Math.pow(10, n) - 1;
+    int b = a / 10;
     long result = 0;
     
-    for(int i = a; i > 0; i--) {
-      for(int j = a; j > 0; j--) {
-        long product = i * j;
-        if(isPalindrome(product) && product > result)
-          result = product;
+    for(int i = a; i > b; i--) {
+      // System.out.println(i);
+      for(int j = a; j > b; j--) {
+        long product = (long)i * (long)j;
+        if(product > result) {
+          if(isPalindrome(product)) {
+            // System.out.println(i + " " + j);
+            result = product;
+          }
+        } else {
+          break;
+        }
       }
     }
-    return (int) result % 1337;
+    result = result % (long)1337;
+    return (int) result;
   }
   
   /*

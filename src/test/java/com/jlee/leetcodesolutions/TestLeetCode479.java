@@ -32,7 +32,7 @@ public class TestLeetCode479 {
     LeetCode479 solution = new LeetCode479();
     Assert.assertEquals(597, solution.largestPalindrome(n));
   }
-/*
+
   @Test
   public void testN5() {
     int n = 5;
@@ -60,7 +60,7 @@ public class TestLeetCode479 {
     LeetCode479 solution = new LeetCode479();
     Assert.assertEquals(475, solution.largestPalindrome(n));
   }
-*/  
+  
   @Test
   public void testN0() {
     int n = 0;

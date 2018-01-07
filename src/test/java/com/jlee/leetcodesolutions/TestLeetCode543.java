@@ -113,6 +113,31 @@ public class TestLeetCode543 {
   }
 
   @Test
+  public void testJustRootLeft() {
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    LeetCode543 solution = new LeetCode543();
+    Assert.assertEquals(1, solution.diameterOfBinaryTree(root));
+  }
+
+  @Test
+  public void testJustRootRight() {
+    TreeNode root = new TreeNode(1);
+    root.right = new TreeNode(3);
+    LeetCode543 solution = new LeetCode543();
+    Assert.assertEquals(1, solution.diameterOfBinaryTree(root));
+  }
+
+  @Test
+  public void testJustRootLeftRight() {
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    root.right = new TreeNode(3);
+    LeetCode543 solution = new LeetCode543();
+    Assert.assertEquals(2, solution.diameterOfBinaryTree(root));
+  }
+
+  @Test
   public void testNull() {
     TreeNode root = null;
     LeetCode543 solution = new LeetCode543();

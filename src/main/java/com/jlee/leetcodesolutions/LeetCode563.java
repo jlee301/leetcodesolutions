@@ -2,7 +2,7 @@ package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.TreeNode;
 
-public class LeetCode562 {
+public class LeetCode563 {
   /*
    * Given a binary tree, return the tilt of the whole tree.
    * 

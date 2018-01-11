@@ -27,14 +27,11 @@ public class LeetCode594 {
     HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
     for(int i = 0; i < nums.length; i++)
       map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-    
-    Object[] values = map.keySet().toArray();
+
     int result = 0;
-    for(int i = 0; i < values.length - 1; i++) {
-      for(int j = i + 1; j < values.length; j++) {
-        if(Math.abs((int) values[i] - (int) values[j]) == 1)
-          result = Math.max(result, map.get((int) values[i]) + map.get((int) values[j]));
-      }
+    for(int key : map.keySet()) {
+      if(map.containsKey(key + 1))
+        result = Math.max(result, map.get(key) + map.get(key + 1));
     }
     return result;
   }

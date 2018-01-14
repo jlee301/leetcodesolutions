@@ -21,14 +21,14 @@ public class LeetCode069 {
       return 1;
     
     int sq = x / 2;
-    while(sq >= 0) {
+    while(sq >= 1) {
       int result = sq * sq;
       // System.out.println("x: " + x);
       // System.out.println("result: " + result);
       // System.out.println("sq:" + sq);
       
       if(result <= x) {
-        // As soon as result < x I know sq is the squareRoot.
+        // As soon as result <= x I know sq is the squareRoot.
         break;
       }
       sq--;

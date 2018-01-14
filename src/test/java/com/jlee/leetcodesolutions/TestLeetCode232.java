@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class TestLeetCode232 {
   @Test
+  public void testClassDeclare() {
+    LeetCode232 solution = new LeetCode232();
+  }
+  
+  @Test
   public void testProblemCase() {
     MyQueue queue = new MyQueue();
     Assert.assertTrue(queue.empty());

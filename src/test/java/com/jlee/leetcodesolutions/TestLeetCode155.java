@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class TestLeetCode155 {
   @Test
+  public void testClassDeclare() {
+    LeetCode155 solution = new LeetCode155();
+  }
+  
+  @Test
   public void testProblemStack() {
     // ["MinStack","push","push","push","getMin","pop","top","getMin"]
     // [[],[-2],[0],[-3],[],[],[],[]]

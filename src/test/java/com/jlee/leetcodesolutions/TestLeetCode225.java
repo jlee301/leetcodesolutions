@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class TestLeetCode225 {
   @Test
+  public void testClassDeclare() {
+    LeetCode225 solution = new LeetCode225();
+  }
+  
+  @Test
   public void testProblemCase() {
     MyStack stack = new MyStack();
     Assert.assertTrue(stack.empty());

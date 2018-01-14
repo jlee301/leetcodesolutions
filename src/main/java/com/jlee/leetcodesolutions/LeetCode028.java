@@ -20,7 +20,12 @@ public class LeetCode028 {
    * indexOf() function.
    */
   public int strStr(String haystack, String needle) {
-    int result = haystack.indexOf(needle);
+    int result = -1;
+    if (haystack == null || needle == null) {
+      return result;
+    }
+    
+    result = haystack.indexOf(needle);
     return result;
   }
 
@@ -60,6 +65,10 @@ public class LeetCode028 {
    * Much easier solution provided in LeetCode discussion
    */
   public int strStrThree(String haystack, String needle) {
+    if (haystack == null || needle == null) {
+      return -1;
+    }
+
     for (int i = 0;; i++) {
       for (int j = 0;; j++) {
         if (j == needle.length())

@@ -7,6 +7,11 @@ import org.junit.Test;
 
 public class TestLeetCode303 {
   @Test
+  public void testClassDeclare() {
+    LeetCode303 solution = new LeetCode303();
+  }
+  
+  @Test
   public void testProblemCase1() {
     int[] nums = {-2, 0, 3, -5, 2, -1};
     NumArray solution = new NumArray(nums);

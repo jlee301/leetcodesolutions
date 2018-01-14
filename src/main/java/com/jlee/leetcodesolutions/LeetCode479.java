@@ -48,22 +48,17 @@ public class LeetCode479 {
    * This was taken from problem 009.
    */
   private boolean isPalindrome(long x) {
-    if (x < 0) {
-      // Negative numbers are not palindromes.
-      return false;
-    } else {
-      long copyOriginal = x;
-      // Use long here to compensate for 32-bit overflow
-      long result = 0;
-      while (copyOriginal != 0) {
-        long remainder = copyOriginal % 10;
-        result = (result * 10) + remainder;
-        copyOriginal = copyOriginal / 10;
-      }
-      if (result == x)
-        return true;
-      else
-        return false;
+    long copyOriginal = x;
+    // Use long here to compensate for 32-bit overflow
+    long result = 0;
+    while (copyOriginal != 0) {
+      long remainder = copyOriginal % 10;
+      result = (result * 10) + remainder;
+      copyOriginal = copyOriginal / 10;
     }
+    if (result == x)
+      return true;
+    else
+      return false;
   }
 }

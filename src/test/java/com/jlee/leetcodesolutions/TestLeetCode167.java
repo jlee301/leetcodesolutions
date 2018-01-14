@@ -82,7 +82,7 @@ public class TestLeetCode167 {
 
   @Test
   public void testNullEntry() {
-    int[] numbers = {};
+    int[] numbers = null;
     int target = 2;
     LeetCode167 solution = new LeetCode167();
     int[] result = solution.twoSum(numbers, target);

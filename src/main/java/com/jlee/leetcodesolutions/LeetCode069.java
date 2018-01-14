@@ -21,7 +21,7 @@ public class LeetCode069 {
       return 1;
     
     int sq = x / 2;
-    while(sq >= 1) {
+    while(sq >= 0) {
       int result = sq * sq;
       // System.out.println("x: " + x);
       // System.out.println("result: " + result);

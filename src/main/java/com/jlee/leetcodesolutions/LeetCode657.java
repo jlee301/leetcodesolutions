@@ -1,7 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.HashMap;
-
 public class LeetCode657 {
   /*
    * Initially, there is a Robot at position (0, 0). Given a sequence of its
@@ -28,13 +26,19 @@ public class LeetCode657 {
       return true;
     
     moves = moves.toUpperCase().trim();
-    HashMap<Character,Integer> map = new HashMap<Character,Integer>();
-    for(int i = 0; i < moves.length(); i++)
-      if(moves.charAt(i) == 'U' || moves.charAt(i) == 'D' || moves.charAt(i) == 'L' || moves.charAt(i) == 'R')
-        map.put((char) moves.charAt(i), map.getOrDefault((char) moves.charAt(i), 0) + 1);
+    int x = 0, y = 0;
+    for(int i = 0; i < moves.length(); i++) {
+      if(moves.charAt(i) == 'U')
+        y++;
+      else if(moves.charAt(i) == 'D')
+        y--;
+      else if(moves.charAt(i) == 'L')
+        x--;
+      else if(moves.charAt(i) == 'R')
+        x++;
+    }
     
-    if(map.getOrDefault((char) 'U',0) - map.getOrDefault((char) 'D',0) == 0 &&
-        map.getOrDefault((char) 'L',0) - map.getOrDefault((char) 'R',0) == 0)
+    if(x == 0 && y == 0)
       return true;
     else
       return false;

@@ -27,6 +27,13 @@ public class TestLeetCode696 {
   }
 
   @Test
+  public void testLargeGroups10Zeros10Ones() {
+    String s = "00000000001111111111";
+    LeetCode696 solution = new LeetCode696();
+    Assert.assertEquals(10, solution.countBinarySubstrings(s));
+  }
+
+  @Test
   public void testLargeGroups10Zeros9Ones() {
     String s = "0000000000111111111";
     LeetCode696 solution = new LeetCode696();

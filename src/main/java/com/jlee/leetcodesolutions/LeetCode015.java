@@ -24,24 +24,28 @@ public class LeetCode015 {
     
     Arrays.sort(nums);
     for(int i = 0; i < nums.length-2; i++) {
+      // If sum greater, then there is no more need to check
+      if(nums[i] + nums[i+1] + nums[i+2] > 0) break;
+      // If sum is less, then we can advance to next number
+      if(nums[i] + nums[nums.length-1] + nums[nums.length-2] < 0) continue;
       // If nums[i] == nums[i-1] then skip ahead because we already checked
-      if(i == 0 || nums[i] != nums[i-1]) {
-        int low = i+1, high = nums.length-1, sum = 0 - nums[i];
-        while(low < high) {
-          if(nums[low] + nums[high] == sum) {
-            result.add(Arrays.asList(nums[i], nums[low], nums[high]));
-            // If nums[low] == nums[low+1] then skip ahead because we already checked
-            while(low < high && nums[low] == nums[low+1]) low++;
-            // If nums[high] == nums[high-1] then skip ahead because we already checked
-            while(low < high && nums[high] == nums[high-1]) high--;
-            // These increments is so we move to the next element that is not the same
-            low++;
-            high--;
-          } else if(nums[low] + nums[high] < sum) {
-            low++;
-          } else {
-            high--;
-          }
+      if(i > 0 && nums[i] == nums[i-1]) continue;
+      int low = i+1, high = nums.length-1;
+      while(low < high) {
+        int sum = nums[i] + nums[low] + nums[high];
+        if(sum == 0) {
+          result.add(Arrays.asList(nums[i], nums[low], nums[high]));
+          // If nums[low] == nums[low+1] then skip ahead because we already checked
+          while(low < high && nums[low] == nums[low+1]) low++;
+          // If nums[high] == nums[high-1] then skip ahead because we already checked
+          while(low < high && nums[high] == nums[high-1]) high--;
+          // These increments is so we move to the next element that is not the same
+          low++;
+          high--;
+        } else if(sum < 0) {
+          low++;
+        } else {
+          high--;
         }
       }
     }

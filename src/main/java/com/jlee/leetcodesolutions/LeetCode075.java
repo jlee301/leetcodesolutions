@@ -31,4 +31,26 @@ public class LeetCode075 {
       else nums[i] = 2;
     }
   }
+  
+  public void sortColorsOnePass(int[] nums) {
+    if(nums == null || nums.length <= 1)
+      return;
+    
+    int curr = 0, redW = 0, blueW = nums.length-1;
+    while(curr <= blueW) {
+      if(nums[curr] == 0) {
+        nums[curr] = nums[redW];
+        nums[redW] = 0;
+        redW++;
+      } else if(nums[curr] == 2) {
+        nums[curr] = nums[blueW];
+        nums[blueW] = 2;
+        blueW--;
+        // We do a continue here to skip the curr increment because we moved a new
+        // number in that place that requires checking.
+        continue;
+      }
+      curr++;
+    }
+  }
 }

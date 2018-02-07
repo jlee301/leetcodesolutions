@@ -29,12 +29,12 @@ public class LeetCode077 {
   }
   
   private void helper(List<Integer> temp, int[] nums, int pos, int k) {
-    if(temp.size() == k)
+    if(k == 0)
       result.add(new ArrayList<>(temp));
     else {
-      for(int i = pos; i < nums.length; i++) {
+      for(int i = pos; i < nums.length && k < nums.length - i+1; i++) {
         temp.add(nums[i]);
-        helper(temp, nums, i+1, k);
+        helper(temp, nums, i+1, k-1);
         temp.remove((Integer) nums[i]);
       }
     }

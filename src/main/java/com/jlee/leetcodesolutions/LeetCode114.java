@@ -33,16 +33,11 @@ public class LeetCode114 {
     if(root == null)
       return;
     
-    List<Integer> left = new ArrayList<>();
-    List<Integer> right = new ArrayList<>();
-    obtainTree(left, root.left);
-    obtainTree(right, root.right);
+    List<Integer> list = new ArrayList<>();
+    obtainTree(list, root.left);
+    obtainTree(list, root.right);
     root.left = null;
-    for(int num : left) {
-      root.right = new TreeNode(num);
-      root = root.right;
-    }
-    for(int num : right) {
+    for(int num : list) {
       root.right = new TreeNode(num);
       root = root.right;
     }
@@ -54,5 +49,23 @@ public class LeetCode114 {
     list.add(node.val);
     obtainTree(list, node.left);
     obtainTree(list, node.right);
+  }
+  
+  public void flattenBetter(TreeNode root) {
+    if(root == null)
+      return;
+    
+    flattenBetter(root.left);
+    flattenBetter(root.right);
+    // Temporarily save root.right
+    TreeNode temp = root.right;
+    if(root.left != null) {
+      // Make right the left, then set left to null.
+      root.right = root.left;
+      root.left = null;
+      // Now traverse to the end of right and set it to the original right.
+      while(root.right != null) root = root.right;
+      root.right = temp;
+    }
   }
 }

@@ -38,4 +38,37 @@ public class TestLeetCode114 {
     solution.flatten(root);
     Assert.assertNull(root);
   }
+
+  @Test
+  public void testProblemCaseBetter() {
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    root.left.left = new TreeNode(3);
+    root.left.right = new TreeNode(4);
+    root.right = new TreeNode(5);
+    root.right.right = new TreeNode(6);
+    LeetCode114 solution = new LeetCode114();
+    solution.flattenBetter(root);
+    Assert.assertEquals(1, root.val);
+    Assert.assertNull(root.left);
+    Assert.assertEquals(2, root.right.val);
+    Assert.assertNull(root.right.left);
+    Assert.assertEquals(3, root.right.right.val);
+    Assert.assertNull(root.right.right.left);
+    Assert.assertEquals(4, root.right.right.right.val);
+    Assert.assertNull(root.right.right.right.left);
+    Assert.assertEquals(5, root.right.right.right.right.val);
+    Assert.assertNull(root.right.right.right.right.left);
+    Assert.assertEquals(6, root.right.right.right.right.right.val);
+    Assert.assertNull(root.right.right.right.right.right.left);
+    Assert.assertNull(root.right.right.right.right.right.right);
+  }
+
+  @Test
+  public void testNullBetter() {
+    TreeNode root = null;
+    LeetCode114 solution = new LeetCode114();
+    solution.flattenBetter(root);
+    Assert.assertNull(root);
+  }
 }

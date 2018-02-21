@@ -20,24 +20,19 @@ public class LeetCode134 {
     if(gas == null || cost == null || gas.length == 0 || cost.length == 0)
       return -1;
     
-    int tank = 0;
-    for(int i = 0; i < gas.length; i++)
-      tank += gas[i] - cost[i];
-    // You do not have enough gas to make the trip.
-    if(tank < 0) 
-      return -1;
-
+    // If the total trip requires more gas than we can obtain, then we return -1.
     // Now we know we have enough gas to make the trip, we must find starting point.
-    // Anytime we reach a point where the reserve goes negative, we move to the next
-    // point.
-    int startPt = 0, reserve = 0;
+    // Any time we reach a point where the reserve goes negative, we move to the
+    // next point.
+    int startPt = 0, reserve = 0, total = 0;
     for(int i = 0; i < gas.length; i++) {
+      total += gas[i] - cost[i];
       reserve += gas[i] - cost[i];
       if(reserve < 0) {
         startPt = i + 1;
         reserve = 0;
       }
     }
-    return startPt;
+    return total < 0 ? -1 : startPt;
   }  
 }

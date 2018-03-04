@@ -24,6 +24,7 @@ public class LeetCode221 {
       for(int j = 0; j < col; j++) {
         if(matrix[i][j] == '1') {
           int len = 1;
+          // Move right-down and then check if the entire row and col is all 1's
           outerloop:
             while(i+len < row && j+len < col) {
               // Check row is all 1's

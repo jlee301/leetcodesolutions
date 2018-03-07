@@ -26,8 +26,14 @@ public class LeetCode274 {
     if(citations == null)
       return 0;
     
+    int len = citations.length;
     Arrays.sort(citations);
-    for(int i = citations.length-1, n = 1; i >= 0; i--, n++) {
+    for(int i = 0; i < len; i++) {
+      if(citations[i] >= len-i)
+        return len-i;
+    }
+    return 0;
+    /*for(int i = citations.length-1, n = 1; i >= 0; i--, n++) {
       if(citations[i] == n)
         return n;
       // If the next iteration is less than the number of papers n, then return n-1
@@ -36,6 +42,6 @@ public class LeetCode274 {
     }
     // If none is found to meet the conditions, then the h-index is the total number
     // of papers
-    return citations.length;
+    return citations.length;*/
   }
 }

@@ -27,6 +27,13 @@ public class TestLeetCode274 {
   }
 
   @Test
+  public void testWrongAns2() {
+    int[] citations = {0};
+    LeetCode274 solution = new LeetCode274();
+    Assert.assertEquals(0, solution.hIndex(citations));
+  }
+
+  @Test
   public void testEmpty() {
     int[] citations = {};
     LeetCode274 solution = new LeetCode274();

@@ -22,12 +22,11 @@ public class LeetCode287 {
     while(slow != fast) {
       slow = nums[slow];
       fast = nums[nums[fast]];
-      // When this stops, slow will have traveled one full cycle when they meet.
     }
-    // So now we must find the entry point of the cycle. We take the fast and
-    // move it back to the beginning and have them both move one step. When they
-    // meet, this will be the entry point of the cycle (which is our duplicate
-    // number).
+    // The distance between "slow" to the "start of the cycle" is the same as the
+    // distance from the "beginning" to the "start of the cycle". So we set "fast"
+    // back to zero and move by one step until they meet. The meeting point is the
+    // "start of the cycle" -- which is the duplicate number.
     fast = 0;
     while(slow != fast) {
       slow = nums[slow];

@@ -1,8 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.HashMap;
-import javafx.util.Pair;
-
 public class LeetCode303 {
   /*
    * Given an integer array nums, find the sum of the elements between indices i
@@ -23,41 +20,21 @@ public class LeetCode303 {
 }
 
 class NumArray {
-  private final int[] data;
-  private final HashMap<Pair<Integer,Integer>,Integer> hash;
+  private int[] nums;
+  private int[] memo;
 
   public NumArray(int[] nums) {
-    data = nums;
-
-    // Caching Method
-    hash = new HashMap<Pair<Integer,Integer>,Integer>();
-    if(nums != null) {
-      for(int i = 0; i < nums.length; i++) {
-        int sum = 0;
-        for(int j = i; j < nums.length; j++) {
-          sum += nums[j];
-          hash.put(new Pair(i,j), sum);
-        }
-      }
-    }
+    if(nums == null || nums.length == 0)
+      return;
+    this.nums = nums;
+    memo = new int[nums.length];
+    memo[0] = nums[0];
+    for(int i = 1; i < nums.length; i++)
+      memo[i] = memo[i-1] + nums[i];
   }
 
   public int sumRange(int i, int j) {
-    int sum = 0;
-    if(data == null || i < 0 || j > data.length - 1 || i > j)
-      return sum;
-    
-    for (int start = i; start <= j; start++) {
-      sum += data[start];
-    }
-    return sum;
-  }
-
-  // Caching Method
-  public int sumRangeCached(int i, int j) {
-    if(hash.isEmpty() || i < 0 || j > data.length - 1 || i > j)
-      return 0;
-    else
-      return hash.get(new Pair(i,j));
+    if(nums == null || i < 0 || j > nums.length-1 || i > j) return 0;
+    return memo[j] - memo[i] + nums[i];
   }
 }

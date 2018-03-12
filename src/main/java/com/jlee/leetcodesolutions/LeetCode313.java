@@ -31,15 +31,15 @@ public class LeetCode313 {
     Arrays.fill(indexes, 1);
     
     for(int i = 2; i <= n; i++) {
-      // Find next ugly number. We will use memo[i] to store the value until the min
+      // Find ith ugly number. We will use memo[i] to store the value until the min
       // is found by checking all instances of prime.
       memo[i] = Integer.MAX_VALUE;
       for(int j = 0; j < primes.length; j++)
         memo[i] = Math.min(memo[i], memo[indexes[j]] * primes[j]);
       
-      // Now update the index references for each prime that is <= memo[i]
+      // If any of the products equal memo[i], then we increment its index
       for(int j = 0; j < primes.length; j++) {
-        while(memo[indexes[j]] * primes[j] <= memo[i])
+        if(memo[indexes[j]] * primes[j] == memo[i])
           indexes[j]++;
       }
     }

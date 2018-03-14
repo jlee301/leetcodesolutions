@@ -21,7 +21,7 @@ public class LeetCode322 {
    * https://leetcode.com/problems/coin-change/description/
    */
   public int coinChange(int[] coins, int amount) {
-    return coinChange(coins, amount, new int[amount]);
+    return coinChange(coins, amount, new int[amount+1]);
   }
   
   // If you comment out the memo caching, the function would run into a recursion
@@ -32,8 +32,9 @@ public class LeetCode322 {
     if(amount == 0)
       return 0;
     // Added for caching
-    if(memo[amount-1] != 0)
-      return memo[amount-1];
+    // memo[i] represents the minimum number of coins that add up to i amount
+    if(memo[amount] != 0)
+      return memo[amount];
 
     int minCount = Integer.MAX_VALUE;
     for(int coin : coins) {
@@ -42,7 +43,7 @@ public class LeetCode322 {
         minCount = Math.min(minCount, count+1);
     }
     // Added for caching
-    memo[amount-1] = minCount == Integer.MAX_VALUE ? -1 : minCount;
-    return memo[amount-1];
+    memo[amount] = minCount == Integer.MAX_VALUE ? -1 : minCount;
+    return memo[amount];
   }
 }

@@ -21,8 +21,17 @@ public class LeetCode338 {
    */
   public int[] countBits(int num) {
     int[] result = new int[num+1];
-    for(int i = 0; i <= num; i++) 
-      result[i] = Integer.bitCount(i);
+    for(int i = 0; i <= num; i++) {
+      int bitCount = 0;
+      int n = i;
+      while(n > 0) {
+        if((n & 1) == 1)
+          bitCount++;
+        n >>= 1;
+        // Keep shifting bits to the right until zero.
+      }
+      result[i] = bitCount;
+    }
     return result;
   }
 }

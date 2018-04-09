@@ -18,12 +18,14 @@ public class LeetCode812 {
   public double largestTriangleArea(int[][] points) {
     if(points == null || points.length < 3)
       return 0.0;
-    // base * height * 0.5
     double result = 0.0;
     for(int i = 0; i < points.length-2; i++) {
       for(int j = i+1; j < points.length-1; j++) {
         for(int k = j+1; k < points.length; k++) {
-          double area = Math.abs(((points[i][0]-points[j][0]) * (points[i][1]-points[k][1])) - ((points[i][0]-points[k][0]) * (points[i][1]-points[j][1]))) * 0.5;
+          // area = 0.5 * |(x2y3-x3y2)-(x1y3-x3y1)+(x1y2-x2y1)|
+          double area = Math.abs((points[j][0] * points[k][1] - points[k][0] * points[j][1])
+              - (points[i][0] * points[k][1] - points[k][0] * points[i][1])
+              + (points[i][0] * points[j][1] - points[j][0] * points[i][1])) * 0.5;
           result = Math.max(result, area);
         }
       }

@@ -31,19 +31,18 @@ public class LeetCode556 {
       if(data[i-1] < data[i]) break;
     // 2. If entire number is descending, then not possible
     if(i == 0) return -1;
-    // 3. Check all digits right of the smaller digit and obtain position of the
-    // least greater number
-    int pos = i;
-    char temp = data[i-1];
-    for(int j = i; j < data.length; j++) {
-      if(temp < data[j] && data[pos] > data[j]) pos = j;
-    }
-    // 4. Now swap numbers
-    data[i-1] = data[pos];
-    data[pos] = temp;
-    // 5. Sort everything right ascending
+    // 3. Sort everything right ascending
     Arrays.sort(data, i, data.length);
-    // 6. Reassemble number for return. Use Long in case it exceeds 32 bit
+    // 4. Check all digits right of the smaller digit and obtain position of the
+    // least greater number
+    char temp = data[i-1];
+    int j = i;
+    // Move position j until temp < data[j]
+    while(temp >= data[j]) j++;
+    // 6. Now swap numbers
+    data[i-1] = data[j];
+    data[j] = temp;
+    // 7. Reassemble number for return. Use Long in case it exceeds 32 bit
     long result = Long.valueOf(String.valueOf(data));
     return result > Integer.MAX_VALUE ? -1 : (int) result;
   }

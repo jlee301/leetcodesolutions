@@ -232,6 +232,7 @@ import org.junit.runners.Suite;
   TestLeetCode592.class,
   TestLeetCode593.class,
   TestLeetCode609.class,
+  TestLeetCode611.class,
   TestLeetCode817.class
 })
 

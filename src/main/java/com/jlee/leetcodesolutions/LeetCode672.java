@@ -23,7 +23,10 @@ public class LeetCode672 {
     
     if(n == 1) return 2;
     else if(n == 2) return m == 1 ? 3 : 4;
-    // A pattern occurs when there are n >= 3 lights
+    // A pattern occurs when there are n >= 3 lights where
+    // m = 1 : produces 4 statuses
+    // m = 2 : produces 7 statuses
+    // m > 2 : produces 8 statuses
     else return m == 1 ? 4 : m == 2 ? 7 : 8;
   }  
 }

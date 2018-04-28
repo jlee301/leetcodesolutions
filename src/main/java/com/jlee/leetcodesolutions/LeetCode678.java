@@ -20,7 +20,7 @@ public class LeetCode678 {
    * https://leetcode.com/problems/valid-parenthesis-string/description/
    */
   public boolean checkValidString(String s) {
-    if(s == null || s.isEmpty())
+    if(s == null)
       return false;
     
     // Store positions of left parenthesis and asterisks into stack

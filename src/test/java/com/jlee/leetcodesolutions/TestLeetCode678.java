@@ -58,7 +58,7 @@ public class TestLeetCode678 {
   public void testEmpty() {
     String s = "";
     LeetCode678 solution = new LeetCode678();
-    Assert.assertFalse(solution.checkValidString(s));
+    Assert.assertTrue(solution.checkValidString(s));
   }
 
   @Test

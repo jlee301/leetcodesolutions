@@ -22,9 +22,41 @@ public class TestLeetCode809 {
   }
   
   @Test
-  public void testCannotAddNewChar() {
+  public void testStringHasMoreChar() {
     String S = "abcd";
     String[] words = { "abc" };
+    LeetCode809 solution = new LeetCode809();
+    Assert.assertEquals(0, solution.expressiveWords(S, words));
+  }
+
+  @Test
+  public void testWordHasMoreChar() {
+    String S = "abc";
+    String[] words = { "abcd" };
+    LeetCode809 solution = new LeetCode809();
+    Assert.assertEquals(0, solution.expressiveWords(S, words));
+  }
+
+  @Test
+  public void testCharMismatch() {
+    String S = "ab";
+    String[] words = { "bc" };
+    LeetCode809 solution = new LeetCode809();
+    Assert.assertEquals(0, solution.expressiveWords(S, words));
+  }
+
+  @Test
+  public void testWordHasMore() {
+    String S = "aaa";
+    String[] words = { "aaaa" };
+    LeetCode809 solution = new LeetCode809();
+    Assert.assertEquals(0, solution.expressiveWords(S, words));
+  }
+
+  @Test
+  public void testWordCannotExtend() {
+    String S = "ll";
+    String[] words = { "l" };
     LeetCode809 solution = new LeetCode809();
     Assert.assertEquals(0, solution.expressiveWords(S, words));
   }

@@ -27,38 +27,54 @@ public class LeetCode809 {
    * https://leetcode.com/problems/expressive-words/description/
    */
   public int expressiveWords(String S, String[] words) {
-    // Define the groups and length of each
-    List<int[]> list = new ArrayList<>();
-    for(int i = 0; i < S.length(); i++) {
-      int j = i+1; 
-      char ch = S.charAt(i);
-      // Advance until next ch is different
-      while(j < S.length() && ch == S.charAt(j)) j++;
-      list.add(new int[] { ch-'a', j-i });
-      i = j - 1;
-    }
+    // Define the groups and frequency of S
+    List<int[]> list = groupBreakdown(S);
     
     // Now check each word to see if it can be extended
     int stretchy = 0;
     for(String word : words) {
-      int j = 0;
-      for(int i = 0; i < word.length(); i++, j++) {
-        int k = i+1;
-        char ch = word.charAt(i);
-        int[] data = list.get(j);
+      // Build groups and frequency for the word
+      List<int[]> temp = groupBreakdown(word);
+      boolean isStretchy = true;
+
+      // There are more groups in either S or word
+      if(list.size() != temp.size()) {
+        isStretchy = false;
+        break;
+      }
+      
+      for(int i = 0; i < temp.size(); i++) {
+        int[] sData = list.get(i);
+        int[] wordData = temp.get(i);
         
-        // Char do not match
-        if(ch-'a' != data[0]) break;
+        // Chars do not match
+        if(sData[0] != wordData[0]) {
+          isStretchy = false;
+          break;
+        }
         
         // Check the frequency of the group, can it be extended?
-        while(k < word.length() && ch == word.charAt(k)) k++;
-        int count = k - i;
-        if(count > data[1] || data[1] < 3 && data[1] != count) break;
-
-        i = k - 1;
+        if(wordData[1] > sData[1] || sData[1] < 3 && sData[1] != wordData[1]) {
+          isStretchy = false;
+          break;
+        }
       }
-      if(j == list.size()) stretchy++;
+      if(isStretchy) stretchy++;
     }
     return stretchy;
+  }
+  
+  private List<int[]> groupBreakdown(String word) {
+    // Define the groups and length of each
+    List<int[]> list = new ArrayList<>();
+    for(int i = 0; i < word.length(); i++) {
+      int j = i+1; 
+      char ch = word.charAt(i);
+      // Advance until next ch is different
+      while(j < word.length() && ch == word.charAt(j)) j++;
+      list.add(new int[] { ch-'a', j-i });
+      i = j - 1;
+    }
+    return list;
   }
 }

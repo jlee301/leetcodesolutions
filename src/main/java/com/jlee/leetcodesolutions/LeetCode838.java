@@ -38,13 +38,14 @@ public class LeetCode838 {
     boolean sim = true;
     while(sim) {
       String next = curr;
+      // Replace any stalemates with X and continue to sim
       next = next.replaceAll("R\\.L", "X");
       next = next.replaceAll("\\.L", "LL").replaceAll("R\\.", "RR");
-      next = next.replaceAll("X", "R.L");
       if(curr.equals(next))
         sim = false;
       curr = next;
     }
-    return curr;
+    // Switch the X's back
+    return curr.replaceAll("X", "R.L");
   }
 }

@@ -1,5 +1,7 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.TreeMap;
+
 public class LeetCode838 {
   /*
    * There are N dominoes in a line, and we place each domino vertically upright.
@@ -47,5 +49,63 @@ public class LeetCode838 {
     }
     // Switch the X's back
     return curr.replaceAll("X", "R.L");
+  }
+  
+  public String pushDominoesToo(String dominoes) {
+    TreeMap<Integer,Character> map = new TreeMap<>();
+    for(int i = 0; i < dominoes.length(); i++) {
+      char ch = dominoes.charAt(i);
+      if(ch != '.')
+        map.put(i, ch);
+    }
+    
+    StringBuilder sb = new StringBuilder();
+    for(int i = 0; i < dominoes.length(); i++) {
+      char ch = dominoes.charAt(i);
+      if(ch != '.')
+        sb.append(ch);
+      else {
+        Integer floor = map.floorKey(i);
+        Integer ceil = map.ceilingKey(i);
+        if(floor == null && ceil == null)
+          sb.append('.');
+        
+        else if(floor == null) {
+          if(map.get(ceil) == 'L')
+            sb.append('L');
+          else
+            sb.append('.');
+        }
+        
+        else if(ceil == null) {
+          if(map.get(floor) == 'R')
+            sb.append('R');
+          else
+            sb.append('.');
+        }
+        
+        else { // floor != null && ceil != null
+          char ceilCh = map.get(ceil);
+          char floorCh = map.get(floor);
+          int ceilDist = ceil - i;
+          int floorDist = i - floor;
+          if(floorCh == 'R' && ceilCh == 'L') {
+            if(ceilDist > floorDist)
+              sb.append('R');
+            else if(ceilDist < floorDist)
+              sb.append('L');
+            else
+              sb.append('.');
+          }
+          else if(floorCh == 'R')
+            sb.append('R');
+          else if(ceilCh == 'L')
+            sb.append('L');
+          else
+            sb.append('.');
+        }
+      }
+    }
+    return sb.toString();
   }
 }

@@ -61,14 +61,16 @@ public class LeetCode818 {
         String R = curr.pos + " -- " + (curr.speed > 0 ? -1 : 1);
         
         // If already past the target, we are not going further past
-        if(Math.abs(curr.pos+curr.speed-target) < target && !visited.contains(A)) {
-          queue.add(new RaceData(curr.pos+curr.speed, 2*curr.speed));
-          visited.add(A);
-        }
-        
-        if(Math.abs(curr.pos-target) < target && !visited.contains(R)) {
-          queue.add(new RaceData(curr.pos, curr.speed > 0 ? -1 : 1));
-          visited.add(R);
+        if(Math.abs(curr.pos - target) <= target) {
+          if(!visited.contains(A)) {
+            queue.add(new RaceData(curr.pos+curr.speed, 2*curr.speed));
+            visited.add(A);
+          }
+          
+          if(!visited.contains(R)) {
+            queue.add(new RaceData(curr.pos, curr.speed > 0 ? -1 : 1));
+            visited.add(R);
+          }          
         }
       }
       sequence++;

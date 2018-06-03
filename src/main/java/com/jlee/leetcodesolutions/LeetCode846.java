@@ -19,7 +19,8 @@ public class LeetCode846 {
    * https://leetcode.com/contest/weekly-contest-87/problems/hand-of-straights/
    */
   public boolean isNStraightHand(int[] hand, int W) {
-    if(hand.length % W != 0)
+    // Can you split the hand W times containing W cards each?
+    if(hand.length % W != 0 || hand.length / W != W)
       return false;
     
     // Generate counts

@@ -26,17 +26,35 @@ public class TestLeetCode846 {
   }
 
   @Test
-  public void testMultipleFirstNumbers() {
-    int[] hand = {1,1,2,2,3,3};
+  public void testSplitsOfThree() {
+    int[] hand = {1,1,1,2,2,2,3,3,3};
     int W = 3;
     LeetCode846 solution = new LeetCode846();
     Assert.assertTrue(solution.isNStraightHand(hand, W));
   }
+  
+  @Test
+  public void testSplitsOfThreeMissingElements() {
+    int[] hand = {1,1,1,2,2,2,4,4,4};
+    int W = 3;
+    LeetCode846 solution = new LeetCode846();
+    Assert.assertFalse(solution.isNStraightHand(hand, W));
+  }
+  
+  @Test
+  public void testNotEnoughElements() {
+    int[] hand = {1,1,2,2,3,3};
+    int W = 3;
+    LeetCode846 solution = new LeetCode846();
+    Assert.assertFalse(solution.isNStraightHand(hand, W));
+  }
 
   @Test
-  public void testMultipleMissingNumbers() {
-    int[] hand = {1,1,3,3,4,4};
-    int W = 3;
+  public void testDivisibleButNotEnoughCards() {
+    // Input: hand = [1,2,3,4], W = 4
+    // Output: false
+    int[] hand = {1,2,3,4};
+    int W = 4;
     LeetCode846 solution = new LeetCode846();
     Assert.assertFalse(solution.isNStraightHand(hand, W));
   }

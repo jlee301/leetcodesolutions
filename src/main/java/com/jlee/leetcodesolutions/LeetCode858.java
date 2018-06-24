@@ -15,30 +15,20 @@ public class LeetCode858 {
    * https://leetcode.com/problems/mirror-reflection/description/
    */
   public int mirrorReflection(int p, int q) {
-    // Simulate the reflections
-    boolean north = true, east = true;
-    int diff = p;
-    while(true) {
-      diff -= q;
-
-      // A receptor has been hit
-      if(diff == 0) {
-        if(north) {
-          if(east) return 1;
-          else return 2;
-        }
-        else {
-          return 0;
-        }
-      }
-      
-      // Toggle direction west --> east or east --> west
-      east = !east;
-      // Reach border, direction changes south --> north, north --> south
-      if(diff < 0) {
-        diff += p;
-        north = !north;
-      }
-    }    
+    // Find the common multiplier of p and q
+    int k = 1;
+    while((p*k) % q != 0)
+      k++;
+    
+    // If multiplier is even, direction is north --> south, only one outcome
+    if(k % 2 == 0)
+      return 0;
+    
+    // If multiplier is odd, direction is south -- north, there's two outcome
+    // If even, direction is east --> west
+    // If odd, directioni is west --> east;
+    if(((p*k) / q) % 2 == 0)
+      return 2;
+    return 1;
   }
 }

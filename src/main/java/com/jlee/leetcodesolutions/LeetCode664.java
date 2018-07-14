@@ -24,10 +24,18 @@ public class LeetCode664 {
     if(memo[i][j] != 0)
       return memo[i][j];
     
+    // 1. If the turn is writing s[i] through [i+1 : j]
+    // s = abc --> aaa
     int ans = strangePrinter(s, i+1, j, memo) + 1;
     for(int k = i+1; k <= j; k++) {
-      if(s.charAt(i) == s.charAt(k))
+      if(s.charAt(i) == s.charAt(k)) {
         ans = Math.min(ans, strangePrinter(s, i, k-1, memo) + strangePrinter(s, k+1, j, memo));
+        // if s[i] exist already @ s[k] (ie no need to rewrite in this position)
+        // This check is to see if it's possible to use less turns by acknowledging
+        // 2. writing s[i] through [i+1 : k-1] + 
+        // 3. writing s[k+1] through [k+2 : j] 
+        // Take the min(1, 2+3)
+      }
     }
     memo[i][j] = ans;
     return ans;

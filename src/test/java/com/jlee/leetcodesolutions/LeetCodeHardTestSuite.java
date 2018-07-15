@@ -15,6 +15,7 @@ import org.junit.runners.Suite;
   TestLeetCode689.class,
   TestLeetCode691.class,
   TestLeetCode699.class,
+  TestLeetCode710.class,
   TestLeetCode715.class,
   TestLeetCode719.class,
   TestLeetCode726.class,
@@ -50,7 +51,6 @@ import org.junit.runners.Suite;
   TestLeetCode854.class,
   TestLeetCode857.class,
   TestLeetCode862.class,
-  TestLeetCode864.class,
   TestLeetCode865.class
 })
   

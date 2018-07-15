@@ -1,55 +1,51 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.TreeNode;
-import java.util.HashMap;
-import java.util.HashSet;
-
 public class LeetCode866 {
   /*
-   * Given a binary tree rooted at root, the depth of each node is the shortest
-   * distance to the root.
+   * Find the smallest prime palindrome greater than or equal to N.
    * 
-   * A node is deepest if it has the largest depth possible.
+   * Recall that a number is prime if it's only divisors are 1 and itself, and it
+   * is greater than 1.
    * 
-   * Return the node with the largest depth such that it contains all the deepest
-   * nodes in it's subtree.
+   * For example, 2,3,5,7,11 and 13 are primes.
    * 
-   * https://leetcode.com/contest/weekly-contest-92/problems/smallest-subtree-with-all-the-deepest-nodes/
+   * Recall that a number is a palindrome if it reads the same from left to right
+   * as it does from right to left.
+   * 
+   * For example, 12321 is a palindrome.
+   * 
+   * Note:
+   * 1. 1 <= N <= 10^8
+   * 2. The answer is guaranteed to exist and be less than 2 * 10^8.
    */
-  public TreeNode subtreeWithAllDeepest(TreeNode root) {
-    HashMap<TreeNode,TreeNode> parents = new HashMap<>();
-    HashMap<Integer,HashSet<TreeNode>> depths = new HashMap<>();
-    findDepthAndParents(root, depths, 0, parents);
-    
-    // The last level in the map are the deepest nodes
-    // Now we must find the common node for all nodes in the last level.
-    // Worst case scenario it points back to root node
-    HashSet<TreeNode> set = new HashSet<>(depths.get(depths.size()-1));
-    while(set.size() != 1) {
-      HashSet<TreeNode> nextSet = new HashSet<>();
-      for(TreeNode node : set)
-        nextSet.add(parents.get(node));
-      set = nextSet;
+  public int primePalindrome(int N) {
+    // 10^8 -> 100 000 000 
+    // Attempt every odd digits palindrome, check to see if it is a prime number
+    // Every even digit palindrome is divisible by 11 (except 11)
+    if(N > 7 && N <= 11)
+      return 11;
+    for(int i = 1; i < 20000; i++) {
+      String front = Integer.toString(i);
+      String back = new StringBuilder(front).reverse().substring(1);
+      int num = Integer.valueOf(front+back);
+      if(num >= N && isPrime(num))
+        return num;
     }
-    return set.iterator().next();
+    return -1;
   }
   
-  private void findDepthAndParents(TreeNode node, HashMap<Integer,HashSet<TreeNode>> depths, int level, HashMap<TreeNode,TreeNode> parents) {
-    if(node == null)
-      return;
+  private boolean isPrime(int num) {
+    // 1 is not a prime number
+    // 2 is a prime number
+    // If the number is even (means it's divisble by 2) cannot be a prime number
+    if(num < 2 || num % 2 == 0)
+      return num == 2;
     
-    // Add to depths
-    if(!depths.containsKey(level))
-      depths.put(level, new HashSet<>());
-    depths.get(level).add(node);
-    
-    // Record the parents
-    if(node.left != null)
-      parents.put(node.left, node);
-    if(node.right != null)
-      parents.put(node.right, node);
-    
-    findDepthAndParents(node.left, depths, level+1, parents);
-    findDepthAndParents(node.right, depths, level+1, parents);
+    // Since any even numbers has been checked above, we check all odds
+    for(int i = 3; i*i <= num; i += 2) {
+      if(num % i == 0)
+        return false;
+    }
+    return true;
   }
 }

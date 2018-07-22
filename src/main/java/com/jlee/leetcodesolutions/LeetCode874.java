@@ -32,12 +32,9 @@ public class LeetCode874 {
       obs.get(obstacle[0]).add(obstacle[1]);
     }
     
-    int x = 0, y = 0;
+    int x = 0, y = 0, dir = 0, move = 0, result = 0;
     // Up, down, left, right
     int[][] moves = { {0,1}, {0,-1}, {-1,0}, {1,0} };
-    int dir = 0;
-    int move = 0;
-    int result = 0;
     for(int com : commands) {
       if(com != -2 && com != -1) {
         for(int i = 0; i < com; i++) {
@@ -52,30 +49,30 @@ public class LeetCode874 {
           // We want the MAX Euclidean distance that the robot will travel
           result = Math.max(result, (x*x) + (y*y));
         }
-        continue;
       }
-      
-      // turn left
-      if(com == -2)
-        dir -= 90;
-      // turn right
-      else
-        dir += 90;
-      
-      // Move left
-      if(dir == -90 || dir == 270)
-        move = 2;
-      // Move right
-      else if(dir == 90 || dir == -270)
-        move = 3;
-      // Move down
-      else if (dir == 180 || dir == -180)
-        move = 1;
-      // Move up
       else {
-        move = 0;
-        dir = 0;
-      }
+        // turn left
+        if(com == -2)
+          dir -= 90;
+        // turn right
+        else
+          dir += 90;
+        
+        // Move left
+        if(dir == -90 || dir == 270)
+          move = 2;
+        // Move right
+        else if(dir == 90 || dir == -270)
+          move = 3;
+        // Move down
+        else if (dir == 180 || dir == -180)
+          move = 1;
+        // Move up
+        else {
+          move = 0;
+          dir = 0;
+        } 
+      }      
     }    
     return result;
   }

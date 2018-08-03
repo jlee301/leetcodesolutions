@@ -3,7 +3,7 @@ package com.jlee.leetcodesolutions;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class LeetCode882 {
+public class LeetCode497 {
   /*
    * Given a list of non-overlapping axis-aligned rectangles rects, write a
    * function pick which randomly and uniformily picks an integer point in the
@@ -28,7 +28,7 @@ public class LeetCode882 {
   private Random rand;
   private int[][] rects;
   
-  public LeetCode882(int[][] rects) {
+  public LeetCode497(int[][] rects) {
     // Store the weighted sum of each rectangle to its index in rects array
     map = new TreeMap<>();
     wsum = 0;

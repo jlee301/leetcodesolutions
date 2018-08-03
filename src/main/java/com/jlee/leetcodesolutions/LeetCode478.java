@@ -2,7 +2,7 @@ package com.jlee.leetcodesolutions;
 
 import java.util.Random;
 
-public class LeetCode883 {
+public class LeetCode478 {
   /*
    * Given the radius and x-y positions of the center of a circle, write a
    * function randPoint which generates a uniform random point in the circle.
@@ -21,7 +21,7 @@ public class LeetCode883 {
   private double radius, x_center, y_center;
   private Random rand;
   
-  public LeetCode883(double radius, double x_center, double y_center) {
+  public LeetCode478(double radius, double x_center, double y_center) {
     this.radius = radius;
     this.x_center = x_center;
     this.y_center = y_center;

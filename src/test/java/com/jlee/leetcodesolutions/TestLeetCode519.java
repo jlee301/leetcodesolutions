@@ -1,13 +1,13 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.LeetCode881;
+import com.jlee.leetcodesolutions.LeetCode519;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLeetCode881 {
+public class TestLeetCode519 {
   @Test
   public void testProblemCase1() {
-    LeetCode881 solution = new LeetCode881(2,3);
+    LeetCode519 solution = new LeetCode519(2,3);
     boolean[][] result = new boolean[2][3];
     for(int i = 0; i < 6; i++) {
       int[] data = solution.flip();

@@ -3,7 +3,7 @@ package com.jlee.leetcodesolutions;
 import java.util.Random;
 import java.util.TreeMap;
 
-public class LeetCode880 {
+public class LeetCode528 {
   /*
    * Given an array w of positive integers, where w[i] describes the weight of
    * index i, write a function pickIndex which randomly picks an index in
@@ -20,7 +20,7 @@ public class LeetCode880 {
   private int sum;
   private Random rand;
   
-  public LeetCode880(int[] w) {
+  public LeetCode528(int[] w) {
     // w = {2,3,5,4}
     //         0,1 --> 2 --> map.get(0)
     //       2,3,4 --> 3 --> map.get(2)

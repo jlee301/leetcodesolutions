@@ -3,7 +3,7 @@ package com.jlee.leetcodesolutions;
 import java.util.HashMap;
 import java.util.Random;
 
-public class LeetCode881 {
+public class LeetCode519 {
   /*
    * You are given the number of rows n_rows and number of columns n_cols of a 2D
    * binary matrix where all values are initially 0. Write a function flip which
@@ -20,7 +20,7 @@ public class LeetCode881 {
   private HashMap<Integer,Integer> map;
   private Random rand;
   
-  public LeetCode881(int n_rows, int n_cols) {
+  public LeetCode519(int n_rows, int n_cols) {
     this.n_rows = n_rows;
     this.n_cols = n_cols;
     // total = total number of row.id, col.id combinations available

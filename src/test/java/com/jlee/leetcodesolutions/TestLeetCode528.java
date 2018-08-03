@@ -1,13 +1,13 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.LeetCode880;
+import com.jlee.leetcodesolutions.LeetCode528;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLeetCode880 {
+public class TestLeetCode528 {
   @Test
   public void testProblemCase1() {
-    LeetCode880 solution = new LeetCode880(new int[] {1});
+    LeetCode528 solution = new LeetCode528(new int[] {1});
     for(int i = 0; i < 10; i++) {
       int index = solution.pickIndex();
       if(index != 0)
@@ -17,7 +17,7 @@ public class TestLeetCode880 {
 
   @Test
   public void testProblemCase2() {
-    LeetCode880 solution = new LeetCode880(new int[] {1,3});
+    LeetCode528 solution = new LeetCode528(new int[] {1,3});
     for(int i = 0; i < 10; i++) {
       int index = solution.pickIndex();
       if(index > 1)
@@ -27,7 +27,7 @@ public class TestLeetCode880 {
 
   @Test
   public void testProblemCase3() {
-    LeetCode880 solution = new LeetCode880(new int[] {2,3,5,4});
+    LeetCode528 solution = new LeetCode528(new int[] {2,3,5,4});
     for(int i = 0; i < 10; i++) {
       int index = solution.pickIndex();
       if(index > 4)

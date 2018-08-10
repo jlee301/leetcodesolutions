@@ -10,13 +10,15 @@ public class LeetCode514 {
     return findRotateSteps(ring, key, 0, new HashMap<>());
   }
   
-  private int findRotateSteps(String ring, String key, int pos, HashMap<String, HashMap<Integer,Integer>> memo) {
+  private int findRotateSteps(String ring, String key, int pos, HashMap<String,Integer> memo) {
     if(pos == key.length())
       return 0;
     
     // memoization
-    if(memo.containsKey(ring) && memo.get(ring).containsKey(pos))
-      return memo.get(ring).get(pos);
+    // We will use the current orientation of ring and key position
+    String status = ring + "-" + pos;
+    if(memo.containsKey(status))
+      return memo.get(status);
     //
     
     // Find index going clockwise from current position
@@ -32,9 +34,7 @@ public class LeetCode514 {
     int steps = Math.min(forward, backward);
     
     // memoization
-    HashMap<Integer,Integer> data = memo.getOrDefault(ring, new HashMap<>());
-    data.put(pos, steps);
-    memo.put(ring, data);
+    memo.put(status, steps);
     //
     
     return steps;

@@ -22,29 +22,30 @@ public class LeetCode488 {
     for(char ch : hand.toCharArray())
       count[ch - 'A']++;
     
-    int moves = findMinStep(board+"#", count);
+    int moves = findMinStep(board, count);
     return moves == 6 ? -1 : moves;
   }
   
   private int findMinStep(String board, int[] count) {
     // Remove any >= 3 consecutive balls
     board = removeBalls(board);
-    if(board.equals("#"))
+    if(board.equals(""))
       return 0;
     
     int moves = 6, need = 0;
-    for(int i = 0, j = 1; j < board.length(); j++) {
+    int i = 0, j = 1;
+    while(i < board.length()) {
       char ch = board.charAt(i);
-      if(ch == board.charAt(j))
-        continue;
-      
+      // Advance j pointer to next non-matching character of i
+      while(j < board.length() && ch == board.charAt(j)) j++;
+
       // how many moves do I need to make this 3 consecutive
       // do I have enough characters in hand to do this?
       need = 3 - (j-i);
       if(count[ch - 'A'] >= need) {
         count[ch - 'A'] -= need;
         moves = Math.min(moves, findMinStep(board.substring(0, i) + board.substring(j), count) + need);
-        count[ch - 'A'] += need;
+        count[ch - 'A'] += need;        
       }
       i = j;
     }
@@ -53,9 +54,11 @@ public class LeetCode488 {
   
   // If three or more consecutive same character, remove from string
   private String removeBalls(String board) {
-    for(int i = 0, j = 1; j < board.length(); j++) {
-      if(board.charAt(i) == board.charAt(j))
-        continue;
+    int i = 0, j = 1;
+    while(i < board.length()) {
+      char ch = board.charAt(i);
+      // Advance j pointer to next non-matching character of i
+      while(j < board.length() && ch == board.charAt(j)) j++;
       
       if(j-i >= 3)
         return removeBalls(board.substring(0, i) + board.substring(j));

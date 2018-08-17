@@ -17,22 +17,34 @@ public class LeetCode483 {
    * https://leetcode.com/problems/smallest-good-base/description/
    */
   public String smallestGoodBase(String n) {
-    // summation i=0 thru i = m-1 --> k^i = n
-    //    k^m-1 + k^m-2 + ... + k^1 + k^0 = n
-    //              ((k^m) - 1) / (k - 1) = n
-    //                          (k^m) - 1 = n * (k-1)
+    //    summation i=0 thru i = m --> k^i = n
+    //       k^m + k^m-1 + ... + k^1 + k^0 = n
+    //           k^m + k^m-1 + ... + k + 1 = n
+    //               k^m + k^m-1 + ... + k = n-1    (1)
+    //                 k^m-1 + ... + k + 1 = n - k^m  (2)
+    //
+    //   k * (k^m-1 + k^m-2 + ... + k + 1) = n-1
+    //                       k * (n - k^m) = n-1
+    //                         k*n - k^m+1 = n-1
+    //                             k*n - n = k^m+1 - 1
+    //                              n(k-1) = k^m+1 - 1
+    //
+    // For the purpose of solving for what m is, we can use
+    //                              n(k-1) = k^m - 1
     BigInteger N = new BigInteger(n);
     long K = Long.MAX_VALUE;
     
+    // log2(n) = max
     // log2(10^18) ~ 60
-    // so we try m = 2 thru 60 to solve for min base k using binary search
-    for(int m = 2; m <= 60; m++) {
+    // so we try m = 2 thru log2(n) to solve for min base k using binary search
+    int max = (int) (Math.log(Long.valueOf(n)) / Math.log(2)) + 1;
+    for(int m = 2; m <= max; m++) {
       // Binary search the value of the base k
       long left = 2, right = Long.MAX_VALUE;
       while(left <= right) {
         long mid = left + (right - left) / 2;
         // LHS = k^m - 1
-        // RHS = n * (k-1)
+        // RHS = n(k-1)
         BigInteger LHS = BigInteger.valueOf(mid).pow(m).subtract(BigInteger.ONE);
         BigInteger RHS = N.multiply(BigInteger.valueOf(mid).subtract(BigInteger.ONE));
         

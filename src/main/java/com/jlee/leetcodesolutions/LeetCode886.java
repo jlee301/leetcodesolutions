@@ -1,58 +1,42 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.PriorityQueue;
+import java.util.HashSet;
 
 public class LeetCode886 {
   /*
-   * https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/description/
+   * https://leetcode.com/contest/weekly-contest-97/problems/possible-bipartition/
    */
-  public int reachableNodes(int[][] edges, int M, int N) {
-    // Create adjacency map of the edges
-    HashMap<Integer, HashMap<Integer,Integer>> map = new HashMap<>();
-    for(int i = 0; i < N; i++)
-      map.put(i, new HashMap<>());
-    for(int[] edge : edges) {
-      map.get(edge[0]).put(edge[1], edge[2]);
-      map.get(edge[1]).put(edge[0], edge[2]);
+  public boolean possibleBipartition(int N, int[][] dislikes) {
+    // Create adjacency map
+    HashMap<Integer,HashSet<Integer>> adjMap = new HashMap<>();
+    for(int i = 1; i <= N; i++)
+      adjMap.put(i, new HashSet<>());
+    
+    for(int[] data : dislikes) {
+      adjMap.get(data[0]).add(data[1]);
+      adjMap.get(data[1]).add(data[0]);
     }
     
-    // seen is storing node and remaining moves
-    HashMap<Integer,Integer> seen = new HashMap<>();
-    PriorityQueue<int[]> queue = new PriorityQueue<>(new MoveComparator());
-    queue.add(new int[] {M,0});
-    while(!queue.isEmpty()) {
-      int moves = queue.peek()[0];
-      int curr = queue.peek()[1];
-      queue.poll();
-      
-      if(!seen.containsKey(curr)) {
-        seen.put(curr, moves);
-        // Check if I can advance to neighboring nodes
-        for(int nei : map.get(curr).keySet()) {
-          int movesRemaining = moves - map.get(curr).get(nei) - 1;
-          if(!seen.containsKey(nei) && movesRemaining >= 0)
-            queue.add(new int[] {movesRemaining,nei});
-        }
-      }
+    // Assign each N to group 0 or 1
+    HashMap<Integer,Integer> group = new HashMap<>();
+    for(int i = 1; i <= N; i++) {
+      if(!group.containsKey(i) && !dfs(adjMap, group, i, 0))
+        return false;
     }
-    
-    // Now since we only have results of the original nodes we can visit
-    // We must calculate how many in-between new nodes we can visit
-    int result = seen.size();
-    for(int[] edge : edges)
-      result += Math.min(seen.getOrDefault(edge[0], 0) + seen.getOrDefault(edge[1], 0), edge[2]);
-    
-    return result;
+    return true;
   }
   
-  // By making the PriorityQueue always put the highest number of moves on top, it
-  // guarantees we always deal with nodes we have not seen first
-  private class MoveComparator implements Comparator<int[]> {
-    @Override
-    public int compare(int[] a, int[] b) {
-      return b[0] - a[0];
+  private boolean dfs(HashMap<Integer,HashSet<Integer>> adjMap, HashMap<Integer,Integer> group, int pos, int g) {
+    if(group.containsKey(pos))
+      return group.get(pos) == g;
+    group.put(pos, g);
+    
+    // Assign each neighbor the opposite group
+    for(int nei : adjMap.get(pos)) {
+      if(!dfs(adjMap, group, nei, g == 0 ? 1 : 0))
+        return false;
     }
+    return true;
   }
 }

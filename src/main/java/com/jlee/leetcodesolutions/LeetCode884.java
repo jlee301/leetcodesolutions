@@ -1,46 +1,42 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class LeetCode884 {
   /*
-   * An encoded string S is given. To find and write the decoded string to a tape,
-   * the encoded string is read one character at a time and the following steps
-   * are taken:
-   * 1. If the character read is a letter, that letter is written onto the tape.
-   * 2. If the character read is a digit (say d), the entire current tape is
-   * repeatedly written d-1 more times in total.
+   * We are given two sentences A and B. (A sentence is a string of space
+   * separated words. Each word consists only of lowercase letters.)
    * 
-   * Now for some encoded string S, and an index K, find and return the K-th
-   * letter (1 indexed) in the decoded string.
+   * A word is uncommon if it appears exactly once in one of the sentences, and
+   * does not appear in the other sentence.
    * 
-   * https://leetcode.com/contest/weekly-contest-96/problems/decoded-string-at-index/
+   * Return a list of all uncommon words.
+   * 
+   * You may return the list in any order.
+   * 
+   * https://leetcode.com/contest/weekly-contest-97/problems/uncommon-words-from-two-sentences/
    */
-  public String decodeAtIndex(String S, int K) {
-    // Find length of decoded string
-    long length = 0;
-    for(int i = 0; i < S.length(); i++) {
-      char ch = S.charAt(i);
-      if(Character.isDigit(ch))
-        length *= ch - '0';
-      else
-        length++;
+  public String[] uncommonFromSentences(String A, String B) {
+    // Map frequency of each word into a Map
+    HashMap<String,Integer> map = new HashMap<>();
+    String[] data = A.split(" ");
+    for(String word : data)
+      map.put(word, map.getOrDefault(word, 0) + 1);
+    
+    data = B.split(" ");
+    for(String word : data)
+      map.put(word, map.getOrDefault(word, 0) + 1);
+    
+    // If the word only occurs once, add into List
+    List<String> list = new ArrayList<>();
+    for(String key : map.keySet()) {
+      if(map.get(key) == 1)
+        list.add(key);
     }
     
-    // Now work backwards to find the Kth character
-    char ch = 0;
-    int i = S.length()-1;
-    while(true) {
-      ch = S.charAt(i);
-      K %= length;
-      if(K == 0 && !Character.isDigit(ch))
-        break;
-      
-      if(Character.isDigit(ch))
-        length /= ch - '0';
-      else
-        length--;
-      
-      i--;
-    }
-    return "" + ch;
+    data = new String[list.size()];
+    return list.toArray(data);
   }
 }

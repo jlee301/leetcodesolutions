@@ -7,36 +7,37 @@ import org.junit.Test;
 public class TestLeetCode887 {
   @Test
   public void testProblemCase1() {
-    int[][] grid = { {2} };
+    // Input: K = 1, N = 2
+    // Output: 2
+    int K = 1, N = 2;
     LeetCode887 solution = new LeetCode887();
-    Assert.assertEquals(5, solution.projectionArea(grid));
+    Assert.assertEquals(2, solution.superEggDrop(K, N));
   }
 
   @Test
   public void testProblemCase2() {
-    int[][] grid = { {1,2},{3,4} };
+    // Input: K = 2, N = 6
+    // Output: 3
+    int K = 2, N = 6;
     LeetCode887 solution = new LeetCode887();
-    Assert.assertEquals(17, solution.projectionArea(grid));
+    Assert.assertEquals(3, solution.superEggDrop(K, N));
   }
 
   @Test
   public void testProblemCase3() {
-    int[][] grid = { {1,0},{0,2} };
+    // Input: K = 3, N = 14
+    // Output: 4
+    int K = 3, N = 14;
     LeetCode887 solution = new LeetCode887();
-    Assert.assertEquals(8, solution.projectionArea(grid));
+    Assert.assertEquals(4, solution.superEggDrop(K, N));
   }
 
   @Test
   public void testProblemCase4() {
-    int[][] grid = { {1,1,1},{1,0,1},{1,1,1} };
+    // Input: K = 100, N = 10000
+    // Output: 14
+    int K = 100, N = 10000;
     LeetCode887 solution = new LeetCode887();
-    Assert.assertEquals(14, solution.projectionArea(grid));
-  }
-
-  @Test
-  public void testProblemCase5() {
-    int[][] grid = { {2,2,2},{2,1,2},{2,2,2} };
-    LeetCode887 solution = new LeetCode887();
-    Assert.assertEquals(21, solution.projectionArea(grid));
+    Assert.assertEquals(14, solution.superEggDrop(K, N));
   }
 }

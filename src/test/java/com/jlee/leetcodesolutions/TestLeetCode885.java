@@ -7,33 +7,22 @@ import org.junit.Test;
 public class TestLeetCode885 {
   @Test
   public void testProblemCase1() {
-    int[] people = {1,2};
-    int limit = 3;
+    // Input: R = 1, C = 4, r0 = 0, c0 = 0
+    // Output: [[0,0],[0,1],[0,2],[0,3]]
+    int R = 1, C = 4, r0 = 0, c0 = 0;
     LeetCode885 solution = new LeetCode885();
-    Assert.assertEquals(1, solution.numRescueBoats(people, limit));
+    Assert.assertArrayEquals(new int[][] {{0,0},{0,1},{0,2},{0,3}}, solution.spiralMatrixIII(R, C, r0, c0));
   }
 
   @Test
   public void testProblemCase2() {
-    int[] people = {3,2,2,1};
-    int limit = 3;
+    // Input: R = 5, C = 6, r0 = 1, c0 = 4
+    // Output: [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]
+    int R = 5, C = 6, r0 = 1, c0 = 4;
     LeetCode885 solution = new LeetCode885();
-    Assert.assertEquals(3, solution.numRescueBoats(people, limit));
-  }
-
-  @Test
-  public void testProblemCase3() {
-    int[] people = {3,5,3,4};
-    int limit = 5;
-    LeetCode885 solution = new LeetCode885();
-    Assert.assertEquals(4, solution.numRescueBoats(people, limit));
-  }
-
-  @Test
-  public void testProblemCase4() {
-    int[] people = {1,1,2};
-    int limit = 4;
-    LeetCode885 solution = new LeetCode885();
-    Assert.assertEquals(2, solution.numRescueBoats(people, limit));
+    Assert.assertArrayEquals(new int[][] { { 1, 4 }, { 1, 5 }, { 2, 5 }, { 2, 4 }, { 2, 3 }, { 1, 3 }, { 0, 3 },
+        { 0, 4 }, { 0, 5 }, { 3, 5 }, { 3, 4 }, { 3, 3 }, { 3, 2 }, { 2, 2 }, { 1, 2 }, { 0, 2 }, { 4, 5 }, { 4, 4 },
+        { 4, 3 }, { 4, 2 }, { 4, 1 }, { 3, 1 }, { 2, 1 }, { 1, 1 }, { 0, 1 }, { 4, 0 }, { 3, 0 }, { 2, 0 }, { 1, 0 },
+        { 0, 0 } }, solution.spiralMatrixIII(R, C, r0, c0));
   }
 }

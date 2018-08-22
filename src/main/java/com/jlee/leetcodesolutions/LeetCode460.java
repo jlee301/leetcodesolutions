@@ -24,17 +24,16 @@ public class LeetCode460 {
   private HashMap<Integer,Integer> cache;
   private HashMap<Integer,Integer> freq;
   private TreeMap<Integer,List<Integer>> freqId;
-  private HashMap<Integer,Integer> timeId;
   private int capacity;
-  private int time;
   
   public LeetCode460(int capacity) {
     this.capacity = capacity;
     cache = new HashMap<>();
     freq = new HashMap<>();
     freqId = new TreeMap<>();
-    timeId = new HashMap<>();
-    time = 0;
+    // cache - stores key, value
+    // freq - stores key, frequency
+    // freqId - stores frequency, key(s), where keys[0] is LFU at that frequency
   }
   
   public int get(int key) {
@@ -54,9 +53,6 @@ public class LeetCode460 {
     ids.add(key);
     freqId.put(frequency+1, ids);
 
-    // Update time for key
-    timeId.put(key, time++);
-    
     return cache.get(key);
   }
   
@@ -69,21 +65,10 @@ public class LeetCode460 {
     if(!cache.containsKey(key) && cache.size() == capacity) {
       // Of all the keys of the same frequency, remove least recently used
       int leastFreqKey = freqId.firstKey();
-      int LFUTime = Integer.MAX_VALUE;
-      int removeId = 0;
-      for(int id : freqId.get(leastFreqKey)) {
-        int temp = timeId.get(id);
-        if(temp < LFUTime) {
-          removeId = id;
-          LFUTime = temp;
-        }
-      }
-      timeId.remove(removeId);
-
-      if(freqId.get(leastFreqKey).size() == 1)
+      int removeId = freqId.get(leastFreqKey).remove(0);
+      
+      if(freqId.get(leastFreqKey).size() == 0)
         freqId.remove(leastFreqKey);
-      else
-        freqId.get(leastFreqKey).remove((Integer) removeId);
       
       freq.remove(removeId);
       cache.remove(removeId);
@@ -109,8 +94,6 @@ public class LeetCode460 {
       ids.add(key);
       freqId.put(0, ids);
     }
-    // Add to time for key
-    timeId.put(key, time++);
     cache.put(key, value);
   }
 }

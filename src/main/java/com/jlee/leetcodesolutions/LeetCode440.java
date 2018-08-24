@@ -26,7 +26,7 @@ public class LeetCode440 {
     return curr;
   }
   
-  private int helper(int n, int n1, int n2) {
+  private int helper(int n, long n1, long n2) {
     // Find how many numbers are between n1(inclusive) and n2 (exclusive)
     // ie n=103, n1=1, n2=2 --> 15 total integers
     // First loop will find: 1

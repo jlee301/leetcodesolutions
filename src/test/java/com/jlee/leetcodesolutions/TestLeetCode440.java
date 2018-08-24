@@ -60,4 +60,11 @@ public class TestLeetCode440 {
     LeetCode440 solution = new LeetCode440();
     Assert.assertEquals(11, solution.findKthNumber(n, k));
   }
+
+  @Test
+  public void testProblemCase9() {
+    int n = 681692778, k = 351251360;
+    LeetCode440 solution = new LeetCode440();
+    Assert.assertEquals(416126219, solution.findKthNumber(n, k));
+  }
 }

@@ -7,6 +7,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({ 
+  TestLeetCode410.class,
   TestLeetCode420.class,
   TestLeetCode432.class,
   TestLeetCode440.class,

@@ -1,6 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.HashSet;
 import java.util.PriorityQueue;
 
 public class LeetCode407 {
@@ -19,39 +18,38 @@ public class LeetCode407 {
     if(heightMap == null || heightMap.length <= 2 || heightMap[0].length <= 2)
       return 0;
     
-    HashSet<String> visited = new HashSet<>();
     PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[0]-b[0]);
     int MAX_i = heightMap.length;
     int MAX_j = heightMap[0].length;
+    boolean[][] visited = new boolean[MAX_i][MAX_j];
     
     // Add outer edges to the queue
     // 1. First row
     for(int j = 0; j < MAX_j; j++) {
       pq.add(new int[] {heightMap[0][j], 0, j});
-      visited.add(0 + "-" + j);
+      visited[0][j] = true;
     }
     
     // 2. Remaining of the first and last column
     for(int i = 1; i < MAX_i; i++) {
       pq.add(new int[] {heightMap[i][0], i, 0});
-      visited.add(i + "-" + 0);
+      visited[i][0] = true;
       pq.add(new int[] {heightMap[i][MAX_j - 1], i, MAX_j - 1});
-      visited.add(i + "-" + (MAX_j - 1));
+      visited[i][MAX_j-1] = true;
     }
     
     // 3. Remaining of the last row
     for(int j = 1; j < MAX_j - 1; j++) {
       pq.add(new int[] {heightMap[MAX_i - 1][j], MAX_i - 1, j});
-      visited.add((MAX_i - 1) + "-" + j);
+      visited[MAX_i-1][j] = true;
     }
     
     // moves[0] == up    moves[2] == left
     // moves[1] == down  moves[3] == right
     int[][] moves = { {-1,0}, {1,0}, {0,-1}, {0,1} };
-    int max = Integer.MIN_VALUE, trap = 0;
+    int trap = 0;
     while(!pq.isEmpty()) {
       int[] node = pq.poll();
-      max = Math.max(max, node[0]);
 
       // Check adjacent nodes to see if water can flow that direction
       for(int[] move : moves) {
@@ -59,15 +57,14 @@ public class LeetCode407 {
         int nextj = node[2] + move[1];
         
         // If out of bounds or already visited, move on to next
-        if(nexti < 0 || nexti == MAX_i || nextj < 0 || nextj == MAX_j || visited.contains(nexti + "-" + nextj))
+        if(nexti < 0 || nexti == MAX_i || nextj < 0 || nextj == MAX_j || visited[nexti][nextj])
           continue;
         
-        pq.add(new int[] {heightMap[nexti][nextj], nexti, nextj});
-        visited.add(nexti + "-" + nextj);
+        pq.add(new int[] {Math.max(node[0], heightMap[nexti][nextj]), nexti, nextj});
+        visited[nexti][nextj] = true;
         
         // There is a downflow, water can be trapped here
-        if(heightMap[nexti][nextj] < max)
-          trap += max - heightMap[nexti][nextj];
+        trap += Math.max(0, node[0] - heightMap[nexti][nextj]);
       }
     }
     return trap;

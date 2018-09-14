@@ -13,7 +13,7 @@ public class LeetCode330 {
     int i = 0, patches = 0;
     // Assume we start at [0,0], the min number (nextN) to patch to get to [0,1] is
     // nextN = 1
-    int nextN = 1;
+    long nextN = 1;
     while(nextN <= n) {
       if(i < nums.length && nums[i] <= nextN) {
         nextN += nums[i];

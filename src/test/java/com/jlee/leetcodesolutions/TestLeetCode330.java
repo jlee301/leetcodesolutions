@@ -36,4 +36,12 @@ public class TestLeetCode330 {
     LeetCode330 solution = new LeetCode330();
     Assert.assertEquals(4, solution.minPatches(nums, n));
   }
+
+  @Test
+  public void testProblemCase5() {
+    int[] nums = {1,2,31,33};
+    int n = 2147483647;
+    LeetCode330 solution = new LeetCode330();
+    Assert.assertEquals(28, solution.minPatches(nums, n));
+  }
 }

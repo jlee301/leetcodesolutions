@@ -34,6 +34,7 @@ public class LeetCode315 {
     int left = 0;
     int right = list.size()-1; 
     // Binary search the position where to insert n into the sorted list
+    // [1, 3, 6], element 2 would insert between 1, 3 -> so index 1 is returned
     while(left <= right) {
       int mid = left + (right-left)/2;
       if(list.get(mid) < n)

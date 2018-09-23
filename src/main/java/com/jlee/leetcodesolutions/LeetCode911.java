@@ -21,7 +21,7 @@ public class LeetCode911 {
     // votes[] is used to keep tally of all the votes
     int[] votes = new int[persons.length];
     int maxVotes = 0;
-    int maxPerson = 0;
+    int maxPerson = -1;
     
     // Process the votes in the order they come in
     // 1. Keep track of who has highest vote per entry
@@ -29,11 +29,13 @@ public class LeetCode911 {
       votes[persons[i]]++;
       if(maxVotes <= votes[persons[i]]) {
         maxVotes = votes[persons[i]];
-        maxPerson = persons[i];
         
         // Only store who has the highest votes at times[i] when there is a change or
         // tie in the highest votes
-        map.put(times[i], maxPerson);
+        if(maxPerson != persons[i]) {
+          maxPerson = persons[i];
+          map.put(times[i], maxPerson);
+        }
       }
     }
   }

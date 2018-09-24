@@ -51,13 +51,15 @@ public class LeetCode909 {
           
           // if next move is a snake or ladder, advance to the position
           if(straightBoard[next] != -1) {
-            if(!visited.contains(straightBoard[next])) {
+            if(!visited.contains(straightBoard[next]))
               queue.add(straightBoard[next]);
-              // visited.add(straightBoard[next]);
-            }
+              // We do not add the jump as visited in case one of the [x+1 : x+6] moves lands
+              // on the same spot and it has a snake or ladder
           }
           else {
-            queue.add(next);     
+            // Check make sure element was not added already because of snake or ladder
+            if(!queue.contains(next))
+              queue.add(next);     
           }
         }
       }

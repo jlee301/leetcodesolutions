@@ -29,6 +29,13 @@ public class LeetCode301 {
     
     // BFS
     while(!queue.isEmpty()) {
+      if(found) {
+        // No need to check ANY of the next level candidates as they were added into the
+        // queue before a valid one was found.
+        queue.clear();
+        continue;
+      }
+      
       int N = queue.size();
       for(int i = 0; i < N; i++) {
         String curr = queue.poll();
@@ -52,9 +59,6 @@ public class LeetCode301 {
           }
         }
       }
-      // No need to check ANY of the next level candidates as they were added into the
-      // queue before a valid one was found.
-      if(found) break;
     }
     return result;
   }

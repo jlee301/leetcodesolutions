@@ -357,7 +357,8 @@ import org.junit.runners.Suite;
   TestLeetCode911.class,
   TestLeetCode915.class,
   TestLeetCode916.class,
-  TestLeetCode918.class
+  TestLeetCode918.class,
+  TestLeetCode919.class
 })
 
 public class LeetCodeMediumTestSuite {

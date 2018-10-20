@@ -21,6 +21,13 @@ public class TestLeetCode154 {
 
   @Test
   public void testProblemCase3() {
+    int[] nums = {3,3,1,3};
+    LeetCode154 solution = new LeetCode154();
+    Assert.assertEquals(1, solution.findMin(nums));
+  }
+
+  @Test
+  public void testProblemCase4() {
     int[] nums = {2,2,2,2,2};
     LeetCode154 solution = new LeetCode154();
     Assert.assertEquals(2, solution.findMin(nums));

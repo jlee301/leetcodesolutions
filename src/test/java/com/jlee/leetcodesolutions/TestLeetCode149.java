@@ -47,4 +47,25 @@ public class TestLeetCode149 {
     LeetCode149 solution = new LeetCode149();
     Assert.assertEquals(0, solution.maxPoints(points));
   }
+
+  @Test
+  public void testProblemCase7() {
+    Point[] points = { new Point(4,0), new Point(4,-1), new Point(4,5) };
+    LeetCode149 solution = new LeetCode149();
+    Assert.assertEquals(3, solution.maxPoints(points));
+  }
+
+  @Test
+  public void testProblemCase8() {
+    Point[] points = { new Point(2,3), new Point(3,3), new Point(-5,3) };
+    LeetCode149 solution = new LeetCode149();
+    Assert.assertEquals(3, solution.maxPoints(points));
+  }
+
+  @Test
+  public void testProblemCase9() {
+    Point[] points = { new Point(0,0), new Point(94911151,94911150), new Point(94911152,94911151) };
+    LeetCode149 solution = new LeetCode149();
+    Assert.assertEquals(2, solution.maxPoints(points));
+  }
 }

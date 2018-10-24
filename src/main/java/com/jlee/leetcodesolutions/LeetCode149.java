@@ -16,35 +16,36 @@ public class LeetCode149 {
       return result;
     
     for(int i = 0; i < points.length; i++) {
-      // Store the count of how many times a slope occurs with points[i] and points[j]
-      HashMap<Double,Integer> map = new HashMap<>();
-      
-      // Compare points[i] with points[j] to find its slope
-      int dupPoint = 1;
+      // dupPoint stores how many times we see points[i]
+      int dupPoint = 1, max = 0;
+      HashMap<Integer,HashMap<Integer,Integer>> map = new HashMap<>();
       for(int j = i + 1; j < points.length; j++) {
-        if(points[i].x == points[j].x && points[i].y == points[j].y) {
-          // points[i] == points[j]
+        int x = points[j].x - points[i].x;
+        int y = points[j].y - points[i].y;
+        if(x == 0 && y == 0) {
           dupPoint++;
+          continue;
         }
-        else if(points[i].y == points[j].y) {
-          // denominator of the slope is zero
-          map.put(Double.MAX_VALUE, map.getOrDefault(Double.MAX_VALUE, 0) + 1);
-        }
-        else {
-          // calculate the slope
-          double slope = (double) (points[j].x - points[i].x) / (double) (points[j].y - points[i].y);
-          map.put(slope, map.getOrDefault(slope, 0) + 1);
-        }
+        
+        // reduce x / y to its lowest fractional form
+        int gcd = gcd(x, y);
+        x /= gcd;
+        y /= gcd;
+        map.computeIfAbsent(x, k -> new HashMap<>());
+        map.get(x).put(y, map.get(x).getOrDefault(y, 0) + 1);
+
+        // Keep track of the most repeated x / y
+        max = Math.max(max, map.get(x).get(y));
       }
-      // Which slope has max count
-      int max = 0;
-      for(int next : map.values()) {
-        max = Math.max(max, next);
-      }
-      // Now add all of the duplicate points as part of the line
-      max += dupPoint;
-      result = Math.max(result, max);
+      // most repeated x / y + duplicate points[i]
+      result = Math.max(result, max + dupPoint);
     }
     return result;
+  }
+  
+  private int gcd(int a, int b) {
+    if(b == 0)
+      return a;
+    else return gcd(b, a % b);
   }
 }

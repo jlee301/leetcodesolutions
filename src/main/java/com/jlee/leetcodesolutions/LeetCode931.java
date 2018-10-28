@@ -12,13 +12,8 @@ public class LeetCode931 {
    * https://leetcode.com/contest/weekly-contest-108/problems/minimum-falling-path-sum/
    */
   public int minFallingPathSum(int[][] A) {
-    int min = Integer.MAX_VALUE;
     Integer[][] memo = new Integer[A.length][A[0].length];
-    // Choose a starting point from first row
-    for(int c = 0; c < A[0].length; c++) {
-      min = Math.min(min, A[0][c] + dfs(A, 1, c, memo));
-    }
-    return min;
+    return dfs(A, 0, 0, memo);
   }
   
   private int dfs(int[][] A, int r, int c, Integer[][] memo) {
@@ -32,7 +27,7 @@ public class LeetCode931 {
     int min = Integer.MAX_VALUE;
     for(int C = 0; C < A[r].length; C++) {
       // Must choose next column with a diff <= 1
-      if(Math.abs(c - C) <= 1) {
+      if(r == 0 || Math.abs(c - C) <= 1) {
         min = Math.min(min, A[r][C] + dfs(A, r+1, C, memo));
       }
     }

@@ -22,8 +22,9 @@ public class LeetCode935 {
     map.put(9, new int[] {2,4});
     
     int count = 0;
+    Integer[][] memo = new Integer[N][10];
     for(int i = 0; i <= 9; i++) {
-      count = (count + helper(N-1, i, map, new Integer[N][10])) % MOD;
+      count = (count + helper(N-1, i, map, memo)) % MOD;
     }
     return count;
   }

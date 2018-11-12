@@ -12,29 +12,25 @@ public class LeetCode940 {
    */
   public int distinctSubseqII(String S) {
     int MOD = 1_000_000_007;
+    int count = 0;
     
-    // dp[k+1] = the number of distinct subsequences containing S[0], S[1], ... S[k]
+    // dp[i] = the number of distinct subsequences ending with S[i]
+    // Base case for dp[i] == 1 for substring S[0:i]
     int N = S.length();
-    int[] dp = new int[N+1];
-    dp[0] = 1; // base case is empty string ""
-
-    // prev[S[k] - 'a'] == index of the previous time char S[k] was processed
-    // This is to be used to avoid doubling the counts
-    int[] prev = new int[26];
-    Arrays.fill(prev, -1);
+    int[] dp = new int[N];
+    Arrays.fill(dp, 1);
     
+    // Calculate how many distinct subsequences ending with S[i]
     for(int i = 0; i < N; i++) {
-      int idx = S.charAt(i) - 'a';
-      dp[i+1] = (dp[i] * 2) % MOD;
-      
-      // check if ch been processed before to avoid doubling counts
-      if(prev[idx] != -1)
-        dp[i+1] = (dp[i+1] - dp[prev[idx]]) % MOD;
-      
-      prev[idx] = i;
+      for(int j = 0; j < i; j++) {
+        // Avoid doubling counts
+        if(S.charAt(i) == S.charAt(j))
+          continue;
+        
+        dp[i] = (dp[i] + dp[j]) % MOD;
+      }
+      count = (count + dp[i]) % MOD;
     }
-    // Removing empty space count
-    dp[N]--;
-    return dp[N] < 0 ? dp[N] + MOD : dp[N];
+    return count;
   }
 }

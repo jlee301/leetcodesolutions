@@ -14,28 +14,41 @@ public class LeetCode025 {
    * https://leetcode.com/problems/reverse-nodes-in-k-group/
    */
   public ListNode reverseKGroup(ListNode head, int k) {
-    if(head == null || k < 2)
+    if(head == null || head.next == null || k < 2)
       return head;
     
-    ListNode[] data = new ListNode[k];
     ListNode dummy = new ListNode(0);
-    dummy.next = head;
     ListNode curr = dummy;
-    
-    int i = 0;
+    ListNode tail = head;
+    int count = 0;
     while(head != null) {
-      data[i++] = head;
-      head = head.next;
-      
-      if(i == k) {
-        for(int j = k - 1; j >= 0; j--) {
-          curr.next = data[j];
-          curr = curr.next;
+      count++;
+      if(count == k) {
+        // Reverse nodes        
+        // Store location of head next
+        // Store location of rear, this will be used to know where to continue next
+        ListNode temp = head.next;
+        ListNode last = tail;
+                
+        // Move pointers around to reverse the nodes
+        ListNode next = tail;
+        while(next != temp) {
+          ListNode prev = tail;
+          tail = next == tail ? tail.next : next;
+          next = tail.next;
+          tail.next = prev;
         }
         curr.next = head;
-        i = 0;
+        curr = last;
+        head = temp;
+        tail = temp;
+        count = 0;
+      }
+      else {
+        head = head.next;
       }
     }
+    curr.next = tail;
     return dummy.next;
   }
 }

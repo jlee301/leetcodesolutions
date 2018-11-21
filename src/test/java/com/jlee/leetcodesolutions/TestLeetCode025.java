@@ -83,4 +83,17 @@ public class TestLeetCode025 {
      Assert.assertEquals(1, result.val);
      Assert.assertNull(result.next);
   }
+
+  @Test
+  public void testProblemCase6() {
+     ListNode head = new ListNode(1);
+     head.next = new ListNode(2);
+     int k = 2;
+     
+     LeetCode025 solution = new LeetCode025();
+     ListNode result = solution.reverseKGroup(head, k);
+     Assert.assertEquals(2, result.val);
+     Assert.assertEquals(1, result.next.val);
+     Assert.assertNull(result.next.next);
+  }
 }

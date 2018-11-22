@@ -1,6 +1,7 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.ListNode;
+import java.util.PriorityQueue;
 
 public class LeetCode023 {
   /*
@@ -12,30 +13,21 @@ public class LeetCode023 {
   public ListNode mergeKLists(ListNode[] lists) {
     ListNode dummy = new ListNode(0);
     ListNode curr = dummy;
-    boolean complete = false;
-    while(!complete) {
-      int pos = 0;
-      ListNode minNode = null;
-      complete = true;
-      for(int i = 0; i < lists.length; i++) {
-        // Find smallest element of each list's head node
-        if(lists[i] == null)
-          continue;
-        
-        if(minNode == null || lists[i].val < minNode.val) {
-          // Store the list index and element of smallest
-          complete = false;
-          pos = i;
-          minNode = lists[i];
-        }
-      }
-      if(!complete) {
-        // Advance the smallest list and store into result
-        curr.next = minNode;
-        curr = curr.next;
-        lists[pos] = lists[pos].next;
+    
+    // Dump all values into queue
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    for(int i = 0; i < lists.length; i++) {
+      while(lists[i] != null) {
+        pq.add(lists[i].val);
+        lists[i] = lists[i].next;
       }
     }
+    
+    // Now that queue is sorted, we can reconstruct in order
+    while(!pq.isEmpty()) {
+      curr.next = new ListNode(pq.poll());
+      curr = curr.next;
+    }  
     return dummy.next;
   }
 }

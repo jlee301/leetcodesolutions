@@ -67,4 +67,11 @@ public class TestLeetCode010 {
     LeetCode010 solution = new LeetCode010();
     Assert.assertFalse(solution.isMatch(s, p));
   }
+
+  @Test
+  public void testProblemCase10() {
+    String s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadefg", p = "a*aa*aaas*t*.*k";
+    LeetCode010 solution = new LeetCode010();
+    Assert.assertFalse(solution.isMatch(s, p));
+  }
 }

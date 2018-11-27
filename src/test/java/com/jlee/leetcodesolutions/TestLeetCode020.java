@@ -7,72 +7,79 @@ import org.junit.Test;
 public class TestLeetCode020 {
 
   @Test
-  public void testBasicParenthesis() {
+  public void theProblemCase1() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("()");
     Assert.assertTrue(result);
   }
 
   @Test
-  public void testBasicBraces() {
+  public void theProblemCase2() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("{}");
     Assert.assertTrue(result);
   }
 
   @Test
-  public void testBasicBrackets() {
+  public void theProblemCase3() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("[]");
     Assert.assertTrue(result);
   }
 
   @Test
-  public void testAllParenthesis() {
+  public void theProblemCase4() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("()[]{}");
     Assert.assertTrue(result);
   }
 
   @Test
-  public void testRepeatParenthesis() {
+  public void theProblemCase5() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("()[]{}()[]{}");
     Assert.assertTrue(result);
   }
 
   @Test
-  public void testMixParenthesisClose() {
+  public void theProblemCase6() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("(]");
     Assert.assertFalse(result);
   }
 
   @Test
-  public void testInvalidCloseOrder() {
+  public void theProblemCase7() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("([)]");
     Assert.assertFalse(result);
   }
 
   @Test
-  public void testAllOpenParenthesis() {
+  public void theProblemCase8() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid(")(}{][");
     Assert.assertFalse(result);
   }
 
   @Test
-  public void testInvalidCharacters() {
+  public void theProblemCase9() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("abc12345");
     Assert.assertFalse(result);
   }
 
   @Test
-  public void testEmptyString() {
+  public void theProblemCase10() {
     LeetCode020 solution = new LeetCode020();
     boolean result = solution.isValid("");
+    Assert.assertTrue(result);
+  }
+
+  @Test
+  public void theProblemCase11() {
+    LeetCode020 solution = new LeetCode020();
+    boolean result = solution.isValid("(}");
     Assert.assertFalse(result);
   }
 }

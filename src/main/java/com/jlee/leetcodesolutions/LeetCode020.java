@@ -1,5 +1,7 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Stack;
+
 public class LeetCode020 {
   /*
    * Given a string containing just the characters '(', ')', '{', '}', '[' and
@@ -9,19 +11,29 @@ public class LeetCode020 {
    * https://leetcode.com/problems/valid-parentheses/description/
    */
   public boolean isValid(String s) {
-    if (s.length() == 0) {
-      // The string was empty to begin with return false
-      return false;
+    Stack<Character> stack = new Stack<>();
+    for(int i = 0; i < s.length(); i++) {
+      char ch = s.charAt(i);
+      if(ch == ')' || ch == '}' || ch == ']') {
+        // If next char is a closing bracket, 
+        // then the top of the stack must be the corresponding opening bracket
+        if(stack.isEmpty())
+          return false;
+        
+        char prev = stack.pop();
+        if(ch == ')' && prev != '(')
+          return false;
+        
+        if(ch == '}' && prev != '{')
+          return false;
+        
+        if(ch == ']' && prev != '[')
+          return false;
+      }
+      else
+        stack.push(ch);
     }
-
-    // Remove all instances of () {} []
-    s = s.replace("()", "").replace("{}", "").replace("[]", "");
-    if (s.length() == 0) {
-      // Now if the string is empty return true
-      return true;
-    } else {
-      // There's still characters left in the string return false
-      return false;
-    }
+    // There should be nothing in the stack for this to be valid
+    return stack.isEmpty();
   }
 }

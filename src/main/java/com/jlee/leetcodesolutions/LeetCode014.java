@@ -13,39 +13,26 @@ public class LeetCode014 {
    * https://leetcode.com/problems/longest-common-prefix/description/
    */
   public String longestCommonPrefix(String[] strs) {
-    if (strs.length == 0)
-      return "";
-    // Start with first word
-    // Set the commonLength to the length of the first word
-    String result = strs[0];
-    int commonLength = result.length();
-
-    for (int i = 1; i < strs.length; i++) {
-      // System.out.println("i: " + i);
-      // If the other words in the array are shorter, set
-      // as the commonLength. This is to avoid going out
-      // of bounds on character comparison.
-      if (strs[i].length() < commonLength) {
-        commonLength = strs[i].length();
-      }
-
-      int match = 0;
-      while (match < commonLength) {
-        if (result.charAt(match) == strs[i].charAt(match)) {
-          // System.out.println(result.charAt(match));
-          match++;
-        } else {
-          // Set the commonLength to the index of the last
-          // character match. Break out of the while loop
-          // as there's no reason to keep comparing.
-          commonLength = match;
-          // System.out.println("commonLength: " + commonLength);
+    String result = "";
+    if(strs == null || strs.length == 0)
+      return result;
+    
+    for(int i = 0; i < strs[0].length(); i++) {
+      // We use strs[0] as reference to the other words
+      boolean allIncluded = true;
+      char ch = strs[0].charAt(i);
+      for(int j = 1; j < strs.length; j++) {
+        // Check remaining words if char is the same
+        if(i == strs[j].length() || ch != strs[j].charAt(i)) {
+          allIncluded = false;
           break;
         }
       }
+      if(allIncluded)
+        result += ch;
+      else
+        break;
     }
-    result = result.substring(0, commonLength);
-    // System.out.println("common prefix: " + result);
     return result;
   }
 }

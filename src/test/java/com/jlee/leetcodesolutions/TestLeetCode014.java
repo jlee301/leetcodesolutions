@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestLeetCode014 {
 
   @Test
-  public void testBasic() {
+  public void testProblemCase1() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "leets", "leetcode", "leet", "leeds" };
     String result = solution.longestCommonPrefix(input);
@@ -15,7 +15,7 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testOneWord() {
+  public void testProblemCase2() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "leets" };
     String result = solution.longestCommonPrefix(input);
@@ -23,7 +23,7 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testLastWordShorterThanCommonLength() {
+  public void testProblemCase3() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "leets", "leetcode", "leet", "l" };
     String result = solution.longestCommonPrefix(input);
@@ -31,7 +31,7 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testNoCommon() {
+  public void testProblemCase4() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "abc", "def", "ghi" };
     String result = solution.longestCommonPrefix(input);
@@ -39,7 +39,7 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testLastWordEmpty() {
+  public void testProblemCase5() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "leets", "leetcode", "leet", "" };
     String result = solution.longestCommonPrefix(input);
@@ -47,7 +47,7 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testSecondToLastWordEmpty() {
+  public void testProblemCase6() {
     LeetCode014 solution = new LeetCode014();
     String[] input = { "leets", "leetcode", "", "leeds" };
     String result = solution.longestCommonPrefix(input);
@@ -55,9 +55,17 @@ public class TestLeetCode014 {
   }
 
   @Test
-  public void testNoWords() {
+  public void testProblemCase7() {
     LeetCode014 solution = new LeetCode014();
     String[] input = {};
+    String result = solution.longestCommonPrefix(input);
+    Assert.assertEquals("", result);
+  }
+
+  @Test
+  public void testProblemCase8() {
+    LeetCode014 solution = new LeetCode014();
+    String[] input = null;
     String result = solution.longestCommonPrefix(input);
     Assert.assertEquals("", result);
   }

@@ -16,48 +16,26 @@ public class LeetCode013 {
    * https://leetcode.com/problems/roman-to-integer/description/
    */
   public int romanToInt(String s) {
-    // In case someone passes lower case
-    s = s.toUpperCase();
-    int nums[] = new int[s.length()];
-    for (int i = 0; i < s.length(); i++) {
-      switch (s.charAt(i)) {
-      case 'M':
-        nums[i] = 1000;
-        break;
-      case 'D':
-        nums[i] = 500;
-        break;
-      case 'C':
-        nums[i] = 100;
-        break;
-      case 'L':
-        nums[i] = 50;
-        break;
-      case 'X':
-        nums[i] = 10;
-        break;
-      case 'V':
-        nums[i] = 5;
-        break;
-      case 'I':
-        nums[i] = 1;
-        break;
-      }
-    }
-
+    // Map each roman numeral to it's value
+    int[] map = new int[26];
+    map['I' - 'A'] = 1;
+    map['V' - 'A'] = 5;
+    map['X' - 'A'] = 10;
+    map['L' - 'A'] = 50;
+    map['C' - 'A'] = 100;
+    map['D' - 'A'] = 500;
+    map['M' - 'A'] = 1000;
+    
     int result = 0;
-    for (int i = 0; i < nums.length - 1; i++) {
-      if (nums[i] < nums[i + 1]) {
-        result = result - nums[i];
-      } else {
-        result = result + nums[i];
-      }
-      // System.out.println(result);
+    for(int i = 0; i < s.length() - 1; i++) {
+      // If the next roman numeral is greater, it means we must deduct
+      // ie. IV = 4 --> -1 + 5 = 4
+      if(map[s.charAt(i) - 'A'] < map[s.charAt(i+1) - 'A'])
+        result -= map[s.charAt(i) - 'A'];
+      else
+        result += map[s.charAt(i) - 'A'];
     }
-
-    // Add the last result in the array as there's no nums[i+1] comparison
-    result = result + nums[nums.length - 1];
-    // System.out.println(result);
+    result += map[s.charAt(s.length()-1) - 'A'];
     return result;
   }
 }

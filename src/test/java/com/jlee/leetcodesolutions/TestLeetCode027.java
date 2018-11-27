@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode027 {
   @Test
-  public void testBasicRemove() {
+  public void theProblemCase1() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = { 3, 2, 2, 3 };
     int val = 3;
@@ -14,12 +14,10 @@ public class TestLeetCode027 {
     Assert.assertEquals(2, result);
     Assert.assertEquals(2, nums[0]);
     Assert.assertEquals(2, nums[1]);
-    Assert.assertEquals(2, nums[2]);
-    Assert.assertEquals(3, nums[3]);
   }
 
   @Test
-  public void testNothingToRemove() {
+  public void theProblemCase2() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = { 3, 2, 2, 3 };
     int val = 4;
@@ -32,48 +30,48 @@ public class TestLeetCode027 {
   }
 
   @Test
-  public void testRemoveAllButOne() {
+  public void theProblemCase3() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = { 3, 3, 3, 2 };
     int val = 3;
     int result = solution.removeElement(nums, val);
     Assert.assertEquals(1, result);
     Assert.assertEquals(2, nums[0]);
-    Assert.assertEquals(3, nums[1]);
-    Assert.assertEquals(3, nums[2]);
-    Assert.assertEquals(2, nums[3]);
   }
 
   @Test
-  public void testRemoveAll() {
+  public void theProblemCase4() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = { 3, 3, 3, 3 };
     int val = 3;
     int result = solution.removeElement(nums, val);
     Assert.assertEquals(0, result);
-    Assert.assertEquals(3, nums[0]);
-    Assert.assertEquals(3, nums[1]);
-    Assert.assertEquals(3, nums[2]);
-    Assert.assertEquals(3, nums[3]);
   }
 
   @Test
-  public void testEmptyInput() {
+  public void theProblemCase5() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = {};
     int val = 3;
     int result = solution.removeElement(nums, val);
     Assert.assertEquals(0, result);
-    Assert.assertEquals(0, nums.length);
   }
 
   @Test
-  public void testNullInput() {
+  public void theProblemCase6() {
     LeetCode027 solution = new LeetCode027();
     int[] nums = null;
     int val = 3;
     int result = solution.removeElement(nums, val);
     Assert.assertEquals(0, result);
-    Assert.assertNull(nums);
+  }
+
+  @Test
+  public void theProblemCase7() {
+    LeetCode027 solution = new LeetCode027();
+    int[] nums = {1};
+    int val = 1;
+    int result = solution.removeElement(nums, val);
+    Assert.assertEquals(0, result);
   }
 }

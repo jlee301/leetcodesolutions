@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode021 {
   @Test
-  public void testBasicMerge() {
+  public void theProblemCase1() {
     ListNode l1 = new ListNode(1);
     l1.next = new ListNode(2);
     l1.next.next = new ListNode(4);
@@ -29,7 +29,7 @@ public class TestLeetCode021 {
   }
 
   @Test
-  public void testL1Short() {
+  public void theProblemCase2() {
     ListNode l1 = new ListNode(1);
 
     ListNode l2 = new ListNode(1);
@@ -47,7 +47,7 @@ public class TestLeetCode021 {
   }
 
   @Test
-  public void testL2Short() {
+  public void theProblemCase3() {
     ListNode l1 = new ListNode(1);
     l1.next = new ListNode(2);
     l1.next.next = new ListNode(4);
@@ -65,7 +65,7 @@ public class TestLeetCode021 {
   }
 
   @Test
-  public void testL1Null() {
+  public void theProblemCase4() {
     ListNode l2 = new ListNode(1);
     l2.next = new ListNode(3);
     l2.next.next = new ListNode(4);
@@ -80,7 +80,7 @@ public class TestLeetCode021 {
   }
 
   @Test
-  public void testL2Null() {
+  public void theProblemCase5() {
     ListNode l1 = new ListNode(1);
     l1.next = new ListNode(2);
     l1.next.next = new ListNode(4);
@@ -95,7 +95,7 @@ public class TestLeetCode021 {
   }
 
   @Test
-  public void testL1L2Null() {
+  public void theProblemCase6() {
     LeetCode021 solution = new LeetCode021();
     ListNode result = solution.mergeTwoLists(null, null);
 

@@ -6,97 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode028 {
   @Test
-  public void testNeedleDetect() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "hello";
-    String needle = "ll";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(2, result);
-  }
-
-  @Test
-  public void testNeedleNoDetect() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "aaaaa";
-    String needle = "bba";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNeedleDetectFirstChar() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "aaaaa";
-    String needle = "a";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNeedleDetectLastChar() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "bbbba";
-    String needle = "a";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(4, result);
-  }
-
-  @Test
-  public void testNeedleNoDetectLastChar() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "bbbba";
-    String needle = "ab";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNeedleMultipleDetects() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "baabababba";
-    String needle = "ab";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(2, result);
-  }
-
-  @Test
-  public void testNeedleSingleHaystack() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "a";
-    String needle = "a";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNeedleSingleInvalidHaystack() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "a";
-    String needle = "b";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNullHaystack() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = null;
-    String needle = "a";
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNullNeedle() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "hello";
-    String needle = null;
-    int result = solution.strStrNotUsingIndexOf(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNeedleDetectStrStr() {
+  public void theProblemCase1() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "hello";
     String needle = "ll";
@@ -105,7 +15,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleNoDetectStrStr() {
+  public void theProblemCase2() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "aaaaa";
     String needle = "bba";
@@ -114,7 +24,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleDetectFirstCharStrStr() {
+  public void theProblemCase3() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "aaaaa";
     String needle = "a";
@@ -123,7 +33,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleDetectLastCharStrStr() {
+  public void theProblemCase4() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "bbbba";
     String needle = "a";
@@ -132,7 +42,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleNoDetectLastCharStrStr() {
+  public void theProblemCase5() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "bbbba";
     String needle = "ab";
@@ -141,7 +51,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleMultipleDetectsStrStr() {
+  public void theProblemCase6() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "baabababba";
     String needle = "ab";
@@ -150,7 +60,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleSingleHaystackStrStr() {
+  public void theProblemCase7() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "a";
     String needle = "a";
@@ -159,7 +69,7 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNeedleSingleInvalidHaystackStrStr() {
+  public void theProblemCase8() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "a";
     String needle = "b";
@@ -168,110 +78,11 @@ public class TestLeetCode028 {
   }
 
   @Test
-  public void testNullHaystackStrStr() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = null;
-    String needle = "a";
-    int result = solution.strStr(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNullNeedleStrStr() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "hello";
-    String needle = null;
-    int result = solution.strStr(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-  
-  @Test
-  public void testNeedleDetectStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "hello";
-    String needle = "ll";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(2, result);
-  }
-
-  @Test
-  public void testNeedleNoDetectStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "aaaaa";
-    String needle = "bba";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNeedleDetectFirstCharStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "aaaaa";
-    String needle = "a";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNeedleDetectLastCharStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "bbbba";
-    String needle = "a";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(4, result);
-  }
-
-  @Test
-  public void testNeedleNoDetectLastCharStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "bbbba";
-    String needle = "ab";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNeedleMultipleDetectsStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "baabababba";
-    String needle = "ab";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(2, result);
-  }
-
-  @Test
-  public void testNeedleSingleHaystackStrStrThree() {
+  public void theProblemCase9() {
     LeetCode028 solution = new LeetCode028();
     String haystack = "a";
-    String needle = "a";
-    int result = solution.strStrThree(haystack, needle);
+    String needle = "";
+    int result = solution.strStr(haystack, needle);
     Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNeedleSingleInvalidHaystackStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "a";
-    String needle = "b";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNullHaystackStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = null;
-    String needle = "a";
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(-1, result);
-  }
-
-  @Test
-  public void testNullNeedleStrStrThree() {
-    LeetCode028 solution = new LeetCode028();
-    String haystack = "hello";
-    String needle = null;
-    int result = solution.strStrThree(haystack, needle);
-    Assert.assertEquals(-1, result);
   }
 }

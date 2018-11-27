@@ -13,29 +13,26 @@ public class LeetCode021 {
    * https://leetcode.com/problems/merge-two-sorted-lists/description/
    */
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-    if (l1 == null && l2 == null) {
-      // If for some reason both linked lists are null
-      return null;
-    } else if (l1 == null) {
-      return l2;
-    } else if (l2 == null) {
-      return l1;
+    ListNode dummy = new ListNode(0);
+    ListNode curr = dummy;
+    while(l1 != null && l2 != null) {
+      if(l1.val <= l2.val) {
+        curr.next = l1;
+        l1 = l1.next;
+      }
+      else {
+        curr.next = l2;
+        l2 = l2.next;
+      }
+      curr = curr.next;
     }
+    
+    // Connect the remaining nodes
+    if(l1 != null)
+      curr.next = l1;
+    else
+      curr.next = l2;
 
-    ListNode mergedResult;
-    // Set lowest value linked list as the mergedResult
-    // Then set mergedResult.next to next set of linked lists
-    if (l1.val < l2.val) {
-      // System.out.println("l1 value: " + l1.val);
-      // System.out.println("l2 value: " + l2.val);
-      mergedResult = l1;
-      mergedResult.next = mergeTwoLists(l1.next, l2);
-    } else {
-      // System.out.println("l1 value: " + l1.val);
-      // System.out.println("l2 value: " + l2.val);
-      mergedResult = l2;
-      mergedResult.next = mergeTwoLists(l1, l2.next);
-    }
-    return mergedResult;
+    return dummy.next;
   }
 }

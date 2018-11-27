@@ -14,70 +14,26 @@ public class LeetCode028 {
    * 
    * https://leetcode.com/problems/implement-strstr/description/
    */
-
-  /*
-   * This was my original solution, but I assumed the idea was to build an
-   * indexOf() function.
-   */
   public int strStr(String haystack, String needle) {
-    int result = -1;
-    if (haystack == null || needle == null) {
-      return result;
-    }
+    if(needle.equals(""))
+      return 0;
     
-    result = haystack.indexOf(needle);
-    return result;
-  }
-
-  public int strStrNotUsingIndexOf(String haystack, String needle) {
-    int length = 0;
-    int result = -1;
-
-    if (haystack == null || needle == null) {
-      return result;
-    }
-
-    for (int j = 0; j < haystack.length(); j++) {
-      // System.out.println("length: " + length);
-      // System.out.println("j: " + j);
-      if (needle.charAt(length) == haystack.charAt(j)) {
-        length++;
-        if (length == needle.length()) {
-          // This indicates the pattern has been found.
-          // Because j pointer is sitting on the index
-          // of last character matched, you add 1 then
-          // subtract by the needle length.
-          result = j + 1 - needle.length();
-          break;
+    char ch = needle.charAt(0);
+    for(int i = 0; i <= haystack.length()-needle.length(); i++) {
+      // Find needle[0] in haystack
+      if(haystack.charAt(i) == ch) {
+        // Check to see if the remaining chars of needle are there
+        boolean found = true;
+        for(int j = 1, k = i+1; j < needle.length(); j++, k++) {
+          if(needle.charAt(j) != haystack.charAt(k)) {
+            found = false;
+            break;
+          }
         }
-      } else {
-        // Move j pointer - length. If length > 0 you are
-        // rechecking for pattern recognition ie baab, ab.
-        // Reset length because no pattern match found yet.
-        j = j - length;
-        length = 0;
-      }
-    }
-    return result;
-  }
-
-  /*
-   * Much easier solution provided in LeetCode discussion
-   */
-  public int strStrThree(String haystack, String needle) {
-    if (haystack == null || needle == null) {
-      return -1;
-    }
-
-    for (int i = 0;; i++) {
-      for (int j = 0;; j++) {
-        if (j == needle.length())
+        if(found)
           return i;
-        if (i + j == haystack.length())
-          return -1;
-        if (needle.charAt(j) != haystack.charAt(i + j))
-          break;
       }
     }
+    return -1;
   }
 }

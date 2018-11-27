@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode026 {
   @Test
-  public void testBasicDupeRemove() {
+  public void testProblemCase1() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = { 1, 1, 2 };
     int result = solution.removeDuplicates(nums);
@@ -16,7 +16,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testBasicDupeExtendedRemove() {
+  public void testProblemCase2() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = { 1, 1, 1, 2 };
     int result = solution.removeDuplicates(nums);
@@ -26,7 +26,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testNoDupes() {
+  public void testProblemCase3() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = { 1, 2, 3, 4 };
     int result = solution.removeDuplicates(nums);
@@ -38,7 +38,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testOneEntry() {
+  public void testProblemCase4() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = { 1 };
     int result = solution.removeDuplicates(nums);
@@ -47,7 +47,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testAllDupes() {
+  public void testProblemCase5() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = { 1, 1, 1, 1 };
     int result = solution.removeDuplicates(nums);
@@ -56,7 +56,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testEmptyInput() {
+  public void testProblemCase6() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = {};
     int result = solution.removeDuplicates(nums);
@@ -65,7 +65,7 @@ public class TestLeetCode026 {
   }
 
   @Test
-  public void testNullInput() {
+  public void testProblemCase7() {
     LeetCode026 solution = new LeetCode026();
     int[] nums = null;
     int result = solution.removeDuplicates(nums);

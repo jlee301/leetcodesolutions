@@ -15,22 +15,26 @@ public class LeetCode027 {
    * https://leetcode.com/problems/remove-element/description/
    */
   public int removeElement(int[] nums, int val) {
-    if (nums == null || nums.length == 0) {
+    if(nums == null)
       return 0;
-    } else {
-      int indexOfRemove = 0;
-      // [3, 2, 2, 3], val = 3 --> [2, 2, 2, 3], length = 2
-      for (int i = 0; i < nums.length; i++) {
-        if (nums[i] != val) {
-          if (indexOfRemove != i) {
-            // If indexOfRemove != i, then copy value
-            nums[indexOfRemove] = nums[i];
-          }
-          indexOfRemove++;
-        }
+    
+    int i = 0, j = nums.length-1;
+    while(i <= j) {
+      // Advance i until it finds val
+      while(i < nums.length && nums[i] != val) 
+        i++;
+      
+      // Advance j until it is not val
+      while(j >= 0 && nums[j] == val)
+        j--;
+        
+      // Swap elements
+      if(i < j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
       }
-      // This index value happens to be next indices to be removed
-      return indexOfRemove;
     }
+    return j + 1;
   }
 }

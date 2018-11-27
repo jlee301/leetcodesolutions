@@ -15,27 +15,21 @@ public class LeetCode026 {
 	 * 
 	 * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 	 */
-	public int removeDuplicates(int[] nums) {
-		if(nums == null || nums.length == 0) {
-			// No input data
-			return 0;
-		}
-		else {
-			// [1,1,1,2] --> [1,2,1,2], length = 2
-			int indexOfDupe = 0;
-			for(int i = 1; i < nums.length; i++) {
-				if(nums[indexOfDupe] != nums[i]) {
-					// When it does not match, increment the index pointer
-					// The index should be at location of first duplicate 
-					indexOfDupe++;
-					if(indexOfDupe != i) {
-						// If indexOfDupe != i, then copy value
-						nums[indexOfDupe] = nums[i];
-					}
-				}
-			}
-			// Add one because indexOfDupe is the index value
-			return indexOfDupe + 1;
+  public int removeDuplicates(int[] nums) {
+    if(nums == null || nums.length == 0)
+      return 0;
+    
+    // Two pointers
+    // i == index of last placed element
+    // j == index of next element
+    int i = 0, j = 1;
+    while(j < nums.length) {
+      if(nums[i] < nums[j]) {
+        i++;
+        nums[i] = nums[j];
+      }
+      j++;
     }
+    return i + 1;
   }
 }

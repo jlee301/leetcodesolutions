@@ -20,22 +20,18 @@ public class LeetCode009 {
    * https://leetcode.com/problems/palindrome-number/description/
    */
   public boolean isPalindrome(int x) {
-    if (x < 0) {
-      // Negative numbers are not palindromes.
+    if(x < 0)
       return false;
-    } else {
-      int copyOriginal = x;
-      // Use long here to compensate for 32-bit overflow
-      long result = 0;
-      while (copyOriginal != 0) {
-        int remainder = copyOriginal % 10;
-        result = (result * 10) + remainder;
-        copyOriginal = copyOriginal / 10;
-      }
-      if (result == x)
-        return true;
-      else
-        return false;
+    
+    // Reconstruct x in reverse
+    int temp = x;
+    int reversedX = 0;
+    while(temp != 0) {
+      int r = temp % 10;
+      temp /= 10;
+      reversedX *= 10;
+      reversedX += r;
     }
+    return x == reversedX;
   }
 }

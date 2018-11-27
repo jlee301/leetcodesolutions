@@ -1,5 +1,8 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.HashMap;
+import java.util.TreeSet;
+
 public class LeetCode001 {
   /*
    * Given an array of integers, return indices of the two numbers such that they
@@ -13,13 +16,21 @@ public class LeetCode001 {
    * https://leetcode.com/problems/two-sum/description/
    */
   public int[] twoSum(int[] nums, int target) {
-    for (int i = 0; i < nums.length; i++) {
-      for (int j = i + 1; j < nums.length; j++) {
-        if (nums[i] + nums[j] == target) {
-          return new int[] { i, j };
-        }
+    // Map each element to its index position(s)
+    HashMap<Integer,TreeSet<Integer>> map = new HashMap<>();
+    for(int i = 0; i < nums.length; i++)
+      map.computeIfAbsent(nums[i], k -> new TreeSet<>()).add(i);
+    
+    for(int i = 0; i < nums.length; i++) {
+      int need = target - nums[i];
+      if(need == nums[i]) {
+        // If the need is the same as nums[i], there must be more than one
+        if(map.get(need).size() > 1)
+          return new int[] {i, map.get(need).higher(i)};
       }
+      else if(map.containsKey(need))
+        return new int[] {i, map.get(need).higher(i)};
     }
-    throw new IllegalArgumentException("Input does not contain two sum solution.");
+    return new int[] {-1,-1};
   }
 }

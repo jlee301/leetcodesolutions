@@ -15,12 +15,10 @@ public class LeetCode058 {
    * https://leetcode.com/problems/length-of-last-word/description/
    */
   public int lengthOfLastWord(String s) {
-    int result = 0;
-    if (s == null)
-      return result;
-
-    String[] words = s.trim().split(" ");
-    result = words[words.length - 1].length();
-    return result;
+    if(s == null)
+      return 0;
+    
+    String[] sData = s.trim().split(" ");
+    return sData[sData.length-1].length();
   }
 }

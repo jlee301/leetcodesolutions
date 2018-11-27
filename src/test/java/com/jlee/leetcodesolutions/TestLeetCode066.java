@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode066 {
   @Test
-  public void testOneNumber() {
+  public void testProblemCase1() {
     LeetCode066 solution = new LeetCode066();
     int[] digits = { 1 };
     int[] result = solution.plusOne(digits);
@@ -14,7 +14,7 @@ public class TestLeetCode066 {
   }
 
   @Test
-  public void testTwoNumber() {
+  public void testProblemCase2() {
     LeetCode066 solution = new LeetCode066();
     int[] digits = { 1, 2 };
     int[] result = solution.plusOne(digits);
@@ -23,7 +23,7 @@ public class TestLeetCode066 {
   }
 
   @Test
-  public void test99() {
+  public void testProblemCase3() {
     LeetCode066 solution = new LeetCode066();
     int[] digits = { 9, 9 };
     int[] result = solution.plusOne(digits);
@@ -33,7 +33,7 @@ public class TestLeetCode066 {
   }
 
   @Test
-  public void test0() {
+  public void testProblemCase4() {
     LeetCode066 solution = new LeetCode066();
     int[] digits = { 0 };
     int[] result = solution.plusOne(digits);
@@ -44,14 +44,6 @@ public class TestLeetCode066 {
   public void testEmpty() {
     LeetCode066 solution = new LeetCode066();
     int[] digits = {};
-    int[] result = solution.plusOne(digits);
-    Assert.assertEquals(1, result[0]);
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode066 solution = new LeetCode066();
-    int[] digits = null;
     int[] result = solution.plusOne(digits);
     Assert.assertEquals(1, result[0]);
   }

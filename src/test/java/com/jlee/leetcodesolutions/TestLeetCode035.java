@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode035 {
   @Test
-  public void testTargetMatch() {
+  public void testProblemCase1() {
     LeetCode035 solution = new LeetCode035();
     int[] nums = { 1, 3, 5, 6 };
     int target = 5;
@@ -15,7 +15,7 @@ public class TestLeetCode035 {
   }
 
   @Test
-  public void testTargetLess() {
+  public void testProblemCase2() {
     LeetCode035 solution = new LeetCode035();
     int[] nums = { 1, 3, 5, 6 };
     int target = 2;
@@ -24,7 +24,7 @@ public class TestLeetCode035 {
   }
 
   @Test
-  public void testTargetLast() {
+  public void testProblemCase3() {
     LeetCode035 solution = new LeetCode035();
     int[] nums = { 1, 3, 5, 6 };
     int target = 7;
@@ -33,7 +33,7 @@ public class TestLeetCode035 {
   }
 
   @Test
-  public void testTargetInitial() {
+  public void testProblemCase4() {
     LeetCode035 solution = new LeetCode035();
     int[] nums = { 1, 3, 5, 6 };
     int target = 0;
@@ -42,16 +42,7 @@ public class TestLeetCode035 {
   }
 
   @Test
-  public void testNullNums() {
-    LeetCode035 solution = new LeetCode035();
-    int[] nums = null;
-    int target = 0;
-    int result = solution.searchInsert(nums, target);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testEmptyNums() {
+  public void testProblemCase5() {
     LeetCode035 solution = new LeetCode035();
     int[] nums = {};
     int target = 0;

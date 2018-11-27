@@ -1,5 +1,7 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Stack;
+
 public class LeetCode066 {
   /*
    * Given a non-negative integer represented as a non-empty array of digits, plus
@@ -13,27 +15,22 @@ public class LeetCode066 {
    * https://leetcode.com/problems/plus-one/description/
    */
   public int[] plusOne(int[] digits) {
-    int[] result = { 1 };
-    if (digits == null || digits.length == 0)
-      return result;
-
-    for (int i = digits.length - 1; i >= 0; i--) {
-      if (digits[i] < 9) {
-        // Any time I am able to add one, you can
-        // immediately return the value
-        digits[i]++;
-        return digits;
-      }
-      // This assume there will be carry over and
-      // should continue looping to the next left
-      // array
-      else
-        digits[i] = 0;
+    Stack<Integer> stack = new Stack<>();
+    // Start the carry with 1 as the plus One
+    int carry = 1;
+    for(int i = digits.length-1; i >= 0; i--) {
+      int temp = digits[i] + carry;
+      stack.add(temp % 10);
+      carry = temp / 10;
     }
-    // Reaching this point of the code means there
-    // is still carry over ie 999 --> 1000
-    result = new int[digits.length + 1];
-    result[0] = 1;
+    if(carry != 0)
+      stack.add(carry);
+    
+    int[] result = new int[stack.size()];
+    int i = 0;
+    while(!stack.isEmpty())
+      result[i++] = stack.pop();
+    
     return result;
   }
 }

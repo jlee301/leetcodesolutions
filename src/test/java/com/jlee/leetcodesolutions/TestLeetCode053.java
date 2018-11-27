@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode053 {
   @Test
-  public void testBasicSum() {
+  public void testProblemCase1() {
     LeetCode053 solution = new LeetCode053();
     int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
     int result = solution.maxSubArray(nums);
@@ -14,7 +14,7 @@ public class TestLeetCode053 {
   }
 
   @Test
-  public void testAllPositive() {
+  public void testProblemCase2() {
     LeetCode053 solution = new LeetCode053();
     int[] nums = { 1, 2 };
     int result = solution.maxSubArray(nums);
@@ -22,7 +22,7 @@ public class TestLeetCode053 {
   }
 
   @Test
-  public void testAllNegative() {
+  public void testProblemCase3() {
     LeetCode053 solution = new LeetCode053();
     int[] nums = { -2, -1, -5, -4 };
     int result = solution.maxSubArray(nums);
@@ -30,7 +30,7 @@ public class TestLeetCode053 {
   }
 
   @Test
-  public void testSingleNumber() {
+  public void testProblemCase4() {
     LeetCode053 solution = new LeetCode053();
     int[] nums = { 5 };
     int result = solution.maxSubArray(nums);
@@ -38,26 +38,10 @@ public class TestLeetCode053 {
   }
 
   @Test
-  public void testSingleNegativeNumber() {
+  public void testProblemCase5() {
     LeetCode053 solution = new LeetCode053();
     int[] nums = { -5 };
     int result = solution.maxSubArray(nums);
     Assert.assertEquals(-5, result);
-  }
-
-  @Test
-  public void testEmptyInput() {
-    LeetCode053 solution = new LeetCode053();
-    int[] nums = {};
-    int result = solution.maxSubArray(nums);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNullInput() {
-    LeetCode053 solution = new LeetCode053();
-    int[] nums = null;
-    int result = solution.maxSubArray(nums);
-    Assert.assertEquals(0, result);
   }
 }

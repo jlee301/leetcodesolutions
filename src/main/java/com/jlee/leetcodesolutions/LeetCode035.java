@@ -23,22 +23,16 @@ public class LeetCode035 {
    * https://leetcode.com/problems/search-insert-position/description/
    */
   public int searchInsert(int[] nums, int target) {
-    int result = 0;
-    if (nums == null || nums.length == 0)
-      return result;
-
-    for (int i = 0; i < nums.length; i++) {
-      if (nums[i] < target) {
-        continue;
-      } else {
-        // nums[i] >= target
-        result = i;
-        return result;
-      }
+    int low = 0, high = nums.length-1;
+    while(low <= high) {
+      int mid = low + (high-low) / 2;
+      if(nums[mid] == target)
+        return mid;
+      else if(nums[mid] < target)
+        low = mid + 1;
+      else
+        high = mid - 1;
     }
-    // If you exited the loop, it means the target is the
-    // last value -- so return the length of the array.
-    result = nums.length;
-    return result;
+    return low;
   }
 }

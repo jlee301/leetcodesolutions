@@ -6,79 +6,72 @@ import org.junit.Test;
 
 public class TestLeetCode038 {
   @Test
-  public void testCountSay1() {
+  public void testProblemCase1() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(1);
     Assert.assertEquals("1", result);
   }
 
   @Test
-  public void testCountSay2() {
+  public void testProblemCase2() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(2);
     Assert.assertEquals("11", result);
   }
 
   @Test
-  public void testCountSay3() {
+  public void testProblemCase3() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(3);
     Assert.assertEquals("21", result);
   }
 
   @Test
-  public void testCountSay4() {
+  public void testProblemCase4() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(4);
     Assert.assertEquals("1211", result);
   }
 
   @Test
-  public void testCountSay5() {
+  public void testProblemCase5() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(5);
     Assert.assertEquals("111221", result);
   }
 
   @Test
-  public void testCountSay6() {
+  public void testProblemCase6() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(6);
     Assert.assertEquals("312211", result);
   }
 
   @Test
-  public void testCountSay7() {
+  public void testProblemCase7() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(7);
     Assert.assertEquals("13112221", result);
   }
 
   @Test
-  public void testCountSay8() {
+  public void testProblemCase8() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(8);
     Assert.assertEquals("1113213211", result);
   }
 
   @Test
-  public void testCountSay9() {
+  public void testProblemCase9() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(9);
     Assert.assertEquals("31131211131221", result);
   }
 
   @Test
-  public void testCountSay10() {
+  public void testProblemCase10() {
     LeetCode038 solution = new LeetCode038();
     String result = solution.countAndSay(10);
     Assert.assertEquals("13211311123113112211", result);
-  }
-
-  @Test
-  public void testCountSay0() {
-    LeetCode038 solution = new LeetCode038();
-    String result = solution.countAndSay(0);
-    Assert.assertEquals("0", result);
   }
 }

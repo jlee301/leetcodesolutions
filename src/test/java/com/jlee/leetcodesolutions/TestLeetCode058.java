@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode058 {
   @Test
-  public void testTwoWords() {
+  public void testProblemCase1() {
     LeetCode058 solution = new LeetCode058();
     String s = "Hello World";
     int result = solution.lengthOfLastWord(s);
@@ -14,7 +14,7 @@ public class TestLeetCode058 {
   }
 
   @Test
-  public void testOneWord() {
+  public void testProblemCase2() {
     LeetCode058 solution = new LeetCode058();
     String s = "Hello";
     int result = solution.lengthOfLastWord(s);
@@ -22,7 +22,7 @@ public class TestLeetCode058 {
   }
 
   @Test
-  public void testMultipleSpacesFrontEndInBetween() {
+  public void testProblemCase3() {
     LeetCode058 solution = new LeetCode058();
     String s = "   Hello   Wor    ";
     int result = solution.lengthOfLastWord(s);
@@ -30,7 +30,7 @@ public class TestLeetCode058 {
   }
 
   @Test
-  public void testSpaceString() {
+  public void testProblemCase4() {
     LeetCode058 solution = new LeetCode058();
     String s = " ";
     int result = solution.lengthOfLastWord(s);
@@ -38,7 +38,7 @@ public class TestLeetCode058 {
   }
 
   @Test
-  public void testEmptyString() {
+  public void testProblemCase5() {
     LeetCode058 solution = new LeetCode058();
     String s = "";
     int result = solution.lengthOfLastWord(s);
@@ -46,7 +46,7 @@ public class TestLeetCode058 {
   }
 
   @Test
-  public void testNullString() {
+  public void testProblemCase6() {
     LeetCode058 solution = new LeetCode058();
     String s = null;
     int result = solution.lengthOfLastWord(s);

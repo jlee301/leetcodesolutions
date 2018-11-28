@@ -10,42 +10,21 @@ public class LeetCode067 {
    * https://leetcode.com/problems/add-binary/description/
    */
   public String addBinary(String a, String b) {
-    if (a == null || a.length() == 0)
-      a = "0";
-    if (b == null || b.length() == 0)
-      b = "0";
-
-    /*
-     * Adding binary per column guide: 
-     * data = 1 + 1 + 1 = 3 --> This should never exceed 3 because binary 
-     * col = data % 2 = 1 --> 0 for even or 1 for odd 
-     * carry = data / 2 = 1 --> 0 or 1
-     */
-    int aLen = a.length() - 1;
-    int bLen = b.length() - 1;
-    int data = 0;
-    int col = 0;
-    int carry = 0;
+    // 1 1
+    //  1010
+    //  1011
+    // 10101     
+    // XOR = different 1, same 0
     String result = "";
-
-    while (aLen >= 0 || bLen >= 0 || carry == 1) {
-      data = carry;
-      if (aLen >= 0) {
-        // This check is if aLen > bLen to avoid out of bounds
-        data = data + Character.getNumericValue(a.charAt(aLen--));
-      }
-      if (bLen >= 0) {
-        // This check is if aLen < bLen to avoid out of bounds
-        data = data + Character.getNumericValue(b.charAt(bLen--));
-      }
-      col = data % 2;
-      carry = data / 2;
-      // System.out.println("data: " + data);
-      // System.out.println("col: " + col);
-      // System.out.println("carry: " + carry);
-      result = col + result;
-    }
-    // System.out.println("result: " + result);
-    return result;
+    int i = a.length() - 1;
+    int j = b.length() - 1;
+    int carry = 0;
+    while(i >= 0 || j >= 0) {
+      int num1 = i >= 0 ? Character.getNumericValue(a.charAt(i--)) : 0;
+      int num2 = j >= 0 ? Character.getNumericValue(b.charAt(j--)) : 0;
+      result = (num1 ^ num2 ^ carry) + result;
+      carry = (num1 + num2 + carry > 1) ? 1 : 0; 
+    }    
+    return carry > 0 ? carry + result : result;
   }
 }

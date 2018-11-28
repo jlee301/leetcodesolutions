@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode088 {
   @Test
-  public void testN1EmptiedFirst() {
+  public void theProblemCase1() {
     LeetCode088 solution = new LeetCode088();
     int[] nums1 = { 3, 0, 0 };
     int m = 1;
@@ -20,7 +20,7 @@ public class TestLeetCode088 {
   }
 
   @Test
-  public void testN2EmptiedFirst() {
+  public void theProblemCase2() {
     LeetCode088 solution = new LeetCode088();
     int[] nums1 = { 1, 2, 0 };
     int m = 2;
@@ -34,7 +34,7 @@ public class TestLeetCode088 {
   }
 
   @Test
-  public void testN1Larger() {
+  public void theProblemCase3() {
     LeetCode088 solution = new LeetCode088();
     int[] nums1 = { 3, 0, 0, 0 };
     int m = 1;
@@ -49,7 +49,7 @@ public class TestLeetCode088 {
   }
   
   @Test
-  public void testN2Empty() {
+  public void theProblemCase4() {
     LeetCode088 solution = new LeetCode088();
     int[] nums1 = { 1 };
     int m = 1;
@@ -61,7 +61,7 @@ public class TestLeetCode088 {
   }
 
   @Test
-  public void testN1Empty() {
+  public void theProblemCase5() {
     LeetCode088 solution = new LeetCode088();
     // N1 is technically not empty, it has to be initialized at least m+n (1), where
     // m=0 to indicate there's no values.
@@ -75,7 +75,7 @@ public class TestLeetCode088 {
   }
 
   @Test
-  public void testN1LargerEmpty() {
+  public void theProblemCase6() {
     LeetCode088 solution = new LeetCode088();
     // N1 is technically not empty, it has to be initialized at least m+n (1), where
     // m=0 to indicate there's no values.

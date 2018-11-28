@@ -16,24 +16,23 @@ public class LeetCode069 {
    * https://leetcode.com/problems/sqrtx/description/
    */
   public int mySqrt(int x) {
+    if(x == 0)
+      return 0;
     if(x == 1)
-      // sq = 1 / 2 = 0 != 1
       return 1;
     
-    int sq = x / 2;
-    while(sq >= 0) {
-      int result = sq * sq;
-      // System.out.println("x: " + x);
-      // System.out.println("result: " + result);
-      // System.out.println("sq:" + sq);
-      
-      if(result <= x) {
-        // As soon as result <= x I know sq is the squareRoot.
-        break;
-      }
-      sq--;
+    // Binary search
+    int low = 2, high = x / 2;
+    while(low <= high) {
+      int mid = low + (high - low) / 2;
+      long sq = (long) mid * (long) mid;
+      if(sq == x)
+        return mid;
+      else if(sq < x)
+        low = mid + 1;
+      else
+        high = mid - 1;
     }
-    
-    return sq;
+    return low - 1;
   }
 }

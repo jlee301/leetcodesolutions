@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode083 {
   @Test
-  public void testFrontRemoval() {
+  public void testProblemCase1() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(1);
@@ -21,7 +21,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testMiddleRemoval() {
+  public void testProblemCase2() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
@@ -35,7 +35,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testEndRemoval() {
+  public void testProblemCase3() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
@@ -49,7 +49,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testDoubleDuplicatesRemoval() {
+  public void testProblemCase4() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(1);
@@ -65,7 +65,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testAllDuplicatesRemoval() {
+  public void testProblemCase5() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(1);
@@ -76,7 +76,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testNoDuplicates() {
+  public void testProblemCase6() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
@@ -89,7 +89,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testOneEntry() {
+  public void testProblemCase7() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = new ListNode(1);
     ListNode result = solution.deleteDuplicates(head);
@@ -98,7 +98,7 @@ public class TestLeetCode083 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase8() {
     LeetCode083 solution = new LeetCode083();
     ListNode head = null;
     ListNode result = solution.deleteDuplicates(head);

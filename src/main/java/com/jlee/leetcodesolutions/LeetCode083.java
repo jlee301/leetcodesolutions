@@ -14,19 +14,32 @@ public class LeetCode083 {
    * https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
    */
   public ListNode deleteDuplicates(ListNode head) {
-    // head.val == head.next.val --> head.next = head.next.next
-    // head.val != head.next.val --> head = head.next
-    // head.next == null --> done
-    // head == null --> done
-    ListNode current = head;
-    
-    while(current != null && current.next != null) {
-      if(current.val == current.next.val) {
-        current.next = current.next.next;
-      } else {
-        current = current.next;
+    ListNode dummy = new ListNode(0);
+    ListNode curr = dummy;
+    Integer prev = null;
+    while(head != null) {
+      if(prev == null) {
+        // Setting first value
+        prev = head.val;
+        curr.next = head;
+        head = head.next;
+        curr = curr.next;        
+      }
+      else {
+        if(prev != head.val) {
+          prev = head.val;
+          curr.next = head;
+          head = head.next;
+          curr = curr.next;
+        }
+        else {
+          // Skip because we already recorded this value
+          head = head.next;
+        }
       }
     }
-    return head;
-  }  
+    // Setting last value which should be null
+    curr.next = head;
+    return dummy.next;
+  } 
 }

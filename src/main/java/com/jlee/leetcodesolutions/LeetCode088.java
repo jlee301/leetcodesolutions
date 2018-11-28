@@ -19,27 +19,24 @@ public class LeetCode088 {
    * nums1: [1, 2, 2, 3, 4, 5]
    */
   public void merge(int[] nums1, int m, int[] nums2, int n) {
-    int maxIndex = m + n - 1;
-    int n1Index = m - 1;
-    int n2Index = n - 1;
-    
-    while(maxIndex >= 0) {
-      if(n1Index < 0) {
-        // All nums1 processed so just process the rest of nums2
-        nums1[maxIndex] = nums2[n2Index];
-        n2Index--;
-      } else if (n2Index < 0) {
-        // All nums2 processed so just process the rest of nums1
-        nums1[maxIndex] = nums1[n1Index];
-        n1Index--;
-      } else if (nums1[n1Index] >= nums2[n2Index]) {
-        nums1[maxIndex] = nums1[n1Index];
-        n1Index--;
-      } else {
-        nums1[maxIndex] = nums2[n2Index];
-        n2Index--;
+    int i = m - 1;      // pointer for nums1
+    int j = n - 1;      // pointer for nums2
+    int k = m + n - 1;  // writer pointer
+    while(j >= 0) {
+      if(i < 0 || nums2[j] >= nums1[i]) {
+        nums1[k--] = nums2[j--];
       }
-      maxIndex--;
+      else {
+        swap(nums1, i, k);
+        i--;
+        k--;
+      }
     }
+  }
+  
+  private void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
   }
 }

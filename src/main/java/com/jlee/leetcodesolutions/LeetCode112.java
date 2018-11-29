@@ -22,14 +22,9 @@ public class LeetCode112 {
     if(root == null)
       return false;
     
-    if(root.left == null && root.right == null && sum - root.val == 0) {
-      // If left and right are null, then you are at the leaf. So if sum - val == 0
-      // then return true
+    if(sum - root.val == 0 && root.left == null && root.right == null)
       return true;
-    }
-    else {
-      // Keep traversing through the tree with updated sum value.
-      return (hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val));
-    }
+    
+    return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
   }
 }

@@ -9,18 +9,25 @@ public class LeetCode111 {
    * 
    * https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
    */
+  int min = Integer.MAX_VALUE;
   public int minDepth(TreeNode root) {
-    if (root == null)
-      return 0;
+    helper(root, 1);
+    return min == Integer.MAX_VALUE ? 0 : min;
+  }
+  
+  private void helper(TreeNode node, int level) {
+    if(node == null || level >= min)
+      return;
     
-    int minLeft = minDepth(root.left);
-    int minRight = minDepth(root.right);
-    
-    if (minLeft == 0 || minRight == 0) {
-      // Either left or right doesn't have any leafs
-      return minLeft + minRight + 1;
-    } else {
-      return Math.min(minLeft,minRight) + 1;
+    if(node.left == null && node.right == null) {
+      min = Math.min(min, level);
+      return;
     }
+    
+    if(node.left != null)
+      helper(node.left, level+1);
+    
+    if(node.right != null)
+      helper(node.right, level+1);
   }
 }

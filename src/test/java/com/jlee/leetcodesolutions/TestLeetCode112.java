@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode112 {
   @Test
-  public void testOneNodeSumEqual() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     
     LeetCode112 solution = new LeetCode112();
@@ -16,7 +16,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testOneNodeSumNotEqual() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(1);
     
     LeetCode112 solution = new LeetCode112();
@@ -25,7 +25,7 @@ public class TestLeetCode112 {
   }
   
   @Test
-  public void testTwoNodeLeftSumEqual() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
 
@@ -35,7 +35,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testTwoNodeLeftSumNotEqual() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
 
@@ -45,7 +45,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testTwoNodeRightSumEqual() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(2);
 
@@ -55,7 +55,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testTwoNodeRightSumNotEqual() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(2);
 
@@ -65,7 +65,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testTwoNodeSumEqual() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -78,7 +78,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testTwoNodeNotEqual() {
+  public void testProblemCase8() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -89,7 +89,7 @@ public class TestLeetCode112 {
   }
 
   @Test
-  public void testProblemExample() {
+  public void testProblemCase9() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(4);
     root.left.left = new TreeNode(11);
@@ -114,7 +114,7 @@ public class TestLeetCode112 {
   }
   
   @Test
-  public void testNull() {
+  public void testProblemCase10() {
     LeetCode112 solution = new LeetCode112();
     boolean result = solution.hasPathSum(null, 0);
     Assert.assertFalse(result);

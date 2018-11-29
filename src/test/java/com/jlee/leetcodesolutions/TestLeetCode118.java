@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode118 {
   @Test
-  public void test5Pascal() {
+  public void testProblemCase1() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(5);
     Assert.assertEquals(5, result.size());
@@ -34,7 +34,7 @@ public class TestLeetCode118 {
   }
 
   @Test
-  public void test4Pascal() {
+  public void testProblemCase2() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(4);
     Assert.assertEquals(4, result.size());
@@ -55,7 +55,7 @@ public class TestLeetCode118 {
   }
 
   @Test
-  public void test3Pascal() {
+  public void testProblemCase3() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(3);
     Assert.assertEquals(3, result.size());
@@ -71,7 +71,7 @@ public class TestLeetCode118 {
   }
 
   @Test
-  public void test2Pascal() {
+  public void testProblemCase4() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(2);
     Assert.assertEquals(2, result.size());
@@ -83,7 +83,7 @@ public class TestLeetCode118 {
   }
 
   @Test
-  public void test1Pascal() {
+  public void testProblemCase5() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(1);
     Assert.assertEquals(1, result.size());
@@ -92,7 +92,7 @@ public class TestLeetCode118 {
   }
 
   @Test
-  public void test0Pascal() {
+  public void testProblemCase6() {
     LeetCode118 solution = new LeetCode118();
     List<List<Integer>> result = solution.generate(0);
     Assert.assertEquals(0, result.size());

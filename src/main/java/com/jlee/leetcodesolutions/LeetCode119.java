@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LeetCode119 {
@@ -16,19 +16,27 @@ public class LeetCode119 {
    * https://leetcode.com/problems/pascals-triangle-ii/description/
    */
   public List<Integer> getRow(int rowIndex) {
-    List<Integer> result = new ArrayList<Integer>();
-    if(rowIndex < 0) {
-      return result;
-    }
+    Integer[] nums = new Integer[rowIndex+1];
+    // Base case
+    nums[0] = 1;
 
-    // This is pretty much the same function from 118 if you designed it to keep
-    // reusing the same List.
-    for(int i = 0; i < rowIndex + 1; i++) {
-      result.add(0, 1);
-      for(int j = 1; j < result.size() - 1; j++) {
-        result.set(j, result.get(j) + result.get(j + 1));
+    // [1,2,1,null] --> [1,2,1,2] --> [1,3,1,2] --> [1,3,3,2] --> [1,3,3,1]
+    // [1,3,3,1]
+    for(int i = 1; i <= rowIndex; i++) {
+      Integer prev = null;
+      for(int j = 0; j < i; j++) {
+        if(prev == null) {
+          prev = nums[j];
+          continue;
+        }
+        else {
+          Integer temp = nums[j];
+          nums[j] += prev;
+          prev = temp;
+        }  
       }
+      nums[i] = prev;
     }
-    return result;
+    return Arrays.asList(nums);
   }
 }

@@ -30,23 +30,15 @@ public class LeetCode101 {
   public boolean isSymmetric(TreeNode root) {
     if(root == null)
       return true;
-    return (isSymmetric(root.left, root.right));
+    return isSymmetric(root.left, root.right);    
   }
   
-  public boolean isSymmetric(TreeNode left, TreeNode right) {
-    // This is very similar to isSameTree code, but you're passing left versus right
-    // 1. null checks
-    // 2. left.val == right.val --> isSymmetric(left.left, right.right) &&
-    // isSymmetric(left.right, right.left)
-    // 3. else return false
-    if(left == null && right == null)
+  private boolean isSymmetric(TreeNode node1, TreeNode node2) {
+    if(node1 == null && node2 == null)
       return true;
-    if(left == null || right == null)
+    else if(node1 == null || node2 == null)
       return false;
-    
-    if(left.val == right.val)
-      return(isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left));
     else
-      return false;
+      return node1.val == node2.val && isSymmetric(node1.left, node2.right) && isSymmetric(node1.right, node2.left);
   }
 }

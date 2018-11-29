@@ -11,26 +11,27 @@ public class LeetCode110 {
    * https://leetcode.com/problems/balanced-binary-tree/description/
    */
   public boolean isBalanced(TreeNode root) {
-    if(root == null) {
-      return true;
-    }
-    
-    int maxLeft = maxDepth(root.left);
-    int maxRight = maxDepth(root.right);
-    
-    if(maxLeft-maxRight < -1 || maxLeft-maxRight > 1)
-      return false;
-    else
-      return true;
+    return helper(root) != -1;
   }
   
-  /*
-   * Taken from Problem 104 Max Depth
-   */
-  public int maxDepth(TreeNode node) {
-    if(node==null) {
-        return 0;
-    }    
-    return Math.max(maxDepth(node.left), maxDepth(node.right)) + 1;
+  private int helper(TreeNode node) {
+    if(node == null)
+      return 0;
+    
+    // Check if left is height balanced
+    int left = helper(node.left);
+    if(left == -1)
+      return -1;
+    
+    // Check if right is height balanced
+    int right = helper(node.right);
+    if(right == -1)
+      return -1;
+    
+    // Check if both subtrees does not have a difference greater than 1
+    if(Math.abs(left-right) > 1)
+      return -1;
+  
+    return 1 + Math.max(left, right);
   }
 }

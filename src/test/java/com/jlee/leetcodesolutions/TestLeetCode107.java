@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TestLeetCode107 {
   @Test
-  public void testFullTreeRight(){
+  public void testProblemCase1(){
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -29,7 +29,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testFullTree(){
+  public void testProblemCase2(){
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(4);
@@ -54,7 +54,7 @@ public class TestLeetCode107 {
   }
   
   @Test
-  public void testAllLeft(){
+  public void testProblemCase3(){
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(4);
@@ -71,7 +71,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testAllRight(){
+  public void testProblemCase4(){
     TreeNode root = new TreeNode(3);
     root.right = new TreeNode(9);
     root.right.right = new TreeNode(4);
@@ -88,7 +88,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testOneNode() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(3);
 
     LeetCode107 solution = new LeetCode107();
@@ -99,7 +99,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testTwoNode() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(4);
@@ -115,7 +115,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testThreeNode() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(10);
@@ -136,7 +136,7 @@ public class TestLeetCode107 {
   }
 
   @Test
-  public void testNull(){
+  public void testProblemCase8(){
     LeetCode107 solution = new LeetCode107();
     List<List<Integer>> result = solution.levelOrderBottom(null);
     Assert.assertEquals(0, result.size());

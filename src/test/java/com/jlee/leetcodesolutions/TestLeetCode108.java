@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode108 {
   @Test
-  public void testOneNode(){
+  public void testProblemCase1(){
     int[] nums = { 0 };
     LeetCode108 solution = new LeetCode108();
     TreeNode result = solution.sortedArrayToBST(nums);
@@ -17,7 +17,7 @@ public class TestLeetCode108 {
   }
 
   @Test
-  public void testTwoNode(){
+  public void testProblemCase2(){
     int[] nums = { -1, 0, 1 };
     LeetCode108 solution = new LeetCode108();
     TreeNode result = solution.sortedArrayToBST(nums);
@@ -31,7 +31,7 @@ public class TestLeetCode108 {
   }
 
   @Test
-  public void testThreeNode(){
+  public void testProblemCase3(){
     int[] nums = { -2, -1, 0, 1, 2 };
     LeetCode108 solution = new LeetCode108();
     TreeNode result = solution.sortedArrayToBST(nums);
@@ -45,7 +45,7 @@ public class TestLeetCode108 {
   }
 
   @Test
-  public void testRightDepthPlusOne(){
+  public void testProblemCase4(){
     int[] nums = { -2, -1, 0, 1 };
     LeetCode108 solution = new LeetCode108();
     TreeNode result = solution.sortedArrayToBST(nums);
@@ -61,17 +61,10 @@ public class TestLeetCode108 {
   }
 
   @Test
-  public void testEmpty(){
+  public void testProblemCase5(){
     int[] nums = {};
     LeetCode108 solution = new LeetCode108();
     TreeNode result = solution.sortedArrayToBST(nums);
-    Assert.assertNull(result);
-  }
-
-  @Test
-  public void testNull(){
-    LeetCode108 solution = new LeetCode108();
-    TreeNode result = solution.sortedArrayToBST(null);
     Assert.assertNull(result);
   }
 }

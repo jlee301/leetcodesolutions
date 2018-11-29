@@ -31,20 +31,11 @@ public class LeetCode100 {
    * https://leetcode.com/problems/same-tree/description/
    */
   public boolean isSameTree(TreeNode p, TreeNode q) {
-    // if p.val != q.val --> return false
-    // else
-    // check left --> isSameTree(p.left, q.left)
-    // check right --> isSameTree(p.right, q.right)
     if(p == null && q == null)
       return true;
-    if(p == null || q == null)
+    else if(p == null || q == null)
       return false;
-    
-    // After passing the null checks, the assumption is you have values to compare
-    if(p.val != q.val) {
-      return false;
-    } else {
-      return(isSameTree(p.left, q.left) && isSameTree(p.right, q.right));
-    }
+    else
+      return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
   }
 }

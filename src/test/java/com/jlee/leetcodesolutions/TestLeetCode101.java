@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode101 {
   @Test
-  public void testOneNodeMirror(){
+  public void testProblemCase1(){
     TreeNode root = new TreeNode(1);
 
     LeetCode101 solution = new LeetCode101();
@@ -16,7 +16,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testTwoNodeMirror(){
+  public void testProblemCase2(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(2);
@@ -27,7 +27,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testTwoNodeDiff(){
+  public void testProblemCase3(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -38,7 +38,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testTwoNodeLeftNull(){
+  public void testProblemCase4(){
     TreeNode root = new TreeNode(1);
     root.left = null;
     root.right = new TreeNode(3);
@@ -49,7 +49,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testTwoNodeRightNull(){
+  public void testProblemCase5(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(3);
     root.right = null;
@@ -60,7 +60,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testThreeNodeMirror(){
+  public void testProblemCase6(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(3);
@@ -75,7 +75,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testThreeNodeDiff(){
+  public void testProblemCase7(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(3);
@@ -90,7 +90,7 @@ public class TestLeetCode101 {
   }
   
   @Test
-  public void testThreeNodeLeftLeftNull(){
+  public void testProblemCase8(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = null;
@@ -105,7 +105,7 @@ public class TestLeetCode101 {
   }
   
   @Test
-  public void testThreeNodeLeftRightNull(){
+  public void testProblemCase9(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(3);
@@ -120,7 +120,7 @@ public class TestLeetCode101 {
   }
   
   @Test
-  public void testThreeNodeRightLeftNull(){
+  public void testProblemCase10(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(3);
@@ -135,7 +135,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testThreeNodeRighRightNull(){
+  public void testProblemCase11(){
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(3);
@@ -150,7 +150,7 @@ public class TestLeetCode101 {
   }
 
   @Test
-  public void testNull(){
+  public void testProblemCase12(){
     LeetCode101 solution = new LeetCode101();
     boolean result = solution.isSymmetric(null);
     Assert.assertTrue(result);

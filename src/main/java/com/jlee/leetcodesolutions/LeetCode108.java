@@ -20,20 +20,17 @@ public class LeetCode108 {
    * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
    */
   public TreeNode sortedArrayToBST(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return null;
-    else
-      return sortedArrayToBST(nums, 0, nums.length - 1);
+    return helper(nums, 0, nums.length-1);
   }
   
-  public TreeNode sortedArrayToBST(int[] nums, int min, int max) {
-    if(min > max)
+  private TreeNode helper(int[] nums, int left, int right) {
+    if(left > right)
       return null;
-          
-    int mid = (min + max) / 2;
+    
+    int mid = left + (right - left) / 2;
     TreeNode node = new TreeNode(nums[mid]);
-    node.left = sortedArrayToBST(nums, min, mid - 1);
-    node.right = sortedArrayToBST(nums, mid + 1, max);
+    node.left = helper(nums, left, mid-1);
+    node.right = helper(nums, mid+1, right);
     return node;
   }
 }

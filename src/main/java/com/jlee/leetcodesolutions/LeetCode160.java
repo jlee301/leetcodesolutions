@@ -1,7 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.ListNode;
-import java.util.ArrayList;
 
 public class LeetCode160 {
   /*
@@ -29,22 +28,46 @@ public class LeetCode160 {
     if(headA == null || headB == null)
       return null;
     
-    ArrayList<ListNode> data = new ArrayList<ListNode>();
-    ListNode point = headA;
-    while(point != null) {
-      // Store everything from the headA path into the List.
-      data.add(point);
-      point = point.next;
-    }
-
-    point = headB;
-    while(point != null) {
-      // Now traverse through headB path and see if it exist in the List.
-      if(data.contains(point))
-        return point;
+    ListNode currA = headA;
+    ListNode currB = headB;
+    ListNode last = null;
+    while(currA != currB) {
+      // Advance A
+      if(currA.next == null) {
+        if(last == null) {
+          // currA reached end first
+          last = currA;
+        }
+        else {
+          // currB reached end first
+          if(currA != last) {
+            // They do not intersect
+            return null;
+          }
+        }
+        currA = headB;
+      }
       else
-        point = point.next;
+        currA = currA.next;
+      
+      // Advance B
+      if(currB.next == null) {
+        if(last == null) {
+          // currB reached end first
+          last = currB;
+        }
+        else {
+          // currA reached end first
+          if(currB != last) {
+            // They do not intersect
+            return null;
+          }
+        }
+        currB = headA;
+      }
+      else
+        currB = currB.next;
     }
-    return null;
-  }
+    return currA;
+  } 
 }

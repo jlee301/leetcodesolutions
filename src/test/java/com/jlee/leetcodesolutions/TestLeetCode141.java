@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode141 {
   @Test
-  public void testLLWithLoop() {
+  public void testProblemCase1() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
     head.next.next = new ListNode(3);
@@ -19,7 +19,7 @@ public class TestLeetCode141 {
   }
 
   @Test
-  public void testLLNoLoop() {
+  public void testProblemCase2() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
     head.next.next = new ListNode(3);
@@ -30,7 +30,7 @@ public class TestLeetCode141 {
   }
 
   @Test
-  public void testLLOneNode() {
+  public void testProblemCase3() {
     ListNode head = new ListNode(1);
 
     LeetCode141 solution = new LeetCode141();
@@ -39,7 +39,7 @@ public class TestLeetCode141 {
   }
 
   @Test
-  public void testLLTwoNode() {
+  public void testProblemCase4() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(2);
 
@@ -49,7 +49,7 @@ public class TestLeetCode141 {
   }
 
   @Test
-  public void testLLNull() {
+  public void testProblemCase5() {
     ListNode head = null;
 
     LeetCode141 solution = new LeetCode141();

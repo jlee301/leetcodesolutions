@@ -18,27 +18,12 @@ public class LeetCode168 {
    * https://leetcode.com/problems/excel-sheet-column-title/description/
    */
   public String convertToTitle(int n) {
-    String result = null;
-    if(n < 0)
-      return result;
-    
-    // char c = 'A' + 25 = 'Z'
-    // Using 'A' as the reference point, adding 0 will make it 'A'
-    // Using 'A' as the reference point, adding 1 will make it 'B'
-    // Using 'A' as the reference point, adding 25 will make it 'Z'
-    //
-    // n = 78 --> BZ
-    // (n - 1) % 26 = 25  --> 'A' + 25 = 'Z'
-    // n = (n - 1) / 26 = 2
-    //
-    // n = 2
-    // (n - 1) % 26 = 1 --> 'A' + 1 = 'B'
-    // n = (n - 1) / 26 = 0
-    result = "";
+    String result = "";
     while(n != 0) {
+      // The n-- is to offset that 0 does not map to a letter, 1 starts with A
       n--;
-      result = (char)('A' + (n % 26)) + result;
-      n = n / 26;
+      result = (char)('A' + n % 26) + result;
+      n /= 26;
     }
     return result;
   }

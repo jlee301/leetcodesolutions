@@ -14,44 +14,43 @@ public class LeetCode155 {
    * 
    * https://leetcode.com/problems/min-stack/description/
    */
-}
-
-class MinStack {
+  private Stack<Integer> stack;
   private int min;
-  private Stack<Stack<Integer>> stack;
-
-  public MinStack() {
-    stack = new Stack<Stack<Integer>>();
+  
+  /** initialize your data structure here. */
+  public LeetCode155() {
+    stack = new Stack<>();
+    min = Integer.MAX_VALUE;
   }
-
+    
   public void push(int x) {
-    int prevMin = min;
-    if (stack.isEmpty() || x < min) {
+    if(x <= min) {
+      // Push the previous min value onto the stack
+      // This will be used to recover the previous value
+      stack.push(min);
       min = x;
     }
-    Stack<Integer> entry = new Stack<Integer>();
-    // Store entry[0] = value
-    // Store entry[1] = previous min value
-    entry.push(x);
-    entry.push(prevMin);
-    stack.push(entry);
+    // Push actual value onto the stack afterwards
+    stack.push(x);
   }
-
+    
   public void pop() {
-    if (stack.isEmpty())
-      return;
-    // Set the min value to the previous min value on top of the stack.
-    min = stack.peek().get(1);
-    stack.pop();
-  }
-
-  public int top() {
     if(stack.isEmpty())
-      return 0;
-    return stack.peek().get(0);
+      return;
+    
+    if(stack.pop() == min) {
+      // Set previous min value
+      min = stack.pop();
+    }
   }
-
+    
+  public int top() {
+    return stack.peek();
+  }
+    
   public int getMin() {
     return min;
   }
 }
+
+

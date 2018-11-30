@@ -14,19 +14,15 @@ public class LeetCode141 {
     if(head == null || head.next == null)
       return false;
     
-    ListNode oneStep = head;
-    ListNode twoStep = head.next;
-    
-    while(oneStep != twoStep) {
-      if(twoStep == null || twoStep.next == null) {
-        // If either step is null, it means you reached the end of the linked list, so
-        // there's no cycle.
-        return false;
-      } else {
-        oneStep = oneStep.next;
-        twoStep = twoStep.next.next;
-      }
+    ListNode slow = head;
+    ListNode fast = head.next;
+    while(fast != null && fast.next != null) {
+      if(slow == fast)
+        return true;
+      
+      slow = slow.next;
+      fast = fast.next.next;
     }
-    return true;
+    return false;
   }
 }

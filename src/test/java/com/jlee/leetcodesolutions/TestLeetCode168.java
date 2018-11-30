@@ -6,219 +6,212 @@ import org.junit.Test;
 
 public class TestLeetCode168 {
   @Test
-  public void test1() {
+  public void testProblemCase1() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(1);
     Assert.assertEquals("A", result);
   }
 
   @Test
-  public void test2() {
+  public void testProblemCase2() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(2);
     Assert.assertEquals("B", result);
   }
 
   @Test
-  public void test3() {
+  public void testProblemCase3() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(3);
     Assert.assertEquals("C", result);
   }
 
   @Test
-  public void test4() {
+  public void testProblemCase4() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(4);
     Assert.assertEquals("D", result);
   }
 
   @Test
-  public void test5() {
+  public void testProblemCase5() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(5);
     Assert.assertEquals("E", result);
   }
 
   @Test
-  public void test6() {
+  public void testProblemCase6() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(6);
     Assert.assertEquals("F", result);
   }
 
   @Test
-  public void test7() {
+  public void testProblemCase7() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(7);
     Assert.assertEquals("G", result);
   }
 
   @Test
-  public void test8() {
+  public void testProblemCase8() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(8);
     Assert.assertEquals("H", result);
   }
 
   @Test
-  public void test9() {
+  public void testProblemCase9() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(9);
     Assert.assertEquals("I", result);
   }
 
   @Test
-  public void test10() {
+  public void testProblemCase10() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(10);
     Assert.assertEquals("J", result);
   }
 
   @Test
-  public void test11() {
+  public void testProblemCase11() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(11);
     Assert.assertEquals("K", result);
   }
 
   @Test
-  public void test12() {
+  public void testProblemCase12() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(12);
     Assert.assertEquals("L", result);
   }
 
   @Test
-  public void test13() {
+  public void testProblemCase13() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(13);
     Assert.assertEquals("M", result);
   }
 
   @Test
-  public void test14() {
+  public void testProblemCase14() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(14);
     Assert.assertEquals("N", result);
   }
 
   @Test
-  public void test15() {
+  public void testProblemCase15() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(15);
     Assert.assertEquals("O", result);
   }
 
   @Test
-  public void test16() {
+  public void testProblemCase16() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(16);
     Assert.assertEquals("P", result);
   }
 
   @Test
-  public void test17() {
+  public void testProblemCase17() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(17);
     Assert.assertEquals("Q", result);
   }
 
   @Test
-  public void test18() {
+  public void testProblemCase18() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(18);
     Assert.assertEquals("R", result);
   }
 
   @Test
-  public void test19() {
+  public void testProblemCase19() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(19);
     Assert.assertEquals("S", result);
   }
 
   @Test
-  public void test20() {
+  public void testProblemCase20() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(20);
     Assert.assertEquals("T", result);
   }
 
   @Test
-  public void test21() {
+  public void testProblemCase21() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(21);
     Assert.assertEquals("U", result);
   }
 
   @Test
-  public void test22() {
+  public void testProblemCase22() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(22);
     Assert.assertEquals("V", result);
   }
 
   @Test
-  public void test23() {
+  public void testProblemCase23() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(23);
     Assert.assertEquals("W", result);
   }
 
   @Test
-  public void test24() {
+  public void testProblemCase24() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(24);
     Assert.assertEquals("X", result);
   }
 
   @Test
-  public void test25() {
+  public void testProblemCase25() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(25);
     Assert.assertEquals("Y", result);
   }
 
   @Test
-  public void test26() {
+  public void testProblemCase26() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(26);
     Assert.assertEquals("Z", result);
   }
 
   @Test
-  public void test27() {
+  public void testProblemCase27() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(27);
     Assert.assertEquals("AA", result);
   }
 
   @Test
-  public void test28() {
+  public void testProblemCase28() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(28);
     Assert.assertEquals("AB", result);
   }
 
   @Test
-  public void test52() {
+  public void testProblemCase29() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(52);
     Assert.assertEquals("AZ", result);
   }
 
   @Test
-  public void test53() {
+  public void testProblemCase30() {
     LeetCode168 solution = new LeetCode168();
     String result = solution.convertToTitle(53);
     Assert.assertEquals("BA", result);
-  }
-
-  @Test
-  public void testNeg() {
-    LeetCode168 solution = new LeetCode168();
-    String result = solution.convertToTitle(-1);
-    Assert.assertNull(result);
   }
 }

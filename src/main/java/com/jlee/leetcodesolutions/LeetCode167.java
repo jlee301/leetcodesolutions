@@ -1,5 +1,8 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.HashMap;
+import java.util.TreeSet;
+
 public class LeetCode167 {
   /*
    * Given an array of integers that is already sorted in ascending order, find
@@ -18,26 +21,22 @@ public class LeetCode167 {
    * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
    */
   public int[] twoSum(int[] numbers, int target) {
-    if(numbers == null)
-      return null;
-    int left = 0;
-    int right = numbers.length - 1;
-
-    // This logic only works if you assume the array is in ascending order
-    // If input array was random { 7, 2, 1, 15 } then this would not work.
-    while(left < right) {
-      int sum = numbers[left] + numbers[right];
-      if(sum > target) {
-        // The sum is higher, so decrease right pointer to lower the sum
-        right--;
-      } else if(sum < target) {
-        // The sum is lower, so increase left pointer to increase the sum
-        left++;
-      } else {
-        return new int[] { left + 1, right + 1 };
+    // Map each integer to its indices
+    HashMap<Integer,TreeSet<Integer>> map = new HashMap<>();
+    for(int i = 0; i < numbers.length; i++)
+      map.computeIfAbsent(numbers[i], k -> new TreeSet<>()).add(i);
+    
+    for(int i = 0; i < numbers.length; i++) {
+      int need = target - numbers[i];
+      if(need == numbers[i]) {
+        if(map.get(need).size() > 1)
+          return new int[] { i+1, map.get(need).higher(i)+1 };  
+      }
+      else {
+        if(map.containsKey(need))
+          return new int[] { i+1, map.get(need).higher(i)+1 };
       }
     }
-    // No solution was found
     return null;
   }
 }

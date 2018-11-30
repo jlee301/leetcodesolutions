@@ -6,65 +6,58 @@ import org.junit.Test;
 
 public class TestLeetCode169 {
   @Test
-  public void test1N() {
+  public void testProblemCase1() {
     int[] nums = {1};
     LeetCode169 solution = new LeetCode169();
     Assert.assertEquals(1, solution.majorityElement(nums));
   }
 
   @Test
-  public void test2N() {
-    int[] nums = {1,2};
+  public void testProblemCase2() {
+    int[] nums = {1,1,2};
     LeetCode169 solution = new LeetCode169();
     Assert.assertEquals(1, solution.majorityElement(nums));
   }
 
   @Test
-  public void test3N() {
+  public void testProblemCase3() {
     int[] nums = {1,2,3};
     LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(1, solution.majorityElement(nums));
+    Assert.assertEquals(Integer.MAX_VALUE, solution.majorityElement(nums));
   }
 
   @Test
-  public void test4NAllUnique() {
+  public void testProblemCase4() {
     int[] nums = {1,2,3,4};
     LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(0, solution.majorityElement(nums));
+    Assert.assertEquals(Integer.MAX_VALUE, solution.majorityElement(nums));
   }
 
   @Test
-  public void test4NOneMulti() {
-    int[] nums = {1,2,2,4};
+  public void testProblemCase5() {
+    int[] nums = {1,2,2,2,4};
     LeetCode169 solution = new LeetCode169();
     Assert.assertEquals(2, solution.majorityElement(nums));
   }
 
   @Test
-  public void test4NTwoMulti() {
+  public void testProblemCase6() {
     int[] nums = {4,4,2,2};
     LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(2, solution.majorityElement(nums));
+    Assert.assertEquals(Integer.MAX_VALUE, solution.majorityElement(nums));
   }
 
   @Test
-  public void test4NNegOneMulti() {
+  public void testProblemCase7() {
     int[] nums = {-4,-4,1,2};
     LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(-4, solution.majorityElement(nums));
+    Assert.assertEquals(Integer.MAX_VALUE, solution.majorityElement(nums));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     int[] nums = {};
     LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(0, solution.majorityElement(nums));
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
-    LeetCode169 solution = new LeetCode169();
-    Assert.assertEquals(0, solution.majorityElement(nums));
+    Assert.assertEquals(Integer.MAX_VALUE, solution.majorityElement(nums));
   }
 }

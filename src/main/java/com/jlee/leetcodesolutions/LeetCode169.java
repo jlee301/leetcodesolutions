@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class LeetCode169 {
   /*
@@ -16,21 +16,20 @@ public class LeetCode169 {
    * https://leetcode.com/problems/majority-element/description/
    */
   public int majorityElement(int[] nums) {
-    int result = 0;
-    if(nums == null || nums.length == 0)
-      return result;
-    
-    HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
-    for(int i = 0; i < nums.length; i++) {
-      map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+    int target = nums.length / 2;
+    Arrays.sort(nums);
+    int i = 0;
+    while(i < nums.length) {
+      // How many times does nums[i] repeat consecutively
+      int j = i + 1;
+      while(j < nums.length && nums[j] == nums[i])
+        j++;
+      
+      if(j - i > target)
+        return nums[i];
+      
+      i = j;
     }
-    
-    for(int key : map.keySet()) {
-      if(map.get(key) >= nums.length / 2) {
-        result = key;
-        break;
-      }
-    }
-    return result;
+    return Integer.MAX_VALUE;
   }
 }

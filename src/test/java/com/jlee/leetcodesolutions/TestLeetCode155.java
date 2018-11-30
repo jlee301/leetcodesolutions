@@ -1,21 +1,15 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.LeetCode155;
-import com.jlee.leetcodesolutions.MinStack;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestLeetCode155 {
   @Test
-  public void testClassDeclare() {
-    LeetCode155 solution = new LeetCode155();
-  }
-  
-  @Test
-  public void testProblemStack() {
-    // ["MinStack","push","push","push","getMin","pop","top","getMin"]
+  public void testProblemCase1() {
+    // ["LeetCode155","push","push","push","getMin","pop","top","getMin"]
     // [[],[-2],[0],[-3],[],[],[],[]]
-    MinStack solution = new MinStack();
+    LeetCode155 solution = new LeetCode155();
     solution.push(-2);
     solution.push(0);
     solution.push(-3);
@@ -26,22 +20,9 @@ public class TestLeetCode155 {
   }
 
   @Test
-  public void testTopNoEntry() {
-    MinStack solution = new MinStack();
-    Assert.assertEquals(0, solution.top());
-  }
-
-  @Test
-  public void testMinNoEntry() {
-    MinStack solution = new MinStack();
-    Assert.assertEquals(0, solution.getMin());
-  }
-
-  @Test
-  public void testAddThenClear() {
-    MinStack solution = new MinStack();
-    Assert.assertEquals(0, solution.top());
-    Assert.assertEquals(0, solution.getMin());
+  public void testProblemCase2() {
+    LeetCode155 solution = new LeetCode155();
+    Assert.assertEquals(Integer.MAX_VALUE, solution.getMin());
     solution.push(1);
     Assert.assertEquals(1, solution.top());
     Assert.assertEquals(1, solution.getMin());
@@ -58,10 +39,8 @@ public class TestLeetCode155 {
     Assert.assertEquals(1, solution.top());
     Assert.assertEquals(1, solution.getMin());
     solution.pop();
-    Assert.assertEquals(0, solution.top());
-    Assert.assertEquals(0, solution.getMin());
+    Assert.assertEquals(Integer.MAX_VALUE, solution.getMin());
     solution.pop();
-    Assert.assertEquals(0, solution.top());
-    Assert.assertEquals(0, solution.getMin());
+    Assert.assertEquals(Integer.MAX_VALUE, solution.getMin());
   }
 }

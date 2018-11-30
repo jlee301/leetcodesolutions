@@ -19,35 +19,30 @@ public class LeetCode125 {
    * https://leetcode.com/problems/valid-palindrome/description/
    */
   public boolean isPalindrome(String s) {
-    boolean result = true;
-    if(s.isEmpty()) {
-      return result;
-    }
+    if(s == null)
+      return false;
     
+    int left = 0, right = s.length()-1;
     s = s.toLowerCase();
-    int head = 0;
-    int tail = s.length() - 1;
-    
-    while(head <= tail) {
-      char cHead = s.charAt(head);
-      char cTail = s.charAt(tail);
-
-      // Check if character is alphanumeric
-      if(!Character.isLetterOrDigit(cHead)) {
-        head++;
-      } else if(!Character.isLetterOrDigit(cTail)) {
-        tail--;
-      } else {
-        // Now check if characters match
-        if(cHead == cTail) {
-          head++;
-          tail--;
-        } else {
-          result = false;
-          return result;
-        }
+    while(left < right) {
+      char chLeft = s.charAt(left);
+      char chRight = s.charAt(right);
+      if(!Character.isLetterOrDigit(chLeft)) {
+        left++;
+        continue;
       }
+      
+      if(!Character.isLetterOrDigit(chRight)) {
+        right--;
+        continue;
+      }
+      
+      if(chLeft != chRight)
+        return false;
+      
+      left++;
+      right--;
     }
-    return result;
+    return true;
   }
 }

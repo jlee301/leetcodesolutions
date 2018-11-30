@@ -1,5 +1,8 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.PriorityQueue;
+import java.util.Stack;
+
 public class LeetCode122 {
   /*
    * Say you have an array for which the ith element is the price of a given stock
@@ -16,14 +19,36 @@ public class LeetCode122 {
    * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
    */
   public int maxProfit(int[] prices) {
-    int result = 0;
-    if(prices == null || prices.length == 0)
-      return result;
-
-    for(int i = 1; i < prices.length; i++) {
-      if(prices[i] > prices[i-1])
-        result = result + (prices[i] - prices[i-1]);
+    PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b - a);
+    Stack<Integer> valleys = new Stack<>();
+    Stack<Integer> peaks = new Stack<>();
+    
+    int low = 0, high = 0;
+    while(low < prices.length-1) {
+      // Find next lowest price
+      while(low < prices.length-1 && prices[low] >= prices[low+1])
+        low++;
+      
+      // Find next highest price
+      high = low + 1;
+      while(high < prices.length-1 && prices[high] <= prices[high+1])
+        high++;
+      
+      if(high < prices.length) { 
+        valleys.add(low);
+        peaks.add(high);
+        low = high + 1;
+      }
     }
-    return result;
+    
+    // Store remaining low/high into pq
+    while(!valleys.isEmpty())
+      pq.add(prices[peaks.pop()] - prices[valleys.pop()]);
+    
+    int profit = 0;
+    while(!pq.isEmpty())
+      profit += pq.poll();
+
+    return profit;
   }
 }

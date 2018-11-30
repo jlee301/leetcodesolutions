@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode125 {
   @Test
-  public void testProblemPalindrome() {
+  public void testProblemCase1() {
     LeetCode125 solution = new LeetCode125();
     String test = "A man, a plan, a canal: Panama";
     boolean result = solution.isPalindrome(test);
@@ -14,7 +14,7 @@ public class TestLeetCode125 {
   }
 
   @Test
-  public void testProblemNotPalindrome() {
+  public void testProblemCase2() {
     LeetCode125 solution = new LeetCode125();
     String test = "race a car";
     boolean result = solution.isPalindrome(test);
@@ -22,7 +22,7 @@ public class TestLeetCode125 {
   }
 
   @Test
-  public void testSingleAlpha() {
+  public void testProblemCase3() {
     LeetCode125 solution = new LeetCode125();
     String test = "r";
     boolean result = solution.isPalindrome(test);
@@ -30,7 +30,7 @@ public class TestLeetCode125 {
   }
   
   @Test
-  public void testSingleNum() {
+  public void testProblemCase4() {
     LeetCode125 solution = new LeetCode125();
     String test = "1";
     boolean result = solution.isPalindrome(test);
@@ -38,7 +38,7 @@ public class TestLeetCode125 {
   }
 
   @Test
-  public void testAlphaSurroundedByJunk() {
+  public void testProblemCase5() {
     LeetCode125 solution = new LeetCode125();
     String test = "~!@#rr*&";
     boolean result = solution.isPalindrome(test);
@@ -46,7 +46,7 @@ public class TestLeetCode125 {
   }
   
   @Test
-  public void testAllJunk() {
+  public void testProblemCase6() {
     LeetCode125 solution = new LeetCode125();
     String test = "~!@#*&";
     boolean result = solution.isPalindrome(test);
@@ -54,7 +54,7 @@ public class TestLeetCode125 {
   }
   
   @Test
-  public void testEmpty() {
+  public void testProblemCase7() {
     LeetCode125 solution = new LeetCode125();
     String test = "";
     boolean result = solution.isPalindrome(test);
@@ -62,7 +62,7 @@ public class TestLeetCode125 {
   }
 
   @Test
-  public void testEmptySpace() {
+  public void testProblemCase8() {
     LeetCode125 solution = new LeetCode125();
     String test = " ";
     boolean result = solution.isPalindrome(test);
@@ -70,10 +70,10 @@ public class TestLeetCode125 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase9() {
     LeetCode125 solution = new LeetCode125();
-    String test = " ";
+    String test = null;
     boolean result = solution.isPalindrome(test);
-    Assert.assertTrue(result);
+    Assert.assertFalse(result);
   }
 }

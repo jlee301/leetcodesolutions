@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode136 {
   @Test
-  public void testSingleNumber() {
+  public void testProblemCase1() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 1 };
     int result = solution.singleNumber(nums);
@@ -14,7 +14,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testOnePair1() {
+  public void testProblemCase2() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 1, 2, 1 };
     int result = solution.singleNumber(nums);
@@ -22,7 +22,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testOnePair2() {
+  public void testProblemCase3() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 1, 1, 2 };
     int result = solution.singleNumber(nums);
@@ -30,7 +30,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testOnePair3() {
+  public void testProblemCase4() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 2, 1, 1 };
     int result = solution.singleNumber(nums);
@@ -38,7 +38,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair1() {
+  public void testProblemCase5() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 2, 2, 3, 1, 1 };
     int result = solution.singleNumber(nums);
@@ -46,7 +46,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair2() {
+  public void testProblemCase6() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 2, 2, 1, 3, 1 };
     int result = solution.singleNumber(nums);
@@ -54,7 +54,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair3() {
+  public void testProblemCase7() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 2, 2, 1, 1, 3 };
     int result = solution.singleNumber(nums);
@@ -62,7 +62,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair4() {
+  public void testProblemCase8() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 3, 2, 2, 1, 1 };
     int result = solution.singleNumber(nums);
@@ -70,7 +70,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair5() {
+  public void testProblemCase9() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 2, 3, 2, 1, 1 };
     int result = solution.singleNumber(nums);
@@ -78,7 +78,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testTwoPair6() {
+  public void testProblemCase10() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 1, 2, 3, 1, 2 };
     int result = solution.singleNumber(nums);
@@ -86,7 +86,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testNeg() {
+  public void testProblemCase11() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 1, 1, -5 };
     int result = solution.singleNumber(nums);
@@ -94,7 +94,7 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testNegPair() {
+  public void testProblemCase12() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { -5, 1, -5 };
     int result = solution.singleNumber(nums);
@@ -102,33 +102,17 @@ public class TestLeetCode136 {
   }
 
   @Test
-  public void testAllPairs() {
+  public void testProblemCase13() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { -5, 1, -5, 1, 2, 2 };
     int result = solution.singleNumber(nums);
-    Assert.assertEquals(0, result);
+    Assert.assertEquals(Integer.MIN_VALUE, result);
   }
 
   @Test
-  public void testSingleZero() {
+  public void testProblemCase14() {
     LeetCode136 solution = new LeetCode136();
     int[] nums = { 5, 0, 5 };
-    int result = solution.singleNumber(nums);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testEmpty() {
-    LeetCode136 solution = new LeetCode136();
-    int[] nums = {};
-    int result = solution.singleNumber(nums);
-    Assert.assertEquals(0, result);
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode136 solution = new LeetCode136();
-    int[] nums = null;
     int result = solution.singleNumber(nums);
     Assert.assertEquals(0, result);
   }

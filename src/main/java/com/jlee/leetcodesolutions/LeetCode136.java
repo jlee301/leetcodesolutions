@@ -1,5 +1,7 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Arrays;
+
 public class LeetCode136 {
   /*
    * Given an array of integers, every element appears twice except for one. Find
@@ -11,15 +13,19 @@ public class LeetCode136 {
    * https://leetcode.com/problems/single-number/description/
    */
   public int singleNumber(int[] nums) {
-    int result = 0;
-    if(nums == null)
-      return result;
-    
-    // The concept here is n ^ n = 0 and 0 ^ n = n. Because XOR is commutative, you
-    // can accomplish this task.
-    for(int i = 0; i < nums.length; i++) {
-      result = result ^ nums[i];
+    Arrays.sort(nums);
+    int i = 0;
+    while(i < nums.length) {
+      // How many times does nums[i] repeat
+      int j = i + 1;
+      while(j < nums.length && nums[j] == nums[i])
+        j++;
+      
+      if(j - i == 1)
+        return nums[i];
+      
+      i = j;
     }
-    return result;
+    return Integer.MIN_VALUE;
   }
 }

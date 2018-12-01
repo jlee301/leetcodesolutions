@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode190 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     LeetCode190 solution = new LeetCode190();
     // 0000 0010 1001 0100 0001 1110 1001 1100 (43261596)
     // 0011 1001 0111 1000 0010 1001 0100 0000 (964176192)
@@ -15,7 +15,7 @@ public class TestLeetCode190 {
   }
 
   @Test
-  public void test2() {
+  public void testProblemCase2() {
     LeetCode190 solution = new LeetCode190();
     // 0100 0000 0000 0000 0000 0000 0000 0000 (1073741824)
     // 0000 0000 0000 0000 0000 0000 0000 0010 (2)
@@ -24,7 +24,7 @@ public class TestLeetCode190 {
   }
 
   @Test
-  public void test0() {
+  public void testProblemCase3() {
     LeetCode190 solution = new LeetCode190();
     // 0000 0000 0000 0000 0000 0000 0000 0000 (0)
     // 0000 0000 0000 0000 0000 0000 0000 0000 (0)
@@ -33,7 +33,7 @@ public class TestLeetCode190 {
   }
 
   @Test
-  public void test10() {
+  public void testProblemCase4() {
     LeetCode190 solution = new LeetCode190();
     // 0101 0000 0000 0000 0000 0000 0000 0000 (1342177280)
     // 0000 0000 0000 0000 0000 0000 0000 1010 (10)
@@ -42,7 +42,7 @@ public class TestLeetCode190 {
   }
 
   @Test
-  public void test2570() {
+  public void testProblemCase5() {
     LeetCode190 solution = new LeetCode190();
     // 0101 0000 0101 0000 0000 0000 0000 0000 (1347420160)
     // 0000 0000 0000 0000 0000 1010 0000 1010 (2570)
@@ -51,7 +51,7 @@ public class TestLeetCode190 {
   }
 
   @Test
-  public void test15790320() {
+  public void testProblemCase6() {
     LeetCode190 solution = new LeetCode190();
     // 0000 1111 0000 1111 0000 1111 0000 0000 (252645120)
     // 0000 0000 1111 0000 1111 0000 1111 0000 (15790320)

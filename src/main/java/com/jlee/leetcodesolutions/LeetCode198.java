@@ -18,23 +18,19 @@ public class LeetCode198 {
    * Output: 35 (5 --> 10 --> 20)
    */
   public int rob(int[] nums) {
-    int result = 0;
-    if(nums == null)
-      return result;
-
-    int maxRob = 0; // Max money if you rob the previous house
-    int maxNotRob = 0; // Max money if you did not rob the previous house.
-    for(int i = 0; i < nums.length; i++) {
-      // If you rob the current house, it means you cannot rob the previous house.
-      int maxCurrRob = nums[i] + maxNotRob;
-
-      // Setting for next house iteration
-      // If you do not rob it, take the max value of the previous maxRob/maxNotRob
-      maxNotRob = Math.max(maxRob, maxNotRob);
-      // If you rob the current house, set maxRob to maxCurrRob
-      maxRob = maxCurrRob;
+    if(nums == null || nums.length == 0)
+      return 0;
+      
+    int[] rob = new int[nums.length];
+    int[] notRob = new int[nums.length];
+    rob[0] = nums[0];
+    for(int i = 1; i < nums.length; i++) {
+      // If you rob nums[i], you cannot rob nums[i-1]
+      // rob[i] = max money if you rob nums[i]
+      // notRob[i] = max money if you do not rob nums[i]
+      rob[i] = nums[i] + notRob[i-1];
+      notRob[i] = Math.max(notRob[i-1], rob[i-1]);
     }
-    result = Math.max(maxRob, maxNotRob);
-    return result;
+    return Math.max(rob[nums.length-1], notRob[nums.length-1]);
   }
 }

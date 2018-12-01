@@ -10,24 +10,17 @@ public class LeetCode189 {
    * https://leetcode.com/problems/rotate-array/description/
    */
   public void rotate(int[] nums, int k) {
-    if(nums == null || nums.length <= 1)
-      return;
-
-    // Take the k % nums.length so you only need to do a single round of rotations.
-    // k(6) % length(4) = 2 --> You don't need to do all 6, you only need rotate 2
-    // times.
-    // If k = 0, then there's no rotation required.
-    k = k % nums.length;
+    k %= nums.length;
     if(k == 0)
       return;
     
-    while(k > 0) {
-      int last = nums[nums.length-1];
-      for(int i = nums.length-1; i > 0; i--) {
-        nums[i] = nums[i-1];
-      }
-      nums[0] = last;
-      k--;
+    int[] temp = nums.clone();
+    int i = k, j = 0;
+    while(j < temp.length) {
+      nums[i++] = temp[j++];
+      
+      if(i == nums.length)
+        i = 0;
     }
   }
 }

@@ -29,29 +29,25 @@ public class LeetCode205 {
    * https://leetcode.com/problems/isomorphic-strings/description/
    */
   public boolean isIsomorphic(String s, String t) {
-    if (s == null || t == null || s.length() != t.length())
-      return false;
-
-    HashMap<Character, Character> map = new HashMap<Character, Character>();
-    for (int i = 0; i < s.length(); i++) {
+    // Map every char of s to t at the same index
+    HashMap<Character,Character> map = new HashMap<>();
+    for(int i = 0; i < s.length(); i++) {
       char a = s.charAt(i);
       char b = t.charAt(i);
+      
       if(map.containsKey(a)) {
-        if(map.get(a).equals(b)) {
-          continue;
-        } else {
-          // The existing key for char a maps to another character
+        // Does not match what is already mapped
+        if(map.get(a) != b)
           return false;
-        }
-      } else {
-        if(!map.containsValue(b)) {
-          map.put(a, b);
-        } else {
-          // The key does not exist but the value already maps to another key
-          return false;
-        }
       }
-    }
+      else {
+        // Cannot map because it already exist
+        if(map.containsValue(b))
+          return false;
+        else
+          map.put(a, b);
+      }
+    }    
     return true;
   }
 }

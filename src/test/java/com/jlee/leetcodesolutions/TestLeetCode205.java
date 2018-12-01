@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode205 {
   @Test
-  public void testeggadd() {
+  public void testProblemCase1() {
     LeetCode205 solution = new LeetCode205();
     String s = "egg";
     String t = "add";
@@ -15,7 +15,7 @@ public class TestLeetCode205 {
   }
 
   @Test
-  public void testeGgadd() {
+  public void testProblemCase2() {
     LeetCode205 solution = new LeetCode205();
     String s = "eGg";
     String t = "add";
@@ -24,7 +24,7 @@ public class TestLeetCode205 {
   }
 
   @Test
-  public void testfoobar() {
+  public void testProblemCase3() {
     LeetCode205 solution = new LeetCode205();
     String s = "foo";
     String t = "bar";
@@ -33,29 +33,11 @@ public class TestLeetCode205 {
   }
 
   @Test
-  public void testDiffLength() {
-    LeetCode205 solution = new LeetCode205();
-    String s = "abc";
-    String t = "abcd";
-    boolean result = solution.isIsomorphic(s, t);
-    Assert.assertFalse(result);
-  }
-
-  @Test
-  public void testEmpty() {
+  public void testProblemCase4() {
     LeetCode205 solution = new LeetCode205();
     String s = "";
     String t = "";
     boolean result = solution.isIsomorphic(s, t);
     Assert.assertTrue(result);
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode205 solution = new LeetCode205();
-    String s = null;
-    String t = null;
-    boolean result = solution.isIsomorphic(s, t);
-    Assert.assertFalse(result);
   }
 }

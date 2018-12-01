@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode171 {
   @Test
-  public void testAthruZ() {
+  public void testProblemCase1() {
     LeetCode171 solution = new LeetCode171();
     Assert.assertEquals(1, solution.titleToNumber("A"));
     Assert.assertEquals(2, solution.titleToNumber("B"));
@@ -37,7 +37,7 @@ public class TestLeetCode171 {
   }
 
   @Test
-  public void testMultiples() {
+  public void testProblemCase2() {
     LeetCode171 solution = new LeetCode171();
     Assert.assertEquals(27, solution.titleToNumber("AA"));
     Assert.assertEquals(28, solution.titleToNumber("AB"));
@@ -55,14 +55,8 @@ public class TestLeetCode171 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase3() {
     LeetCode171 solution = new LeetCode171();
     Assert.assertEquals(0, solution.titleToNumber(""));
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode171 solution = new LeetCode171();
-    Assert.assertEquals(0, solution.titleToNumber(null));
   }
 }

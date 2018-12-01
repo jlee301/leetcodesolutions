@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode198 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5, 1, 2, 10, 15, 20};
     int result = solution.rob(nums);
@@ -22,7 +22,7 @@ public class TestLeetCode198 {
   }
   
   @Test
-  public void testOneHouse() {
+  public void testProblemCase3() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5};
     int result = solution.rob(nums);
@@ -30,7 +30,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testTwoHouse1() {
+  public void testProblemCase4() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {1,5};
     int result = solution.rob(nums);
@@ -38,7 +38,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testTwoHouse2() {
+  public void testProblemCase5() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5,1};
     int result = solution.rob(nums);
@@ -46,7 +46,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testTwoHouse3() {
+  public void testProblemCase6() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5,5};
     int result = solution.rob(nums);
@@ -54,7 +54,7 @@ public class TestLeetCode198 {
   }
   
   @Test
-  public void testThreeHouse1() {
+  public void testProblemCase7() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {1, 2, 5};
     int result = solution.rob(nums);
@@ -62,14 +62,14 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testThreeHouse2() {
+  public void testProblemCase8() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5, 2, 1};
     int result = solution.rob(nums);
     Assert.assertEquals(6,  result);
   }
   @Test
-  public void testThreeHouse3() {
+  public void testProblemCase9() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {1, 5, 2};
     int result = solution.rob(nums);
@@ -77,7 +77,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testThreeHouse4() {
+  public void testProblemCase10() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5, 1, 2};
     int result = solution.rob(nums);
@@ -85,7 +85,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testThreeHouse5() {
+  public void testProblemCase12() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5, 5, 2};
     int result = solution.rob(nums);
@@ -93,7 +93,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testThreeHouse6() {
+  public void testProblemCase13() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {5, 7, 5};
     int result = solution.rob(nums);
@@ -101,7 +101,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testBadEconomy() {
+  public void testProblemCase14() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {0, 0, 0, 0, 0, 0};
     int result = solution.rob(nums);
@@ -109,7 +109,7 @@ public class TestLeetCode198 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase15() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = {};
     int result = solution.rob(nums);
@@ -117,7 +117,7 @@ public class TestLeetCode198 {
   }
   
   @Test
-  public void testNull() {
+  public void testProblemCase16() {
     LeetCode198 solution = new LeetCode198();
     int[] nums = null;
     int result = solution.rob(nums);

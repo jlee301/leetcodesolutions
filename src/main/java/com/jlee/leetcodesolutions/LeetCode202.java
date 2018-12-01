@@ -1,5 +1,7 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.HashSet;
+
 public class LeetCode202 {
   /*
    * Write an algorithm to determine if a number is "happy".
@@ -25,36 +27,24 @@ public class LeetCode202 {
    * https://leetcode.com/problems/happy-number/description/
    */
   public boolean isHappy(int n) {
-    boolean result = false;
-    if(n < 0)
-      return result;
-    
-    int oneStep = n;
-    int twoStep = n;
-    
-    do {
-      oneStep = squareSum(oneStep);
-      if(oneStep == 1) {
-        result = true;
-        return result;
-      }
-      // This is twoStep because you are doing it twice
-      // If twoStep catches up to oneStep before completion (equals 1), it means a
-      // cycle is detected.
-      twoStep = squareSum(twoStep);
-      twoStep = squareSum(twoStep);
-    } while (oneStep != twoStep);
-    
-    return result;
-  }
-  
-  public int squareSum(int n) {
+    HashSet<Integer> set = new HashSet<>();
     int sum = 0;
-    while(n > 0) {
-      int rightDigit = n % 10;
-      sum = sum + (rightDigit * rightDigit);
-      n = n / 10;
+    // If you try to add a number that you already performed a sum of the squared
+    // digits, then it will infinitely loop
+    while(set.add(n)) {
+      sum = 0;
+      while(n != 0) {
+        // Sum the square of each digit
+        int r = n % 10;
+        sum += r * r;
+        n /= 10;
+      }
+      
+      if(sum == 1)
+        return true;
+      
+      n = sum;
     }
-    return sum;
+    return false;
   }
 }

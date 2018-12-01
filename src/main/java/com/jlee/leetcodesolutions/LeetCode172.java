@@ -15,13 +15,8 @@ public class LeetCode172 {
    * 30! = 265 252 859 812 191 058 636 308 480 000 000 = 7 = (30 / 5) = 6 + (6 / 5) = 7
    */
   public int trailingZeroes(int n) {
-    int result = 0;
-    
-    // Every divisible by 5 and you keep adding until n / 5 = 0;
-    while(n > 0) {
-      n = n / 5;
-      result = result + n;
-    }
-    return result;
+    // Every multiple of 5 contributes an additional trailing zero.
+    // Now if n / 5 is also a multiple of 5, we need to apply recursion
+    return n >= 5 ? n / 5 + trailingZeroes(n / 5) : 0;  
   }
 }

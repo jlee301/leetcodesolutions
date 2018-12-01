@@ -16,13 +16,9 @@ public class LeetCode171 {
    */
   public int titleToNumber(String s) {
     int result = 0;
-    if(s == null || s.length() == 0)
-      return result;
-    
-    s = s.toUpperCase();
-    for(int i = s.length() - 1, j = 0; i >= 0; i--, j++) {
-        result += (s.charAt(i) - 'A' + 1)*Math.pow(26, j);
-    }
+    // i == index of the char evaluating, j == power
+    for(int i = s.length()-1, j = 0; i >= 0; i--, j++)
+      result += (int) (s.charAt(i) - 'A' + 1) * Math.pow(26, j);
     return result;
   }
 }

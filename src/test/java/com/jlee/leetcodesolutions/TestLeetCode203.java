@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode203 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     LeetCode203 solution = new LeetCode203();
     // Input: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
     // Output: 1 --> 2 --> 3 --> 4 --> 5
@@ -29,7 +29,7 @@ public class TestLeetCode203 {
   }
 
   @Test
-  public void testRemoveAll() {
+  public void testProblemCase2() {
     LeetCode203 solution = new LeetCode203();
     ListNode head = new ListNode(6);
     head.next = new ListNode(6);
@@ -44,7 +44,7 @@ public class TestLeetCode203 {
   }
 
   @Test
-  public void testFirst() {
+  public void testProblemCase3() {
     LeetCode203 solution = new LeetCode203();
     ListNode head = new ListNode(6);
     head.next = new ListNode(1);
@@ -59,7 +59,7 @@ public class TestLeetCode203 {
   }
 
   @Test
-  public void testNothingToRemove() {
+  public void testProblemCase4() {
     LeetCode203 solution = new LeetCode203();
     ListNode head = new ListNode(6);
     head.next = new ListNode(1);
@@ -75,7 +75,7 @@ public class TestLeetCode203 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase5() {
     LeetCode203 solution = new LeetCode203();
     ListNode head = null;
     int val = 0;

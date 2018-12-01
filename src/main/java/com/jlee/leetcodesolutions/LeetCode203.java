@@ -12,13 +12,16 @@ public class LeetCode203 {
    * https://leetcode.com/problems/remove-linked-list-elements/description/
    */
   public ListNode removeElements(ListNode head, int val) {
-    if(head == null)
-      return null;
-    
-    head.next = removeElements(head.next, val);
-    if (head.val == val)
-      return head.next;
-    else
-      return head;
+    ListNode dummy = new ListNode(0);
+    ListNode curr = dummy;
+    while(head != null) {
+      if(head.val != val) {
+        curr.next = head;
+        curr = curr.next;
+      }
+      head = head.next;    
+    }
+    curr.next = head;
+    return dummy.next;
   }
 }

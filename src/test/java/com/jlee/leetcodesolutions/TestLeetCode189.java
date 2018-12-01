@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode189 {
   @Test
-  public void test1Rotate() {
+  public void testProblemCase1() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 1;
@@ -19,7 +19,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test2Rotate() {
+  public void testProblemCase2() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 2;
@@ -32,7 +32,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test3Rotate() {
+  public void testProblemCase3() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 3;
@@ -45,7 +45,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test4Rotate() {
+  public void testProblemCase4() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 4;
@@ -58,7 +58,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test5Rotate() {
+  public void testProblemCase5() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 5;
@@ -71,7 +71,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test8Rotate() {
+  public void testProblemCase6() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 8;
@@ -84,7 +84,7 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void test0Rotate() {
+  public void testProblemCase7() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1, 2, 3, 4 };
     int k = 0;
@@ -97,43 +97,12 @@ public class TestLeetCode189 {
   }
 
   @Test
-  public void testOneEntry() {
+  public void testProblemCase8() {
     LeetCode189 solution = new LeetCode189();
     int[] nums = { 1 };
     int k = 100;
     solution.rotate(nums, k);
     Assert.assertEquals(1, nums.length);
     Assert.assertEquals(1, nums[0]);
-  }
-
-  @Test
-  public void testNegRotate() {
-    LeetCode189 solution = new LeetCode189();
-    int[] nums = { 1, 2, 3, 4 };
-    int k = -1;
-    solution.rotate(nums, k);
-    Assert.assertEquals(4, nums.length);
-    Assert.assertEquals(1, nums[0]);
-    Assert.assertEquals(2, nums[1]);
-    Assert.assertEquals(3, nums[2]);
-    Assert.assertEquals(4, nums[3]);
-  }
-
-  @Test
-  public void testEmpty() {
-    LeetCode189 solution = new LeetCode189();
-    int[] nums = {};
-    int k = 100;
-    solution.rotate(nums, k);
-    Assert.assertEquals(0, nums.length);
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode189 solution = new LeetCode189();
-    int[] nums = null;
-    int k = 100;
-    solution.rotate(nums, k);
-    Assert.assertNull(nums);
   }
 }

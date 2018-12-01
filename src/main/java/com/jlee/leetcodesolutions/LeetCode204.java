@@ -7,24 +7,20 @@ public class LeetCode204 {
    * https://leetcode.com/problems/count-primes/description/
    */
   public int countPrimes(int n) {
-    int result = 0;
-    if(n <= 1)
-      return result;
+    // 1. Prime numbers are greater than 1 
+    // 2. Only have factors of 1 and itself  
+    boolean[] notPrime = new boolean[n];
+    // notPrime[i] == false == i is a prime number
+    // notPrime[i] == true == i is not a prime number
     
-    boolean[] isPrime = new boolean[n];
-    // isPrime is not to be used as a reference at the end to count all that is
-    // true -- this will be off by one because isPrime[2] is never set to true
-
-    for (int i = 2; i < n; i++) {
-      // We start at 2 because we know 2 is the first prime, and we start doing
-      // deductions by the multiple of 2's, 3's, 5's, etc. We skip 4's because the
-      // process of elimination using Sieve of Eratosthenes will have set isPrime[4] =
-      // true during the multiple of 2's elimination.
-      if (isPrime[i] == false) {
+    int result = 0;
+    for(int i = 2; i < n; i++) {
+      if(!notPrime[i]) {
         result++;
-        for (int j = 2; i * j < n; j++) {
-          isPrime[i * j] = true;
-        }
+        
+        // Find all integers that have i as a factor
+        for(int j = 2; i*j < n; j++)
+          notPrime[i*j] = true;
       }
     }
     return result;

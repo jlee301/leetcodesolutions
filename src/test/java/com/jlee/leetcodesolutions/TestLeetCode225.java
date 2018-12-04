@@ -1,19 +1,13 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.LeetCode225;
-import com.jlee.leetcodesolutions.MyStack;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestLeetCode225 {
   @Test
-  public void testClassDeclare() {
-    LeetCode225 solution = new LeetCode225();
-  }
-  
-  @Test
-  public void testProblemCase() {
-    MyStack stack = new MyStack();
+  public void testProblemCase1() {
+    LeetCode225 stack = new LeetCode225();
     Assert.assertTrue(stack.empty());
 
     stack.push(1);

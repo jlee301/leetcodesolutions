@@ -24,46 +24,33 @@ public class LeetCode225 {
    * 
    * https://leetcode.com/problems/implement-stack-using-queues/description/
    */
-}
-
-class MyStack {
   private Queue<Integer> queue;
   
   /** Initialize your data structure here. */
-  public MyStack() {
-    // Stack = LIFO
-    // Queue = FIFO
-    queue = new LinkedList<Integer>();
+  public LeetCode225() {
+    queue = new LinkedList<>();
   }
-
+    
   /** Push element x onto stack. */
   public void push(int x) {
-    // int=4 --> 4
-    // int=3 --> 4, 3 --> 3, 4
-    // int=2 --> 3, 4, 2 --> 2, 3, 4
-    // int=1 --> 2, 3, 4, 1 --> 1, 2, 3, 4
-
-    // This add puts value to the bottom of the FIFO queue
     queue.add(x);
-    for(int i = 0; i < queue.size() - 1; i++) {
-      // Now this takes from the top of the FIFO queue and puts it to the bottom up
-      // until the entry inserted above is now on the top.
+    for(int i = 0; i < queue.size()-1; i++)
       queue.add(queue.poll());
-    }
   }
-
+    
   /** Removes the element on top of the stack and returns that element. */
   public int pop() {
-    return queue.poll();
+    return queue.poll();      
   }
-
+    
   /** Get the top element. */
   public int top() {
-    return queue.peek();
+    return queue.peek();      
   }
-
+    
   /** Returns whether the stack is empty. */
   public boolean empty() {
-    return queue.isEmpty();
+    return queue.isEmpty();      
   }
 }
+

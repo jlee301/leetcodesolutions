@@ -23,51 +23,37 @@ public class LeetCode232 {
    * 
    * https://leetcode.com/problems/implement-queue-using-stacks/description/
    */
-}
-
-class MyQueue {
-  // Queue (FIFO) but using Stack (LIFO)
-  private Stack<Integer> stack;
+  private Stack<Integer> stackA;
+  private Stack<Integer> stackB;
   
   /** Initialize your data structure here. */
-  public MyQueue() {
-    stack = new Stack<Integer>();
+  public LeetCode232() {
+    stackA = new Stack<>();
+    stackB = new Stack<>();
   }
-  
+    
   /** Push element x to the back of queue. */
   public void push(int x) {
-    Stack<Integer> tempStack = new Stack<Integer>();
-    // Dump everything into temp stack
-    // stack = 1   -->   tempStack 2
-    //         2                   1
-    //
-    // Then add x=3 into stack and move tempStack back into stack.
-    // stack = 3   <--   tempStack 2
-    //                             1
-    //
-    // stack = 1         tempStack
-    //         2
-    //         3
-    while(!stack.isEmpty())
-      tempStack.add(stack.pop());
+    while(!stackA.isEmpty())
+      stackB.push(stackA.pop());
+    stackA.push(x);
     
-    stack.add(x);
-    while(!tempStack.isEmpty())
-      stack.add(tempStack.pop());
+    while(!stackB.isEmpty())
+      stackA.push(stackB.pop());
   }
-  
+    
   /** Removes the element from in front of queue and returns that element. */
   public int pop() {
-      return stack.pop();
+    return stackA.pop();
   }
-  
+    
   /** Get the front element. */
   public int peek() {
-      return stack.peek();
+    return stackA.peek();
   }
-  
+    
   /** Returns whether the queue is empty. */
   public boolean empty() {
-      return stack.isEmpty();
+    return stackA.isEmpty();
   }
 }

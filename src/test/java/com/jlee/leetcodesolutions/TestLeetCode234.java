@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode234 {
   @Test
-  public void testFourNodePalindrome() {
+  public void testProblemCase1() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(0);
     head.next.next = new ListNode(0);
@@ -17,7 +17,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testFourNodeNotPalindrome() {
+  public void testProblemCase2() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(0);
     head.next.next = new ListNode(1);
@@ -28,7 +28,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testThreeNodePalindrome() {
+  public void testProblemCase3() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(0);
     head.next.next = new ListNode(1);
@@ -38,7 +38,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testThreeNodeNotPalindrome() {
+  public void testProblemCase4() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(0);
     head.next.next = new ListNode(0);
@@ -48,7 +48,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testTwoNodePalindrome() {
+  public void testProblemCase5() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(1);
     
@@ -57,7 +57,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testTwoNodeNotPalindrome() {
+  public void testProblemCase6() {
     ListNode head = new ListNode(1);
     head.next = new ListNode(0);
     
@@ -66,7 +66,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testOneNodePalindrome() {
+  public void testProblemCase7() {
     ListNode head = new ListNode(1);
     
     LeetCode234 solution = new LeetCode234();
@@ -74,7 +74,7 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testThreeNodeNegPalindrome() {
+  public void testProblemCase8() {
     ListNode head = new ListNode(-1);
     head.next = new ListNode(-2);
     head.next.next = new ListNode(-1);
@@ -84,96 +84,10 @@ public class TestLeetCode234 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase9() {
     ListNode head = null;
     
     LeetCode234 solution = new LeetCode234();
     Assert.assertTrue(solution.isPalindrome(head));
-  }
-
-  @Test
-  public void testFourNodePalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(0);
-    head.next.next = new ListNode(0);
-    head.next.next.next = new ListNode(1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testFourNodeNotPalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(0);
-    head.next.next = new ListNode(1);
-    head.next.next.next = new ListNode(1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertFalse(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testThreeNodePalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(0);
-    head.next.next = new ListNode(1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testThreeNodeNotPalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(0);
-    head.next.next = new ListNode(0);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertFalse(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testTwoNodePalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testTwoNodeNotPalindromeNoList() {
-    ListNode head = new ListNode(1);
-    head.next = new ListNode(0);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertFalse(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testOneNodePalindromeNoList() {
-    ListNode head = new ListNode(1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testThreeNodeNegPalindromeNoList() {
-    ListNode head = new ListNode(-1);
-    head.next = new ListNode(-2);
-    head.next.next = new ListNode(-1);
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
-  }
-
-  @Test
-  public void testNullNoList() {
-    ListNode head = null;
-    
-    LeetCode234 solution = new LeetCode234();
-    Assert.assertTrue(solution.isPalindromeNoList(head));
   }
 }

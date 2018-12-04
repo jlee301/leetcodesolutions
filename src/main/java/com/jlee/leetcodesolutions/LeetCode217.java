@@ -11,17 +11,12 @@ public class LeetCode217 {
    * https://leetcode.com/problems/contains-duplicate/description/
    */
   public boolean containsDuplicate(int[] nums) {
-    if(nums == null || nums.length <= 1)
-      return false;
-    
-    HashSet<Integer> set = new HashSet<Integer>();
-    for(int i = 0; i < nums.length; i++) {
-      int currInt = nums[i];
-      if(set.contains(currInt)) {
+    HashSet<Integer> set = new HashSet<>();
+    // Use a set to determine if there are duplicates. If the set returns false on
+    // an add, it means there exist an entry already
+    for(int next : nums) {
+      if(!set.add(next))
         return true;
-      } else {
-        set.add(currInt);
-      }
     }
     return false;
   }

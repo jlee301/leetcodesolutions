@@ -24,13 +24,13 @@ public class LeetCode226 {
     if(root == null)
       return null;
     
-    // Invert temporarily here to not affect original
+    // Create the left and right subtrees w/o directly affecting the input first
     TreeNode left = invertTree(root.right);
     TreeNode right = invertTree(root.left);
     
+    // After they are created, now swap them in-place
     root.left = left;
     root.right = right;
-    
     return root;
   }
 }

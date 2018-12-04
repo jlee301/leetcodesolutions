@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode219 {
   @Test
-  public void testBegDuplicatesInRange() {
+  public void testProblemCase1() {
     int[] nums = {1,1,2,3};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -14,7 +14,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testMidDuplicatesInRange() {
+  public void testProblemCase2() {
     int[] nums = {1,2,2,3};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -22,7 +22,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testEndDuplicatesInRange() {
+  public void testProblemCase3() {
     int[] nums = {1,2,3,3};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -30,7 +30,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testDuplicatesNotInRange() {
+  public void testProblemCase4() {
     int[] nums = {1,2,3,1};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -38,7 +38,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testDuplicatesNotInRange2() {
+  public void testProblemCase5() {
     int[] nums = {1,2,3,1};
     int k = 2;
     LeetCode219 solution = new LeetCode219();
@@ -46,7 +46,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testDuplicatesInRange() {
+  public void testProblemCase6() {
     int[] nums = {1,2,3,1};
     int k = 3;
     LeetCode219 solution = new LeetCode219();
@@ -54,7 +54,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testDuplicatesOverRange() {
+  public void testProblemCase7() {
     int[] nums = {1,2,3,1};
     int k = 10;
     LeetCode219 solution = new LeetCode219();
@@ -62,7 +62,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testSkipsFirstDupeSecondDupeInRange() {
+  public void testProblemCase8() {
     int[] nums = {1, 2, 3, 1, 4, 1};
     int k = 2;
     LeetCode219 solution = new LeetCode219();
@@ -70,7 +70,7 @@ public class TestLeetCode219 {
   }
   
   @Test
-  public void testDuplicatesZeroRange() {
+  public void testProblemCase9() {
     int[] nums = {1,2,3,1};
     int k = 0;
     LeetCode219 solution = new LeetCode219();
@@ -78,7 +78,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testDuplicatesNegRange() {
+  public void testProblemCase10() {
     int[] nums = {1, 2, 3, 1};
     int k = -1;
     LeetCode219 solution = new LeetCode219();
@@ -86,7 +86,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testNoDuplicates() {
+  public void testProblemCase11() {
     int[] nums = {1, 2, 3, 4};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -94,7 +94,7 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testOneEntry() {
+  public void testProblemCase12() {
     int[] nums = {1};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
@@ -102,130 +102,10 @@ public class TestLeetCode219 {
   }
 
   @Test
-  public void testEmptyEntry() {
+  public void testProblemCase13() {
     int[] nums = {};
     int k = 1;
     LeetCode219 solution = new LeetCode219();
     Assert.assertFalse(solution.containsNearbyDuplicate(nums, k));
-  }
-
-  @Test
-  public void testNullEntry() {
-    int[] nums = null;
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicate(nums, k));
-  }
-
-  @Test
-  public void testBegDuplicatesInRangeHash() {
-    int[] nums = {1,1,2,3};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testMidDuplicatesInRangeHash() {
-    int[] nums = {1,2,2,3};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testEndDuplicatesInRangeHash() {
-    int[] nums = {1,2,3,3};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testDuplicatesNotInRangeHash() {
-    int[] nums = {1,2,3,1};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testDuplicatesNotInRange2Hash() {
-    int[] nums = {1,2,3,1};
-    int k = 2;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testDuplicatesInRangeHash() {
-    int[] nums = {1,2,3,1};
-    int k = 3;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testDuplicatesOverRangeHash() {
-    int[] nums = {1,2,3,1};
-    int k = 10;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testSkipsFirstDupeSecondDupeInRangeHash() {
-    int[] nums = {1, 2, 3, 1, 4, 1};
-    int k = 2;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertTrue(solution.containsNearbyDuplicateHash(nums, k));
-  }
-  
-  @Test
-  public void testDuplicatesZeroRangeHash() {
-    int[] nums = {1,2,3,1};
-    int k = 0;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testDuplicatesNegRangeHash() {
-    int[] nums = {1, 2, 3, 1};
-    int k = -1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testNoDuplicatesHash() {
-    int[] nums = {1, 2, 3, 4};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testOneEntryHash() {
-    int[] nums = {1};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testEmptyEntryHash() {
-    int[] nums = {};
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
-  }
-
-  @Test
-  public void testNullEntryHash() {
-    int[] nums = null;
-    int k = 1;
-    LeetCode219 solution = new LeetCode219();
-    Assert.assertFalse(solution.containsNearbyDuplicateHash(nums, k));
   }
 }

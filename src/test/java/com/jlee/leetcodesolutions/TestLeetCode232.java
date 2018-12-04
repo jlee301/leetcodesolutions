@@ -1,19 +1,13 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.LeetCode232;
-import com.jlee.leetcodesolutions.MyQueue;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestLeetCode232 {
   @Test
-  public void testClassDeclare() {
-    LeetCode232 solution = new LeetCode232();
-  }
-  
-  @Test
   public void testProblemCase() {
-    MyQueue queue = new MyQueue();
+    LeetCode232 queue = new LeetCode232();
     Assert.assertTrue(queue.empty());
 
     queue.push(1);

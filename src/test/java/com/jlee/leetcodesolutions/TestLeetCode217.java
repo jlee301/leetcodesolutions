@@ -6,71 +6,64 @@ import org.junit.Test;
 
 public class TestLeetCode217 {
   @Test
-  public void testNoDuplicates() {
+  public void testProblemCase1() {
     int[] nums = {1, 2, 3, 4};
     LeetCode217 solution = new LeetCode217();
     Assert.assertFalse(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testBegDuplicate() {
+  public void testProblemCase2() {
     int[] nums = {1, 1, 2, 3};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testMidDuplicate() {
+  public void testProblemCase3() {
     int[] nums = {1, 2, 2, 3};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testEndDuplicate() {
+  public void testProblemCase4() {
     int[] nums = {1, 2, 3, 3};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testMultipleDuplicate() {
+  public void testProblemCase5() {
     int[] nums = {1, 2, 1, 2};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testAllDuplicate() {
+  public void testProblemCase6() {
     int[] nums = {1, 1, 1, 1};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testOneEntry() {
+  public void testProblemCase7() {
     int[] nums = {1};
     LeetCode217 solution = new LeetCode217();
     Assert.assertFalse(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testNegDuplicate() {
+  public void testProblemCase8() {
     int[] nums = {-1, 0, 1, -1, 2};
     LeetCode217 solution = new LeetCode217();
     Assert.assertTrue(solution.containsDuplicate(nums));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase9() {
     int[] nums = {};
-    LeetCode217 solution = new LeetCode217();
-    Assert.assertFalse(solution.containsDuplicate(nums));
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
     LeetCode217 solution = new LeetCode217();
     Assert.assertFalse(solution.containsDuplicate(nums));
   }

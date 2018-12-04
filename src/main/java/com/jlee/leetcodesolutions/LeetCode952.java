@@ -26,21 +26,17 @@ public class LeetCode952 {
     HashMap<Integer,HashSet<Integer>> map = new HashMap<>();
     int N = A.length;
     for(int i = 0; i < N; i++) {
-      int d = 2;
-      int x = A[i];
+      int k = A[i];
       
       // Find the prime factorization of A[i]
-      while(d * d <= x) {
-        if(x % d == 0) {
-          while(x % d == 0) 
-            x /= d;
-          
-          map.computeIfAbsent(d, k -> new HashSet<>()).add(i);
+      for(int j = 2; j * j <= k; j++) {
+        if(k % j == 0) {
+          while(k % j == 0) k /= j;
+          map.computeIfAbsent(j, l -> new HashSet<>()).add(i);
         }
-        d++;
       }
-      if(x > 1)
-        map.computeIfAbsent(x, k -> new HashSet<>()).add(i);
+      if(k > 1)
+        map.computeIfAbsent(k, l -> new HashSet<>()).add(i);
     }
     
     counts = new int[N];

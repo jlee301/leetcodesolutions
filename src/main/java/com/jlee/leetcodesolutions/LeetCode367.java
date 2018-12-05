@@ -19,34 +19,17 @@ public class LeetCode367 {
    * https://leetcode.com/problems/valid-perfect-square/description/
    */
   public boolean isPerfectSquare(int num) {
-    if(num <= 0)
-      return false;
-    
-    int result = 0;
-    for(int i = 1; result < num; i++) {
-      result = i * i;
-    }
-    return result == num;
-  }
-
-  public boolean isPerfectSquareBinary(int num) {
-    if(num <= 0)
-      return false;
-    
-    int low = 1;
-    int high = num;
-    int result = 0;
-    
+    long low = 0, high = num;
     while(low <= high) {
-      int mid = low + ((high - low) / 2);
-      result = mid * mid;
-      if(result < num)
+      long mid = low + (high - low) / 2;
+      long sq = mid * mid;
+      if(sq == num)
+        return true;
+      else if(sq < num)
         low = mid + 1;
-      else if (result > num)
-        high = mid - 1;
       else
-        break;
+        high = mid - 1;
     }
-    return result == num;
+    return false;
   }
 }

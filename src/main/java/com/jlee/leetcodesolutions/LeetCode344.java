@@ -11,13 +11,10 @@ public class LeetCode344 {
    * https://leetcode.com/problems/reverse-string/description/
    */
   public String reverseString(String s) {
-    if(s == null)
-      return null;
+    StringBuilder sb = new StringBuilder();
+    for(int i = s.length()-1; i >= 0; i--)
+      sb.append(s.charAt(i));
     
-    String result = "";
-    for(int i = s.length() - 1; i >= 0; i--) {
-      result += s.charAt(i);
-    }
-    return result;
+    return sb.toString();
   }
 }

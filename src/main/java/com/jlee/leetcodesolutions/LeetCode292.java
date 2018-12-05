@@ -18,13 +18,11 @@ public class LeetCode292 {
    * https://leetcode.com/problems/nim-game/description/
    */
   public boolean canWinNim(int n) {
-    // If n-pile is a multiple of four when it is your turn, you will lose. This is
-    // because no matter if you pick 1, 2, or 3 stones, your opponent can take
-    // enough stones to keep it as a multiple of four. If your opponent keeps to
-    // that strategy, you will ultimately be left with four stones left in the pile.
-    if (n <= 0)
-      return false;
-    else
-      return (n % 4 != 0);
+    // 1. If you pick 1,2,3 stones leaving a pile divisible by 4, then you can win
+    // because you can continue to keep picking just enough stones to keep is
+    // divisble by 4.
+    // 2. Now if it is your turn and it is divisble by 4, then your opponent and
+    // keep it this way for you to lose.
+    return n % 4 != 0;      
   }
 }

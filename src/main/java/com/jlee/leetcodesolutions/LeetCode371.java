@@ -11,31 +11,12 @@ public class LeetCode371 {
    * https://leetcode.com/problems/sum-of-two-integers/description/
    */
   public int getSum(int a, int b) {
-    if(a == 0)
-      return b;
-    if(b == 0)
-      return a;
-
-    // The XOR operation is like adding but w/o any binary carries:
-    //  0010 (2)    0010    
-    // +0011 (3)   ^0011
-    // =0101 (5)   =0001
-    // 
-    // So we used the AND operation to determine if there's any carries, but we will
-    // need to shift the result to the left to be in the right placement
-    //  0010
-    // &0011
-    // =0010 --> 0100
-    //
-    // Lastly we XOR the XOR result with the carry result to get the sum. You repeat
-    // this process until carry is zero.
-    //  0001
-    // ^0100
-    // =0101 <-- 5
+    // XOR simulates addition w/o the carry
+    // AND simulates the carry results, but needs to be shifted 1 bit to the right
     while(b != 0) {
       int carry = a & b;
-      carry = carry << 1;
-      a = a ^ b;
+      carry <<= 1;
+      a ^= b;
       b = carry;
     }
     return a;

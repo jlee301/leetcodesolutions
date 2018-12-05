@@ -17,24 +17,26 @@ public class LeetCode303 {
    * 
    * https://leetcode.com/problems/range-sum-query-immutable/description/
    */
-}
-
-class NumArray {
+  private int[] sum;
   private int[] nums;
-  private int[] memo;
-
-  public NumArray(int[] nums) {
+  
+  public LeetCode303(int[] nums) {
     if(nums == null || nums.length == 0)
       return;
+    
     this.nums = nums;
-    memo = new int[nums.length];
-    memo[0] = nums[0];
+    
+    // sum[i] == sum(nums[0] : nums[i])
+    sum = new int[nums.length];
+    sum[0] = nums[0];
     for(int i = 1; i < nums.length; i++)
-      memo[i] = memo[i-1] + nums[i];
+      sum[i] = sum[i-1] + nums[i];
   }
-
+    
   public int sumRange(int i, int j) {
-    if(nums == null || i < 0 || j > nums.length-1 || i > j) return 0;
-    return memo[j] - memo[i] + nums[i];
+    if(nums == null)
+      return 0;
+    
+    return sum[j] - sum[i] + nums[i];       
   }
 }

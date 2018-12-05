@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode350 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int[] nums1 = {1, 2, 2, 1};
     int[] nums2 = {2, 2};
     LeetCode350 solution = new LeetCode350();
@@ -17,7 +17,7 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testTwoIntersect() {
+  public void testProblemCase2() {
     int[] nums1 = {1, 2, 3, 4};
     int[] nums2 = {1, 3};
     LeetCode350 solution = new LeetCode350();
@@ -28,7 +28,7 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testAllIntersect() {
+  public void testProblemCase3() {
     int[] nums1 = {1, 2, 3, 4};
     int[] nums2 = {1, 2, 3, 4};
     LeetCode350 solution = new LeetCode350();
@@ -41,20 +41,20 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testMultipleDupes() {
+  public void testProblemCase4() {
     int[] nums1 = {1, 1, 2, 2};
     int[] nums2 = {1, 2, 1, 2};
     LeetCode350 solution = new LeetCode350();
     int[] result = solution.intersect(nums1, nums2);
     Assert.assertEquals(4, result.length);
     Assert.assertEquals(1, result[0]);
-    Assert.assertEquals(2, result[1]);
-    Assert.assertEquals(1, result[2]);
+    Assert.assertEquals(1, result[1]);
+    Assert.assertEquals(2, result[2]);
     Assert.assertEquals(2, result[3]);
   }
 
   @Test
-  public void testAllSameNumbers() {
+  public void testProblemCase5() {
     int[] nums1 = {1, 1, 1, 1};
     int[] nums2 = {1, 1};
     LeetCode350 solution = new LeetCode350();
@@ -65,7 +65,7 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testEverythingUnique() {
+  public void testProblemCase6() {
     int[] nums1 = {1, 2, 3, 4};
     int[] nums2 = {5, 6};
     LeetCode350 solution = new LeetCode350();
@@ -74,7 +74,7 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testEmptyNums1() {
+  public void testProblemCase7() {
     int[] nums1 = {};
     int[] nums2 = {5, 6};
     LeetCode350 solution = new LeetCode350();
@@ -83,7 +83,7 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testEmptyNums2() {
+  public void testProblemCase8() {
     int[] nums1 = {1, 2, 3, 4};
     int[] nums2 = {};
     LeetCode350 solution = new LeetCode350();
@@ -92,36 +92,9 @@ public class TestLeetCode350 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase9() {
     int[] nums1 = {};
     int[] nums2 = {};
-    LeetCode350 solution = new LeetCode350();
-    int[] result = solution.intersect(nums1, nums2);
-    Assert.assertEquals(0, result.length);
-  }
-
-  @Test
-  public void testNullNums1() {
-    int[] nums1 = null;
-    int[] nums2 = {5, 6};
-    LeetCode350 solution = new LeetCode350();
-    int[] result = solution.intersect(nums1, nums2);
-    Assert.assertEquals(0, result.length);
-  }
-
-  @Test
-  public void testNullNums2() {
-    int[] nums1 = {1, 2, 3, 4};
-    int[] nums2 = null;
-    LeetCode350 solution = new LeetCode350();
-    int[] result = solution.intersect(nums1, nums2);
-    Assert.assertEquals(0, result.length);
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums1 = null;
-    int[] nums2 = null;
     LeetCode350 solution = new LeetCode350();
     int[] result = solution.intersect(nums1, nums2);
     Assert.assertEquals(0, result.length);

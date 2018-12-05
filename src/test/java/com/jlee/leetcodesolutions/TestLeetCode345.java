@@ -6,51 +6,44 @@ import org.junit.Test;
 
 public class TestLeetCode345 {
   @Test
-  public void testHello() {
+  public void testProblemCase1() {
     String s = "HeLlO";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("HOLle", solution.reverseVowels(s));
   }
 
   @Test
-  public void testMiddleVowel() {
+  public void testProblemCase2() {
     String s = "lloll";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("lloll", solution.reverseVowels(s));
   }
 
   @Test
-  public void testAllVowel() {
+  public void testProblemCase3() {
     String s = "AaEeIiOoUu";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("uUoOiIeEaA", solution.reverseVowels(s));
   }
 
   @Test
-  public void testNoVowels() {
+  public void testProblemCase4() {
     String s = "BbCcDdFfGgHh";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("BbCcDdFfGgHh", solution.reverseVowels(s));
   }
 
   @Test
-  public void testSpaces() {
+  public void testProblemCase5() {
     String s = "  ";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("  ", solution.reverseVowels(s));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase6() {
     String s = "";
     LeetCode345 solution = new LeetCode345();
     Assert.assertEquals("", solution.reverseVowels(s));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
-    LeetCode345 solution = new LeetCode345();
-    Assert.assertNull(solution.reverseVowels(s));
   }
 }

@@ -16,12 +16,10 @@ public class LeetCode326 {
    * https://leetcode.com/problems/power-of-three/description/
    */
   public boolean isPowerOfThree(int n) {
-    if(n <= 0)
-      return false;
+    long result = 1;
+    while(result < n)
+      result *= 3;
     
-    while(n % 3 == 0)
-      return isPowerOfThree(n / 3);
-    
-    return n == 1;
+    return result == n;
   }
 }

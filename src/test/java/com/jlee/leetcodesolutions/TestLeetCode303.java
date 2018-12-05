@@ -1,29 +1,23 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.LeetCode303;
-import com.jlee.leetcodesolutions.NumArray;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestLeetCode303 {
   @Test
-  public void testClassDeclare() {
-    LeetCode303 solution = new LeetCode303();
-  }
-  
-  @Test
   public void testProblemCase1() {
     int[] nums = {-2, 0, 3, -5, 2, -1};
-    NumArray solution = new NumArray(nums);
+    LeetCode303 solution = new LeetCode303(nums);
     Assert.assertEquals(1, solution.sumRange(0, 2));
     Assert.assertEquals(-1, solution.sumRange(2, 5));
     Assert.assertEquals(-3, solution.sumRange(0, 5));
   }
 
   @Test
-  public void testIJSame() {
+  public void testProblemCase2() {
     int[] nums = {-2, 0, 3, -5, 2, -1};
-    NumArray solution = new NumArray(nums);
+    LeetCode303 solution = new LeetCode303(nums);
     Assert.assertEquals(-2, solution.sumRange(0, 0));
     Assert.assertEquals(0, solution.sumRange(1, 1));
     Assert.assertEquals(3, solution.sumRange(2, 2));
@@ -33,32 +27,23 @@ public class TestLeetCode303 {
   }
 
   @Test
-  public void testIGreaterThanJ() {
+  public void testProblemCase3() {
     int[] nums = {-2, 0, 3, -5, 2, -1};
-    NumArray solution = new NumArray(nums);
+    LeetCode303 solution = new LeetCode303(nums);
     Assert.assertEquals(0, solution.sumRange(5, 0));
   }
 
   @Test
-  public void testOutOfRange() {
-    int[] nums = {-2, 0, 3, -5, 2, -1};
-    NumArray solution = new NumArray(nums);
-    Assert.assertEquals(0, solution.sumRange(-1, 5));
-    Assert.assertEquals(0, solution.sumRange(0, 6));
-    Assert.assertEquals(0, solution.sumRange(5, 0));
-  }
-
-  @Test
-  public void testNumsEmpty() {
+  public void testProblemCase4() {
     int[] nums = {};
-    NumArray solution = new NumArray(nums);
+    LeetCode303 solution = new LeetCode303(nums);
     Assert.assertEquals(0, solution.sumRange(0, 5));
   }
 
   @Test
-  public void testNumsNull() {
+  public void testProblemCase5() {
     int[] nums = null;
-    NumArray solution = new NumArray(nums);
+    LeetCode303 solution = new LeetCode303(nums);
     Assert.assertEquals(0, solution.sumRange(0, 5));
   }
 }

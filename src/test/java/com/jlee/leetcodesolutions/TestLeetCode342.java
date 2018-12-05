@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode342 {
   @Test
-  public void testPowerOfFour() {
+  public void testProblemCase1() {
     LeetCode342 solution = new LeetCode342();
     Assert.assertTrue(solution.isPowerOfFour(1));
     Assert.assertTrue(solution.isPowerOfFour(4));
@@ -16,7 +16,7 @@ public class TestLeetCode342 {
   }
 
   @Test
-  public void testNotPowerOfFour() {
+  public void testProblemCase2() {
     LeetCode342 solution = new LeetCode342();
     Assert.assertFalse(solution.isPowerOfFour(2));
     Assert.assertFalse(solution.isPowerOfFour(3));
@@ -38,7 +38,7 @@ public class TestLeetCode342 {
   }
 
   @Test
-  public void testEdgeCases() {
+  public void testProblemCase3() {
     LeetCode342 solution = new LeetCode342();
     Assert.assertFalse(solution.isPowerOfFour(0));
     Assert.assertFalse(solution.isPowerOfFour(-1));

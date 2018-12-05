@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode371 {
   @Test
-  public void testA1B2() {
+  public void testProblemCase1() {
     LeetCode371 solution = new LeetCode371();
     int a = 1;
     int b = 2;
@@ -14,7 +14,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA2B3() {
+  public void testProblemCase2() {
     LeetCode371 solution = new LeetCode371();
     int a = 2;
     int b = 3;
@@ -22,7 +22,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA1000B24() {
+  public void testProblemCase3() {
     LeetCode371 solution = new LeetCode371();
     int a = 1000;
     int b = 24;
@@ -30,7 +30,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA1000BNeg24() {
+  public void testProblemCase4() {
     LeetCode371 solution = new LeetCode371();
     int a = 1000;
     int b = -24;
@@ -38,7 +38,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA24BNeg1000() {
+  public void testProblemCase5() {
     LeetCode371 solution = new LeetCode371();
     int a = 24;
     int b = -1000;
@@ -46,7 +46,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testANeg1000BNeg24() {
+  public void testProblemCase6() {
     LeetCode371 solution = new LeetCode371();
     int a = -1000;
     int b = -24;
@@ -54,7 +54,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA0B1000() {
+  public void testProblemCase7() {
     LeetCode371 solution = new LeetCode371();
     int a = 0;
     int b = 1000;
@@ -62,7 +62,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testA1000B0() {
+  public void testProblemCase8() {
     LeetCode371 solution = new LeetCode371();
     int a = 1000;
     int b = 0;
@@ -70,7 +70,7 @@ public class TestLeetCode371 {
   }
 
   @Test
-  public void testZeroes() {
+  public void testProblemCase9() {
     LeetCode371 solution = new LeetCode371();
     int a = 0;
     int b = 0;

@@ -14,12 +14,10 @@ public class LeetCode342 {
    * https://leetcode.com/problems/power-of-four/description/
    */
   public boolean isPowerOfFour(int num) {
-    if(num <= 0)
-      return false;
+    long result = 1;
+    while(result < num)
+      result *= 4;
     
-    while(num % 4 == 0)
-      return isPowerOfFour(num / 4);
-    
-    return num == 1;
+    return result == num;
   }
 }

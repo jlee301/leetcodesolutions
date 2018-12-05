@@ -1,6 +1,8 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class LeetCode350 {
   /*
@@ -25,33 +27,27 @@ public class LeetCode350 {
    * https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
    */
   public int[] intersect(int[] nums1, int[] nums2) {
-    if(nums1 == null || nums2 == null)
-      return new int[] {};
+    // Find the frequency of each integer
+    HashMap<Integer,Integer> count1 = new HashMap<>();
+    HashMap<Integer,Integer> count2 = new HashMap<>();
+    for(int n : nums1)
+      count1.put(n, count1.getOrDefault(n, 0) + 1);
+
+    for(int n : nums2)
+      count2.put(n, count2.getOrDefault(n, 0) + 1);
     
-    ArrayList<Integer> hashNums1 = new ArrayList<Integer>();
-    ArrayList<Integer> hashIntersect = new ArrayList<Integer>();
-    
-    // Insert all values from nums1 into hash
-    for(int i = 0; i < nums1.length; i++)
-      hashNums1.add(nums1[i]);
-    
-    // If nums2 is found in hashNums1
-    // 1. Insert into hashIntersect
-    // 2. Remove first instance from hashNums1
-    for(int i = 0; i < nums2.length; i++) {
-      if(hashNums1.contains(nums2[i])) {
-        hashIntersect.add(nums2[i]);
-        
-        // Must typecast Object or it will try to remove via index
-        hashNums1.remove((Object)nums2[i]);
-      }
+    List<Integer> result = new ArrayList<>();
+    for(int key : count2.keySet()) {
+      // The min frequency of the integer is how many times it appears
+      int min = Math.min(count1.getOrDefault(key, 0), count2.get(key));
+      for(int i = 0; i < min; i++)
+        result.add(key); 
     }
     
-    // Create result array from hashIntersect size and populate
-    int[] result = new int[hashIntersect.size()];
-    for(int i = 0; i < hashIntersect.size(); i++)
-      result[i] = hashIntersect.get(i);
+    int[] ans = new int[result.size()];
+    for(int i = 0; i < ans.length; i++)
+      ans[i] = result.get(i);
     
-    return result;
+    return ans;
   }
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode235 {
   @Test
-  public void test2and8() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -26,7 +26,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test2and4() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -46,7 +46,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test0and5() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -66,7 +66,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test3and5() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -86,7 +86,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test4and3() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -106,7 +106,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test7and9() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -126,7 +126,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test8and9() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -146,7 +146,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test8and7() {
+  public void testProblemCase8() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -166,7 +166,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test6and7() {
+  public void testProblemCase9() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -186,7 +186,7 @@ public class TestLeetCode235 {
   }
 
   @Test
-  public void test5and7() {
+  public void testProblemCase10() {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(0);
@@ -199,6 +199,26 @@ public class TestLeetCode235 {
     
     TreeNode p = new TreeNode(6);
     TreeNode q = new TreeNode(7);
+    
+    LeetCode235 solution = new LeetCode235();
+    TreeNode result = solution.lowestCommonAncestor(root, p, q);
+    Assert.assertEquals(6, result.val);
+  }
+  
+  @Test
+  public void testProblemCase11() {
+    TreeNode root = new TreeNode(6);
+    root.left = new TreeNode(2);
+    root.left.left = new TreeNode(0);
+    root.left.right = new TreeNode(4);
+    root.left.right.left = new TreeNode(3);
+    root.left.right.right = new TreeNode(5);
+    root.right = new TreeNode(8);
+    root.right.left = new TreeNode(7);
+    root.right.right = new TreeNode(9);
+    
+    TreeNode p = new TreeNode(8);
+    TreeNode q = new TreeNode(6);
     
     LeetCode235 solution = new LeetCode235();
     TreeNode result = solution.lowestCommonAncestor(root, p, q);

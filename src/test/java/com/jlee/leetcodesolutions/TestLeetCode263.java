@@ -6,28 +6,28 @@ import org.junit.Test;
 
 public class TestLeetCode263 {
   @Test
-  public void test6() {
+  public void testProblemCase1() {
     int num = 6;
     LeetCode263 solution = new LeetCode263();
     Assert.assertTrue(solution.isUgly(num));
   }
 
   @Test
-  public void test8() {
+  public void testProblemCase2() {
     int num = 8;
     LeetCode263 solution = new LeetCode263();
     Assert.assertTrue(solution.isUgly(num));
   }
 
   @Test
-  public void test14() {
+  public void testProblemCase3() {
     int num = 14;
     LeetCode263 solution = new LeetCode263();
     Assert.assertFalse(solution.isUgly(num));
   }
   
   @Test
-  public void testUglyNumbersTrue() {
+  public void testProblemCase4() {
     LeetCode263 solution = new LeetCode263();
     Assert.assertTrue(solution.isUgly(1));    
     Assert.assertTrue(solution.isUgly(2));    
@@ -46,7 +46,7 @@ public class TestLeetCode263 {
   }
 
   @Test
-  public void testUglyNumbersFalse() {
+  public void testProblemCase5() {
     LeetCode263 solution = new LeetCode263();
     Assert.assertFalse(solution.isUgly(-100));
     Assert.assertFalse(solution.isUgly(-10));
@@ -58,5 +58,6 @@ public class TestLeetCode263 {
     Assert.assertFalse(solution.isUgly(14));
     Assert.assertFalse(solution.isUgly(17));
     Assert.assertFalse(solution.isUgly(19));
+    Assert.assertFalse(solution.isUgly(49));
   }
 }

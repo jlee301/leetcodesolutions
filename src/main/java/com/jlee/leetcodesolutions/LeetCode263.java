@@ -13,20 +13,18 @@ public class LeetCode263 {
    * https://leetcode.com/problems/ugly-number/description/
    */
   public boolean isUgly(int num) {
-    if(num <= 0)
+    // Only positive numbers
+    if(num < 1)
       return false;
-    if(num == 1)
-      return true;
-
-    if(num % 2 == 0)
-      return isUgly(num / 2);
-
-    if(num % 3 == 0)
-      return isUgly(num / 3);
     
-    if(num % 5 == 0)
-      return isUgly(num / 5);
+    // Prime factorization of just 2, 3, 5
+    while(num % 2 == 0)
+      num /= 2;
+    while(num % 3 == 0)
+      num /= 3;
+    while(num % 5 == 0)
+      num /= 5;
     
-    return false;
+    return num == 1;
   }
 }

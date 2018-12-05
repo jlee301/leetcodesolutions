@@ -14,25 +14,22 @@ public class LeetCode283 {
    * https://leetcode.com/problems/move-zeroes/description/
    */
   public void moveZeroes(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return;
+    boolean swap = true;
+    int limit = nums.length-1;
     
-    // i=0 [0, 1, 0, 3, 12]
-    // i=1 [1, 1, 0, 3, 12]
-    // i=2 [1, 1, 0, 3, 12]
-    // i=3 [1, 3, 0, 3, 12]
-    // i=4 [1, 3, 12, 3, 12]
-    int lastNonZeroIndex = 0;
-    for(int i = 0; i < nums.length; i++) {
-      if(nums[i] != 0) {
-        nums[lastNonZeroIndex] = nums[i];
-        lastNonZeroIndex++;
+    // Like Bubble Sort
+    while(swap) {
+      swap = false;
+      for(int i = 0; i < limit; i++) {
+        if(nums[i] == 0 && nums[i+1] != 0) {
+          // Swap
+          int temp = nums[i+1];
+          nums[i+1] = nums[i];
+          nums[i] = temp;
+          swap = true;
+        }
       }
-    }
-    // Now that we moved everything non-zero to the front of the array, we can fill
-    // in the rest of the array from the lastNonZeroIndex with zeroes
-    for(int i = lastNonZeroIndex; i < nums.length; i++) {
-      nums[i] = 0;
+      limit--;
     }
   }
 }

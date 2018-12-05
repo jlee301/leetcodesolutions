@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TestLeetCode257 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.right = new TreeNode(5);
@@ -17,12 +17,12 @@ public class TestLeetCode257 {
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(2, result.size());
-    Assert.assertEquals("1->2->5", result.get(0));
-    Assert.assertEquals("1->3", result.get(1));
+    Assert.assertTrue(result.contains("1->2->5"));
+    Assert.assertTrue(result.contains("1->3"));
   }
 
   @Test
-  public void testFullThreeNode() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(4);
@@ -34,14 +34,14 @@ public class TestLeetCode257 {
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(4, result.size());
-    Assert.assertEquals("1->2->4", result.get(0));
-    Assert.assertEquals("1->2->5", result.get(1));
-    Assert.assertEquals("1->3->6", result.get(2));
-    Assert.assertEquals("1->3->7", result.get(3));
+    Assert.assertTrue(result.contains("1->2->4"));
+    Assert.assertTrue(result.contains("1->2->5"));
+    Assert.assertTrue(result.contains("1->3->6"));
+    Assert.assertTrue(result.contains("1->3->7"));
   }
   
   @Test
-  public void testFullTwoNode() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -49,44 +49,44 @@ public class TestLeetCode257 {
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(2, result.size());
-    Assert.assertEquals("1->2", result.get(0));
-    Assert.assertEquals("1->3", result.get(1));
+    Assert.assertTrue(result.contains("1->2"));
+    Assert.assertTrue(result.contains("1->3"));
   }
   
   @Test
-  public void testLeftTwoNode() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(1, result.size());
-    Assert.assertEquals("1->2", result.get(0));
+    Assert.assertTrue(result.contains("1->2"));
   }
   
   @Test
-  public void testRightTwoNode() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(2);
     
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(1, result.size());
-    Assert.assertEquals("1->2", result.get(0));
+    Assert.assertTrue(result.contains("1->2"));
   }
   
   @Test
-  public void testOneNode() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(1);
     
     LeetCode257 solution = new LeetCode257();
     List<String> result = solution.binaryTreePaths(root);
     Assert.assertEquals(1, result.size());
-    Assert.assertEquals("1", result.get(0));
+    Assert.assertTrue(result.contains("1"));
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase7() {
     TreeNode root = null;
     
     LeetCode257 solution = new LeetCode257();

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode278 {
   @Test
-  public void testFirstBadVersionMiddle() {
+  public void testProblemCase1() {
     int[] versions = { 0,0,0,0,1,1,1,1,1 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -14,7 +14,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testFirstBadVersionMiddlePlus1() {
+  public void testProblemCase2() {
     int[] versions = { 0,0,0,0,0,1,1,1,1 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -22,7 +22,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testFirstBadVersionMiddleMinus1() {
+  public void testProblemCase3() {
     int[] versions = { 0,0,0,1,1,1,1,1,1 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -30,7 +30,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testFirstBadVersionEnd() {
+  public void testProblemCase4() {
     int[] versions = { 0,0,0,0,0,0,0,0,1 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -38,7 +38,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testAllBad() {
+  public void testProblemCase5() {
     int[] versions = { 1,1,1,1,1,1,1,1,1 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -46,7 +46,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testAllGood() {
+  public void testProblemCase6() {
     int[] versions = { 0,0,0,0,0,0,0,0,0 };
     int n = 9;
     LeetCode278 solution = new LeetCode278(versions);
@@ -54,7 +54,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testOneVersionGood() {
+  public void testProblemCase7() {
     int[] versions = { 0 };
     int n = 1;
     LeetCode278 solution = new LeetCode278(versions);
@@ -62,7 +62,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testOneVersionBad() {
+  public void testProblemCase8() {
     int[] versions = { 1 };
     int n = 1;
     LeetCode278 solution = new LeetCode278(versions);
@@ -70,7 +70,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testTwoVersionsBadEnd() {
+  public void testProblemCase9() {
     int[] versions = { 0,1 };
     int n = 2;
     LeetCode278 solution = new LeetCode278(versions);
@@ -78,7 +78,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testTwoVersionsBadStart() {
+  public void testProblemCase10() {
     int[] versions = { 1,1 };
     int n = 2;
     LeetCode278 solution = new LeetCode278(versions);
@@ -86,7 +86,7 @@ public class TestLeetCode278 {
   }
 
   @Test
-  public void testTwoVersionsAllGood() {
+  public void testProblemCase11() {
     int[] versions = { 0,0 };
     int n = 2;
     LeetCode278 solution = new LeetCode278(versions);

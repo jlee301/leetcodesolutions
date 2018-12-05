@@ -42,7 +42,7 @@ public class TestLeetCode290 {
   }
 
   @Test
-  public void testAllSame() {
+  public void testProblemCase5() {
     String pattern = "aaaa";
     String str = "dog dog dog dog";
     
@@ -51,7 +51,7 @@ public class TestLeetCode290 {
   }
 
   @Test
-  public void testNoPattern() {
+  public void testProblemCase6() {
     String pattern = "abcd";
     String str = "dog cat fish mouse";
     
@@ -60,7 +60,7 @@ public class TestLeetCode290 {
   }
 
   @Test
-  public void testOnePattern() {
+  public void testProblemCase7() {
     String pattern = "d";
     String str = "mouse";
     
@@ -69,7 +69,7 @@ public class TestLeetCode290 {
   }
   
   @Test
-  public void testMorePatternThanWords() {
+  public void testProblemCase8() {
     String pattern = "aaaaa";
     String str = "dog dog dog dog";
     
@@ -78,7 +78,7 @@ public class TestLeetCode290 {
   }
 
   @Test
-  public void testMoreWordsThanPattern() {
+  public void testProblemCase9() {
     String pattern = "aaaa";
     String str = "dog dog dog dog dog";
     
@@ -87,18 +87,9 @@ public class TestLeetCode290 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase10() {
     String pattern = "";
     String str = "";
-    
-    LeetCode290 solution = new LeetCode290();
-    Assert.assertFalse(solution.wordPattern(pattern, str));
-  }
-
-  @Test
-  public void testNull() {
-    String pattern = null;
-    String str = null;
     
     LeetCode290 solution = new LeetCode290();
     Assert.assertFalse(solution.wordPattern(pattern, str));

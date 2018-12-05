@@ -14,23 +14,15 @@ public class LeetCode258 {
    * https://leetcode.com/problems/add-digits/description/
    */
   public int addDigits(int num) {
-    while(num > 10) {
-      int result = 0;
-      while(num != 0) {
-        result += num % 10;
+    while(num > 9) {
+      // Sum up each digit
+      int sum = 0;
+      while(num > 0) {
+        sum += num % 10;
         num /= 10;
-      }
-      num = result;
+      }      
+      num = sum;
     }
     return num;
-  }
-  
-  public int addDigitsNoLoops(int num) {
-    if(num <= 0)
-      return num;
-    else if(num % 9 == 0)
-      return 9;
-    else
-      return num % 9;
   }
 }

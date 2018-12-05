@@ -14,15 +14,12 @@ public class LeetCode237 {
    * https://leetcode.com/problems/delete-node-in-a-linked-list/description/
    */
   public void deleteNode(ListNode node) {
-    if(node == null || node.next == null)
-      return;
-    
-    // Since we cannot modify the nodes before or after, then the previous node will
-    // still be pointing at the one that needs to be "removed". Therefore you need
-    // to:
-    // 1. Copy the value of the next node
-    // 2. Copy the next reference of the next node
-    node.val = node.next.val;
-    node.next = node.next.next;
+    ListNode prev = null;
+    while(node.next != null) {
+      node.val = node.next.val;
+      prev = node;
+      node = node.next;
+    }
+    prev.next = node.next;
   }
 }

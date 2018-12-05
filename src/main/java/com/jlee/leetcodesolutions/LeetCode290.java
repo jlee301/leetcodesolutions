@@ -21,25 +21,26 @@ public class LeetCode290 {
    * https://leetcode.com/problems/word-pattern/description/
    */
   public boolean wordPattern(String pattern, String str) {
-    if(pattern == null || str == null)
+    // Map each char in pattern to a word in str
+    HashMap<Character,String> map = new HashMap<>();
+    String[] sData = str.trim().split(" ");
+    pattern = pattern.trim();
+    if(pattern.length() != sData.length)
       return false;
     
-    String[] data = str.split(" ");
-    if(pattern.length() != data.length)
-      return false;
-    HashMap<Character, String> hash = new HashMap<Character, String>();
     for(int i = 0; i < pattern.length(); i++) {
-      if(hash.containsKey((Character)pattern.charAt(i))) {
-        if(!hash.get((Character)pattern.charAt(i)).equals(data[i]))
-          // Key exist, but data does not match
+      char ch = pattern.charAt(i);
+      if(!map.containsKey(ch)) {
+        // The word is already associated to another char
+        if(map.containsValue(sData[i]))
           return false;
-      } else {
-        if(hash.containsValue(data[i]))
-          // Key does not exist, but value already exist
+        else
+          map.put(ch, sData[i]);
+      }
+      else {
+        // The ch doesn't match the expected word
+        if(!map.get(ch).equals(sData[i]))
           return false;
-        
-        // Key and value does not exist, so store
-        hash.put((Character)pattern.charAt(i), data[i]);
       }
     }
     return true;

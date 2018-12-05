@@ -24,15 +24,12 @@ public class LeetCode235 {
    * itself according to the LCA definition.
    */
   public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-    if(root.val > p.val && root.val > q.val) {
-      // Both values less than root, go left
-      return lowestCommonAncestor(root.left, p, q);
-    } else if (root.val < p.val && root.val < q.val) {
-      // Both values greater than root, go right
+    if(root.val < p.val && root.val < q.val)
       return lowestCommonAncestor(root.right, p, q);
-    } else {
-      // Mix of greater/less or equal, then it's root
-      return root;
-    }
+    
+    if(root.val > p.val && root.val > q.val)
+      return lowestCommonAncestor(root.left, p, q);
+    
+    return root;
   }
 }

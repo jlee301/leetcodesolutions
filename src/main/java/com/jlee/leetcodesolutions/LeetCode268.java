@@ -1,7 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Arrays;
-
 public class LeetCode268 {
   /*
    * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find
@@ -19,20 +17,12 @@ public class LeetCode268 {
    * https://leetcode.com/problems/missing-number/description/
    */
   public int missingNumber(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return 0;
+    // XOR - Same == 0, Different = 1
+    // ie 5 ^ 5 = 0, 5 ^ 5 ^ 4 = 4
+    int i = 0, result = 0;
+    for(; i < nums.length; i++)
+      result ^= i ^ nums[i];
     
-    Arrays.sort(nums);
-    if(nums[0] != 0)
-      return 0;
-    
-    int next = nums[0] + 1;
-    for(int i = 1; i < nums.length; i++) {
-      if(nums[i] == next)
-        next++;
-      else
-        return next;
-    }
-    return next;
+    return result ^ i;
   }
 }

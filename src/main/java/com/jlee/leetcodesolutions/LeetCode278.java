@@ -22,22 +22,21 @@ public class LeetCode278 {
     versions = x;
   }
   
-  public int firstBadVersion(int n) {
-    int left = 1;
-    int right = n;
-    
-    while(left < right) {
-      int mid = left + ((right - left) / 2);
-      
-      if(isBadVersion(mid))
-        right = mid;
-      else
-        left = mid + 1;
-    }
-    return left;
-  }
-  
   private boolean isBadVersion(int n) {
     return versions[n-1] == 1;
   }
+  
+  public int firstBadVersion(int n) {
+    int low = 1, high = n;
+    while(low < high) {
+      int mid = low + (high - low) / 2;
+      boolean result = isBadVersion(mid);
+      if(result)
+        high = mid;
+      else
+        low = mid + 1;
+    }
+    return low;
+  }
+  
 }

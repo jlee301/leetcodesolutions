@@ -20,27 +20,24 @@ public class LeetCode257 {
    * 
    * https://leetcode.com/problems/binary-tree-paths/description/
    */  
-  public List<String> binaryTreePaths(TreeNode root){
-    ArrayList<String> list = new ArrayList<String>();
-    if(root == null) 
-      return list;
-    else {
-      binaryTreePaths(root, list, "");
-      return list;
-    }
+  public List<String> binaryTreePaths(TreeNode root) {
+    List<String> result = new ArrayList<>();
+    if(root != null)
+      binaryTreePaths(root, result, "");
+    return result;
   }
   
-  private void binaryTreePaths(TreeNode root, List<String> list, String rootToLeaf) {
-    if(root.left != null) {
-      binaryTreePaths(root.left, list, rootToLeaf + root.val + "->");
+  private void binaryTreePaths(TreeNode node, List<String> result, String str) {
+    str += node.val;
+    if(node.left == null && node.right == null) {
+      result.add(str);
+      return;
     }
     
-    if (root.right != null) {
-      binaryTreePaths(root.right, list, rootToLeaf + root.val + "->");
-    } 
-    
-    if(root.left == null && root.right == null) {
-      list.add(rootToLeaf + root.val);
-    }
+    if(node.left != null)
+      binaryTreePaths(node.left, result, str+"->");
+      
+    if(node.right != null)
+      binaryTreePaths(node.right, result, str+"->");
   }
 }

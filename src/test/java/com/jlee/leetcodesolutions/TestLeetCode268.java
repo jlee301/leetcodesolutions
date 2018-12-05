@@ -20,43 +20,36 @@ public class TestLeetCode268 {
   }
 
   @Test
-  public void testMissingZero() {
+  public void testProblemCase3() {
     int[] nums = {9,6,4,2,3,5,7,8,1};
     LeetCode268 solution = new LeetCode268();
     Assert.assertEquals(0, solution.missingNumber(nums));
   }
 
   @Test
-  public void testNothingMissing() {
+  public void testProblemCase4() {
     int[] nums = {9,6,4,2,3,5,7,8,1,0};
     LeetCode268 solution = new LeetCode268();
     Assert.assertEquals(10, solution.missingNumber(nums));
   }
 
   @Test
-  public void testOneEntry0() {
+  public void testProblemCase5() {
     int[] nums = {0};
     LeetCode268 solution = new LeetCode268();
     Assert.assertEquals(1, solution.missingNumber(nums));
   }
 
   @Test
-  public void testOneEntry1() {
+  public void testProblemCase6() {
     int[] nums = {1};
     LeetCode268 solution = new LeetCode268();
     Assert.assertEquals(0, solution.missingNumber(nums));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase7() {
     int[] nums = {};
-    LeetCode268 solution = new LeetCode268();
-    Assert.assertEquals(0, solution.missingNumber(nums));
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
     LeetCode268 solution = new LeetCode268();
     Assert.assertEquals(0, solution.missingNumber(nums));
   }

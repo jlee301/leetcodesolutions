@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode283 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int[] nums = { 0, 1, 0, 3, 12 };
     LeetCode283 solution = new LeetCode283();
     solution.moveZeroes(nums);
@@ -19,7 +19,7 @@ public class TestLeetCode283 {
   }
 
   @Test
-  public void testAllZeroes() {
+  public void testProblemCase2() {
     int[] nums = { 0, 0, 0, 0, 0 };
     LeetCode283 solution = new LeetCode283();
     solution.moveZeroes(nums);
@@ -32,7 +32,7 @@ public class TestLeetCode283 {
   }
 
   @Test
-  public void testAllNonZeroes() {
+  public void testProblemCase3() {
     int[] nums = { 1, 2, 3, 4, 5 };
     LeetCode283 solution = new LeetCode283();
     solution.moveZeroes(nums);
@@ -45,7 +45,7 @@ public class TestLeetCode283 {
   }
 
   @Test
-  public void testZerosAlreadyAtEnd() {
+  public void testProblemCase4() {
     int[] nums = { 1, 2, 3, 0, 0 };
     LeetCode283 solution = new LeetCode283();
     solution.moveZeroes(nums);
@@ -58,18 +58,10 @@ public class TestLeetCode283 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase5() {
     int[] nums = {};
     LeetCode283 solution = new LeetCode283();
     solution.moveZeroes(nums);
     Assert.assertEquals(0, nums.length);
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
-    LeetCode283 solution = new LeetCode283();
-    solution.moveZeroes(nums);
-    Assert.assertNull(nums);
   }
 }

@@ -1,7 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.ArrayList;
-
 public class LeetCode389 {
   /*
    * Given two strings s and t which consist of only lowercase letters.
@@ -14,21 +12,20 @@ public class LeetCode389 {
    * https://leetcode.com/problems/find-the-difference/description/
    */
   public char findTheDifference(String s, String t) {
-    if(s == null || t == null)
-      return '0';
-    
-    // Store all chars of s-string into List
-    ArrayList<Character> inputList = new ArrayList<Character>();
-    for(int i = 0; i < s.length(); i++)
-      inputList.add((Character)s.charAt(i));
-    
-    // Check t-string against List.  Remove if found
-    for(int i = 0; i < t.length(); i++) {
-      if(inputList.contains((Character)t.charAt(i)))
-        inputList.remove((Character)t.charAt(i));
-      else
-        return t.charAt(i);
+    int[] count = new int[26];
+    for(int i = 0; i < s.length() || i < t.length(); i++) {
+      if(i < s.length())
+        count[s.charAt(i) - 'a']++;
+      
+      if(i < t.length())
+        count[t.charAt(i) - 'a']--;
     }
-    return '0';
+    
+    // find char with count == -1
+    for(int i = 0; i < 26; i++) {
+      if(count[i] == -1)
+        return (char) (i + 'a');
+    }
+    return 0;
   }
 }

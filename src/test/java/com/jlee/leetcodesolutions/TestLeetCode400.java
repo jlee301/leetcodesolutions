@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode400 {
   @Test
-  public void testNthPlacement() {
+  public void testProblemCase1() {
     LeetCode400 solution = new LeetCode400();
     Assert.assertEquals(1, solution.findNthDigit(1));
     Assert.assertEquals(2, solution.findNthDigit(2));
@@ -29,12 +29,6 @@ public class TestLeetCode400 {
     Assert.assertEquals(4, solution.findNthDigit(19));
     Assert.assertEquals(1, solution.findNthDigit(20));
     Assert.assertEquals(4, solution.findNthDigit(1234));
-  }
-  
-  @Test
-  public void testInvalidInputs() {
-    LeetCode400 solution = new LeetCode400();
-    Assert.assertEquals(0, solution.findNthDigit(0));
-    Assert.assertEquals(0, solution.findNthDigit(-1));
+    Assert.assertEquals(2, solution.findNthDigit(Integer.MAX_VALUE-1));
   }
 }

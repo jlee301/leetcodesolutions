@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode401 {
   @Test
-  public void testN1() {
+  public void testProblemCase1() {
     LeetCode401 solution = new LeetCode401();
     int num = 1;
     List<String> result = solution.readBinaryWatch(num);
@@ -25,7 +25,7 @@ public class TestLeetCode401 {
   }
 
   @Test
-  public void testN8() {
+  public void testProblemCase2() {
     LeetCode401 solution = new LeetCode401();
     int num = 8;
     List<String> result = solution.readBinaryWatch(num);
@@ -41,15 +41,16 @@ public class TestLeetCode401 {
   }
 
   @Test
-  public void testN0() {
+  public void testProblemCase3() {
     LeetCode401 solution = new LeetCode401();
     int num = 0;
     List<String> result = solution.readBinaryWatch(num);
-    Assert.assertEquals(0, result.size());
+    Assert.assertEquals(1, result.size());
+    Assert.assertTrue(result.contains("0:00"));
   }
 
   @Test
-  public void testN9() {
+  public void testProblemCase4() {
     LeetCode401 solution = new LeetCode401();
     int num = 9;
     List<String> result = solution.readBinaryWatch(num);
@@ -57,7 +58,7 @@ public class TestLeetCode401 {
   }
 
   @Test
-  public void testN10() {
+  public void testProblemCase5() {
     LeetCode401 solution = new LeetCode401();
     int num = 10;
     List<String> result = solution.readBinaryWatch(num);
@@ -65,7 +66,7 @@ public class TestLeetCode401 {
   }
 
   @Test
-  public void testNeg1() {
+  public void testProblemCase6() {
     LeetCode401 solution = new LeetCode401();
     int num = -1;
     List<String> result = solution.readBinaryWatch(num);

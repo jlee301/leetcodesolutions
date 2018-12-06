@@ -1,7 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.ArrayList;
-
 public class LeetCode383 {
   /*
    * Given an arbitrary ransom note string and another string containing letters
@@ -19,20 +17,18 @@ public class LeetCode383 {
    * https://leetcode.com/problems/ransom-note/description/
    */
   public boolean canConstruct(String ransomNote, String magazine) {
-    if(ransomNote == null || magazine == null)
-      return false;
-    
-    // Store all characters from magazine into list
-    ArrayList<Character> magList = new ArrayList<Character>();    
+    // find frequency of each char in magazine
+    int[] count = new int[26];
     for(int i = 0; i < magazine.length(); i++)
-      magList.add((Character)magazine.charAt(i));
+      count[magazine.charAt(i) - 'a']++;
     
-    // Check to see if chars from ransomNote exist in list
+    // check if you have enough chars to build the note
     for(int i = 0; i < ransomNote.length(); i++) {
-      if(magList.contains((Character)ransomNote.charAt(i)))
-        magList.remove((Character)ransomNote.charAt(i));
-      else
+      int ch = ransomNote.charAt(i) - 'a';
+      if(count[ch] == 0)
         return false;
+      else
+        count[ch]--;
     }
     return true;
   }

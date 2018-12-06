@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode389 {
   @Test
-  public void testNewCharLocation0() {
+  public void testProblemCase1() {
     String s = "abcd";
     String t = "eabcd";
     LeetCode389 solution = new LeetCode389();
@@ -14,7 +14,7 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testNewCharLocation1() {
+  public void testProblemCase2() {
     String s = "abcd";
     String t = "aebcd";
     LeetCode389 solution = new LeetCode389();
@@ -22,7 +22,7 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testNewCharLocation2() {
+  public void testProblemCase3() {
     String s = "abcd";
     String t = "abecd";
     LeetCode389 solution = new LeetCode389();
@@ -30,7 +30,7 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testNewCharLocation3() {
+  public void testProblemCase4() {
     String s = "abcd";
     String t = "abced";
     LeetCode389 solution = new LeetCode389();
@@ -38,7 +38,7 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testNewCharLocation4() {
+  public void testProblemCase5() {
     String s = "abcd";
     String t = "abcde";
     LeetCode389 solution = new LeetCode389();
@@ -46,15 +46,15 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testNoNewChar() {
+  public void testProblemCase6() {
     String s = "abcd";
     String t = "abcd";
     LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
+    Assert.assertEquals(0, solution.findTheDifference(s, t));
   }
 
   @Test
-  public void testEmptyInput() {
+  public void testProblemCase7() {
     String s = "";
     String t = "e";
     LeetCode389 solution = new LeetCode389();
@@ -62,42 +62,18 @@ public class TestLeetCode389 {
   }
 
   @Test
-  public void testEmptyOutput() {
+  public void testProblemCase8() {
     String s = "abcd";
     String t = "";
     LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
+    Assert.assertEquals(0, solution.findTheDifference(s, t));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase9() {
     String s = "";
     String t = "";
     LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
-  }
-
-  @Test
-  public void testNullInput() {
-    String s = null;
-    String t = "abcde";
-    LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
-  }
-
-  @Test
-  public void testNullOutput() {
-    String s = "abcd";
-    String t = null;
-    LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
-    String t = null;
-    LeetCode389 solution = new LeetCode389();
-    Assert.assertEquals('0', solution.findTheDifference(s, t));
+    Assert.assertEquals(0, solution.findTheDifference(s, t));
   }
 }

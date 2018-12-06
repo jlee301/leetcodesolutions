@@ -27,19 +27,15 @@ public class LeetCode401 {
    * 
    * https://leetcode.com/problems/binary-watch/description/
    */
-  public List<String> readBinaryWatch(int num){
-    List<String> result = new ArrayList<String>();
-    if(num <= 0)
-      return result;
+  public List<String> readBinaryWatch(int num) {
+    List<String> result = new ArrayList<>();
     
-    // Pretty much brute force all available hours and minutes to check if any
-    // combination will have bitCount == num
     for(int h = 0; h < 12; h++) {
       for(int m = 0; m < 60; m++) {
         if(Integer.bitCount(h) + Integer.bitCount(m) == num)
-          result.add(String.format("%d:%02d", h, m));
+          result.add("" + h + ":" + (m < 10 ? "0" + m : m));
       }
-    }    
+    }
     return result;
   }
 }

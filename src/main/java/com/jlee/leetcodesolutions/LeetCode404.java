@@ -17,20 +17,27 @@ public class LeetCode404 {
    * respectively. Return 24.
    */
   public int sumOfLeftLeaves(TreeNode root) {
-    int sum = 0;
-    if(root == null)
-      return sum;
+    return sumOfLeftLeaves(null, root);
+  }
+  
+  private int sumOfLeftLeaves(TreeNode parent, TreeNode child) {
+    if(child == null)
+      return 0;
     
-    // If left node is a leaf --> add to sum
-    // Else keep traversing the tree on left
-    if(root.left != null)
-      if(root.left.left == null && root.left.right == null)
-        sum += root.left.val;
+    if(child.left == null && child.right == null) {
+      if(parent != null && parent.left == child)
+        return child.val;
       else
-        sum += sumOfLeftLeaves(root.left);
+        return 0;
+    }
     
-    // Now check right
-    sum += sumOfLeftLeaves(root.right);
+    int sum = 0;
+    if(child.left != null)
+      sum += sumOfLeftLeaves(child, child.left);
+    
+    if(child.right != null)
+      sum += sumOfLeftLeaves(child, child.right);
+    
     return sum;
   }
 }

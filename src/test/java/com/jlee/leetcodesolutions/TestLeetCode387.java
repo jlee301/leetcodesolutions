@@ -20,78 +20,71 @@ public class TestLeetCode387 {
   }
 
   @Test
-  public void testLastChar() {
+  public void testProblemCase3() {
     String s = "lllllz";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(5, solution.firstUniqChar(s));
   }
 
   @Test
-  public void test2ndLastChar() {
+  public void testProblemCase4() {
     String s = "llllzl";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(4, solution.firstUniqChar(s));
   }
 
   @Test
-  public void test3rdLastChar() {
+  public void testProblemCase5() {
     String s = "lllzll";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(3, solution.firstUniqChar(s));
   }
 
   @Test
-  public void testMidChar() {
+  public void testProblemCase6() {
     String s = "llzlll";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(2, solution.firstUniqChar(s));
   }
 
   @Test
-  public void test2ndChar() {
+  public void testProblemCase7() {
     String s = "lzllll";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(1, solution.firstUniqChar(s));
   }
 
   @Test
-  public void test1stChar() {
+  public void testProblemCase8() {
     String s = "zlllll";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(0, solution.firstUniqChar(s));
   }
 
   @Test
-  public void testAllUnique() {
+  public void testProblemCase9() {
     String s = "abcdef";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(0, solution.firstUniqChar(s));
   }
 
   @Test
-  public void testAllDupes() {
+  public void testProblemCase10() {
     String s = "acbacb";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(-1, solution.firstUniqChar(s));
   }
 
   @Test
-  public void testAllSame() {
+  public void testProblemCase11() {
     String s = "aaaaaa";
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(-1, solution.firstUniqChar(s));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase14() {
     String s = "";
-    LeetCode387 solution = new LeetCode387();
-    Assert.assertEquals(-1, solution.firstUniqChar(s));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
     LeetCode387 solution = new LeetCode387();
     Assert.assertEquals(-1, solution.firstUniqChar(s));
   }

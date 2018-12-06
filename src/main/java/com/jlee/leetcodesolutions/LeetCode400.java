@@ -21,38 +21,24 @@ public class LeetCode400 {
    * https://leetcode.com/problems/nth-digit/description/
    */
   public int findNthDigit(int n) {
-    if(n <= 0)
-      return 0;
+    // 1-9 len 9
+    // 10-99 len 90
+    // 100 - 999 len 900
+    // 1000 - 9999 len 9000
     
-    // Initial values if 1 thru 9 are chosen
-    int length = 1;
-    int count = 9;
-    int start = 1;
-    
-    // 1 thru 9 --> 9 x 1 = 9 length
-    // 10 thru 99 --> 90 x 2 = 180 length
-    // 100 thru 999 --> 900 x 3 = 2700 length
-    
-    // Determine the length
-    while(n > length * count) {
-      n = n - (length * count);
-      length = length + 1;
-      count = count * 10;
-      start = start * 10;
+    // find integer that the nth digit appears on
+    int d_len = 1;
+    long d_cnt = 9;
+    int init = 1;
+    while(n > d_cnt * d_len) {
+      n -= d_cnt * d_len;
+      d_len++;
+      d_cnt *= 10;
+      init *= 10;
     }
-    
-    // Calculate the value at the Nth
-    // n=22 --> n=13, length=2, count=90, start=10
-    //
-    // Essentially we know there are 12 digits from 10:  
-    // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, [16], 17
-    //
-    // Since 10 - 99 are multiple of length=2, we can determine the actual value
-    // from 10.
-    start = start + ((n - 1) / length);
-    
-    String data = Integer.toString(start);
-    // Taking the mod will give back the placement of the number the Nth falls on.
-    return Character.getNumericValue(data.charAt((n - 1) % length));
+    // now n-1 / d_len == how many times a digit of length d_len repeats
+    init += (n - 1) / d_len;
+    String str = "" + init;
+    return Character.getNumericValue(str.charAt((n - 1) % d_len));
   }
 }

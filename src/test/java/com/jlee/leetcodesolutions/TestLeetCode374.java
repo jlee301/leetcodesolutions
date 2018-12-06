@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode374 {
   @Test
-  public void testN20Pick20() {
+  public void testProblemCase1() {
     int pick = 20;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -14,7 +14,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick19() {
+  public void testProblemCase2() {
     int pick = 19;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -22,7 +22,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick18() {
+  public void testProblemCase3() {
     int pick = 18;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -30,7 +30,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick17() {
+  public void testProblemCase4() {
     int pick = 17;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -38,7 +38,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick16() {
+  public void testProblemCase5() {
     int pick = 16;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -46,7 +46,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick15() {
+  public void testProblemCase6() {
     int pick = 15;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -54,7 +54,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick14() {
+  public void testProblemCase7() {
     int pick = 14;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -62,7 +62,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick13() {
+  public void testProblemCase8() {
     int pick = 13;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -70,7 +70,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick12() {
+  public void testProblemCase9() {
     int pick = 12;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -78,7 +78,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick11() {
+  public void testProblemCase10() {
     int pick = 11;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -86,7 +86,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick10() {
+  public void testProblemCase11() {
     int pick = 10;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -94,7 +94,7 @@ public class TestLeetCode374 {
   }  
   
   @Test
-  public void testN20Pick9() {
+  public void testProblemCase12() {
     int pick = 9;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -102,7 +102,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick8() {
+  public void testProblemCase13() {
     int pick = 8;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -110,7 +110,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick7() {
+  public void testProblemCase14() {
     int pick = 7;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -118,7 +118,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick6() {
+  public void testProblemCase15() {
     int pick = 6;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -126,7 +126,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick5() {
+  public void testProblemCase16() {
     int pick = 5;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -134,7 +134,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick4() {
+  public void testProblemCase17() {
     int pick = 4;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -142,7 +142,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick3() {
+  public void testProblemCase18() {
     int pick = 3;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -150,7 +150,7 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick2() {
+  public void testProblemCase19() {
     int pick = 2;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
@@ -158,42 +158,10 @@ public class TestLeetCode374 {
   }  
 
   @Test
-  public void testN20Pick1() {
+  public void testProblemCase20() {
     int pick = 1;
     int n = 20;
     LeetCode374 solution = new LeetCode374(pick);
     Assert.assertEquals(pick, solution.guessNumber(n));
-  }  
-
-  @Test
-  public void testN20Pick0() {
-    int pick = 0;
-    int n = 20;
-    LeetCode374 solution = new LeetCode374(pick);
-    Assert.assertEquals(0, solution.guessNumber(n));
-  } 
-  
-  @Test
-  public void testN20Pick21() {
-    int pick = 21;
-    int n = 20;
-    LeetCode374 solution = new LeetCode374(pick);
-    Assert.assertEquals(0, solution.guessNumber(n));
-  }   
-
-  @Test
-  public void testN0Pick18() {
-    int pick = 18;
-    int n = 0;
-    LeetCode374 solution = new LeetCode374(pick);
-    Assert.assertEquals(0, solution.guessNumber(n));
-  }  
-
-  @Test
-  public void testNNeg1Pick18() {
-    int pick = 18;
-    int n = -1;
-    LeetCode374 solution = new LeetCode374(pick);
-    Assert.assertEquals(0, solution.guessNumber(n));
   }  
 }

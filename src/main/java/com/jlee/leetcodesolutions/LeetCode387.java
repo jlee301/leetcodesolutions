@@ -14,17 +14,14 @@ public class LeetCode387 {
    * https://leetcode.com/problems/first-unique-character-in-a-string/description/
    */
   public int firstUniqChar(String s) {
-    if(s == null || s.length() == 0)
-      return -1;
-    
-    // Loop through the string and increment the counts
-    int[] counts = new int[26];
+    // find frequency of each char
+    int[] count = new int[26];
     for(int i = 0; i < s.length(); i++)
-      counts[s.charAt(i) - 'a']++;
+      count[s.charAt(i) - 'a']++;
     
-    // Loop through the string again looking for first count == 1 match
+    // find first char with frequency of 1
     for(int i = 0; i < s.length(); i++) {
-      if(counts[s.charAt(i) - 'a'] == 1)
+      if(count[s.charAt(i) - 'a'] == 1)
         return i;
     }
     return -1;

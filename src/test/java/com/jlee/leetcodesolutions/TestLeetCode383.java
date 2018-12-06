@@ -30,79 +30,7 @@ public class TestLeetCode383 {
   }
 
   @Test
-  public void testCaseSensitive() {
-    String ransom = "aAbB";
-    String magazine = "BbAa";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testCaseSensitiveFail() {
-    String ransom = "aAbB";
-    String magazine = "Bbaa";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testNumbers() {
-    String ransom = "12345";
-    String magazine = "012345";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testNumbersFail() {
-    String ransom = "12345";
-    String magazine = "1245";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testSymbols() {
-    String ransom = "!@#$%";
-    String magazine = "!@#$%^";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testSymbolsFail() {
-    String ransom = "!@#$%";
-    String magazine = "#$%^";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testSpacesRansom() {
-    String ransom = " ";
-    String magazine = "";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testSpacesMagazine() {
-    String ransom = "";
-    String magazine = " ";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testSpaces() {
-    String ransom = " ";
-    String magazine = " ";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testEmptyRansom() {
+  public void testProblemCase4() {
     String ransom = "";
     String magazine = "aab";
     LeetCode383 solution = new LeetCode383();
@@ -110,7 +38,7 @@ public class TestLeetCode383 {
   }
 
   @Test
-  public void testEmptyMagazine() {
+  public void testProblemCase5() {
     String ransom = "aa";
     String magazine = "";
     LeetCode383 solution = new LeetCode383();
@@ -118,34 +46,10 @@ public class TestLeetCode383 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase6() {
     String ransom = "";
     String magazine = "";
     LeetCode383 solution = new LeetCode383();
     Assert.assertTrue(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testNullRansom() {
-    String ransom = null;
-    String magazine = "aab";
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testNullMagazine() {
-    String ransom = "aa";
-    String magazine = null;
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
-  }
-
-  @Test
-  public void testNull() {
-    String ransom = null;
-    String magazine = null;
-    LeetCode383 solution = new LeetCode383();
-    Assert.assertFalse(solution.canConstruct(ransom, magazine));
   }
 }

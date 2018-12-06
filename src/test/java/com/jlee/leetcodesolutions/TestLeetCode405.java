@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode405 {
   @Test
-  public void testConvertPositive() {
+  public void testProblemCase1() {
     LeetCode405 solution = new LeetCode405();
     Assert.assertEquals("0", solution.toHex(0));
     Assert.assertEquals("1", solution.toHex(1));
@@ -32,7 +32,7 @@ public class TestLeetCode405 {
   }
   
   @Test
-  public void testConvertNegative() {
+  public void testProblemCase2() {
     LeetCode405 solution = new LeetCode405();
     Assert.assertEquals("ffffffff", solution.toHex(-1));
     Assert.assertEquals("fffffffe", solution.toHex(-2));

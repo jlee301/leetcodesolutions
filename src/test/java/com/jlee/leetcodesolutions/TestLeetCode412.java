@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode412 {
   @Test
-  public void test1() {
+  public void testProblemCase1() {
     int n = 1;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -16,7 +16,7 @@ public class TestLeetCode412 {
   }
 
   @Test
-  public void test2() {
+  public void testProblemCase2() {
     int n = 2;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -26,7 +26,7 @@ public class TestLeetCode412 {
   }
 
   @Test
-  public void test3() {
+  public void testProblemCase3() {
     int n = 3;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -37,7 +37,7 @@ public class TestLeetCode412 {
   }
 
   @Test
-  public void test4() {
+  public void testProblemCase4() {
     int n = 4;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -49,7 +49,7 @@ public class TestLeetCode412 {
   }
 
   @Test
-  public void test5() {
+  public void testProblemCase5() {
     int n = 5;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -62,7 +62,7 @@ public class TestLeetCode412 {
   }
 
   @Test
-  public void test15() {
+  public void testProblemCase6() {
     int n = 15;
     LeetCode412 solution = new LeetCode412();
     List<String> result = solution.fizzBuzz(n);
@@ -82,21 +82,5 @@ public class TestLeetCode412 {
     Assert.assertEquals("13", result.get(12));
     Assert.assertEquals("14", result.get(13));
     Assert.assertEquals("FizzBuzz", result.get(14));
-  }
-
-  @Test
-  public void test0() {
-    int n = 0;
-    LeetCode412 solution = new LeetCode412();
-    List<String> result = solution.fizzBuzz(n);
-    Assert.assertEquals(0, result.size());
-  }
-
-  @Test
-  public void testNeg1() {
-    int n = -1;
-    LeetCode412 solution = new LeetCode412();
-    List<String> result = solution.fizzBuzz(n);
-    Assert.assertEquals(0, result.size());
   }
 }

@@ -23,22 +23,16 @@ public class LeetCode405 {
     if(num == 0)
       return "0";
     
+    char[] map = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
     String result = "";
-    char[] hexMap = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-    
-    // Treat as unsigned because of negative support. To access 4 bits at a time
-    //   0000 0000 0000 0000 0000 0000 0000 0001 (1) 
-    // & 0000 0000 0000 0000 0000 0000 0000 1111 (15)
-    // = 0000 0000 0000 0000 0000 0000 0000 0001 (1)
-    //
-    //   1111 1111 1111 1111 1111 1111 1111 1111 (-1)
-    // & 0000 0000 0000 0000 0000 0000 0000 1111 (15)
-    // = 0000 0000 0000 0000 0000 0000 0000 1111 (15)
+    // 26
+    // 0001 1010
     while(num != 0) {
-      result = hexMap[num & 15] + result;
-      // System.out.println(Integer.bitCount(num & 15));
-      // This will treat as unsigned and insert four zeroes at the left position.
-      num = num >>> 4;
+      // Get the next four bits
+      int hex = num & 15;
+      result = map[hex] + result;
+      // Shift num four bits to right
+      num >>>= 4;
     }
     return result;
   }

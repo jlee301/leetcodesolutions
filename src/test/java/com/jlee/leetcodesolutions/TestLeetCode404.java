@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode404 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -19,7 +19,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testOneNode() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(3);
     
     LeetCode404 solution = new LeetCode404();
@@ -27,7 +27,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testTwoNodeLeft() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     
@@ -36,7 +36,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testTwoNodeRight() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(3);
     root.right = new TreeNode(9);
     
@@ -45,7 +45,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testTwoNode() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -55,7 +55,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testThreeNodeLeft() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(15);
@@ -67,7 +67,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testThreeNodeRight() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -78,7 +78,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testThreeNode() {
+  public void testProblemCase8() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(1);
@@ -92,7 +92,7 @@ public class TestLeetCode404 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase9() {
     TreeNode root = null;
     
     LeetCode404 solution = new LeetCode404();

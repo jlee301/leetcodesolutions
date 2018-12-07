@@ -27,65 +27,51 @@ public class TestLeetCode414 {
   }
 
   @Test
-  public void testDistinct2Outside() {
+  public void testProblemCase4() {
     int[] nums = {2, 3, 4, 4, 4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(2, solution.thirdMax(nums));
   }
 
   @Test
-  public void testDistinct3Inside() {
+  public void testProblemCase5() {
     int[] nums = {1, 2, 3, 4, 4, 4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(2, solution.thirdMax(nums));
   }
 
   @Test
-  public void testDistinct1Outside() {
+  public void testProblemCase6() {
     int[] nums = {3, 3, 4, 4, 4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(4, solution.thirdMax(nums));
   }
 
   @Test
-  public void testAllTheSame() {
+  public void testProblemCase7() {
     int[] nums = {4, 4, 4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(4, solution.thirdMax(nums));
   }
 
   @Test
-  public void testNeg() {
+  public void testProblemCase8() {
     int[] nums = {-1, -2, -2, -3, -4, -4, -4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(-3, solution.thirdMax(nums));
   }
 
   @Test
-  public void testTwoInt() {
+  public void testProblemCase9() {
     int[] nums = {3, 4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(4, solution.thirdMax(nums));
   }
 
   @Test
-  public void testOneInt() {
+  public void testProblemCase10() {
     int[] nums = {4};
     LeetCode414 solution = new LeetCode414();
     Assert.assertEquals(4, solution.thirdMax(nums));
-  }
-
-  @Test
-  public void testEmpty() {
-    int[] nums = {};
-    LeetCode414 solution = new LeetCode414();
-    Assert.assertEquals(0, solution.thirdMax(nums));
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
-    LeetCode414 solution = new LeetCode414();
-    Assert.assertEquals(0, solution.thirdMax(nums));
   }
 }

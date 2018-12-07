@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode415 {
   @Test
-  public void testSimpleAdd() {
+  public void testProblemCase1() {
     String num1 = "1";
     String num2 = "2";
     LeetCode415 solution = new LeetCode415();
@@ -14,7 +14,7 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testSimpleCarry() {
+  public void testProblemCase2() {
     String num1 = "1";
     String num2 = "9";
     LeetCode415 solution = new LeetCode415();
@@ -22,7 +22,7 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testNum1Bigger() {
+  public void testProblemCase3() {
     String num1 = "12";
     String num2 = "1";
     LeetCode415 solution = new LeetCode415();
@@ -30,7 +30,7 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testNum2Bigger() {
+  public void testProblemCase4() {
     String num1 = "1";
     String num2 = "12";
     LeetCode415 solution = new LeetCode415();
@@ -38,7 +38,7 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testNum1Num2Big() {
+  public void testProblemCase5() {
     String num1 = "12";
     String num2 = "12";
     LeetCode415 solution = new LeetCode415();
@@ -46,7 +46,7 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testNum1Num2BigCarry() {
+  public void testProblemCase6() {
     String num1 = "97";
     String num2 = "25";
     LeetCode415 solution = new LeetCode415();
@@ -54,50 +54,26 @@ public class TestLeetCode415 {
   }
 
   @Test
-  public void testNum1Empty() {
+  public void testProblemCase7() {
     String num1 = "";
     String num2 = "25";
     LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
+    Assert.assertEquals("25", solution.addStrings(num1, num2));
   }
 
   @Test
-  public void testNum2Empty() {
+  public void testProblemCase8() {
     String num1 = "25";
     String num2 = "";
     LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
+    Assert.assertEquals("25", solution.addStrings(num1, num2));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase9() {
     String num1 = "";
     String num2 = "";
     LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
-  }
-
-  @Test
-  public void testNum1Null() {
-    String num1 = null;
-    String num2 = "25";
-    LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
-  }
-
-  @Test
-  public void testNum2Null() {
-    String num1 = "25";
-    String num2 = null;
-    LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
-  }
-
-  @Test
-  public void testNull() {
-    String num1 = null;
-    String num2 = null;
-    LeetCode415 solution = new LeetCode415();
-    Assert.assertEquals("0", solution.addStrings(num1, num2));
+    Assert.assertEquals("", solution.addStrings(num1, num2));
   }
 }

@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class LeetCode414 {
   /*
@@ -29,30 +29,29 @@ public class LeetCode414 {
    * https://leetcode.com/problems/third-maximum-number/description/
    */
   public int thirdMax(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return 0;
-
-    Arrays.sort(nums);
-    if(nums.length < 3)
-      return nums[nums.length - 1];
-    
-    // Loop backwards and keep track of distincts
-    int distincts = 0;
-    //[2,3,4,4,4]
-    //[1,2,3,4,4,4]
-    //[3,3,4,4,4]
-    //[4,4,4,4]
-    for(int i = nums.length - 1; i > 0; i--) {
-      if(nums[i] != nums[i-1])
-        distincts++;
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    for(int n : nums) {
+      // n is already in the queue
+      if(pq.contains(n))
+        continue;
       
-      if(distincts == 3)
-        return nums[i];
+      // There is 3 numbers in the queue, and n is greater than the current third max
+      if(pq.size() == 3 && n > pq.peek()) {
+        pq.poll();
+        pq.add(n);
+      }
+      else if(pq.size() < 3)
+        pq.add(n);
     }
     
-    if(distincts <= 1)
-      return nums[nums.length - 1];
-    else // distincts == 2
-      return nums[0];
+    if(pq.size() == 3)
+      return pq.peek();
+    else {
+      // Empty the queue except for the max value
+      while(pq.size() > 1)
+        pq.poll();
+      
+      return pq.peek();
+    }
   }
 }

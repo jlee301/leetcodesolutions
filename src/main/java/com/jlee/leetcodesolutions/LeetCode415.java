@@ -15,23 +15,22 @@ public class LeetCode415 {
    * https://leetcode.com/problems/add-strings/description/
    */
   public String addStrings(String num1, String num2) {
-    if(num1 == null || num2 == null || num1.length() == 0 || num2.length() == 0)
-      return "0";
-    
-    String result = "";
+    int i = num1.length()-1;
+    int j = num2.length()-1;
+    StringBuilder sb = new StringBuilder();
     int carry = 0;
-    for(int i=num1.length()-1, j=num2.length()-1; i >= 0 || j >= 0 || carry == 1; i--, j--) {
-      int x = 0;
-      if(i >= 0)
-        x = num1.charAt(i) - '0';
-      
-      int y = 0;
-      if(j >= 0)
-        y = num2.charAt(j) - '0';
-      
-      result = ((x+y+carry) % 10) + result;
-      carry = (x+y+carry) / 10;
+    while(i >= 0 || j >= 0) {
+      int add = (i >= 0 ? num1.charAt(i) - '0' : 0) + (j >= 0 ? num2.charAt(j) - '0' : 0) + carry;
+      carry = add / 10;
+      add %= 10;
+      sb.insert(0, add);
+      i--;
+      j--;
     }
-    return result;
+    
+    if(carry > 0)
+      sb.insert(0, carry);
+    
+    return sb.toString();
   }
 }

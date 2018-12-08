@@ -1,5 +1,6 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.HashMap;
 import com.jlee.leetcodesolutions.TreeNode;
 
 public class LeetCode437 {
@@ -32,20 +33,27 @@ public class LeetCode437 {
    * 
    * https://leetcode.com/problems/path-sum-iii/description/
    */
+  private int result;
+  
   public int pathSum(TreeNode root, int sum) {
-    if(root == null)
-      return 0;
-    
-    return pathSumAt(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+    HashMap<Integer,Integer> map = new HashMap<>();
+    map.put(0, 1);
+    result = 0;
+    pathSum(root, sum, 0, map);
+    return result;
   }
   
-  public int pathSumAt(TreeNode root, int sum) {
-    if (root == null)
-      return 0;
+  private void pathSum(TreeNode node, int target, int sum, HashMap<Integer,Integer> map) {
+    if(node == null)
+      return;
     
-    if(root.val == sum)
-      return 1 + pathSumAt(root.left, sum - root.val) + pathSumAt(root.right, sum - root.val);
-    else
-      return 0 + pathSumAt(root.left, sum - root.val) + pathSumAt(root.right, sum - root.val);
+    int currSum = sum + node.val;
+    // Check to see if I have any previous sums that sum to target
+    result += map.getOrDefault(currSum - target, 0);
+    
+    map.put(currSum, map.getOrDefault(currSum, 0) + 1);
+    pathSum(node.left, target, currSum, map);
+    pathSum(node.right, target, currSum, map);
+    map.put(currSum, map.getOrDefault(currSum, 0) - 1);
   }
 }

@@ -30,7 +30,7 @@ public class TestLeetCode438 {
   }
   
   @Test
-  public void testDupeOverlay() {
+  public void testProblemCase3() {
     String s = "babc"; 
     String p = "abc";
     LeetCode438 solution = new LeetCode438();
@@ -40,7 +40,7 @@ public class TestLeetCode438 {
   }
   
   @Test
-  public void testRepeatCharsInP() {
+  public void testProblemCase4() {
     String s = "cbaababacd"; 
     String p = "abca";
     LeetCode438 solution = new LeetCode438();
@@ -51,7 +51,7 @@ public class TestLeetCode438 {
   }
   
   @Test
-  public void testMultipleSpanningAnagrams() {
+  public void testProblemCase5() {
     String s = "cbaacb"; 
     String p = "abca";
     LeetCode438 solution = new LeetCode438();
@@ -63,7 +63,7 @@ public class TestLeetCode438 {
   }
   
   @Test
-  public void testNoMatch() {
+  public void testProblemCase6() {
     String s = "efghijk"; 
     String p = "abc";
     LeetCode438 solution = new LeetCode438();
@@ -72,7 +72,7 @@ public class TestLeetCode438 {
   }
   
   @Test
-  public void testSEmpty() {
+  public void testProblemCase7() {
     String s = ""; 
     String p = "abc";
     LeetCode438 solution = new LeetCode438();
@@ -81,45 +81,9 @@ public class TestLeetCode438 {
   }
 
   @Test
-  public void testPEmpty() {
-    String s = "cbaebabacd"; 
-    String p = "";
-    LeetCode438 solution = new LeetCode438();
-    List<Integer> result = solution.findAnagrams(s, p);
-    Assert.assertEquals(0, result.size());
-  }
-
-  @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     String s = ""; 
     String p = "";
-    LeetCode438 solution = new LeetCode438();
-    List<Integer> result = solution.findAnagrams(s, p);
-    Assert.assertEquals(0, result.size());
-  }
-  
-  @Test
-  public void testSNull() {
-    String s = null; 
-    String p = "abc";
-    LeetCode438 solution = new LeetCode438();
-    List<Integer> result = solution.findAnagrams(s, p);
-    Assert.assertEquals(0, result.size());
-  }
-
-  @Test
-  public void testPNull() {
-    String s = "cbaebabacd"; 
-    String p = null;
-    LeetCode438 solution = new LeetCode438();
-    List<Integer> result = solution.findAnagrams(s, p);
-    Assert.assertEquals(0, result.size());
-  }
-
-  @Test
-  public void testNull() {
-    String s = null; 
-    String p = null;
     LeetCode438 solution = new LeetCode438();
     List<Integer> result = solution.findAnagrams(s, p);
     Assert.assertEquals(0, result.size());

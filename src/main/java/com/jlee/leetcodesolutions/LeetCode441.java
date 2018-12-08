@@ -32,15 +32,20 @@ public class LeetCode441 {
    * https://leetcode.com/problems/arranging-coins/description/
    */
   public int arrangeCoins(int n) {
-    if(n < 0)
-      return 0;
-    
-    int steps = 0;
-    // Subtracting from n will avoid overflow.
-    while(n >= 0) {
-      steps++;
-      n -= steps;
+    //            x: 1 + 2 + 3 + 4 + 5 + 6
+    // sum of coins: 1   3   6  10  15  21
+    // x(x+1) / 2 = sum of coins
+    long low = 0, high = (long) n;
+    while(low <= high) {
+      long mid = low + (high - low) / 2L;
+      long sumOfCoins = (mid * (mid + 1L)) / 2L;
+      if(sumOfCoins == n)
+        return (int) mid;
+      else if(sumOfCoins > n)
+        high = mid - 1L;
+      else
+        low = mid + 1L;
     }
-    return steps - 1;
+    return (int) (low - 1L);
   }
 }

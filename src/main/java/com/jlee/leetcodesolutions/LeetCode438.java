@@ -1,6 +1,7 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LeetCode438 {
@@ -31,40 +32,25 @@ public class LeetCode438 {
    * https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
    */
   public List<Integer> findAnagrams(String s, String p) {
-    List<Integer> result = new ArrayList<Integer>();
-    if(s == null || p == null || s.length() == 0 || p.length() == 0)
-      return result;
+    List<Integer> result = new ArrayList<>();
     
-    // Dump all of p into defaultPlist. This list will never be directly used.
-    ArrayList<Character> defaultPlist = new ArrayList<Character>(p.length());
-    for (int i = 0; i < p.length(); i++) {
-      defaultPlist.add((Character) p.charAt(i));
-    }
-
-    // This list will be used indirectly and rebuilt from the default.
-    ArrayList<Character> pList = new ArrayList<Character>(defaultPlist);
-
-    for (int i = 0; i < s.length(); i++) {
-      if (pList.remove((Character) s.charAt(i))) {
-        if (pList.size() == 0) {
-          result.add(i - (defaultPlist.size() - 1));
-          pList = new ArrayList<Character>(defaultPlist);
-          // If I have to reset the list because of a match, I need to recheck from last
-          // starting index+1:
-          // s="cbaacb" p="abca"
-          // [cbaa]cb
-          // c[baac]b
-          // cb[aacb]
-          i = i - (defaultPlist.size() - 1);
-        }
-      } else {
-        // If the last character was not removed but is originally part of the
-        // defaultPlist, we move i back the distance that is currently defaultPlist -
-        // pList size.
-        if (defaultPlist.contains((Character) s.charAt(i)))
-          i = i - (defaultPlist.size() - pList.size());
-        pList = new ArrayList<Character>(defaultPlist);
-      }
+    int N = s.length(), M = p.length();
+    // Obtain the char frequency of p
+    int[] pCount = new int[26];
+    for(int i = 0; i < M; i++)
+      pCount[p.charAt(i) - 'a']++;
+    
+    // Now check the char frequency of s every instance of size p
+    int[] sCount = new int[26];
+    for(int i = 0; i < N; i++) {
+      sCount[s.charAt(i) - 'a']++;
+      
+      // Remove out of window chars
+      if(i >= M)
+        sCount[s.charAt(i-M) - 'a']--;
+        
+      if(i >= M-1 && Arrays.equals(pCount, sCount))
+        result.add(i-M+1);
     }
     return result;
   }

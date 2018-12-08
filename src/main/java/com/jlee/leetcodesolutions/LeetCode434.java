@@ -14,17 +14,11 @@ public class LeetCode434 {
    * https://leetcode.com/problems/number-of-segments-in-a-string/description/
    */
   public int countSegments(String s) {
-    int result = 0;
-    if(s == null || s.length() == 0)
-      return result;
-    
-    char prev = ' ';
+    int count = 0;
     for(int i = 0; i < s.length(); i++) {
-      if(s.charAt(i) != ' ' && prev == ' ')
-        result++;
-      
-      prev = s.charAt(i);
+      if(s.charAt(i) != ' ' && (i == s.length()-1 || s.charAt(i+1) == ' '))
+        count++;
     }
-    return result;
+    return count;
   }
 }

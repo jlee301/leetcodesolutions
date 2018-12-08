@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode441 {
   @Test
-  public void testSteps() {
+  public void testProblemCase1() {
     LeetCode441 solution = new LeetCode441();
     Assert.assertEquals(0, solution.arrangeCoins(0));
     Assert.assertEquals(1, solution.arrangeCoins(1));
@@ -30,14 +30,5 @@ public class TestLeetCode441 {
     Assert.assertEquals(5, solution.arrangeCoins(19));
     Assert.assertEquals(5, solution.arrangeCoins(20));
     Assert.assertEquals(6, solution.arrangeCoins(21));
-  }
-
-  @Test
-  public void testNegSteps() {
-    LeetCode441 solution = new LeetCode441();
-    Assert.assertEquals(0, solution.arrangeCoins(-1));
-    Assert.assertEquals(0, solution.arrangeCoins(-2));
-    Assert.assertEquals(0, solution.arrangeCoins(-3));
-    Assert.assertEquals(0, solution.arrangeCoins(-4));
   }
 }

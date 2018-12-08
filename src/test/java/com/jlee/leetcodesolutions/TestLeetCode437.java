@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode437 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(5);
     root.left.left = new TreeNode(3);
@@ -36,7 +36,7 @@ public class TestLeetCode437 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase2() {
     TreeNode root = null;
     LeetCode437 solution = new LeetCode437();
     Assert.assertEquals(0, solution.pathSum(root, 8));

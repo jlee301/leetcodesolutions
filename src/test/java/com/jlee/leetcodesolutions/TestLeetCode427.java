@@ -1,7 +1,7 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.LeetCode427;
-import com.jlee.leetcodesolutions.Node;
+import com.jlee.leetcodesolutions.LeetCode427.Node;
 import org.junit.Assert;
 import org.junit.Test;
 

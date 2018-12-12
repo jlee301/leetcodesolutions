@@ -270,6 +270,7 @@ import org.junit.runners.Suite;
   TestLeetCode688.class,
   TestLeetCode692.class,
   TestLeetCode698.class,
+  TestLeetCode701.class,
   TestLeetCode712.class,
   TestLeetCode713.class,
   TestLeetCode714.class,

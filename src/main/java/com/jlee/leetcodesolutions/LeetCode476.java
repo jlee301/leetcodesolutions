@@ -28,14 +28,11 @@ public class LeetCode476 {
    * https://leetcode.com/problems/number-complement/description/
    */
   public int findComplement(int num) {
-    if(num < 0)
-      return 0;
-    
-    int i = 1;
-    // This will setup all 1's binary to the same length as the input num
-    while(i < num)
-      i = (i << 1) | 1;
-    
-    return i - num;
+    // ~num flips all bits, also flips the sign bit
+    // Integer.highestOneBit(num) << 1 offsets the sign bit
+    // num = 5 +0(101)
+    // ~num = -6 -1(10)
+    // Integer.highestOneBit(num) << 1 = 8 (1000)
+    return ~num + (Integer.highestOneBit(num) << 1); 
   }
 }

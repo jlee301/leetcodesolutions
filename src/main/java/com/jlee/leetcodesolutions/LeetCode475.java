@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Arrays;
+import java.util.TreeSet;
 
 public class LeetCode475 {
   /*
@@ -40,16 +40,25 @@ public class LeetCode475 {
    * https://leetcode.com/problems/heaters/description/
    */
   public int findRadius(int[] houses, int[] heaters) {
-    Arrays.sort(houses);
-    Arrays.sort(heaters);
+    TreeSet<Integer> set = new TreeSet<>();
+    for(int n : heaters)
+      set.add(n);
     
     int radius = 0;
     // Find nearest heater for each house
-    for(int i = 0, j = 0; i < houses.length; i++) {
-      while(j < heaters.length-1 && Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j+1] - houses[i]))
-        j++; 
-        
-      radius = Math.max(radius, Math.abs(heaters[j] - houses[i]));
+    for(int i = 0; i < houses.length; i++) {
+      Integer ceiling = set.ceiling(houses[i]);
+      Integer floor = set.floor(houses[i]);
+      if(ceiling == null)
+        radius = Math.max(radius, Math.abs(houses[i] - floor));
+      else if(floor == null)
+        radius = Math.max(radius, Math.abs(houses[i] - ceiling));
+      else {
+        if(Math.abs(houses[i] - ceiling) >= Math.abs(houses[i] - floor))
+          radius = Math.max(radius, Math.abs(houses[i] - floor));
+        else
+          radius = Math.max(radius, Math.abs(houses[i] - ceiling));          
+      }        
     }
     return radius;
   }

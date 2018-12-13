@@ -32,31 +32,37 @@ public class LeetCode443 {
    * https://leetcode.com/problems/string-compression/description/
    */
   public int compress(char[] chars) {
-    if(chars == null)
-      return 0;
-
-    int write = 0;
+    char prev = 0;
     int count = 1;
-    for(int read = 0; read < chars.length; read++) {
-      if(read + 1 == chars.length || chars[read] != chars[read + 1]) {
-        // Store in the write position the char before (chars[read])
-        chars[write] = chars[read];
-        write++;
-        if(count > 1) {
-          // If count > 1, then we need to store the count in next write position
-          String strCount = Integer.toString(count);
-          for(int i = 0; i < strCount.length(); i++) {
-            chars[write] = strCount.charAt(i);
-            write++;
-          }
-          // Here we must reset the count for next char.
-          count = 1;
-        }
-      } else {
-        // We increment the count as this is chars[read] == chars[read + 1]
+    int writeIdx = 0;
+    for(int i = 0; i < chars.length; i++) {
+      if(prev == 0) {
+        prev = chars[i];
+        writeIdx = i+1;
+      }
+      else if(prev == chars[i]) {
         count++;
       }
+      else {
+        // Different character than prev
+        if(count > 1) {
+          // Write the count
+          String countStr = String.valueOf(count);
+          for(int j = 0; j < countStr.length(); j++)
+            chars[writeIdx++] = countStr.charAt(j);
+        }
+        // Write next char
+        chars[writeIdx++] = chars[i];
+        prev = chars[i];
+        count = 1;
+      }
     }
-    return write;
+    // If loop ends before writing the count
+    if(count > 1) {
+      String countStr = String.valueOf(count);
+      for(int j = 0; j < countStr.length(); j++)
+        chars[writeIdx++] = countStr.charAt(j);      
+    }
+    return writeIdx;
   }
 }

@@ -24,10 +24,14 @@ public class LeetCode461 {
    * https://leetcode.com/problems/hamming-distance/description/
    */
   public int hammingDistance(int x, int y) {
-    if(x < 0 || y < 0)
-      return 0;
-    
-    // XOR ^ - When the bit is different, it will equal 1.
-    return Integer.bitCount(x^y);
+    int count = 0;
+    for(int i = 0; i < 31; i++) {
+      int a = x & 1;
+      int b = y & 1;
+      count += a ^ b;
+      x >>= 1;
+      y >>= 1;
+    }
+    return count;
   }
 }

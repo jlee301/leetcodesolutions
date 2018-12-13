@@ -22,7 +22,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testBunchOfHousesHeaters() {
+  public void testProblemCase3() {
     int[] houses = {1,2,3,4,5,6,7,8};
     int[] heaters = {2,5,9};
     LeetCode475 solutions = new LeetCode475();
@@ -30,7 +30,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testOneHeater() {
+  public void testProblemCase4() {
     int[] houses = {1,2,3,4};
     int[] heaters = {1};
     LeetCode475 solutions = new LeetCode475();
@@ -38,7 +38,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testOneHouse() {
+  public void testProblemCase5() {
     int[] houses = {1};
     int[] heaters = {1};
     LeetCode475 solutions = new LeetCode475();
@@ -46,7 +46,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testHeaterAtHouseNotOnList() {
+  public void testProblemCase6() {
     int[] houses = {1,2,3,4};
     int[] heaters = {8};
     LeetCode475 solutions = new LeetCode475();
@@ -54,7 +54,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testDontCareAboutEveryHouseInBetween() {
+  public void testProblemCase7() {
     int[] houses = {2,3,5};
     int[] heaters = {1,8};
     LeetCode475 solutions = new LeetCode475();
@@ -62,7 +62,7 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testOneHeaterFarAway() {
+  public void testProblemCase8() {
     int[] houses = {2,3};
     int[] heaters = {1,8};
     LeetCode475 solutions = new LeetCode475();
@@ -70,7 +70,7 @@ public class TestLeetCode475 {
   }
   
   @Test
-  public void testUnorganizedHouseHeaterList() {
+  public void testProblemCase9() {
     int[] houses = {2,5,3};
     int[] heaters = {8,1};
     LeetCode475 solutions = new LeetCode475();
@@ -78,49 +78,9 @@ public class TestLeetCode475 {
   }
 
   @Test
-  public void testEmptyHouses() {
+  public void testProblemCase10() {
     int[] houses = {};
     int[] heaters = {1,8};
-    LeetCode475 solutions = new LeetCode475();
-    Assert.assertEquals(0, solutions.findRadius(houses, heaters));
-  }
-
-  @Test
-  public void testEmptyHeaters() {
-    int[] houses = {2,3,5};
-    int[] heaters = {};
-    LeetCode475 solutions = new LeetCode475();
-    Assert.assertEquals(0, solutions.findRadius(houses, heaters));
-  }
-
-  @Test
-  public void testEmpty() {
-    int[] houses = {};
-    int[] heaters = {};
-    LeetCode475 solutions = new LeetCode475();
-    Assert.assertEquals(0, solutions.findRadius(houses, heaters));
-  }
-
-  @Test
-  public void testNullHouses() {
-    int[] houses = null;
-    int[] heaters = {1,8};
-    LeetCode475 solutions = new LeetCode475();
-    Assert.assertEquals(0, solutions.findRadius(houses, heaters));
-  }
-
-  @Test
-  public void testNullHeaters() {
-    int[] houses = {2,3,5};
-    int[] heaters = null;
-    LeetCode475 solutions = new LeetCode475();
-    Assert.assertEquals(0, solutions.findRadius(houses, heaters));
-  }
-
-  @Test
-  public void testNull() {
-    int[] houses = null;
-    int[] heaters = null;
     LeetCode475 solutions = new LeetCode475();
     Assert.assertEquals(0, solutions.findRadius(houses, heaters));
   }

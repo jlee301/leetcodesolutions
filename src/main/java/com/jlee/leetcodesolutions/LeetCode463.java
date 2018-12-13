@@ -22,31 +22,44 @@ public class LeetCode463 {
    * https://leetcode.com/problems/island-perimeter/description/
    */
   public int islandPerimeter(int[][] grid) {
-    if(grid == null)
-      return 0;
-    
-    // Assume every island has 4 sides.
-    // If the island has a right neighbor, subtract 2
-    // If the island has a below neighbor, subtract 2
-    int islands = 0;
-    int neighborIsland = 0;
-    
-    for(int i = 0; i < grid.length; i++) {
-      for(int j = 0; j < grid[i].length; j++) {
-        if(grid[i][j] == 1) {
-          // Counting all islands
-          islands++;
-          
-          // Does it have a right neighbor?
-          if(j < grid[i].length - 1 && grid[i][j + 1] == 1)
-            neighborIsland++;
-          
-          // Does it have a below neighbor?
-          if(i < grid.length - 1 && grid[i + 1][j] == 1)
-            neighborIsland++;          
+    // Find first island point
+    int r = 0, c = 0;
+    boolean found = false;
+    search: for(r = 0; r < grid.length; r++) {
+      for(c = 0; c < grid[r].length; c++) {
+        if(grid[r][c] == 1) {
+          found = true;
+          break search;
         }
-      }      
+      }
     }
-    return(4*islands - 2*neighborIsland);
+    if(found) {
+      boolean[][] visited = new boolean[grid.length][grid[0].length];
+      visited[r][c] = true;
+      return dfs(grid, r, c, visited);
+    }
+    return 0;
+  }
+  
+  public int dfs(int[][] grid, int r, int c, boolean[][] visited) {
+    int count = 0;
+
+    // Up, down, left, right
+    int[][] moves = { {-1,0}, {1,0}, {0,-1}, {0,1} };    
+    for(int[] move : moves) {
+      int nextR = r+move[0];
+      int nextC = c+move[1];
+      if(nextR < 0 || nextR == grid.length || nextC < 0 || nextC == grid[0].length || grid[nextR][nextC] == 0) {
+        // Island surrounded by water, increment perimeter
+        count++;
+      }
+      else {
+        if(!visited[nextR][nextC]) {
+          visited[nextR][nextC] = true;
+          count += dfs(grid, nextR, nextC, visited);
+        }
+      }
+    }    
+    return count;
   }
 }

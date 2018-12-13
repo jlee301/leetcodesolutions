@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode448 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int nums[] = {4,3,2,7,8,2,3,1};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -17,7 +17,7 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testMissingMid() {
+  public void testProblemCase2() {
     int nums[] = {1,1,3,4};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -26,7 +26,7 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testMissingBeginEnd() {
+  public void testProblemCase3() {
     int nums[] = {2,2,3,3};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -36,7 +36,7 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testMissingMidEnd() {
+  public void testProblemCase4() {
     int nums[] = {1,1,2,2};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -46,7 +46,7 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testNothingMissing() {
+  public void testProblemCase5() {
     int nums[] = {1,2,3,4};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -54,7 +54,7 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testSingleEntry() {
+  public void testProblemCase6() {
     int nums[] = {1};
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
@@ -62,16 +62,8 @@ public class TestLeetCode448 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase7() {
     int nums[] = {};
-    LeetCode448 solution = new LeetCode448();
-    List<Integer> result = solution.findDisappearedNumbers(nums);
-    Assert.assertEquals(0, result.size());
-  }
-
-  @Test
-  public void testNull() {
-    int nums[] = null;
     LeetCode448 solution = new LeetCode448();
     List<Integer> result = solution.findDisappearedNumbers(nums);
     Assert.assertEquals(0, result.size());

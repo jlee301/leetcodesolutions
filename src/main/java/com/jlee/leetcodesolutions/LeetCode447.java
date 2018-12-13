@@ -1,7 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class LeetCode447 {
   /*
@@ -21,30 +20,27 @@ public class LeetCode447 {
    * https://leetcode.com/problems/number-of-boomerangs/description/
    */
   public int numberOfBoomerangs(int[][] points) {
-    int result = 0;
-    // If I need to compare a tuple (i, j, k), n needs to be at least 3
-    if(points == null || points.length < 3)
-      return result;
-    
-    Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+    int count = 0;
     for(int i = 0; i < points.length; i++) {
+      HashMap<Integer,Integer> map = new HashMap<>();
       for(int j = 0; j < points.length; j++) {
         if(i == j)
           continue;
         
-        // Do not need the actual distance, but by squaring the difference you do not
-        // need to spend any cycles determining which is greater in value before
-        // subtracting.
-        int distance = ((points[i][0] - points[j][0]) * (points[i][0] - points[j][0]))
-            + ((points[i][1] - points[j][1]) * (points[i][1] - points[j][1]));
-        
-        map.put(distance, map.getOrDefault(distance, 0) + 1);
+        // Calculate how many points have same distance from points[i]
+        int x = points[i][0] - points[j][0];
+        int y = points[i][1] - points[j][1];
+        // a^2 + b^2 = c^2
+        // However we are not task to find the actual distance, so taking the squareroot
+        // is not required
+        int dist = x*x + y*y;
+        map.put(dist, map.getOrDefault(dist, 0) + 1);
       }
-      for(int value : map.values()) {
-        result = result + (value * (value-1));
-      }
-      map.clear();
+      
+      // Calculate number of permutations
+      for(int n : map.values())
+        count += n * (n - 1);
     }
-    return result;
+    return count;
   }
 }

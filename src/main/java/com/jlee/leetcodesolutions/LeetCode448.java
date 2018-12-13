@@ -1,6 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,26 +19,22 @@ public class LeetCode448 {
    * 
    * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
    */
-  public List<Integer> findDisappearedNumbers(int[] nums){
-    List<Integer> result = new ArrayList<Integer>();
-    if(nums == null || nums.length == 0)
-      return result;
+  public List<Integer> findDisappearedNumbers(int[] nums) {
+    List<Integer> result = new ArrayList<>();
     
-    Arrays.sort(nums);
-    int value = 1;
+    // Mark all found integers as negative
     for(int i = 0; i < nums.length; i++) {
-      while(value < nums[i])
-        result.add(value++);
+      int next = nums[i] > 0 ? nums[i] - 1 : -nums[i] - 1;
       
-      if(value <= nums[i])
-        value++;
-      
-      // If you reached the end of the array, fill in the rest from value
-      if(i == nums.length - 1)
-        if(nums[i] != nums.length)
-          for(int j = value; j <= nums.length; j++)
-            result.add(j);
-    }    
+      if(nums[next] > 0)
+        nums[next] = -nums[next];
+    }
+    
+    // See which integers are still positive
+    for(int i = 0; i < nums.length; i++) {
+      if(nums[i] > 0)
+        result.add(i+1);
+    }
     return result;
   }
 }

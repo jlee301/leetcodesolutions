@@ -15,25 +15,13 @@ public class LeetCode453 {
    * https://leetcode.com/problems/minimum-moves-to-equal-array-elements/description/
    */
   public int minMoves(int[] nums) {
-    if(nums == null || nums.length <= 1)
-      return 0;
-    // n = length of array
-    // sum = sum of array before any moves
-    // minNum = smallest number in the array
-    // x = number the array elements should equal to
-    // m = number of moves
-    //
-    // 1. sum + m(n-1) = n * x 
-    // 2. minNum + m = x
-    // 3. sum + m(n-1) = n(minNum + m) --> (Simplified) sum - n(minNum) = m
-    int n = nums.length;
+    int N = nums.length;
     int sum = 0;
-    int minNum = nums[0];
-    for(int i = 0; i < nums.length; i++) {
+    int min = Integer.MAX_VALUE;
+    for(int i = 0; i < N; i++) {
       sum += nums[i];
-      if(nums[i] < minNum)
-        minNum = nums[i];
+      min = Math.min(min, nums[i]);
     }
-    return sum - (n * minNum);
+    return sum - min * N;    
   }
 }

@@ -40,23 +40,17 @@ public class LeetCode475 {
    * https://leetcode.com/problems/heaters/description/
    */
   public int findRadius(int[] houses, int[] heaters) {
-    int result = 0;
-    if(houses == null || heaters == null || houses.length == 0 || heaters.length == 0)
-      return result;
-    
     Arrays.sort(houses);
     Arrays.sort(heaters);
     
-    int j = 0;
-    for(int i = 0; i < houses.length; i++) {
-      // Determine if the house has shorter or equal distance at current heater or
-      // next -- if so we want to check the next set of heaters.
-      while (j < heaters.length - 1 && Math.abs(heaters[j + 1] - houses[i]) <= Math.abs(heaters[j] - houses[i]))
-        j++;
-      
-      // Take the max distance between heater and house of previous result or current.
-      result = Math.max(result, Math.abs(heaters[j] - houses[i]));
+    int radius = 0;
+    // Find nearest heater for each house
+    for(int i = 0, j = 0; i < houses.length; i++) {
+      while(j < heaters.length-1 && Math.abs(heaters[j] - houses[i]) >= Math.abs(heaters[j+1] - houses[i]))
+        j++; 
+        
+      radius = Math.max(radius, Math.abs(heaters[j] - houses[i]));
     }
-    return result;
+    return radius;
   }
 }

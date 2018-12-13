@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode463 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int[][] grid = {{0,1,0,0}, 
                     {1,1,1,0}, 
                     {0,1,0,0}, 
@@ -16,7 +16,7 @@ public class TestLeetCode463 {
   }
 
   @Test
-  public void testNoIslands() {
+  public void testProblemCase2() {
     int[][] grid = {{0,0,0,0}, 
                     {0,0,0,0}, 
                     {0,0,0,0}, 
@@ -26,7 +26,7 @@ public class TestLeetCode463 {
   }
 
   @Test
-  public void testSoloIsland() {
+  public void testProblemCase3() {
     int[][] grid = {{0,1,0,0}, 
                     {0,0,0,0}, 
                     {0,0,0,0}, 
@@ -36,7 +36,7 @@ public class TestLeetCode463 {
   }
 
   @Test
-  public void testIslandWithRightNeighbor() {
+  public void testProblemCase4() {
     int[][] grid = {{0,1,1,0}, 
                     {0,0,0,0}, 
                     {0,0,0,0}, 
@@ -46,7 +46,7 @@ public class TestLeetCode463 {
   }
 
   @Test
-  public void testIslandWithDownNeighbor() {
+  public void testProblemCase5() {
     int[][] grid = {{0,1,0,0}, 
                     {0,1,0,0}, 
                     {0,0,0,0}, 
@@ -56,7 +56,7 @@ public class TestLeetCode463 {
   }
 
   @Test
-  public void testIslandWithRightDownNeighbor() {
+  public void testProblemCase6() {
     int[][] grid = {{0,1,1,0}, 
                     {0,1,0,0}, 
                     {0,0,0,0}, 
@@ -66,15 +66,18 @@ public class TestLeetCode463 {
   }
   
   @Test
-  public void testEmpty() {
-    int[][] grid = {};
+  public void testProblemCase7() {
+    int[][] grid = {{1,1,1,1}, 
+                    {1,0,0,1}, 
+                    {1,0,0,1}, 
+                    {1,1,1,1}};
     LeetCode463 solution = new LeetCode463();
-    Assert.assertEquals(0, solution.islandPerimeter(grid));
+    Assert.assertEquals(24, solution.islandPerimeter(grid));
   }
-
+  
   @Test
-  public void testNull() {
-    int[][] grid = null;
+  public void testProblemCase8() {
+    int[][] grid = {};
     LeetCode463 solution = new LeetCode463();
     Assert.assertEquals(0, solution.islandPerimeter(grid));
   }

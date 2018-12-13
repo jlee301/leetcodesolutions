@@ -27,43 +27,36 @@ public class TestLeetCode459 {
   }
 
   @Test
-  public void testAllSameCharacter() {
+  public void testProblemCase4() {
     String s = "aaaaaaaaaaaa";
     LeetCode459 solution = new LeetCode459();
     Assert.assertTrue(solution.repeatedSubstringPattern(s));
   }
 
   @Test
-  public void testDifferentPatternAtEnd() {
+  public void testProblemCase5() {
     String s = "abcabcddd";
     LeetCode459 solution = new LeetCode459();
     Assert.assertFalse(solution.repeatedSubstringPattern(s));
   }
 
   @Test
-  public void testDifferentPatternAtBeg() {
+  public void testProblemCase6() {
     String s = "dddabcabc";
     LeetCode459 solution = new LeetCode459();
     Assert.assertFalse(solution.repeatedSubstringPattern(s));
   }
 
   @Test
-  public void testDifferentPatternAtMid() {
+  public void testProblemCase7() {
     String s = "abcdddabc";
     LeetCode459 solution = new LeetCode459();
     Assert.assertFalse(solution.repeatedSubstringPattern(s));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     String s = "";
-    LeetCode459 solution = new LeetCode459();
-    Assert.assertFalse(solution.repeatedSubstringPattern(s));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
     LeetCode459 solution = new LeetCode459();
     Assert.assertFalse(solution.repeatedSubstringPattern(s));
   }

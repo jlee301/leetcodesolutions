@@ -34,18 +34,20 @@ public class LeetCode455 {
    * https://leetcode.com/problems/assign-cookies/description/
    */
   public int findContentChildren(int[] g, int[] s) {
-    if(g == null || s == null || g.length == 0 || s.length == 0)
-      return 0;
-    
-    // Sort arrays in ascending order
     Arrays.sort(g);
     Arrays.sort(s);
-    
-    int i = 0;
-    for(int j = 0; i < g.length && j < s.length; j++) {
-      if(g[i] <= s[j])
-        i++;
+    int count = 0;
+    int j = 0;
+    for(int i = 0; i < g.length; i++) {
+      // Find a cookie that meet child's greed
+      while(j < s.length && g[i] > s[j])
+        j++;
+      
+      if(j < s.length) {
+        count++;
+        j++;
+      }
     }
-    return i;
+    return count;
   }
 }

@@ -27,25 +27,17 @@ public class LeetCode459 {
    * https://leetcode.com/problems/repeated-substring-pattern/description/
    */
   public boolean repeatedSubstringPattern(String s) {
-    if(s == null || s.length() == 0)
-      return false;
-    
-    int sLen = s.length();
-    // The pattern must be at least half of the entire string. If it was greater
-    // than half then the pattern could not exist.  So we'll work backwards from 
-    // this point.
-    for(int i = sLen / 2; i >= 1; i--) {
-      // The pattern can only work if its an equal divisor of the length. No need to
-      // check if it is not.
-      if(sLen % i == 0) {
-        int multiple = sLen / i;
-        String pattern = s.substring(0, i);
-        String result = "";
-        // Construct string based against multiple times
-        for(int j = 0; j < multiple; j++) {
-          result += pattern;
-        }
-        if(result.equals(s))
+    int N = s.length();
+    for(int i = 1; i <= N/2; i++) {
+      // If the substring cannot evenly divide, then skip
+      if(N % i == 0) {
+        int multiple = N / i;
+        StringBuilder sb = new StringBuilder();
+        String str = s.substring(0, i);
+        for(int j = 0; j < multiple; j++)
+          sb.append(str);
+        
+        if(sb.toString().equals(s))
           return true;
       }
     }

@@ -38,7 +38,7 @@ public class TestLeetCode443 {
   }
 
   @Test
-  public void testNoCompress() {
+  public void testProblemCase4() {
     LeetCode443 solution = new LeetCode443();
     char[] chars = {'a','b','c','d'};
     Assert.assertEquals(4, solution.compress(chars));
@@ -49,7 +49,7 @@ public class TestLeetCode443 {
   }
 
   @Test
-  public void testSymbols() {
+  public void testProblemCase5() {
     LeetCode443 solution = new LeetCode443();
     char[] chars = {'!','!','@','#','#','#'};
     Assert.assertEquals(5, solution.compress(chars));
@@ -61,7 +61,7 @@ public class TestLeetCode443 {
   }
 
   @Test
-  public void testNumeric() {
+  public void testProblemCase6() {
     LeetCode443 solution = new LeetCode443();
     char[] chars = {'1','1','2','3','3','3'};
     Assert.assertEquals(5, solution.compress(chars));
@@ -73,7 +73,7 @@ public class TestLeetCode443 {
   }
 
   @Test
-  public void testSpaces() {
+  public void testProblemCase7() {
     LeetCode443 solution = new LeetCode443();
     char[] chars = {' ',' ',' '};
     Assert.assertEquals(2, solution.compress(chars));
@@ -82,18 +82,10 @@ public class TestLeetCode443 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     LeetCode443 solution = new LeetCode443();
     char[] chars = {};
     Assert.assertEquals(0, solution.compress(chars));
     Assert.assertEquals(0, chars.length);
-  }
-
-  @Test
-  public void testNull() {
-    LeetCode443 solution = new LeetCode443();
-    char[] chars = null;
-    Assert.assertEquals(0, solution.compress(chars));
-    Assert.assertNull(chars);
   }
 }

@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode501 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(2);
     root.right.left = new TreeNode(2);
@@ -18,7 +18,7 @@ public class TestLeetCode501 {
   }
 
   @Test
-  public void testMoreFrequencyThanOther() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(2);
@@ -32,7 +32,7 @@ public class TestLeetCode501 {
   }
 
   @Test
-  public void testMultipleHighFrequencySame() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(2);
@@ -48,7 +48,7 @@ public class TestLeetCode501 {
   }
 
   @Test
-  public void testNoDupes() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -61,7 +61,7 @@ public class TestLeetCode501 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase5() {
     TreeNode root = null;
     LeetCode501 solution = new LeetCode501();
     int[] result = solution.findMode(root);

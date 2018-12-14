@@ -28,11 +28,15 @@ public class LeetCode476 {
    * https://leetcode.com/problems/number-complement/description/
    */
   public int findComplement(int num) {
-    // ~num flips all bits, also flips the sign bit
-    // Integer.highestOneBit(num) << 1 offsets the sign bit
-    // num = 5 +0(101)
-    // ~num = -6 -1(10)
-    // Integer.highestOneBit(num) << 1 = 8 (1000)
-    return ~num + (Integer.highestOneBit(num) << 1); 
+    // Obtain max number based off num
+    // ie num = 5 --> 101
+    //      n = 7 --> 111
+    // The diff is num inverted
+    //   diff = 2 --> 010
+    int n = 1;
+    while(n < num)
+      n = (n << 1) | 1;
+    
+    return n - num;
   }
 }

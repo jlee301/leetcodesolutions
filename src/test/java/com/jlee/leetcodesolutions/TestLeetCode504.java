@@ -6,154 +6,154 @@ import org.junit.Test;
 
 public class TestLeetCode504 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int num = 100;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("202", solution.convertToBase7(num));    
   }
   
   @Test
-  public void test0() {
+  public void testProblemCase2() {
     int num = 0;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("0", solution.convertToBase7(num));
   }
   
   @Test
-  public void test1() {
+  public void testProblemCase3() {
     int num = 1;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("1", solution.convertToBase7(num));
   }
   
   @Test
-  public void test2() {
+  public void testProblemCase4() {
     int num = 2;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("2", solution.convertToBase7(num));
   }
   
   @Test
-  public void test3() {
+  public void testProblemCase5() {
     int num = 3;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("3", solution.convertToBase7(num));
   }
   
   @Test
-  public void test4() {
+  public void testProblemCase6() {
     int num = 4;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("4", solution.convertToBase7(num));
   }
   
   @Test
-  public void test5() {
+  public void testProblemCase7() {
     int num = 5;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("5", solution.convertToBase7(num));
   }
   
   @Test
-  public void test6() {
+  public void testProblemCase8() {
     int num = 6;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("6", solution.convertToBase7(num));
   }
   
   @Test
-  public void test7() {
+  public void testProblemCase9() {
     int num = 7;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("10", solution.convertToBase7(num));
   }
   
   @Test
-  public void test8() {
+  public void testProblemCase10() {
     int num = 8;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("11", solution.convertToBase7(num));
   }
   
   @Test
-  public void test9() {
+  public void testProblemCase11() {
     int num = 9;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("12", solution.convertToBase7(num));
   }
   
   @Test
-  public void test10() {
+  public void testProblemCase12() {
     int num = 10;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("13", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg1() {
+  public void testProblemCase13() {
     int num = -1;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-1", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg2() {
+  public void testProblemCase14() {
     int num = -2;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-2", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg3() {
+  public void testProblemCase15() {
     int num = -3;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-3", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg4() {
+  public void testProblemCase16() {
     int num = -4;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-4", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg5() {
+  public void testProblemCase17() {
     int num = -5;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-5", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg6() {
+  public void testProblemCase18() {
     int num = -6;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-6", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg7() {
+  public void testProblemCase19() {
     int num = -7;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-10", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg8() {
+  public void testProblemCase20() {
     int num = -8;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-11", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg9() {
+  public void testProblemCase21() {
     int num = -9;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-12", solution.convertToBase7(num));
   }
   
   @Test
-  public void testNeg10() {
+  public void testProblemCase22() {
     int num = -10;
     LeetCode504 solution = new LeetCode504();
     Assert.assertEquals("-13", solution.convertToBase7(num));

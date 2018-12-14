@@ -22,7 +22,7 @@ public class TestLeetCode482 {
   }
 
   @Test
-  public void testK1() {
+  public void testProblemCase3() {
     String S = "2-5g-3-J";
     int K = 1;
     LeetCode482 solution = new LeetCode482();
@@ -30,32 +30,8 @@ public class TestLeetCode482 {
   }
 
   @Test
-  public void testK0() {
-    String S = "2-5g-3-J";
-    int K = 0;
-    LeetCode482 solution = new LeetCode482();
-    Assert.assertEquals("25G3J", solution.licenseKeyFormatting(S, K));
-  }
-
-  @Test
-  public void testKNeg() {
-    String S = "2-5g-3-J";
-    int K = -1;
-    LeetCode482 solution = new LeetCode482();
-    Assert.assertEquals("25G3J", solution.licenseKeyFormatting(S, K));
-  }
-  
-  @Test
-  public void testEmpty() {
+  public void testProblemCase4() {
     String S = "";
-    int K = 4;
-    LeetCode482 solution = new LeetCode482();
-    Assert.assertEquals("", solution.licenseKeyFormatting(S, K));
-  }
-
-  @Test
-  public void testNull() {
-    String S = null;
     int K = 4;
     LeetCode482 solution = new LeetCode482();
     Assert.assertEquals("", solution.licenseKeyFormatting(S, K));

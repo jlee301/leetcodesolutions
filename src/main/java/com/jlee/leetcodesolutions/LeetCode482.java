@@ -41,24 +41,23 @@ public class LeetCode482 {
    * https://leetcode.com/problems/license-key-formatting/description/
    */
   public String licenseKeyFormatting(String S, int K) {
-    String result = "";
-    if(S == null || S.length() == 0)
-      return result;
-    
-    String noDash = S.replace("-", "").toUpperCase();
-    if(K <= 0)
-      return noDash;
-    
+    // all lowercase letters must be uppercase
+    S = S.toUpperCase();
     int count = 0;
-    for(int i = noDash.length() - 1; i >= 0; i--) {
+    StringBuilder sb = new StringBuilder();
+    for(int i = S.length()-1; i >= 0; i--) {
+      char ch = S.charAt(i);
+      if(ch == '-')
+        continue;
+      
       if(count == K) {
-        result = Character.toString(noDash.charAt(i)) + "-" + result;
+        // Every group must contain K chars (except the first)
+        sb.append('-');
         count = 0;
-      } else {
-        result = Character.toString(noDash.charAt(i)) + result;
       }
+      sb.append(ch);
       count++;
     }
-    return result;
+    return sb.reverse().toString();
   }
 }

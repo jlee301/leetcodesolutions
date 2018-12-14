@@ -1,7 +1,7 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class LeetCode506 {
   /*
@@ -25,26 +25,29 @@ public class LeetCode506 {
    * https://leetcode.com/problems/relative-ranks/description/
    */
   public String[] findRelativeRanks(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return new String[] {};
+    // Prioritize the scores descending
+    PriorityQueue<Integer> pq = new PriorityQueue<>((a,b) -> b - a);
+    for(int n : nums)
+      pq.add(n);
     
-    int[] tempNums = nums.clone();
-    Arrays.sort(tempNums);
-    HashMap<Integer,String> map = new HashMap<Integer,String>();
-    
-    for(int i = tempNums.length - 1, j = 1; i >= 0; i--, j++) {
-      if(j == 1)
-        map.put(tempNums[i], "Gold Medal");
-      else if (j == 2)
-        map.put(tempNums[i], "Silver Medal");
-      else if (j == 3)
-        map.put(tempNums[i], "Bronze Medal");
+    // Now map each score to its rank
+    HashMap<Integer,String> map = new HashMap<>();
+    int count = 1;
+    while(!pq.isEmpty()) {
+      if(count == 1)
+        map.put(pq.poll(), "Gold Medal");
+      else if(count == 2)
+        map.put(pq.poll(), "Silver Medal");
+      else if(count == 3)
+        map.put(pq.poll(), "Bronze Medal");
       else
-        map.put(tempNums[i], Integer.toString(j));
+        map.put(pq.poll(), "" + count);
+      
+      count++;
     }
     
     String[] result = new String[nums.length];
-    for(int i = 0; i < nums.length; i++)
+    for(int i = 0; i < result.length; i++)
       result[i] = map.get(nums[i]);
     
     return result;

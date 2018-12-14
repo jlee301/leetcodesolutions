@@ -20,23 +20,16 @@ public class LeetCode504 {
   public String convertToBase7(int num) {
     if(num == 0)
       return "0";
-
-    boolean neg = false;
-    if(num < 0) {
-      neg = true;
-      num = Math.abs(num);
-    }
     
-    String result = "";
+    StringBuilder sb = new StringBuilder();
+    boolean neg = num < 0 ? true : false;
+    num = num < 0 ? -num : num;
     while(num != 0) {
-      int remainder = num % 7;
-      result = remainder + result;
-      num = num / 7;
+      sb.append(num % 7);
+      num /= 7;
     }
-    
     if(neg)
-      result = "-" + result;
-    
-    return result;
+      sb.append('-');
+    return sb.reverse().toString();
   }
 }

@@ -3,6 +3,7 @@ package com.jlee.leetcodesolutions;
 import com.jlee.leetcodesolutions.TreeNode;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class LeetCode501 {
   /*
@@ -31,43 +32,32 @@ public class LeetCode501 {
    * 
    * https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
    */
-  private HashMap<Integer, Integer> map;
   private int max;
-
+  
   public int[] findMode(TreeNode root) {
-    map = new HashMap<Integer, Integer>();
+    HashMap<Integer,Integer> map = new HashMap<>();
     max = 0;
-    findCounts(root);
-
-    ArrayList<Integer> list = new ArrayList<Integer>();
-    for (int key : map.keySet())
-      if (map.get(key) == max)
+    traverse(root, map);
+    
+    List<Integer> list = new ArrayList<>();
+    for(int key : map.keySet()) {
+      if(max == map.get(key))
         list.add(key);
-
-    int[] result = new int[list.size()];
-    for (int i = 0; i < list.size(); i++)
-      result[i] = list.get(i);
-
-    return result;
+    }    
+    int[] ans = new int[list.size()];
+    for(int i = 0; i < list.size(); i++)
+      ans[i] = list.get(i);
+    return ans;
   }
-
-  /*
-   * This function traverses the tree and counts how many time a value repeats in
-   * the entire tree. Every turn it will calculate the max value.
-   */
-  private void findCounts(TreeNode root) {
-    if (root == null)
+  
+  private void traverse(TreeNode node, HashMap<Integer,Integer> map) {
+    if(node == null)
       return;
-
-    map.put(root.val, map.getOrDefault(root.val, 0) + 1);
-    max = Math.max(max, map.get(root.val));
-
-    if (root.left != null)
-      findCounts(root.left);
-
-    if (root.right != null)
-      findCounts(root.right);
-
-    return;
+    
+    int count = map.getOrDefault(node.val, 0) + 1;
+    max = Math.max(max, count);
+    map.put(node.val, count);
+    traverse(node.left, map);
+    traverse(node.right, map);
   }
 }

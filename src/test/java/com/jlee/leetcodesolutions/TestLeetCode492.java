@@ -6,16 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode492 {
   @Test
-  public void test0() {
-    int area = 0;
-    LeetCode492 solution = new LeetCode492();
-    int[] result = solution.constructRectangle(area);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
-  }
-
-  @Test
-  public void test1() {
+  public void testProblemCase1() {
     int area = 1;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -24,7 +15,7 @@ public class TestLeetCode492 {
   }
   
   @Test
-  public void test2() {
+  public void testProblemCase2() {
     int area = 2;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -33,7 +24,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test3() {
+  public void testProblemCase3() {
     int area = 3;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -42,7 +33,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test4() {
+  public void testProblemCase4() {
     int area = 4;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -51,7 +42,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test5() {
+  public void testProblemCase5() {
     int area = 5;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -60,7 +51,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test6() {
+  public void testProblemCase6() {
     int area = 6;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -69,7 +60,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test7() {
+  public void testProblemCase7() {
     int area = 7;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -78,7 +69,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test8() {
+  public void testProblemCase8() {
     int area = 8;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -87,7 +78,7 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test9() {
+  public void testProblemCase9() {
     int area = 9;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
@@ -96,20 +87,11 @@ public class TestLeetCode492 {
   }
 
   @Test
-  public void test10() {
+  public void testProblemCase10() {
     int area = 10;
     LeetCode492 solution = new LeetCode492();
     int[] result = solution.constructRectangle(area);
     Assert.assertEquals(5, result[0]);
     Assert.assertEquals(2, result[1]);
-  }
-
-  @Test
-  public void testNeg() {
-    int area = -1;
-    LeetCode492 solution = new LeetCode492();
-    int[] result = solution.constructRectangle(area);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
   }
 }

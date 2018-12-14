@@ -32,13 +32,10 @@ public class LeetCode492 {
    * https://leetcode.com/problems/construct-the-rectangle/description/
    */
   public int[] constructRectangle(int area) {
-    if(area <= 0)
-      return new int[] {0,0};
-    
-    int width = (int) Math.sqrt(area);
-    while(area % width != 0)
+    int width = (int) Math.sqrt(area);      
+    while(area % width != 0) 
       width--;
     
-    return new int[] {area / width, width};
+    return new int[] { area / width, width };
   }
 }

@@ -19,22 +19,12 @@ public class LeetCode485 {
    * https://leetcode.com/problems/max-consecutive-ones/description/
    */
   public int findMaxConsecutiveOnes(int[] nums) {
-    int result = 0;
-    if(nums == null || nums.length == 0)
-      return result;
-    
+    int max = 0;
     int count = 0;
-    for(int i = 0; i < nums.length; i++) {
-      if(nums[i] == 1)
-        count++;
-      
-      if(nums[i] == 0 || i == nums.length - 1) {
-        if(count > result)
-          result = count;
-        
-        count = 0;
-      }
+    for(int n : nums) {
+      count = (count + n) * n;
+      max = Math.max(max, count);
     }
-    return result;
+    return max;
   }
 }

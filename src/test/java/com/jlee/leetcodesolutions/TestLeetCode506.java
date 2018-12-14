@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode506 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int[] nums = {5, 4, 3, 2, 1};
     LeetCode506 solution = new LeetCode506();
     String[] result = solution.findRelativeRanks(nums);
@@ -19,7 +19,7 @@ public class TestLeetCode506 {
   }
 
   @Test
-  public void testAsendingRank() {
+  public void testProblemCase2() {
     int[] nums = {1,2,3,4,5};
     LeetCode506 solution = new LeetCode506();
     String[] result = solution.findRelativeRanks(nums);
@@ -32,7 +32,7 @@ public class TestLeetCode506 {
   }
 
   @Test
-  public void testRandomOrder() {
+  public void testProblemCase3() {
     int[] nums = {1,4,2,5,3};
     LeetCode506 solution = new LeetCode506();
     String[] result = solution.findRelativeRanks(nums);
@@ -45,7 +45,7 @@ public class TestLeetCode506 {
   }
 
   @Test
-  public void testRandomNumbers() {
+  public void testProblemCase4() {
     int[] nums = {1000,100,10000,50,25};
     LeetCode506 solution = new LeetCode506();
     String[] result = solution.findRelativeRanks(nums);
@@ -58,16 +58,8 @@ public class TestLeetCode506 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase5() {
     int[] nums = {};
-    LeetCode506 solution = new LeetCode506();
-    String[] result = solution.findRelativeRanks(nums);
-    Assert.assertEquals(0, result.length);
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
     LeetCode506 solution = new LeetCode506();
     String[] result = solution.findRelativeRanks(nums);
     Assert.assertEquals(0, result.length);

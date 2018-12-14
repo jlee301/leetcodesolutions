@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode500 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     String[] words = {"Hello", "Alaska", "Dad", "Peace"};
     LeetCode500 solution = new LeetCode500();
     String[] result = solution.findWords(words);
@@ -16,26 +16,8 @@ public class TestLeetCode500 {
   }
 
   @Test
-  public void testEmptySpacesWord() {
-    String[] words = {"", " "};
-    LeetCode500 solution = new LeetCode500();
-    String[] result = solution.findWords(words);
-    Assert.assertEquals(2,  result.length);
-    Assert.assertEquals("", result[0]);
-    Assert.assertEquals("", result[1]);
-  }
-
-  @Test
-  public void testEmpty() {
+  public void testProblemCase2() {
     String[] words = {};
-    LeetCode500 solution = new LeetCode500();
-    String[] result = solution.findWords(words);
-    Assert.assertEquals(0,  result.length);
-  }
-
-  @Test
-  public void testNullWords() {
-    String[] words = null;
     LeetCode500 solution = new LeetCode500();
     String[] result = solution.findWords(words);
     Assert.assertEquals(0,  result.length);

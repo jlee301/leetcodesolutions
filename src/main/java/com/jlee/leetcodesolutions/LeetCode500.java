@@ -1,6 +1,7 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LeetCode500 {
   /*
@@ -18,35 +19,30 @@ public class LeetCode500 {
    * https://leetcode.com/problems/keyboard-row/description/
    */
   public String[] findWords(String[] words) {
-    if(words == null || words.length == 0)
-      return new String[] {};
+    List<String> result = new ArrayList<>();
     
-    // Alphabet map for row indication
-    int[] alphaMap = {1,2,2,1,0,1,1,1,0,1,1,1,2,2,0,0,0,0,1,0,0,2,0,2,0,2};
-    ArrayList<String> list = new ArrayList<String>();
-    
-    for(int i = 0; i < words.length; i++) {
-      String temp = words[i].toLowerCase().trim();
-      if(temp.length() == 0) {
-        // If word is empty, add
-        list.add(temp);
-      } else {
-        int prev = alphaMap[temp.charAt(0) - 'a'];
-        for(int j = 0; j < temp.length(); j++) {
-          if(j == temp.length() - 1 && prev == alphaMap[temp.charAt(j) - 'a']) {
-            // When at last character and it matches the same row still
-            list.add(words[i]);
-          } else if (prev != alphaMap[temp.charAt(j) - 'a']) {
-            // Any time on a different row, break out of loop.
-            break;
-          }
+    // Map each char to a row
+    int[] map = {1,2,2,1,0,1,1,1,0,1,1,1,2,2,0,0,0,0,1,0,0,2,0,2,0,2};
+    for(String word : words) {
+      String str = word.toLowerCase();
+      boolean addWord = true;
+      int prev = -1;
+      for(int i = 0; i < str.length(); i++) {
+        if(prev == -1) {
+          prev = map[str.charAt(i) - 'a'];
+          continue;
+        }
+        // If not the same row, fail
+        if(prev != map[str.charAt(i) - 'a']) {
+          addWord = false;
+          break;
         }
       }
+      if(addWord)
+        result.add(word);
     }
-    String[] result = new String[list.size()];
-    for(int i = 0; i < list.size(); i++) {
-      result[i] = list.get(i);
-    }
-    return result;
+    String[] ans = new String[result.size()];
+    ans = result.toArray(ans);
+    return ans;
   }
 }

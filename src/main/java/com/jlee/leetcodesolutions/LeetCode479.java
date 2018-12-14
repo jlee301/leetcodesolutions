@@ -22,43 +22,20 @@ public class LeetCode479 {
     if(n <= 0)
       return 0;
     
-    int a = (int) Math.pow(10, n) - 1;
-    int b = a / 10;
-    long result = 0;
+    long max = (long) Math.pow(10, n) - 1; // 1000 - 1 = 999
+    long min = max / 10; // 999 / 10 = 99
     
-    for(int i = a; i > b; i--) {
-      // System.out.println(i);
-      for(int j = a; j > b; j--) {
-        long product = (long)i * (long)j;
-        if(product > result) {
-          if(isPalindrome(product)) {
-            // System.out.println(i + " " + j);
-            result = product;
-          }
-        } else {
-          break;
-        }
+    // Try every palindrome possible
+    for(long left = max; left > min; left--) {
+      long right = Long.valueOf(new StringBuilder("" + left).reverse().toString());
+      long palindrome = left * (max + 1) + right;
+      
+      // Find possible divisor
+      for(long i = max; i * i >= palindrome; i--) {
+        if(palindrome % i == 0)
+          return (int) (palindrome % 1337);
       }
     }
-    result = result % (long)1337;
-    return (int) result;
-  }
-  
-  /*
-   * This was taken from problem 009.
-   */
-  private boolean isPalindrome(long x) {
-    long copyOriginal = x;
-    // Use long here to compensate for 32-bit overflow
-    long result = 0;
-    while (copyOriginal != 0) {
-      long remainder = copyOriginal % 10;
-      result = (result * 10) + remainder;
-      copyOriginal = copyOriginal / 10;
-    }
-    if (result == x)
-      return true;
-    else
-      return false;
+    return 9;
   }
 }

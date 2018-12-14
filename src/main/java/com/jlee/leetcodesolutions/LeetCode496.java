@@ -38,27 +38,20 @@ public class LeetCode496 {
    * https://leetcode.com/problems/next-greater-element-i/description/
    */
   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-    if(nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0)
-      return new int[] {-1};
+    // Store indices for each element for faster searching
+    HashMap<Integer,Integer> map = new HashMap<>();
+    for(int i = 0; i < nums2.length; i++)
+      map.put(nums2[i], i);
     
-    HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
-    // Store all possible combinations from nums2
-    for(int i = 0; i < nums2.length; i++) {
-      for(int j = i + 1; j <= nums2.length; j++) {
-        if(j == nums2.length) {
-          // You reached the end of the array without finding one that is greater.
-          map.put(nums2[i], -1);
-        } else if(nums2[j] > nums2[i]) {
-          // Once you find one that's greater, break out of loop.
-          map.put(nums2[i], nums2[j]);
-          break;
-        }
-      }
-    }
-    // Create result from hash map
     int[] result = new int[nums1.length];
-    for(int i = 0; i < nums1.length; i++) {
-      result[i] = map.get(nums1[i]);
+    for(int i = 0; i < result.length; i++) {
+      int j = map.get(nums1[i]) + 1;
+      
+      // Look for the next greater element
+      while(j < nums2.length && nums1[i] > nums2[j])
+        j++;
+      
+      result[i] = j == nums2.length ? -1 : nums2[j];
     }
     return result;
   }

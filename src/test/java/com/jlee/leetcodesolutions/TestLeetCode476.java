@@ -6,13 +6,6 @@ import org.junit.Test;
 
 public class TestLeetCode476 {
   @Test
-  public void testProblemCase0() {
-    int num = 0;
-    LeetCode476 solution = new LeetCode476();
-    Assert.assertEquals(-1, solution.findComplement(num));
-  }
-
-  @Test
   public void testProblemCase1() {
     int num = 1;
     LeetCode476 solution = new LeetCode476();
@@ -113,13 +106,6 @@ public class TestLeetCode476 {
   @Test
   public void testProblemCase15() {
     int num = 15;
-    LeetCode476 solution = new LeetCode476();
-    Assert.assertEquals(0, solution.findComplement(num));
-  }
-
-  @Test
-  public void testProblemCase16() {
-    int num = -1;
     LeetCode476 solution = new LeetCode476();
     Assert.assertEquals(0, solution.findComplement(num));
   }

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode507 {
   @Test
-  public void testPerfectNumbers() {
+  public void testProblemCase1() {
     LeetCode507 solution = new LeetCode507();
     Assert.assertTrue(solution.checkPerfectNumber(6));
     Assert.assertTrue(solution.checkPerfectNumber(28));
@@ -16,7 +16,7 @@ public class TestLeetCode507 {
   }
   
   @Test
-  public void testNonPerfectNumbers() {
+  public void testProblemCase2() {
     LeetCode507 solution = new LeetCode507();
     Assert.assertFalse(solution.checkPerfectNumber(1));
     Assert.assertFalse(solution.checkPerfectNumber(2));
@@ -31,7 +31,7 @@ public class TestLeetCode507 {
   }
   
   @Test
-  public void testZeroNeg() {
+  public void testProblemCase3() {
     LeetCode507 solution = new LeetCode507();
     Assert.assertFalse(solution.checkPerfectNumber(0));
     Assert.assertFalse(solution.checkPerfectNumber(-1));

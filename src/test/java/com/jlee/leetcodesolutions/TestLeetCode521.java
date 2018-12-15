@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode521 {
   @Test
-  public void testEqualStrings() {
+  public void testProblemCase1() {
     String a = "abc";
     String b = "abc";
     LeetCode521 solution = new LeetCode521();
@@ -14,7 +14,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringALonger() {
+  public void testProblemCase2() {
     String a = "abcd";
     String b = "abc";
     LeetCode521 solution = new LeetCode521();
@@ -22,7 +22,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringBLonger() {
+  public void testProblemCase3() {
     String a = "abc";
     String b = "abcd";
     LeetCode521 solution = new LeetCode521();
@@ -30,7 +30,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringARepeat() {
+  public void testProblemCase4() {
     String a = "abcabc";
     String b = "abc";
     LeetCode521 solution = new LeetCode521();
@@ -38,7 +38,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringBRepeat() {
+  public void testProblemCase5() {
     String a = "abc";
     String b = "abcabc";
     LeetCode521 solution = new LeetCode521();
@@ -46,7 +46,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringsDiffButSameSize() {
+  public void testProblemCase6() {
     String a = "abc";
     String b = "def";
     LeetCode521 solution = new LeetCode521();
@@ -54,7 +54,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringAEmpty() {
+  public void testProblemCase7() {
     String a = "";
     String b = "abc";
     LeetCode521 solution = new LeetCode521();
@@ -62,7 +62,7 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testStringBEmpty() {
+  public void testProblemCase8() {
     String a = "abc";
     String b = "";
     LeetCode521 solution = new LeetCode521();
@@ -70,33 +70,9 @@ public class TestLeetCode521 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase9() {
     String a = "";
     String b = "";
-    LeetCode521 solution = new LeetCode521();
-    Assert.assertEquals(-1, solution.findLUSlength(a, b));
-  }
-
-  @Test
-  public void testStringANull() {
-    String a = null;
-    String b = "abc";
-    LeetCode521 solution = new LeetCode521();
-    Assert.assertEquals(-1, solution.findLUSlength(a, b));
-  }
-
-  @Test
-  public void testStringBNull() {
-    String a = "abc";
-    String b = null;
-    LeetCode521 solution = new LeetCode521();
-    Assert.assertEquals(-1, solution.findLUSlength(a, b));
-  }
-
-  @Test
-  public void testNull() {
-    String a = null;
-    String b = null;
     LeetCode521 solution = new LeetCode521();
     Assert.assertEquals(-1, solution.findLUSlength(a, b));
   }

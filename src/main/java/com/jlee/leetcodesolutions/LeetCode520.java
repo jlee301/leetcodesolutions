@@ -28,20 +28,22 @@ public class LeetCode520 {
    * https://leetcode.com/problems/detect-capital/description/
    */
   public boolean detectCapitalUse(String word) {
-    if(word == null)
-      return false;
-    
-    if(word.length() == 0)
-      return true;
-    
-    int cap = 0;
-    for(int i = 0; i < word.length(); i++) {
-      if(word.charAt(i) - 'a' < 0)
-        cap++;
+    boolean upperSum = true;
+    boolean lowerSum = true;
+    for(int i = 1; i < word.length(); i++) {
+      char ch = word.charAt(i);
+      boolean upper = Character.isUpperCase(ch);
+      upperSum &= upper;
+      lowerSum &= !upper;
     }
-    if(cap == word.length() || cap == 0 || (cap == 1 && word.charAt(0) - 'a' < 0))
-      return true;
+    
+    // 1. If first letter is upper case      
+    //    a. remaining chars are either all lower or all upper
+    // 2. If first letter is lower case
+    //    a. remaining chars are all lower case
+    if(Character.isUpperCase(word.charAt(0)))
+      return upperSum || lowerSum;
     else
-      return false;
+      return lowerSum;
   }
 }

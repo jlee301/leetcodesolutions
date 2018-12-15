@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode541 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     String s = "abcdefg";
     int k = 2;
     LeetCode541 solution = new LeetCode541();
@@ -14,7 +14,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testExactly2k() {
+  public void testProblemCase2() {
     String s = "abcdefgh";
     int k = 2;
     LeetCode541 solution = new LeetCode541();
@@ -22,7 +22,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testLessThan2KButKLeft() {
+  public void testProblemCase3() {
     String s = "abcdef";
     int k = 2;
     LeetCode541 solution = new LeetCode541();
@@ -30,7 +30,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testLessThan2KButLessThanKLeft() {
+  public void testProblemCase4() {
     String s = "abcde";
     int k = 2;
     LeetCode541 solution = new LeetCode541();
@@ -38,7 +38,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testKLeft() {
+  public void testProblemCase5() {
     String s = "abc";
     int k = 2;
     LeetCode541 solution = new LeetCode541();
@@ -46,7 +46,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testKLessLeft() {
+  public void testProblemCase6() {
     String s = "ab";
     int k = 4;
     LeetCode541 solution = new LeetCode541();
@@ -54,7 +54,7 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testK1() {
+  public void testProblemCase7() {
     String s = "abcdefg";
     int k = 1;
     LeetCode541 solution = new LeetCode541();
@@ -62,32 +62,8 @@ public class TestLeetCode541 {
   }
 
   @Test
-  public void testK0() {
-    String s = "abcdefg";
-    int k = 0;
-    LeetCode541 solution = new LeetCode541();
-    Assert.assertEquals("", solution.reverseStr(s, k));
-  }
-
-  @Test
-  public void testKNeg() {
-    String s = "abcdefg";
-    int k = -1;
-    LeetCode541 solution = new LeetCode541();
-    Assert.assertEquals("", solution.reverseStr(s, k));
-  }
-
-  @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     String s = "";
-    int k = 2;
-    LeetCode541 solution = new LeetCode541();
-    Assert.assertEquals("", solution.reverseStr(s, k));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
     int k = 2;
     LeetCode541 solution = new LeetCode541();
     Assert.assertEquals("", solution.reverseStr(s, k));

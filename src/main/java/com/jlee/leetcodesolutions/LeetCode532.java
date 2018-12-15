@@ -1,8 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.Arrays;
-import java.util.ArrayList;
-import javafx.util.Pair;
 
 public class LeetCode532 {
   /*
@@ -40,18 +38,20 @@ public class LeetCode532 {
    * https://leetcode.com/problems/k-diff-pairs-in-an-array/description/
    */
   public int findPairs(int[] nums, int k) {
-    if(nums == null || nums.length == 0)
-      return 0;
-    
-    // By ascend sorting, you don't need to worry about determining absolute value.
+    int count = 0;
     Arrays.sort(nums);
-    ArrayList<Pair<Integer,Integer>> list = new ArrayList<Pair<Integer,Integer>>();
-    for(int i = 0; i < nums.length - 1; i++) {
+    for(int i = 0; i < nums.length; i++) {
+      if(i > 0 && nums[i] == nums[i-1])
+        continue;
+      
       for(int j = i+1; j < nums.length; j++) {
-        if(nums[j] - nums[i] == k && !list.contains(new Pair(nums[i],nums[j])))
-          list.add(new Pair(nums[i],nums[j]));
+        if(j > i+1 && nums[j] == nums[j-1])
+          continue;
+        
+        if(nums[j] - nums[i] == k)
+          count++;
       }
     }
-    return list.size();
+    return count;
   }
 }

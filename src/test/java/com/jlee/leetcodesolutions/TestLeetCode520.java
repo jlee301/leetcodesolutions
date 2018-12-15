@@ -6,72 +6,58 @@ import org.junit.Test;
 
 public class TestLeetCode520 {
   @Test
-  public void testAllCaps() {
+  public void testProblemCase1() {
     String word = "USA";
     LeetCode520 solution = new LeetCode520();
     Assert.assertTrue(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testAllLower() {
+  public void testProblemCase2() {
     String word = "usa";
     LeetCode520 solution = new LeetCode520();
     Assert.assertTrue(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testCapBeg() {
+  public void testProblemCase3() {
     String word = "Usa";
     LeetCode520 solution = new LeetCode520();
     Assert.assertTrue(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testCapMid() {
+  public void testProblemCase4() {
     String word = "uSa";
     LeetCode520 solution = new LeetCode520();
     Assert.assertFalse(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testCapEnd() {
+  public void testProblemCase5() {
     String word = "usA";
     LeetCode520 solution = new LeetCode520();
     Assert.assertFalse(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testMultiCap() {
+  public void testProblemCase6() {
     String word = "UsA";
     LeetCode520 solution = new LeetCode520();
     Assert.assertFalse(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testOneLetterCap() {
+  public void testProblemCase7() {
     String word = "U";
     LeetCode520 solution = new LeetCode520();
     Assert.assertTrue(solution.detectCapitalUse(word));
   }
 
   @Test
-  public void testOneLetterLow() {
+  public void testProblemCase8() {
     String word = "u";
     LeetCode520 solution = new LeetCode520();
     Assert.assertTrue(solution.detectCapitalUse(word));
-  }
-
-  @Test
-  public void testEmpty() {
-    String word = "";
-    LeetCode520 solution = new LeetCode520();
-    Assert.assertTrue(solution.detectCapitalUse(word));
-  }
-
-  @Test
-  public void testNull() {
-    String word = null;
-    LeetCode520 solution = new LeetCode520();
-    Assert.assertFalse(solution.detectCapitalUse(word));
   }
 }

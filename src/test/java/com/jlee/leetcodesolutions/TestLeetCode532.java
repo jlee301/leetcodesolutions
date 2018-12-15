@@ -30,7 +30,7 @@ public class TestLeetCode532 {
   }
 
   @Test
-  public void testNeg() {
+  public void testProblemCase4() {
     int[] nums = {1, 3, -1, -4, 4};
     int k = 3;
     LeetCode532 solution = new LeetCode532();
@@ -38,7 +38,7 @@ public class TestLeetCode532 {
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase5() {
     int[] nums = {};
     int k = 1;
     LeetCode532 solution = new LeetCode532();
@@ -46,10 +46,10 @@ public class TestLeetCode532 {
   }
 
   @Test
-  public void testNull() {
-    int[] nums = null;
-    int k = 1;
+  public void testProblemCase6() {
+    int[] nums = {1, 3, 5, 5, 5};
+    int k = 2;
     LeetCode532 solution = new LeetCode532();
-    Assert.assertEquals(0, solution.findPairs(nums, k));
+    Assert.assertEquals(2, solution.findPairs(nums, k));
   }
 }

@@ -31,12 +31,6 @@ public class LeetCode521 {
    * https://leetcode.com/problems/longest-uncommon-subsequence-i/description/
    */
   public int findLUSlength(String a, String b) {
-    if(a == null || b == null)
-      return -1;
-    
-    if(a.equals(b))
-      return -1;
-    else
-      return Math.max(a.length(), b.length());
+    return a.equals(b) ? -1 : Math.max(a.length(), b.length());   
   }
 }

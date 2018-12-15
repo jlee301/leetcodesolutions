@@ -1,7 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.TreeNode;
-import java.util.ArrayList;
 
 public class LeetCode538 {
   /*
@@ -24,42 +23,24 @@ public class LeetCode538 {
    * 
    * https://leetcode.com/problems/convert-bst-to-greater-tree/description/
    */
-  private ArrayList<Integer> list = new ArrayList<Integer>();
-
+  private int sum;
+  
   public TreeNode convertBST(TreeNode root) {
-    if(root == null)
-      return null;
-    
-    populateList(root);
-    TreeNode temp = new TreeNode(0);
-    populateGreaterTree(root, temp, root.val);
-    
-    return temp;
+    sum = 0;
+    helper(root);
+    return root;
   }
   
-  private void populateList(TreeNode node) {
-    list.add(node.val);
-    if(node.left != null)
-      populateList(node.left);
-    if(node.right != null)
-      populateList(node.right);
-  }
-  
-  private void populateGreaterTree(TreeNode node, TreeNode greater, int value) {
-    greater.val = value;
-    for(int i = 0; i < list.size(); i++) {
-      if(list.get(i) > value)
-        greater.val += list.get(i);
-    }
+  private void helper(TreeNode node) {
+    if(node == null)
+      return;
     
-    if(node.left != null) {
-      greater.left = new TreeNode(0);
-      populateGreaterTree(node.left, greater.left, node.left.val);
-    }
+    // Traverse right side first to find greater values
+    // Add the sum to root, then traverse left
+    helper(node.right);
+    node.val += sum;
+    sum = node.val;
     
-    if(node.right != null) {
-      greater.right = new TreeNode(0);
-      populateGreaterTree(node.right, greater.right, node.right.val);
-    }
+    helper(node.left);
   }
 }

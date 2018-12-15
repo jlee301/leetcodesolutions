@@ -18,22 +18,15 @@ public class LeetCode507 {
    * https://leetcode.com/problems/perfect-number/description/
    */
   public boolean checkPerfectNumber(int num) {
-    if(num <= 0)
+    if(num <= 1)
       return false;
     
-    int sum = 0;
-    for(int i = 1; i * i <= num; i++) {
-      // num = 28
-      // sum = 1 + 28 + 2 + 14 + 4 + 7 = 56
-      // Because using this logic, both products are added to the sum, so we need to
-      // subtract 28 at the end.
-      if(num % i == 0) {
-        sum += i;
-        if(i * i != num) {
-          sum += num / i;
-        }
-      }
+    int sum = 1;
+    int sqrt = (int) Math.sqrt(num);
+    for(int i = 2; i <= sqrt; i++) {
+      if(num % i == 0)
+        sum += i + (num / i);
     }
-    return sum - num == num;
+    return sum == num;
   }
 }

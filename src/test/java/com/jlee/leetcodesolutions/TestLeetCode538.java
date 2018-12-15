@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode538 {
   @Test
-  public void testThreeNode() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(1);
@@ -35,7 +35,7 @@ public class TestLeetCode538 {
   }
 
   @Test
-  public void testTwoNode() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(2);
     root.right = new TreeNode(13);
@@ -51,7 +51,7 @@ public class TestLeetCode538 {
   }
 
   @Test
-  public void testOneNode() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(5);
     LeetCode538 solution = new LeetCode538();
     TreeNode result = solution.convertBST(root);
@@ -61,11 +61,10 @@ public class TestLeetCode538 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase4() {
     TreeNode root = null;
     LeetCode538 solution = new LeetCode538();
     TreeNode result = solution.convertBST(root);
-    Assert.assertNull(result);
     Assert.assertNull(result);
   }
 }

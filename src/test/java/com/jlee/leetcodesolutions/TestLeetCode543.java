@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode543 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -18,7 +18,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testLongerLeftRight() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -31,7 +31,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testLongerLeftLeft() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -44,7 +44,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testMoreRight() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -58,7 +58,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testMoreRightToo() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -73,7 +73,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testMoreRightTrice() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -89,7 +89,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testMoreRightTriceAgain() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -106,14 +106,14 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testJustRoot() {
+  public void testProblemCase8() {
     TreeNode root = new TreeNode(1);
     LeetCode543 solution = new LeetCode543();
     Assert.assertEquals(0, solution.diameterOfBinaryTree(root));
   }
 
   @Test
-  public void testJustRootLeft() {
+  public void testProblemCase9() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     LeetCode543 solution = new LeetCode543();
@@ -121,7 +121,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testJustRootRight() {
+  public void testProblemCase10() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(3);
     LeetCode543 solution = new LeetCode543();
@@ -129,7 +129,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testJustRootLeftRight() {
+  public void testProblemCase11() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -138,7 +138,7 @@ public class TestLeetCode543 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase12() {
     TreeNode root = null;
     LeetCode543 solution = new LeetCode543();
     Assert.assertEquals(0, solution.diameterOfBinaryTree(root));

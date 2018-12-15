@@ -22,17 +22,21 @@ public class LeetCode543 {
    * 
    * https://leetcode.com/problems/diameter-of-binary-tree/description/
    */
+  private int max;
   public int diameterOfBinaryTree(TreeNode root) {
-    if(root == null)
-      return 0;
-    
-    return countLength(root.left) + countLength(root.right);    
+    max = 0;
+    findDepth(root);
+    return max;
   }
   
-  private int countLength(TreeNode node) {
+  private int findDepth(TreeNode node) {
     if(node == null)
       return 0;
     
-    return Math.max(countLength(node.left), countLength(node.right)) + 1;
+    int leftDepth = findDepth(node.left);
+    int rightDepth = findDepth(node.right);
+    max = Math.max(max, leftDepth + rightDepth);
+    
+    return 1 + Math.max(leftDepth, rightDepth);
   }
 }

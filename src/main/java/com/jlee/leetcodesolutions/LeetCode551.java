@@ -25,24 +25,19 @@ public class LeetCode551 {
    * https://leetcode.com/problems/student-attendance-record-i/description/
    */
   public boolean checkRecord(String s) {
-    if(s == null || s.length() == 0)
-      return true;
-    
-    int aCount = 0, lCount = 0;
-    for(int i = 0; i < s.length(); i++) {
-      if(s.charAt(i) == 'A') {
+    int aCount = 0;
+    int i = 0;
+    while(i < s.length()) {
+      char ch = s.charAt(i);
+      if(ch == 'A')
         aCount++;
-        lCount = 0;
-        if(aCount > 1)
+      
+      if(ch == 'L') {
+        if(i < s.length()-2 && s.charAt(i+1) == 'L' && s.charAt(i+2) == 'L')
           return false;
-      } else if(s.charAt(i) == 'L') {
-        lCount++;
-        if(lCount == 3)
-          return false;
-      } else {
-        lCount = 0;
       }
+      i++;
     }
-    return true;
+    return aCount < 2;
   }
 }

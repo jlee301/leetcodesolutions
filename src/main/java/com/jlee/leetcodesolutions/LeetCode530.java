@@ -24,21 +24,25 @@ public class LeetCode530 {
    * 
    * https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
    */
-  private int min = Integer.MAX_VALUE;
-  private Integer prev = null;
+  private int min;
+  private Integer prev;
   
   public int getMinimumDifference(TreeNode root) {
-    if(root == null)
-      return min;
-    
-    getMinimumDifference(root.left);
-    
-    if(prev != null)
-      min = Math.min(min,  root.val - prev);
-    
-    prev = root.val;
-    
-    getMinimumDifference(root.right);
+    min = Integer.MAX_VALUE;      
+    prev = null;
+    helper(root);
     return min;
+  }
+  
+  private void helper(TreeNode node) {
+    if(node == null)
+      return;
+    
+    helper(node.left);
+    if(prev != null)
+      min = Math.min(min, node.val - prev);
+    
+    prev = node.val;
+    helper(node.right);
   }
 }

@@ -17,15 +17,14 @@ public class LeetCode557 {
    * https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
    */
   public String reverseWords(String s) {
-    if(s == null)
-      return "";
-    
-    String[] sSplit = s.trim().split(" ");
+    String[] sData = s.split(" ");
     StringBuilder sb = new StringBuilder();
-    for(int i = 0; i < sSplit.length; i++) {
-      sb.append(new StringBuilder(sSplit[i]).reverse());
-      if(i != sSplit.length - 1)
-        sb.append(" ");
+    for(int i = 0; i < sData.length; i++) {
+      for(int j = sData[i].length()-1; j >= 0; j--)
+        sb.append(sData[i].charAt(j));
+      
+      if(i < sData.length-1)
+        sb.append(' ');
     }
     return sb.toString();
   }

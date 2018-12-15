@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode530 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     root.right = new TreeNode(3);
     root.right.left = new TreeNode(2);
@@ -16,7 +16,7 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testLeftSideTree() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(6);
     root.left.left = new TreeNode(2);
@@ -26,7 +26,7 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testLeftSideTreeMissingRightLeaf() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(6);
     root.left.left = new TreeNode(2);
@@ -35,7 +35,7 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testLeftSideTwoTier() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(6);
     LeetCode530 solution = new LeetCode530();
@@ -43,7 +43,7 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testTwoTierRightSmaller() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(6);
     root.right = new TreeNode(12);
@@ -52,7 +52,7 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testThreeTierRightSmaller() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(10);
     root.left = new TreeNode(6);
     root.right = new TreeNode(12);
@@ -63,14 +63,14 @@ public class TestLeetCode530 {
   }
 
   @Test
-  public void testOneNode() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(10);
     LeetCode530 solution = new LeetCode530();
     Assert.assertEquals(Integer.MAX_VALUE, solution.getMinimumDifference(root));
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase8() {
     TreeNode root = null;
     LeetCode530 solution = new LeetCode530();
     Assert.assertEquals(Integer.MAX_VALUE, solution.getMinimumDifference(root));

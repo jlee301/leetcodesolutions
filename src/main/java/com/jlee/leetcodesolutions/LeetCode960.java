@@ -33,7 +33,7 @@ public class LeetCode960 {
     
     for(int c = 0; c < C; c++) {
       for(int i = 0; i < c; i++) {
-        // Check each row if lexicographic order A[r][i] <= A[r][c]
+        // Check each String if lexicographically correct A[r][i] <= A[r][c]
         int r = 0;
         for(r = 0; r < R; r++) {
           if(A[r].charAt(i) > A[r].charAt(c))

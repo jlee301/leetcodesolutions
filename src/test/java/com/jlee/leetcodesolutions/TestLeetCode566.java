@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode566 {
   @Test
-  public void test2By2To1By4() {
+  public void testProblemCase1() {
     int[][] nums = {{1,2},{3,4}};
     int r = 1, c = 4;
     LeetCode566 solution = new LeetCode566();
@@ -18,7 +18,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2To4By1() {
+  public void testProblemCase2() {
     int[][] nums = {{1,2},{3,4}};
     int r = 4, c = 1;
     LeetCode566 solution = new LeetCode566();
@@ -30,7 +30,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2To2By2() {
+  public void testProblemCase3() {
     int[][] nums = {{1,2},{3,4}};
     int r = 2, c = 2;
     LeetCode566 solution = new LeetCode566();
@@ -42,7 +42,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2ToUnderSize() {
+  public void testProblemCase4() {
     int[][] nums = {{1,2},{3,4}};
     int r = 1, c = 2;
     LeetCode566 solution = new LeetCode566();
@@ -54,7 +54,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2ToOverSize() {
+  public void testProblemCase5() {
     int[][] nums = {{1,2},{3,4}};
     int r = 3, c = 2;
     LeetCode566 solution = new LeetCode566();
@@ -66,7 +66,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2ToRLess1() {
+  public void testProblemCase6() {
     int[][] nums = {{1,2},{3,4}};
     int r = 0, c = 2;
     LeetCode566 solution = new LeetCode566();
@@ -78,7 +78,7 @@ public class TestLeetCode566 {
   }
 
   @Test
-  public void test2By2ToCLess1() {
+  public void testProblemCase7() {
     int[][] nums = {{1,2},{3,4}};
     int r = 2, c = 0;
     LeetCode566 solution = new LeetCode566();
@@ -87,14 +87,5 @@ public class TestLeetCode566 {
     Assert.assertEquals(2, result[0][1]);
     Assert.assertEquals(3, result[1][0]);
     Assert.assertEquals(4, result[1][1]);
-  }
-
-  @Test
-  public void testNull() {
-    int[][] nums = null;
-    int r = 1, c = 4;
-    LeetCode566 solution = new LeetCode566();
-    int[][] result = solution.matrixReshape(nums, r, c);
-    Assert.assertNull(result);
   }
 }

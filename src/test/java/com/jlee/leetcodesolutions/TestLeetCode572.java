@@ -40,7 +40,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testSameTree() {
+  public void testProblemCase3() {
     TreeNode s = new TreeNode(3);
     s.left = new TreeNode(4);
     s.left.left = new TreeNode(1);
@@ -58,7 +58,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testMultipleSameValuesOnLeft() {
+  public void testProblemCase4() {
     TreeNode s = new TreeNode(4);
     s.left = new TreeNode(4);
     s.left.left = new TreeNode(1);
@@ -73,7 +73,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testMultipleSameValuesOnBothSides() {
+  public void testProblemCase5() {
     TreeNode s = new TreeNode(4);
     s.left = new TreeNode(4);
     s.left.left = new TreeNode(5);
@@ -91,7 +91,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testMatchLeaf() {
+  public void testProblemCase6() {
     TreeNode s = new TreeNode(3);
     s.left = new TreeNode(4);
     s.left.left = new TreeNode(1);
@@ -105,7 +105,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testMatchLeafRight() {
+  public void testProblemCase7() {
     TreeNode s = new TreeNode(3);
     s.left = new TreeNode(4);
     s.left.left = new TreeNode(1);
@@ -119,7 +119,7 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testSNull() {
+  public void testProblemCase8() {
     TreeNode s = null;
     TreeNode t = new TreeNode(4);
     t.left = new TreeNode(1);
@@ -130,9 +130,40 @@ public class TestLeetCode572 {
   }
 
   @Test
-  public void testTNull() {
+  public void testProblemCase9() {
     TreeNode s = new TreeNode(4);    
     TreeNode t = null;
+    
+    LeetCode572 solution = new LeetCode572();
+    Assert.assertFalse(solution.isSubtree(s, t));
+  }
+
+  @Test
+  public void testProblemCase10() {
+    TreeNode s = null;    
+    TreeNode t = null;
+    
+    LeetCode572 solution = new LeetCode572();
+    Assert.assertTrue(solution.isSubtree(s, t));
+  }
+
+  @Test
+  public void testProblemCase11() {
+    TreeNode s = new TreeNode(1);
+    s.left = new TreeNode(2);
+    TreeNode t = new TreeNode(1);
+    t.right = new TreeNode(2);
+    
+    LeetCode572 solution = new LeetCode572();
+    Assert.assertFalse(solution.isSubtree(s, t));
+  }
+
+  @Test
+  public void testProblemCase12() {
+    TreeNode s = new TreeNode(1);
+    s.right = new TreeNode(2);
+    TreeNode t = new TreeNode(1);
+    t.left = new TreeNode(2);
     
     LeetCode572 solution = new LeetCode572();
     Assert.assertFalse(solution.isSubtree(s, t));

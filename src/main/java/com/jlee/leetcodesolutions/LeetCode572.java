@@ -26,23 +26,28 @@ public class LeetCode572 {
    * https://leetcode.com/problems/subtree-of-another-tree/description/
    */
   public boolean isSubtree(TreeNode s, TreeNode t) {
-    if(s == null || t == null)
-      return false;
-    
-    if(s.val != t.val) {
-      return isSubtree(s.left,t) || isSubtree(s.right,t);
-    } else {
-      return checkNodes(s,t) || isSubtree(s.left,t) || isSubtree(s.right,t);
-    }
-  }
-  
-  private boolean checkNodes(TreeNode s, TreeNode t) {
     if(s == null && t == null)
       return true;
     
-    if(s != null && t != null && s.val == t.val)
-      return checkNodes(s.left,t.left) && checkNodes(s.right, t.right);
+    if(s == null || t == null)
+      return false;
     
-    return false;
+    if(isMatch(s, t))
+      return true;
+    else
+      return isSubtree(s.left, t) || isSubtree(s.right, t);
+  }
+  
+  private boolean isMatch(TreeNode s, TreeNode t) {
+    if(s == null && t == null)
+      return true;
+    
+    if(s == null || t == null)
+      return false;
+    
+    if(s.val != t.val)
+      return false;
+    else
+      return isMatch(s.left, t.left) && isMatch(s.right, t.right);
   }
 }

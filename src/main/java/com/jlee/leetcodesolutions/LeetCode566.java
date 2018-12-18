@@ -36,23 +36,19 @@ public class LeetCode566 {
    * 
    * https://leetcode.com/problems/reshape-the-matrix/description/
    */
-  public int[][] matrixReshape(int[][] nums, int r, int c){
-    if(nums == null)
-      return null;
-    
-    if((nums.length == r && nums[0].length == c) || (nums.length*nums[0].length != r*c) || r < 1 || c < 1)
+  public int[][] matrixReshape(int[][] nums, int r, int c) {
+    int R = nums.length, C = nums[0].length;
+    if(R*C != r*c)
       return nums;
     
-    int k = 0, l = 0;
     int[][] result = new int[r][c];
-    for(int i = 0; i < result.length; i++) {
-      for(int j = 0; j < result[i].length; j++) {
-        result[i][j] = nums[k][l];
-        if(l == nums[k].length - 1) {
+    int k = 0, l = 0;
+    for(int i = 0; i < R; i++) {
+      for(int j = 0; j < C; j++) {
+        result[k][l++] = nums[i][j];
+        if(l == c) {
           k++;
           l = 0;
-        } else {
-          l++;
         }
       }
     }

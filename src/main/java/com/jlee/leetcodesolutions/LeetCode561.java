@@ -21,14 +21,12 @@ public class LeetCode561 {
    * https://leetcode.com/problems/array-partition-i/description/
    */
   public int arrayPairSum(int[] nums) {
-    if(nums == null || nums.length % 2 != 0)
-      return 0;
-    
-    int sum = 0;
+    // [-10000, -1, 1, 2, 3, 4]
     Arrays.sort(nums);
-    for(int i = 0; i < nums.length; i += 2) {
+    int sum = 0;
+    for(int i = 0; i < nums.length; i += 2)
       sum += nums[i];
-    }
+    
     return sum;
   }
 }

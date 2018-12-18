@@ -33,29 +33,22 @@ public class LeetCode563 {
    * 
    * https://leetcode.com/problems/binary-tree-tilt/description/
    */
-  private int tilt = 0;
+  private int tilt;
+  
   public int findTilt(TreeNode root) {
-    if(root == null)
-      return tilt;
-    
-    findTiltAt(root);
+    tilt = 0;
+    findSum(root);
     return tilt;
   }
   
-  private void findTiltAt(TreeNode root) {
-    if(root.left != null && root.right != null) {
-      tilt += Math.abs(root.left.val - root.right.val);
-      findTiltAt(root.left);
-      findTiltAt(root.right);
-      
-    } else if(root.left != null && root.right == null) {
-      tilt += Math.abs(root.left.val - 0);
-      findTiltAt(root.left);
-      
-    } else if(root.left == null && root.right != null) {
-      tilt += Math.abs(0 - root.right.val);
-      findTiltAt(root.right);
-      
-    }
+  public int findSum(TreeNode node) {
+    if(node == null)
+      return 0;
+    
+    int left = findSum(node.left);
+    int right = findSum(node.right);
+    tilt += Math.abs(left-right);
+    
+    return left + right + node.val;
   }
 }

@@ -6,70 +6,56 @@ import org.junit.Test;
 
 public class TestLeetCode575 {
   @Test
-  public void testTwoSameCandy() {
+  public void testProblemCase1() {
     int[] candies = {1,1};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(1, solution.distributeCandies(candies));
   }
 
   @Test
-  public void testFourCandiesOnePair() {
+  public void testProblemCase2() {
     int[] candies = {1,1,2,3};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(2, solution.distributeCandies(candies));
   }
 
   @Test
-  public void testFourCandiesTwoPairs() {
+  public void testProblemCase3() {
     int[] candies = {1,1,2,2};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(2, solution.distributeCandies(candies));
   }
 
   @Test
-  public void testFourCandiesAllDifferent() {
+  public void testProblemCase4() {
     int[] candies = {1,2,3,4};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(2, solution.distributeCandies(candies));
   }
 
   @Test
-  public void test10CandiesAllPairsOrMore() {
+  public void testProblemCase5() {
     int[] candies = {1,1,1,2,2,2,3,3,4,4};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(4, solution.distributeCandies(candies));
   }
 
   @Test
-  public void test10CandiesAllSame() {
+  public void testProblemCase6() {
     int[] candies = {1,1,1,1,1,1,1,1,1,1};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(1, solution.distributeCandies(candies));
   }
 
   @Test
-  public void test10CandiesAllDifferent() {
+  public void testProblemCase7() {
     int[] candies = {1,2,3,4,5,6,7,8,9,10};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(5, solution.distributeCandies(candies));
   }
 
   @Test
-  public void testNotEven() {
-    int[] candies = {1,2,3};
-    LeetCode575 solution = new LeetCode575();
-    Assert.assertEquals(0, solution.distributeCandies(candies));
-  }
-
-  @Test
-  public void testEmpty() {
-    int[] candies = {};
-    LeetCode575 solution = new LeetCode575();
-    Assert.assertEquals(0, solution.distributeCandies(candies));
-  }
-
-  @Test
-  public void testNull() {
+  public void testProblemCase8() {
     int[] candies = {};
     LeetCode575 solution = new LeetCode575();
     Assert.assertEquals(0, solution.distributeCandies(candies));

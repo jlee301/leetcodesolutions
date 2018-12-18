@@ -24,23 +24,16 @@ public class LeetCode581 {
    * https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/
    */
   public int findUnsortedSubarray(int[] nums) {
-    int result = 0;
-    if(nums == null || nums.length <= 1)
-      return result;
+    int[] clone = nums.clone();
+    Arrays.sort(clone);
+    int i = 0;
+    while(i < clone.length && clone[i] == nums[i])
+      i++;
     
-    int[] sorted = nums.clone();
-    Arrays.sort(sorted);
-    int maxPtr = 0, minPtr = sorted.length;
+    int j = clone.length-1;
+    while(j >= i+1 && clone[j] == nums[j])
+      j--;
     
-    for(int i = 0; i < nums.length; i++) {
-      if(nums[i] != sorted[i]) {
-        minPtr = Math.min(minPtr, i);
-        maxPtr = Math.max(maxPtr, i);
-      }
-    }
-    if(maxPtr - minPtr > 0)
-      return maxPtr - minPtr + 1;
-    else
-      return 0;
+    return i == clone.length ? 0 : j - i + 1;
   }
 }

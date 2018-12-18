@@ -141,6 +141,8 @@ import org.junit.runners.Suite;
   TestLeetCode572.class,
   TestLeetCode575.class,
   TestLeetCode581.class,
+  TestLeetCode589.class,
+  TestLeetCode590.class,
   TestLeetCode594.class,
   TestLeetCode598.class,
   TestLeetCode599.class,

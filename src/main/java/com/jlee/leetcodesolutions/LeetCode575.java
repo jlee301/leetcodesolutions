@@ -34,16 +34,10 @@ public class LeetCode575 {
    * https://leetcode.com/problems/distribute-candies/description/
    */
   public int distributeCandies(int[] candies) {
-    if(candies == null || candies.length % 2 != 0)
-      return 0;
+    HashSet<Integer> set = new HashSet<>();
+    for(int n : candies)
+      set.add(n);
     
-    HashSet<Integer> set = new HashSet<Integer>();
-    for(int i = 0; i < candies.length; i++)
-      set.add(candies[i]);
-    
-    if(set.size() >= candies.length / 2)
-      return candies.length / 2;
-    else
-      return set.size();
+    return Math.min(set.size(), candies.length/2);
   }
 }

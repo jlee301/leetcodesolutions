@@ -27,35 +27,29 @@ public class LeetCode637 {
    * 
    * https://leetcode.com/problems/average-of-levels-in-binary-tree/description/
    */
-  private HashMap<Integer, ArrayList<Integer>> map = new HashMap<Integer, ArrayList<Integer>>();
-
   public List<Double> averageOfLevels(TreeNode root) {
-    int level = 0;
-    populateMap(root, level);
+    HashMap<Integer,List<Integer>> map = new HashMap<>();
+    traverse(root, 0, map);
     
-    List<Double> result = new ArrayList<Double>();
-    for(int key: map.keySet()) {
-      ArrayList<Integer> list = map.get(key);
-      long avg = 0;
-      for(int i = 0; i < list.size(); i++) {
-        avg += list.get(i);
-      }
-      result.add((double) avg / (long) list.size());
+    List<Double> result = new ArrayList<>();
+    for(int i = 0; i < map.size(); i++) {
+      double avg = 0.0;
+      List<Integer> list = map.get(i);
+      for(int n : list)
+        avg += n;
+      
+      avg /= list.size();
+      result.add(avg);
     }
     return result;
   }
   
-  private void populateMap(TreeNode node, int level) {
+  private void traverse(TreeNode node, int level, HashMap<Integer,List<Integer>> map) {
     if(node == null)
       return;
     
-    if(!map.containsKey(level))
-      map.put(level, new ArrayList<Integer>());
-    
-    map.get(level).add(node.val);
-    
-    level++;
-    populateMap(node.left, level);
-    populateMap(node.right, level);
+    map.computeIfAbsent(level, k -> new ArrayList<>()).add(node.val);
+    traverse(node.left, level+1, map);
+    traverse(node.right, level+1, map);
   }
 }

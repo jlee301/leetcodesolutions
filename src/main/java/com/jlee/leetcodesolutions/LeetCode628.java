@@ -24,24 +24,9 @@ public class LeetCode628 {
    * https://leetcode.com/problems/maximum-product-of-three-numbers/description/
    */
   public int maximumProduct(int[] nums) {
-    if(nums == null || nums.length < 3)
-      return 0;
-    
     Arrays.sort(nums);
-    // If the product of the first two numbers is >= the product of the last two
-    // numbers then the first two numbers are negative numbers.
-    //
-    // The second check is seeing if the last two numbers are negative, it means all
-    // the numbers are negative in the array.
-    if(nums[0] * nums[1] >= nums[nums.length-1] * nums[nums.length-2] 
-        && !(nums[nums.length-1] < 0) && !(nums[nums.length-2] < 0))
-      return nums[0] * nums[1] * nums[nums.length-1];
-    else
-      return nums[nums.length-1] * nums[nums.length-2] * nums[nums.length-3];
-
-    /*
-    return Math.max(nums[0] * nums[1] * nums[nums.length-1], 
-        nums[nums.length-1] * nums[nums.length-2] * nums[nums.length-3]);
-    */
+    // If the two minimum numbers are negative and multiplied by the biggest number
+    // OR the three biggest numbers
+    return Math.max(nums[0] * nums[1] * nums[nums.length-1], nums[nums.length-1] * nums[nums.length-2] * nums[nums.length-3]);
   }
 }

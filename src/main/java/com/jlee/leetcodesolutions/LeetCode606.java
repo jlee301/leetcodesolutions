@@ -44,22 +44,23 @@ public class LeetCode606 {
    * https://leetcode.com/problems/construct-string-from-binary-tree/description/
    */
   public String tree2str(TreeNode t) {
-    String result = "";
     if(t == null)
+      return "";
+    
+    String result = t.val + "";
+    String left = tree2str(t.left);
+    String right = tree2str(t.right);
+    
+    if(left.equals("") && right.equals(""))
       return result;
     
-    result = buildString(t);
-    return result;
-  }
-  
-  private String buildString(TreeNode node) {
-    if(node.left != null && node.right != null)
-      return Integer.toString(node.val) + "(" + buildString(node.left) + ")(" + buildString(node.right) + ")";
-    else if(node.left != null && node.right == null)
-      return Integer.toString(node.val) + "(" + buildString(node.left) + ")";
-    else if (node.left == null && node.right != null)
-      return Integer.toString(node.val) + "()(" + buildString(node.right) + ")";
-    else    
-      return Integer.toString(node.val);    
+    // Must pad parenthesis if only left is null
+    if(left.equals(""))
+      return result + "()" + "(" + right + ")";
+    
+    if(right.equals(""))
+      return result + "(" + left + ")";
+    
+    return result + "(" + left + ")" + "(" + right + ")";
   }
 }

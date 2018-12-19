@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class TestLeetCode637 {
   @Test
-  public void testJustRoot() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(3);
     LeetCode637 solution = new LeetCode637();
     List<Double> result = solution.averageOfLevels(root);
@@ -17,7 +17,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testTwoLevel() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -29,7 +29,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testThreeLevelRight() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.right = new TreeNode(20);
@@ -44,7 +44,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testThreeLevelLeft() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(15);
@@ -59,7 +59,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testThreeLevel() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(9);
     root.left.left = new TreeNode(11);
@@ -76,7 +76,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testMaxIntegers() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(Integer.MAX_VALUE);
     root.right = new TreeNode(Integer.MAX_VALUE);
@@ -88,7 +88,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testMinIntegers() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(Integer.MIN_VALUE);
     root.right = new TreeNode(Integer.MIN_VALUE);
@@ -100,7 +100,7 @@ public class TestLeetCode637 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase8() {
     TreeNode root = null;
     LeetCode637 solution = new LeetCode637();
     List<Double> result = solution.averageOfLevels(root);

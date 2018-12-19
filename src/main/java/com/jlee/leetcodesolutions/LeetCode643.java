@@ -18,21 +18,17 @@ public class LeetCode643 {
    * https://leetcode.com/problems/maximum-average-subarray-i/description/
    */
   public double findMaxAverage(int[] nums, int k) {
-    if(nums == null || nums.length == 0 || k < 1 || k > nums.length)
-      return (double) 0;
-    
+    double avg = -300_000_000;
     int sum = 0;
-    // Get the first sum of k
-    for(int i = 0; i < k; i++)
+    for(int i = 0; i < nums.length; i++) {
       sum += nums[i];
-    
-    int result = sum;
-    // After first run, the sum is subtracting least previous and adding the
-    // new.  This will avoid k-2 computations per iteration.
-    for(int i = k; i < nums.length; i++) {
-      sum = sum - nums[i-k] + nums[i];
-      result = Math.max(result, sum);
+      if(i >= k) 
+        sum -= nums[i-k];
+      
+      if(i >= k-1)
+        avg = Math.max(avg, sum / (double) k);
+      
     }
-    return (double) result / k;
+    return avg;
   }
 }

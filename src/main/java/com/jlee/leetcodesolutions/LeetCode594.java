@@ -21,18 +21,18 @@ public class LeetCode594 {
    * https://leetcode.com/problems/longest-harmonious-subsequence/description/
    */
   public int findLHS(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return 0;
+    // Find frequency of each integer
+    HashMap<Integer,Integer> map = new HashMap<>();
+    for(int n : nums)
+      map.put(n, map.getOrDefault(n, 0) + 1);
     
-    HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
-    for(int i = 0; i < nums.length; i++)
-      map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-
-    int result = 0;
+    // Now for each integer, add its frequency and its +1 variant
+    int max = 0;
     for(int key : map.keySet()) {
-      if(map.containsKey(key + 1))
-        result = Math.max(result, map.get(key) + map.get(key + 1));
+      int len = map.get(key);
+      if(map.containsKey(key+1))
+        max = Math.max(max, len + map.get(key+1));
     }
-    return result;
+    return max;
   }
 }

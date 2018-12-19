@@ -7,14 +7,14 @@ import org.junit.Test;
 
 public class TestLeetCode606 {
   @Test
-  public void testJustRoot() {
+  public void testProblemCase1() {
     TreeNode t = new TreeNode(1);
     LeetCode606 solution = new LeetCode606();
     Assert.assertEquals("1", solution.tree2str(t));
   }
 
   @Test
-  public void testTwoTierLeft() {
+  public void testProblemCase2() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     LeetCode606 solution = new LeetCode606();
@@ -22,7 +22,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testTwoTierRight() {
+  public void testProblemCase3() {
     TreeNode t = new TreeNode(1);
     t.right = new TreeNode(2);
     LeetCode606 solution = new LeetCode606();
@@ -30,7 +30,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testTwoTierFull() {
+  public void testProblemCase4() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.right = new TreeNode(3);
@@ -39,7 +39,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeftLeft() {
+  public void testProblemCase5() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.left = new TreeNode(4);
@@ -49,7 +49,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeftRight() {
+  public void testProblemCase6() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.right = new TreeNode(4);
@@ -59,7 +59,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeft() {
+  public void testProblemCase7() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.left = new TreeNode(4);
@@ -70,7 +70,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeftRightLeft() {
+  public void testProblemCase8() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.left = new TreeNode(4);
@@ -82,7 +82,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeftRightRight() {
+  public void testProblemCase9() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.left = new TreeNode(4);
@@ -94,7 +94,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testThreeTierLeftRightFull() {
+  public void testProblemCase10() {
     TreeNode t = new TreeNode(1);
     t.left = new TreeNode(2);
     t.left.left = new TreeNode(4);
@@ -107,7 +107,7 @@ public class TestLeetCode606 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase11() {
     TreeNode t = null;
     LeetCode606 solution = new LeetCode606();
     Assert.assertEquals("", solution.tree2str(t));

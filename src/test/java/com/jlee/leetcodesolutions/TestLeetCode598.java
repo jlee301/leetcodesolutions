@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode598 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int m = 3, n = 3;
     int[][] ops = {{2,2},{3,3}};
     LeetCode598 solution = new LeetCode598();
@@ -14,7 +14,7 @@ public class TestLeetCode598 {
   }
 
   @Test
-  public void testProblemCaseDiffOrder() {
+  public void testProblemCase2() {
     int m = 3, n = 3;
     int[][] ops = {{3,3},{2,2}};
     LeetCode598 solution = new LeetCode598();
@@ -22,7 +22,7 @@ public class TestLeetCode598 {
   }
   
   @Test
-  public void testLowerMin() {
+  public void testProblemCase3() {
     int m = 3, n = 3;
     int[][] ops = {{2,2},{1,1}};
     LeetCode598 solution = new LeetCode598();
@@ -30,7 +30,7 @@ public class TestLeetCode598 {
   }
 
   @Test
-  public void testM0() {
+  public void testProblemCase4() {
     int m = 0, n = 3;
     int[][] ops = {{2,2},{1,1}};
     LeetCode598 solution = new LeetCode598();
@@ -38,7 +38,7 @@ public class TestLeetCode598 {
   }
 
   @Test
-  public void testN0() {
+  public void testProblemCase5() {
     int m = 3, n = 0;
     int[][] ops = {{2,2},{1,1}};
     LeetCode598 solution = new LeetCode598();
@@ -46,26 +46,10 @@ public class TestLeetCode598 {
   }
 
   @Test
-  public void testOpsEmpty() {
+  public void testProblemCase6() {
     int m = 3, n = 3;
     int[][] ops = {};
     LeetCode598 solution = new LeetCode598();
-    Assert.assertEquals(0, solution.maxCount(m, n, ops));    
-  }
-
-  @Test
-  public void testOpsOpEmpty() {
-    int m = 3, n = 3;
-    int[][] ops = {{}};
-    LeetCode598 solution = new LeetCode598();
-    Assert.assertEquals(0, solution.maxCount(m, n, ops));    
-  }
-
-  @Test
-  public void testNull() {
-    int m = 3, n = 3;
-    int[][] ops = null;
-    LeetCode598 solution = new LeetCode598();
-    Assert.assertEquals(0, solution.maxCount(m, n, ops));    
+    Assert.assertEquals(9, solution.maxCount(m, n, ops));    
   }
 }

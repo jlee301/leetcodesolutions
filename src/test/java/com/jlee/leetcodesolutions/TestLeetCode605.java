@@ -22,7 +22,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testInBeginning() {
+  public void testProblemCase3() {
     int[] flowerbed = {0,0,1};
     int n = 1;
     LeetCode605 solution = new LeetCode605();
@@ -30,7 +30,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testInEnd() {
+  public void testProblemCase4() {
     int[] flowerbed = {1,0,0};
     int n = 1;
     LeetCode605 solution = new LeetCode605();
@@ -38,7 +38,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testInBetween() {
+  public void testProblemCase5() {
     int[] flowerbed = {1,0,0,0};
     int n = 1;
     LeetCode605 solution = new LeetCode605();
@@ -46,7 +46,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testOneSpace() {
+  public void testProblemCase6() {
     int[] flowerbed = {0};
     int n = 1;
     LeetCode605 solution = new LeetCode605();
@@ -54,7 +54,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testAllFull() {
+  public void testProblemCase7() {
     int[] flowerbed = {1,1,1,1};
     int n = 1;
     LeetCode605 solution = new LeetCode605();
@@ -62,7 +62,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testEnoughRoom() {
+  public void testProblemCase8() {
     int[] flowerbed = {0,0,0,0};
     int n = 2;
     LeetCode605 solution = new LeetCode605();
@@ -70,7 +70,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testNotEnoughRoom() {
+  public void testProblemCase9() {
     int[] flowerbed = {0,0,0,0};
     int n = 3;
     LeetCode605 solution = new LeetCode605();
@@ -78,7 +78,7 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testFlowerEmpty() {
+  public void testProblemCase10() {
     int[] flowerbed = {};
     int n = 3;
     LeetCode605 solution = new LeetCode605();
@@ -86,18 +86,10 @@ public class TestLeetCode605 {
   }
 
   @Test
-  public void testFlowerNull() {
-    int[] flowerbed = null;
-    int n = 3;
-    LeetCode605 solution = new LeetCode605();
-    Assert.assertFalse(solution.canPlaceFlowers(flowerbed, n));
-  }
-
-  @Test
-  public void testN0() {
+  public void testProblemCase11() {
     int[] flowerbed = {0,0,0,0};
     int n = 0;
     LeetCode605 solution = new LeetCode605();
-    Assert.assertFalse(solution.canPlaceFlowers(flowerbed, n));
+    Assert.assertTrue(solution.canPlaceFlowers(flowerbed, n));
   }
 }

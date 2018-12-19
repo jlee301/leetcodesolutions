@@ -26,38 +26,15 @@ public class LeetCode605 {
    * https://leetcode.com/problems/can-place-flowers/description/
    */
   public boolean canPlaceFlowers(int[] flowerbed, int n) {
-    if(flowerbed == null || flowerbed.length == 0 || n <= 0)
-      return false;
-    
+    int count = 0;
     for(int i = 0; i < flowerbed.length; i++) {
-      if(flowerbed[i] == 0) {
-        if((i == 0 || flowerbed[i-1] == 0) && (i == flowerbed.length-1 || flowerbed[i+1] == 0)) {
-          n--;
-          flowerbed[i] = 1;
-        }
-        /*
-        if(i-1 >= 0 && i+1 <= flowerbed.length-1 && flowerbed[i-1] == 0 && flowerbed[i+1] == 0) {
-          // in between
-          n--;
-          flowerbed[i] = 1;
-        } else if(i-1 >= 0 && i+1 > flowerbed.length-1 && flowerbed[i-1] == 0) {
-          // in end
-          n--;
-          flowerbed[i] = 1;
-        } else if(i-1 < 0 && i+1 <= flowerbed.length-1 && flowerbed[i+1] == 0) {
-          // in beginning
-          n--;
-          flowerbed[i] = 1;
-        } else if(i-1 < 0 && i+1 > flowerbed.length-1) {
-          // only one space
-          n--;
-          flowerbed[i] = 1;
-        }
-        */
-        if(n == 0)
-          return true;
+      int prev = i == 0 ? 0 : flowerbed[i-1];
+      int next = i == flowerbed.length-1 ? 0 : flowerbed[i+1];
+      if(prev + flowerbed[i] + next == 0) {
+        flowerbed[i] = 1;
+        count++;
       }
     }
-    return false;
-  }  
+    return n <= count;
+  }
 }

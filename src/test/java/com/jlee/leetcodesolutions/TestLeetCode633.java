@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode633 {
   @Test
-  public void testSquareSums() {
+  public void testProblemCase1() {
     LeetCode633 solution = new LeetCode633();
     Assert.assertTrue(solution.judgeSquareSum(0));
     Assert.assertTrue(solution.judgeSquareSum(1));
@@ -24,7 +24,7 @@ public class TestLeetCode633 {
   }
   
   @Test
-  public void testNotSquareSums() {
+  public void testProblemCase2() {
     LeetCode633 solution = new LeetCode633();
     Assert.assertFalse(solution.judgeSquareSum(3));
     Assert.assertFalse(solution.judgeSquareSum(6));
@@ -34,20 +34,5 @@ public class TestLeetCode633 {
     Assert.assertFalse(solution.judgeSquareSum(14));
     Assert.assertFalse(solution.judgeSquareSum(15));
     Assert.assertFalse(solution.judgeSquareSum(19));
-  }
-
-  @Test
-  public void testLessThanZero() {
-    LeetCode633 solution = new LeetCode633();
-    Assert.assertFalse(solution.judgeSquareSum(-1));
-    Assert.assertFalse(solution.judgeSquareSum(-2));
-    Assert.assertFalse(solution.judgeSquareSum(-3));
-    Assert.assertFalse(solution.judgeSquareSum(-4));
-    Assert.assertFalse(solution.judgeSquareSum(-5));
-    Assert.assertFalse(solution.judgeSquareSum(-6));
-    Assert.assertFalse(solution.judgeSquareSum(-7));
-    Assert.assertFalse(solution.judgeSquareSum(-8));
-    Assert.assertFalse(solution.judgeSquareSum(-9));
-    Assert.assertFalse(solution.judgeSquareSum(-10));
   }
 }

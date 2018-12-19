@@ -42,14 +42,11 @@ public class LeetCode598 {
    * https://leetcode.com/problems/range-addition-ii/description/
    */
   public int maxCount(int m, int n, int[][] ops) {
-    if(ops == null || m <= 0 || n <= 0 || ops.length <= 0 || ops[0].length <= 0)
-      return 0;
-    
-    int M = m, N = n;
+    int a = m, b = n;
     for(int[] op : ops) {
-      M = Math.min(M, op[0]);
-      N = Math.min(N, op[1]);
+      a = Math.min(a, op[0]);
+      b = Math.min(b, op[1]);
     }
-    return M * N;
+    return a*b;
   }
 }

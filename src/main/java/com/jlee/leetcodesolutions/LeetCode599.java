@@ -1,7 +1,9 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class LeetCode599 {
   /*
@@ -38,23 +40,30 @@ public class LeetCode599 {
    * https://leetcode.com/problems/minimum-index-sum-of-two-lists/description/
    */
   public String[] findRestaurant(String[] list1, String[] list2) {
-    if(list1 == null || list2 == null || list1.length == 0 || list2.length == 0)
-      return new String[] {};
+    // Map list1 Strings to their indices for faster searches
+    HashMap<String,Integer> map = new HashMap<>();
+    for(int i = 0; i < list1.length; i++)
+      map.put(list1[i], i);
     
-    int leastSum = Integer.MAX_VALUE;
-    HashMap<Integer, ArrayList<String>> map = new HashMap<Integer, ArrayList<String>>();
-    for(int i = 0; i < list1.length; i++) {
-      for(int j = 0; j < list2.length; j++) {
-        if(list1[i].equals(list2[j])) {
-          if(!map.containsKey(i+j)) {
-            map.put(i+j, new ArrayList<String>());
-          }
-          map.get(i+j).add(list1[i]);
-          leastSum = Math.min(leastSum, i+j);
-        }
+    int min = Integer.MAX_VALUE;
+    int[] sum = new int[list2.length];
+    Arrays.fill(sum, -1);
+    // sum[i] = sum of indices of list2[i]
+    // sum[i] = -1 no matches found
+    
+    for(int i = 0; i < list2.length; i++) {
+      if(map.containsKey(list2[i])) {
+        sum[i] = i + map.get(list2[i]);
+        min = Math.min(min, sum[i]);
       }
     }
-    String[] result = new String[map.get(leastSum).size()];
-    return map.get(leastSum).toArray(result);
+    List<String> result = new ArrayList<>();
+    for(int i = 0; i < sum.length; i++) {
+      if(sum[i] == min)
+        result.add(list2[i]);
+    }
+    String[] ans = new String[result.size()];
+    ans = result.toArray(ans);
+    return ans;
   }
 }

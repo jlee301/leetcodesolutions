@@ -17,12 +17,14 @@ public class LeetCode633 {
    * https://leetcode.com/problems/sum-of-square-numbers/description/
    */
   public boolean judgeSquareSum(int c) {
-    if(c < 0)
-      return false;
-    
-    for(int a = 0; a * a <= c; a++) {
-      double b = Math.sqrt(c - a*a);
-      if(b == (int) b)
+    int left = 0, right = (int) Math.sqrt(c);
+    while(left <= right) {
+      int sumSq = left * left + right * right;
+      if(sumSq > c)
+        right--;
+      else if(sumSq < c)
+        left++;
+      else
         return true;
     }
     return false;

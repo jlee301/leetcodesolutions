@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode617 {
   @Test
-  public void testMergeRoot() {
+  public void testProblemCase1() {
     TreeNode t1 = new TreeNode(1);
     TreeNode t2 = new TreeNode(2);
     LeetCode617 solution = new LeetCode617();
@@ -18,7 +18,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierT1Left() {
+  public void testProblemCase2() {
     TreeNode t1 = new TreeNode(1);
     t1.left = new TreeNode(3);
     TreeNode t2 = new TreeNode(2);
@@ -32,7 +32,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierT1Right() {
+  public void testProblemCase3() {
     TreeNode t1 = new TreeNode(1);
     t1.right = new TreeNode(3);
     TreeNode t2 = new TreeNode(2);
@@ -46,7 +46,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierT2Left() {
+  public void testProblemCase4() {
     TreeNode t1 = new TreeNode(1);
     TreeNode t2 = new TreeNode(2);
     t2.left = new TreeNode(4);
@@ -60,7 +60,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierT2Right() {
+  public void testProblemCase5() {
     TreeNode t1 = new TreeNode(1);
     TreeNode t2 = new TreeNode(2);
     t2.right = new TreeNode(4);
@@ -74,7 +74,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierFullLeft() {
+  public void testProblemCase6() {
     TreeNode t1 = new TreeNode(1);
     t1.left = new TreeNode(3);
     t1.right = new TreeNode(5);
@@ -91,7 +91,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierFullRight() {
+  public void testProblemCase7() {
     TreeNode t1 = new TreeNode(1);
     TreeNode t2 = new TreeNode(2);
     t2.left = new TreeNode(4);
@@ -108,7 +108,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeTwoTierFull() {
+  public void testProblemCase8() {
     TreeNode t1 = new TreeNode(1);
     t1.left = new TreeNode(3);
     t1.right = new TreeNode(5);
@@ -127,7 +127,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeT1Null() {
+  public void testProblemCase9() {
     TreeNode t1 = null;
     TreeNode t2 = new TreeNode(2);
     LeetCode617 solution = new LeetCode617();
@@ -138,7 +138,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeT2Null() {
+  public void testProblemCase10() {
     TreeNode t1 = new TreeNode(1);
     TreeNode t2 = null;
     LeetCode617 solution = new LeetCode617();
@@ -149,7 +149,7 @@ public class TestLeetCode617 {
   }
 
   @Test
-  public void testMergeNull() {
+  public void testProblemCase11() {
     TreeNode t1 = null;
     TreeNode t2 = null;
     LeetCode617 solution = new LeetCode617();

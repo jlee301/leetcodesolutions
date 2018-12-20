@@ -1,6 +1,7 @@
 package com.jlee.leetcodesolutions;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class LeetCode645 {
   /*
@@ -24,14 +25,27 @@ public class LeetCode645 {
    * https://leetcode.com/problems/set-mismatch/description/
    */
   public int[] findErrorNums(int[] nums) {
-    if(nums == null || nums.length < 2)
-      return new int[] {0,0};
-    
     Arrays.sort(nums);
-    for(int i = 0; i < nums.length; i++) {
-      if(i+1 != nums[i])
-        return new int[] {nums[i], i+1};
+    int a = 0, b = 0;
+    HashSet<Integer> set = new HashSet<>();
+    boolean foundMissing = false;
+    boolean foundDupe = false;
+    int i = 1, j = 0;
+    while(j < nums.length && (!foundMissing || !foundDupe)) {
+      if(!foundDupe && !set.add(nums[j])) {
+        foundDupe = true;
+        a = nums[j];
+        j++;
+        continue;
+      }
+      
+      if(!foundMissing && i != nums[j]) {
+        foundMissing = true;
+        b = i;
+      }
+      i++;
+      j++;
     }
-    return new int[] {0,0};
+    return new int[] {a, foundMissing ? b : nums.length };
   }
 }

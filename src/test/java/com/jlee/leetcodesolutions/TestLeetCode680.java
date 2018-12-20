@@ -6,93 +6,86 @@ import org.junit.Test;
 
 public class TestLeetCode680 {
   @Test
-  public void testOne() {
+  public void testProblemCase1() {
     String s = "a";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testTwoValid() {
+  public void testProblemCase2() {
     String s = "aa";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testTwoRemoval() {
+  public void testProblemCase3() {
     String s = "ab";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testThreeValid() {
+  public void testProblemCase4() {
     String s = "aba";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testThreeRemoval() {
+  public void testProblemCase5() {
     String s = "aab";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testThreeRemovalInvalid() {
+  public void testProblemCase6() {
     String s = "abc";
     LeetCode680 solution = new LeetCode680();
     Assert.assertFalse(solution.validPalindrome(s));
   }
 
   @Test
-  public void testEndRemovalInvalid() {
+  public void testProblemCase7() {
     String s = "abaac";
     LeetCode680 solution = new LeetCode680();
     Assert.assertFalse(solution.validPalindrome(s));
   }
 
   @Test
-  public void testFrontRemovalInvalid() {
+  public void testProblemCase8() {
     String s = "acbadc";
     LeetCode680 solution = new LeetCode680();
     Assert.assertFalse(solution.validPalindrome(s));
   }
 
   @Test
-  public void testFrontRemovalValid() {
+  public void testProblemCase9() {
     String s = "acdc";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testSpace() {
+  public void testProblemCase10() {
     String s = " ";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testSpaces() {
+  public void testProblemCase11() {
     String s = "  ";
     LeetCode680 solution = new LeetCode680();
     Assert.assertTrue(solution.validPalindrome(s));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase12() {
     String s = "";
     LeetCode680 solution = new LeetCode680();
-    Assert.assertFalse(solution.validPalindrome(s));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
-    LeetCode680 solution = new LeetCode680();
-    Assert.assertFalse(solution.validPalindrome(s));
+    Assert.assertTrue(solution.validPalindrome(s));
   }
 }

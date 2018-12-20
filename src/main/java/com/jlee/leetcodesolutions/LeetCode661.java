@@ -29,54 +29,21 @@ public class LeetCode661 {
    * 
    * https://leetcode.com/problems/image-smoother/description/
    */
-  public int[][] imageSmoother(int[][] M){
-    if(M == null || M.length < 1 || M[0].length < 1)
-      return null;
-    
+  public int[][] imageSmoother(int[][] M) {
     int[][] result = new int[M.length][M[0].length];
-    for(int i = 0; i < result.length; i++) {
-      for(int j = 0; j < result[i].length; j++) {
-        int sum = M[i][j];
+    int[][] moves = { {-1,-1}, {-1,0}, {-1,1}, {0,-1}, {0,1}, {1,-1}, {1,0}, {1,1} };
+    for(int i = 0; i < M.length; i++) {
+      for(int j = 0; j < M[i].length; j++) {        
+        // Check adjacent cells
         int count = 1;
-        
-        // add above
-        if(i != 0) {
-          sum += M[i-1][j];
-          count++;
-        }
-        // add left
-        if(j != 0) {
-          sum += M[i][j-1];
-          count++;
-        }
-        // add above left
-        if(i != 0 && j != 0) {
-          sum += M[i-1][j-1];
-          count++;
-        }
-        // add below
-        if(i != result.length-1) {
-          sum += M[i+1][j];
-          count++;
-        }
-        // add right
-        if(j != result[i].length-1) {
-          sum += M[i][j+1];
-          count++;
-        }
-        // add below right
-        if(i != result.length-1 && j != result[i].length-1) {
-          sum += M[i+1][j+1];
-          count++;
-        }
-        // add above right
-        if(i != 0 && j != result[i].length-1) {
-          sum += M[i-1][j+1];
-          count++;
-        }
-        // add below left
-        if(i != result.length-1 && j != 0) {
-          sum += M[i+1][j-1];
+        int sum = M[i][j];
+        for(int[] move : moves) {
+          int nextI = i + move[0];
+          int nextJ = j + move[1];
+          if(nextI < 0 || nextI == M.length || nextJ < 0 || nextJ == M[0].length)
+            continue;
+          
+          sum += M[nextI][nextJ];
           count++;
         }
         result[i][j] = sum / count;

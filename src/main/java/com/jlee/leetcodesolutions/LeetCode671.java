@@ -1,8 +1,6 @@
 package com.jlee.leetcodesolutions;
 
 import com.jlee.leetcodesolutions.TreeNode;
-import java.util.Arrays;
-import java.util.HashSet;
 
 public class LeetCode671 {
   /*
@@ -39,31 +37,22 @@ public class LeetCode671 {
    * 
    * https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/description/
    */
-  private HashSet<Integer> hash = new HashSet<Integer>();
+  private int result;
   
   public int findSecondMinimumValue(TreeNode root) {
-    if(root == null)
-      return -1;
-    
-    populateSet(root);
-    Integer[] values = new Integer[hash.size()];
-    hash.toArray(values);
-
-    Arrays.sort(values);
-    // Because HashSet does not allow duplicate entries, the second entry if it
-    // exist is the second minimum.
-    if(values.length > 1)
-      return values[1];
-    else
-      return -1;
+    result = Integer.MAX_VALUE;
+    traverse(root, root.val);
+    return result == Integer.MAX_VALUE ? -1 : result;
   }
   
-  private void populateSet(TreeNode node) {
+  private void traverse(TreeNode node, int min) {
     if(node == null)
       return;
     
-    hash.add(node.val);
-    populateSet(node.left);
-    populateSet(node.right);
+    if(node.val != min)
+      result = Math.min(result, node.val);
+    
+    traverse(node.left, min);
+    traverse(node.right, min);
   }
 }

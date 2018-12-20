@@ -32,21 +32,18 @@ public class LeetCode669 {
    * https://leetcode.com/problems/trim-a-binary-search-tree/description/
    */
   public TreeNode trimBST(TreeNode root, int L, int R) {
-    TreeNode newTree = null;
     if(root == null)
-      return newTree;
+      return null;
     
-    newTree = new TreeNode(0);
-    if(root.val >= L && root.val <= R) {
-      newTree.val = root.val;
-      newTree.left = trimBST(root.left, L, R);
-      newTree.right = trimBST(root.right, L, R);
-    } else {
-      newTree = trimBST(root.left, L, R);
-      // If the trim is still null, then try right side.
-      if(newTree == null)
-        newTree = trimBST(root.right, L, R);
-    }
-    return newTree;
+    if(root.val < L)
+      return trimBST(root.right, L, R);
+    
+    if(root.val > R)
+      return trimBST(root.left, L, R);
+    
+    TreeNode node = new TreeNode(root.val);
+    node.left = trimBST(root.left, L, R);
+    node.right = trimBST(root.right, L, R);
+    return node;
   }
 }

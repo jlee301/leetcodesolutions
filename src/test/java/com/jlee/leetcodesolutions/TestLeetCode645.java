@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode645 {
   @Test
-  public void testDupeMid() {
+  public void testProblemCase1() {
     int[] nums = {1,2,2,4};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
@@ -15,7 +15,7 @@ public class TestLeetCode645 {
   }
 
   @Test
-  public void testDupeBeg() {
+  public void testProblemCase2() {
     int[] nums = {1,1,3,4};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
@@ -24,7 +24,7 @@ public class TestLeetCode645 {
   }
 
   @Test
-  public void testDupeEnd() {
+  public void testProblemCase3() {
     int[] nums = {1,2,4,4};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
@@ -33,7 +33,7 @@ public class TestLeetCode645 {
   }
 
   @Test
-  public void testUnordered() {
+  public void testProblemCase4() {
     int[] nums = {4,2,2,1};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
@@ -42,16 +42,7 @@ public class TestLeetCode645 {
   }
 
   @Test
-  public void testNoDupes() {
-    int[] nums = {1,2,3,4};
-    LeetCode645 solution = new LeetCode645();
-    int[] result = solution.findErrorNums(nums);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
-  }
-
-  @Test
-  public void testTwoEntry() {
+  public void testProblemCase5() {
     int[] nums = {1,1};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
@@ -60,29 +51,29 @@ public class TestLeetCode645 {
   }
 
   @Test
-  public void testOneEntry() {
-    int[] nums = {1};
+  public void testProblemCase6() {
+    int[] nums = {1,2,2,3,4};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
+    Assert.assertEquals(2, result[0]);
+    Assert.assertEquals(5, result[1]);
   }
 
   @Test
-  public void testEmpty() {
-    int[] nums = {};
+  public void testProblemCase7() {
+    int[] nums = {1,2,2,3,5};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
+    Assert.assertEquals(2, result[0]);
+    Assert.assertEquals(4, result[1]);
   }
 
   @Test
-  public void testNull() {
-    int[] nums = null;
+  public void testProblemCase8() {
+    int[] nums = {3,2,3,4,6,5};
     LeetCode645 solution = new LeetCode645();
     int[] result = solution.findErrorNums(nums);
-    Assert.assertEquals(0, result[0]);
-    Assert.assertEquals(0, result[1]);
+    Assert.assertEquals(3, result[0]);
+    Assert.assertEquals(1, result[1]);
   }
 }

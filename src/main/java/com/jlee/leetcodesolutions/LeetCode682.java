@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class LeetCode682 {
   /*
@@ -55,37 +55,36 @@ public class LeetCode682 {
    * https://leetcode.com/problems/baseball-game/description/
    */
   public int calPoints(String[] ops) {
-    if(ops == null || ops.length == 0)
-      return 0;
-    
-    ArrayList<Integer> list = new ArrayList<Integer>();
+    Stack<Integer> stack = new Stack<>();
+    int sum = 0;
     for(int i = 0; i < ops.length; i++) {
-      if(ops[i] == "+") {
-        if(list.size() == 1)
-          list.add(list.get(0));
-        else if(list.size() >= 2)
-          list.add(list.get(list.size()-1) + list.get(list.size()-2));
-        else
-          list.add(0);
-        
-      } else if(ops[i] == "D") {
-        if(list.size() > 0)
-          list.add(2 * list.get(list.size()-1));
-        else
-          list.add(0);
-
-      } else if(ops[i] == "C") {
-        if(list.size() > 0)
-          list.remove(list.size()-1);
-        
-      } else {
-        list.add(Integer.parseInt(ops[i]));
-        
+      String op = ops[i];
+      if(op.equals("C")) {
+        // Remove last valid score
+        int val = stack.isEmpty() ? 0 : stack.pop();
+        sum -= val;
+      }
+      else if(op.equals("D")) {
+        // Double last valid score
+        int val = stack.isEmpty() ? 0 : 2 * stack.peek();
+        sum += val;
+        stack.push(val);
+      }
+      else if(op.equals("+")) {
+        // Sum last two valid scores
+        int val1 = stack.isEmpty() ? 0 : stack.pop();
+        int val2 = stack.isEmpty() ? 0 : stack.pop();
+        sum += val1 + val2;
+        stack.push(val2);
+        stack.push(val1);
+        stack.push(val1 + val2);
+      }
+      else {
+        int val = Integer.valueOf(op);
+        sum += val;
+        stack.push(val);
       }
     }
-    int sum = 0;
-    for(int i = 0; i < list.size(); i++)
-      sum += list.get(i);
     return sum;
   }
 }

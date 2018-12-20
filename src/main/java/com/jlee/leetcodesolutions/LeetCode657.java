@@ -22,25 +22,18 @@ public class LeetCode657 {
    * https://leetcode.com/problems/judge-route-circle/description/
    */
   public boolean judgeCircle(String moves) {
-    if(moves == null || moves.length() == 0)
-      return true;
-    
-    moves = moves.toUpperCase().trim();
     int x = 0, y = 0;
     for(int i = 0; i < moves.length(); i++) {
-      if(moves.charAt(i) == 'U')
+      char ch = moves.charAt(i);
+      if(ch == 'U')
         y++;
-      else if(moves.charAt(i) == 'D')
+      else if(ch == 'D')
         y--;
-      else if(moves.charAt(i) == 'L')
+      else if(ch == 'L')
         x--;
-      else if(moves.charAt(i) == 'R')
+      else
         x++;
     }
-    
-    if(x == 0 && y == 0)
-      return true;
-    else
-      return false;
+    return x == 0 && y == 0;
   }
 }

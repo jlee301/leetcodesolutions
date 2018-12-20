@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode653 {
   @Test
-  public void testJustRoot() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(5);
     int k = 5;
     LeetCode653 solution = new LeetCode653();
@@ -15,7 +15,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testTwoLevel() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(3);
     root.right = new TreeNode(6);
@@ -29,7 +29,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testTwoLevelWithDupeValues() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(4);
     root.right = new TreeNode(5);
@@ -43,7 +43,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testThreeLevel() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(3);
     root.left.left = new TreeNode(2);
@@ -72,7 +72,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testZeroSum() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(-5);
     root.right = new TreeNode(10);
@@ -84,7 +84,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testNegSum() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(-5);
     root.left = new TreeNode(-10);
     root.right = new TreeNode(10);
@@ -96,7 +96,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testAllSame() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(1);
     root.right = new TreeNode(1);
@@ -108,7 +108,7 @@ public class TestLeetCode653 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase8() {
     TreeNode root = null;
     int k = 1;
     LeetCode653 solution = new LeetCode653();

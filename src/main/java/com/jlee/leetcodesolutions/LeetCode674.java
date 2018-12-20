@@ -25,18 +25,22 @@ public class LeetCode674 {
    * https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
    */
   public int findLengthOfLCIS(int[] nums) {
+    int max = 0;
     if(nums == null || nums.length == 0)
-      return 0;
+      return max;
     
-    int result = 1, count = 1;
-    for(int i = 0; i < nums.length-1; i++) {
-      if(nums[i] < nums[i+1])
-        count++;
-      else {
-        result = Math.max(result, count);
-        count = 1;
+    // i == location of starting element of increasing subarray
+    // j == starting element of next increasing subarray
+    int i = 0, j = 1;
+    while(j < nums.length) {
+      // advance until j is at the starting element of the next subarray
+      if(nums[j-1] >= nums[j]) {
+        max = Math.max(max, j - i);
+        i = j;
       }
+      j++;
     }
-    return Math.max(result, count);
+    max = Math.max(max, j - i);
+    return max;
   }
 }

@@ -20,43 +20,36 @@ public class TestLeetCode682 {
   }
 
   @Test
-  public void testPlusButOneValidValues() {
+  public void testProblemCase3() {
     String[] ops = {"5","+"};
     LeetCode682 solution = new LeetCode682();
     Assert.assertEquals(10, solution.calPoints(ops));
   }
 
   @Test
-  public void testPlusButNoValidValues() {
+  public void testProblemCase4() {
     String[] ops = {"+"};
     LeetCode682 solution = new LeetCode682();
     Assert.assertEquals(0, solution.calPoints(ops));
   }
 
   @Test
-  public void testCButNoValidValues() {
+  public void testProblemCase5() {
     String[] ops = {"C"};
     LeetCode682 solution = new LeetCode682();
     Assert.assertEquals(0, solution.calPoints(ops));
   }
 
   @Test
-  public void testDButNoValidValues() {
+  public void testProblemCase6() {
     String[] ops = {"D"};
     LeetCode682 solution = new LeetCode682();
     Assert.assertEquals(0, solution.calPoints(ops));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase7() {
     String[] ops = {};
-    LeetCode682 solution = new LeetCode682();
-    Assert.assertEquals(0, solution.calPoints(ops));
-  }
-
-  @Test
-  public void testNull() {
-    String[] ops = null;
     LeetCode682 solution = new LeetCode682();
     Assert.assertEquals(0, solution.calPoints(ops));
   }

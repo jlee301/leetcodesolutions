@@ -7,14 +7,14 @@ import org.junit.Test;
 
 public class TestLeetCode671 {
   @Test
-  public void testRoot() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(2);
     LeetCode671 solution = new LeetCode671();
     Assert.assertEquals(-1, solution.findSecondMinimumValue(root));
   }
 
   @Test
-  public void testTwoLevelSame() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(2);
     root.left = new TreeNode(2);
     root.right = new TreeNode(2);
@@ -23,7 +23,7 @@ public class TestLeetCode671 {
   }
 
   @Test
-  public void testTwoLevel() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(2);
     root.left = new TreeNode(2);
     root.right = new TreeNode(5);
@@ -32,7 +32,7 @@ public class TestLeetCode671 {
   }
 
   @Test
-  public void testThreeLevelRight() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(2);
     root.left = new TreeNode(2);
     root.right = new TreeNode(5);
@@ -43,7 +43,7 @@ public class TestLeetCode671 {
   }
 
   @Test
-  public void testThreeLevelLeft() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(2);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(2);
@@ -54,7 +54,7 @@ public class TestLeetCode671 {
   }
 
   @Test
-  public void testThreeLevel() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(2);
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(2);
@@ -64,12 +64,5 @@ public class TestLeetCode671 {
     root.right.right = new TreeNode(7);
     LeetCode671 solution = new LeetCode671();
     Assert.assertEquals(3, solution.findSecondMinimumValue(root));
-  }
-
-  @Test
-  public void testNull() {
-    TreeNode root = null;
-    LeetCode671 solution = new LeetCode671();
-    Assert.assertEquals(-1, solution.findSecondMinimumValue(root));
   }
 }

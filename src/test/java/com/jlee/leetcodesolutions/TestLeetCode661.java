@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode661 {
   @Test
-  public void testProblemCase() {
+  public void testProblemCase1() {
     int[][] M = {{1,1,1},{1,0,1},{1,1,1}};
     LeetCode661 solution = new LeetCode661();
     int[][] result = solution.imageSmoother(M);
@@ -24,7 +24,7 @@ public class TestLeetCode661 {
   }
   
   @Test
-  public void test3By3() {
+  public void testProblemCase2() {
     int[][]M = {{5,15,4},{6,8,2},{3,4,50}};
     LeetCode661 solution = new LeetCode661();
     int[][] result = solution.imageSmoother(M);
@@ -39,29 +39,5 @@ public class TestLeetCode661 {
     Assert.assertEquals(5, result[2][0]);
     Assert.assertEquals(12, result[2][1]);
     Assert.assertEquals(16, result[2][2]);    
-  }
-
-  @Test
-  public void testEmptyLength() {
-    int[][]M = {};
-    LeetCode661 solution = new LeetCode661();
-    int[][] result = solution.imageSmoother(M);
-    Assert.assertNull(result);
-  }
-
-  @Test
-  public void testEmptyWidth() {
-    int[][]M = {{}};
-    LeetCode661 solution = new LeetCode661();
-    int[][] result = solution.imageSmoother(M);
-    Assert.assertNull(result);
-  }
-
-  @Test
-  public void testNull() {
-    int[][]M = null;
-    LeetCode661 solution = new LeetCode661();
-    int[][] result = solution.imageSmoother(M);
-    Assert.assertNull(result);
   }
 }

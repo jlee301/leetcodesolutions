@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestLeetCode669 {
   @Test
-  public void testJustRootInRange() {
+  public void testProblemCase1() {
     TreeNode root = new TreeNode(1);
     int L = 1, R = 2;
     LeetCode669 solution = new LeetCode669();
@@ -18,7 +18,7 @@ public class TestLeetCode669 {
   }
 
   @Test
-  public void testJustRootNotInRange() {
+  public void testProblemCase2() {
     TreeNode root = new TreeNode(1);
     int L = 2, R = 2;
     LeetCode669 solution = new LeetCode669();
@@ -27,7 +27,7 @@ public class TestLeetCode669 {
   }
   
   @Test
-  public void testTwoLevelInRange() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(0);
     root.right = new TreeNode(2);
@@ -44,7 +44,7 @@ public class TestLeetCode669 {
   }  
 
   @Test
-  public void testTwoLevelNotInRange() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(0);
     root.right = new TreeNode(2);
@@ -59,7 +59,7 @@ public class TestLeetCode669 {
   }  
 
   @Test
-  public void testFourLevelInRange() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(3);
     root.left = new TreeNode(0);
     root.left.right = new TreeNode(2);
@@ -78,7 +78,7 @@ public class TestLeetCode669 {
   }
   
   @Test
-  public void testRootPromotionLeftSide() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(0);
     root.right = new TreeNode(2);
@@ -91,7 +91,7 @@ public class TestLeetCode669 {
   }
 
   @Test
-  public void testRootPromotionRightSide() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(0);
     root.right = new TreeNode(2);
@@ -104,7 +104,7 @@ public class TestLeetCode669 {
   }
 
   @Test
-  public void testEntireTreeNotInRange() {
+  public void testProblemCase8() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(1);
     root.right = new TreeNode(1);
@@ -115,7 +115,7 @@ public class TestLeetCode669 {
   }
 
   @Test
-  public void testNull() {
+  public void testProblemCase9() {
     TreeNode root = null;
     int L = 1, R = 3;
     LeetCode669 solution = new LeetCode669();

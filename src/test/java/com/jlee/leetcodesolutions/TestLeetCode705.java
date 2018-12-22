@@ -16,5 +16,10 @@ public class TestLeetCode705 {
     Assert.assertTrue(solution.contains(2));
     solution.remove(2);
     Assert.assertFalse(solution.contains(2));
+    
+    // Test bucketing
+    solution.add(10001);
+    solution.remove(20001);
+    Assert.assertFalse(solution.contains(20001));
   }
 }

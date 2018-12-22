@@ -16,5 +16,10 @@ public class TestLeetCode706 {
     Assert.assertEquals(1, solution.get(2));
     solution.remove(2);
     Assert.assertEquals(-1, solution.get(2));
+    
+    // Test bucketing
+    solution.put(10001, 10001);
+    solution.remove(20001);
+    Assert.assertEquals(-1, solution.get(20001));
   }
 }

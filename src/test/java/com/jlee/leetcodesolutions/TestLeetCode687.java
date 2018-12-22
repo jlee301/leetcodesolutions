@@ -31,14 +31,14 @@ public class TestLeetCode687 {
   }
   
   @Test
-  public void testRoot() {
+  public void testProblemCase3() {
     TreeNode root = new TreeNode(1);
     LeetCode687 solution = new LeetCode687();
     Assert.assertEquals(0, solution.longestUnivaluePath(root));    
   }
 
   @Test
-  public void testTwoLevelSame() {
+  public void testProblemCase4() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(1);
     root.right = new TreeNode(1);
@@ -47,7 +47,7 @@ public class TestLeetCode687 {
   }
   
   @Test
-  public void testTwoLevelRightDiff() {
+  public void testProblemCase5() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(1);
     root.right = new TreeNode(2);
@@ -56,7 +56,7 @@ public class TestLeetCode687 {
   }
   
   @Test
-  public void testTwoLevelAllDiff() {
+  public void testProblemCase6() {
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
     root.right = new TreeNode(3);
@@ -65,7 +65,7 @@ public class TestLeetCode687 {
   }
   
   @Test
-  public void testThreeLevelAllSame() {
+  public void testProblemCase7() {
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(5);
     root.left.left = new TreeNode(5);
@@ -76,7 +76,7 @@ public class TestLeetCode687 {
   }
   
   @Test
-  public void testNull() {
+  public void testProblemCase8() {
     TreeNode root = null;
     LeetCode687 solution = new LeetCode687();
     Assert.assertEquals(0, solution.longestUnivaluePath(root));    

@@ -36,28 +36,25 @@ public class LeetCode687 {
    * 
    * https://leetcode.com/problems/longest-univalue-path/description/
    */
-  private int result = 0;
-
+  private int max;
+  
   public int longestUnivaluePath(TreeNode root) {
-    if (root == null)
-      return result;
+    max = 0;
+    if(root == null)
+      return max;
     
-    // The value for root is intentionally ignored.
-    getLen(root, root.val);
-    return result;
+    traverse(root, root.val);
+    return max;
   }
   
-  private int getLen(TreeNode node, int prev) {
-    if (node == null)
+  private int traverse(TreeNode node, int match) {
+    if(node == null)
       return 0;
     
-    int left = getLen(node.left, node.val);
-    int right = getLen(node.right, node.val);
-    result = Math.max(result, left + right);
+    int left = traverse(node.left, node.val);
+    int right = traverse(node.right, node.val);
+    max = Math.max(max, left + right);
     
-    if (prev == node.val)
-      return Math.max(left, right) + 1;
-    else
-      return 0;
+    return node.val == match ? Math.max(left, right) + 1 : 0;
   }
 }

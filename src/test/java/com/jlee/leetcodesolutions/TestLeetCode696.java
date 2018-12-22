@@ -20,50 +20,43 @@ public class TestLeetCode696 {
   }
 
   @Test
-  public void testMore1InPattern() {
+  public void testProblemCase3() {
     String s = "001110011";
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(6, solution.countBinarySubstrings(s));
   }
 
   @Test
-  public void testLargeGroups10Zeros10Ones() {
+  public void testProblemCase4() {
     String s = "00000000001111111111";
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(10, solution.countBinarySubstrings(s));
   }
 
   @Test
-  public void testLargeGroups10Zeros9Ones() {
+  public void testProblemCase5() {
     String s = "0000000000111111111";
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(9, solution.countBinarySubstrings(s));
   }
 
   @Test
-  public void testAllSame() {
+  public void testProblemCase6() {
     String s = "11111";
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(0, solution.countBinarySubstrings(s));
   }
 
   @Test
-  public void testOneBit() {
+  public void testProblemCase7() {
     String s = "1";
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(0, solution.countBinarySubstrings(s));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     String s = "";
-    LeetCode696 solution = new LeetCode696();
-    Assert.assertEquals(0, solution.countBinarySubstrings(s));
-  }
-
-  @Test
-  public void testNull() {
-    String s = null;
     LeetCode696 solution = new LeetCode696();
     Assert.assertEquals(0, solution.countBinarySubstrings(s));
   }

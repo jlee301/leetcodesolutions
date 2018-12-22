@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode693 {
   @Test
-  public void testAlternatingBits() {
+  public void testProblemCase1() {
     LeetCode693 solution = new LeetCode693();
     Assert.assertTrue(solution.hasAlternatingBits(0));
     Assert.assertTrue(solution.hasAlternatingBits(1));
@@ -16,7 +16,7 @@ public class TestLeetCode693 {
   }
   
   @Test
-  public void testNonAlternatingBits() {
+  public void testProblemCase2() {
     LeetCode693 solution = new LeetCode693();
     Assert.assertFalse(solution.hasAlternatingBits(3));    
     Assert.assertFalse(solution.hasAlternatingBits(4));    
@@ -29,15 +29,5 @@ public class TestLeetCode693 {
     Assert.assertFalse(solution.hasAlternatingBits(13));    
     Assert.assertFalse(solution.hasAlternatingBits(14));    
     Assert.assertFalse(solution.hasAlternatingBits(15));    
-  }
-    
-  @Test
-  public void testNeg() {
-    LeetCode693 solution = new LeetCode693();
-    Assert.assertFalse(solution.hasAlternatingBits(-1));
-    Assert.assertFalse(solution.hasAlternatingBits(-2));
-    Assert.assertFalse(solution.hasAlternatingBits(-3));
-    Assert.assertFalse(solution.hasAlternatingBits(-4));
-    Assert.assertFalse(solution.hasAlternatingBits(-5));
   }
 }

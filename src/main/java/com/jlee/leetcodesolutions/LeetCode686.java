@@ -16,21 +16,18 @@ public class LeetCode686 {
    * https://leetcode.com/problems/repeated-string-match/description/
    */
   public int repeatedStringMatch(String A, String B) {
-    if(A == null || B == null || A.length() == 0 || B.length() == 0)
-      return -1;
-    
-    int count = 1;
-    while(A.length() <= B.length()) {
-      if(A.indexOf(B) != -1) {
-        return count;
-      } else {
-        A = A + A;
-        count++;
-      }
+    int count = 0;
+    StringBuilder sb = new StringBuilder();
+    while(sb.length() < B.length()) {
+      sb.append(A);
+      count++;
     }
-    if(A.indexOf(B) != -1)
+    
+    // Handle cases where A is the same as B
+    if(sb.indexOf(B) > -1)
       return count;
-    else
-      return -1;
+    
+    // Attempt one more append, if still not found, then -1
+    return sb.append(A).indexOf(B) > -1 ? count + 1 : -1;
   }
 }

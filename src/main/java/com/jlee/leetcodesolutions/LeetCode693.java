@@ -28,19 +28,14 @@ public class LeetCode693 {
    * https://leetcode.com/problems/binary-number-with-alternating-bits/description/
    */
   public boolean hasAlternatingBits(int n) {
-    if(n < 0)
-      return false;
-    
-    int prev = n & 1;
-    n >>= 1;
-    
+    Integer prev = null;
     while(n > 0) {
-      if(prev == (n & 1))
+      int nextBit = n & 1;
+      if(prev != null && prev == nextBit)
         return false;
-      else {
-        prev = n & 1;
-        n >>= 1;
-      }
+      
+      prev = nextBit;
+      n >>= 1;
     }
     return true;
   }

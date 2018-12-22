@@ -1,7 +1,5 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.ArrayList;
-
 public class LeetCode696 {
   /*
    * Give a string s, count the number of non-empty (contiguous) substrings that
@@ -35,36 +33,25 @@ public class LeetCode696 {
    * https://leetcode.com/problems/count-binary-substrings/description/
    */
   public int countBinarySubstrings(String s) {
-    if(s == null || s.length() == 0)
-      return 0;
+    // count of current consecutive bits
+    int curr = 1;      
+    // count of previous consecutive bits
+    int prev = 0;
     
-    // First thing is to derive the # of consecutive occurrences of 1's and 0's
-    int count = 1;
-    ArrayList<Integer> list = new ArrayList<Integer>();
-    for(int i = 0; i < s.length() - 1; i++) {
-      if(s.charAt(i) == s.charAt(i + 1)) {
-        count++;
-      } else {
-        list.add(count);
-        count = 1;
+    int count = 0;
+    for(int i = 1; i < s.length(); i++) {
+      if(s.charAt(i-1) == s.charAt(i)) {
+        // bit is the same, increase curr
+        curr++;
+      }
+      else {
+        // bit changes 0 -> 1, 1 -> 0
+        count += Math.min(prev, curr);
+        prev = curr;
+        curr = 1;
       }
     }
-    list.add(count);
-    
-    int result = 0;
-    // If there is only one entry in the list, then the string was either all 1's or
-    // 0's
-    if(list.size() == 1)
-      return result;
-    
-    // If pairs are the same, then add either
-    // If pairs are different, then add the smaller of the two
-    for(int i = 0; i < list.size() - 1; i++) {
-      if(list.get(i) == list.get(i + 1))
-        result += list.get(i);
-      else
-        result += Math.min(list.get(i), list.get(i + 1));
-    }
-    return result;
+    count += Math.min(prev, curr);
+    return count;
   }
 }

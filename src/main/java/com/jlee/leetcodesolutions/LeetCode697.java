@@ -29,31 +29,29 @@ public class LeetCode697 {
    * https://leetcode.com/problems/degree-of-an-array/description/
    */
   public int findShortestSubArray(int[] nums) {
-    if(nums == null || nums.length == 0)
-      return 0;
-    
-    HashMap<Integer,Integer> startIndex = new HashMap<Integer,Integer>();
-    HashMap<Integer,Integer> endIndex = new HashMap<Integer,Integer>();
-    HashMap<Integer,Integer> freq = new HashMap<Integer,Integer>();
-    int degree = 0;
-    
-    // Populate the starting point, ending point, and frequency for each number.
+    HashMap<Integer,int[]> map = new HashMap<>();
     for(int i = 0; i < nums.length; i++) {
-      if(startIndex.containsKey(nums[i])) {
-        endIndex.put(nums[i], i);
-      } else {
-        startIndex.put(nums[i], i);
-        endIndex.put(nums[i], i);
+      if(!map.containsKey(nums[i])) {
+        // int[0] = frequency, int[1] = first index, int[2] = last index
+        map.put(nums[i], new int[] {1, i, i});
       }
-      freq.put(nums[i], freq.getOrDefault(nums[i], 0) + 1);
-      degree = Math.max(degree, freq.get(nums[i]));
+      else {
+        int[] data = map.get(nums[i]);
+        data[0]++;
+        data[2] = i;
+        map.put(nums[i], data);
+      }      
     }
     
-    int result = Integer.MAX_VALUE;
-    for(int key : freq.keySet()) {
-      if(freq.get(key) == degree)
-        result = Math.min(result, endIndex.get(key) - startIndex.get(key) + 1);
+    int maxFreq = 0, minLen = Integer.MAX_VALUE;
+    for(int[] data : map.values()) {
+      if(data[0] > maxFreq) {
+        maxFreq = data[0];
+        minLen = data[2] - data[1] + 1;
+      }
+      else if(data[0] == maxFreq)
+        minLen = Math.min(minLen, data[2] - data[1] + 1);
     }
-    return result;
+    return minLen == Integer.MAX_VALUE ? 0 : minLen;
   }
 }

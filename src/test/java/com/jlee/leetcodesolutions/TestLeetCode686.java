@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TestLeetCode686 {
   @Test
-  public void testAandBSame() {
+  public void testProblemCase1() {
     String A = "a";
     String B = "a";
     LeetCode686 solution = new LeetCode686();
@@ -14,7 +14,7 @@ public class TestLeetCode686 {
   }
 
   @Test
-  public void testAandBTwoTimes() {
+  public void testProblemCase2() {
     String A = "ab";
     String B = "abab";
     LeetCode686 solution = new LeetCode686();
@@ -22,7 +22,7 @@ public class TestLeetCode686 {
   }
 
   @Test
-  public void testAandBThreeTimes() {
+  public void testProblemCase3() {
     String A = "ab";
     String B = "baba";
     LeetCode686 solution = new LeetCode686();
@@ -30,7 +30,7 @@ public class TestLeetCode686 {
   }
 
   @Test
-  public void testAandBDifferent() {
+  public void testProblemCase4() {
     String A = "ab";
     String B = "cdef";
     LeetCode686 solution = new LeetCode686();
@@ -38,50 +38,18 @@ public class TestLeetCode686 {
   }
 
   @Test
-  public void testAEmpty() {
-    String A = "";
-    String B = "cdef";
-    LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
-  }
-
-  @Test
-  public void testBEmpty() {
+  public void testProblemCase5() {
     String A = "ab";
     String B = "";
     LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
+    Assert.assertEquals(0, solution.repeatedStringMatch(A, B));
   }
   
   @Test
-  public void testEmpty() {
+  public void testProblemCase6() {
     String A = "";
     String B = "";
     LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
-  }
-
-  @Test
-  public void testANull() {
-    String A = null;
-    String B = "cdef";
-    LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
-  }
-
-  @Test
-  public void testBNull() {
-    String A = "ab";
-    String B = null;
-    LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
-  }
-  
-  @Test
-  public void testNull() {
-    String A = null;
-    String B = null;
-    LeetCode686 solution = new LeetCode686();
-    Assert.assertEquals(-1, solution.repeatedStringMatch(A, B));
+    Assert.assertEquals(0, solution.repeatedStringMatch(A, B));
   }
 }

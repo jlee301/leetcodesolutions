@@ -20,50 +20,43 @@ public class TestLeetCode697 {
   }
 
   @Test
-  public void testAllUnique() {
+  public void testProblemCase3() {
     int[] nums = {1,2,3,4,5,6,7};
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(1, solution.findShortestSubArray(nums));
   }
 
   @Test
-  public void testAllSame() {
+  public void testProblemCase4() {
     int[] nums = {1,1,1,1,1,1,1,1};
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(8, solution.findShortestSubArray(nums));
   }
 
   @Test
-  public void testTwoUniqueSameDegreeAlternating() {
+  public void testProblemCase5() {
     int[] nums = {1,2,1,2,1,2,1,2};
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(7, solution.findShortestSubArray(nums));
   }
 
   @Test
-  public void testTwoUniqueSameDegreeHalf() {
+  public void testProblemCase6() {
     int[] nums = {1,1,1,1,2,2,2,2};
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(4, solution.findShortestSubArray(nums));
   }
 
   @Test
-  public void testSingleNumber() {
+  public void testProblemCase7() {
     int[] nums = {1};
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(1, solution.findShortestSubArray(nums));
   }
 
   @Test
-  public void testEmpty() {
+  public void testProblemCase8() {
     int[] nums = {};
-    LeetCode697 solution = new LeetCode697();
-    Assert.assertEquals(0, solution.findShortestSubArray(nums));
-  }
-
-  @Test
-  public void testNull() {
-    int[] nums = null;
     LeetCode697 solution = new LeetCode697();
     Assert.assertEquals(0, solution.findShortestSubArray(nums));
   }

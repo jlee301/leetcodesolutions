@@ -11,50 +11,39 @@ public class LeetCode963 {
       xmap.computeIfAbsent(pt[0], l -> new HashSet<>()).add(pt[1]);
     
     for(int i = 0; i < points.length; i++) {
-      for(int j = i+1; j < points.length; j++) {
-        for(int k = j+1; k < points.length; k++) {
-          int[] pt1 = points[i], pt2 = points[j], pt3 = points[k];
-          // Find which point is equally distance from the other two
-          if(isValid(pt1, pt2, pt3)) {
-            int[] pt4 = genPoint(pt1, pt2, pt3);
-            if(xmap.containsKey(pt4[0]) && xmap.get(pt4[0]).contains(pt4[1]))
-              min = Math.min(min, getArea(pt1, pt2, pt3));
-          }
+      int[] pt1 = points[i];
+      for(int j = 0; j < points.length; j++) {
+        if(i == j) continue;
+        int[] pt2 = points[j];
+        for(int k = 0; k < points.length; k++) {
+          if(k == i || k == j) continue;
+          int[] pt3 = points[k];
           
-          if(isValid(pt2, pt1, pt3)) {
-            int[] pt4 = genPoint(pt2, pt1, pt3);
-            if(xmap.containsKey(pt4[0]) && xmap.get(pt4[0]).contains(pt4[1]))
-              min = Math.min(min, getArea(pt2, pt1, pt3));            
-          }
+          // Find the correct 90 degree orientation of three points: a^2 + b^2 = c^2
+          //    (pt2)
+          //      |\
+          //      | \
+          //      |  \
+          //      |_  \
+          //      |_|__\
+          //  (pt3)   (pt1)
+          if(distance(pt1, pt3) + distance(pt2, pt3) != distance(pt1, pt2))
+            continue;
           
-          if(isValid(pt3, pt1, pt2)) {
-            int[] pt4 = genPoint(pt3, pt1, pt2);            
-            if(xmap.containsKey(pt4[0]) && xmap.get(pt4[0]).contains(pt4[1]))
-              min = Math.min(min, getArea(pt3, pt1, pt2));            
-          }
+          // pt4
+          int x = pt1[0] + pt2[0] - pt3[0];
+          int y = pt1[1] + pt2[1] - pt3[1];
+          if(xmap.containsKey(x) && xmap.get(x).contains(y))
+            min = Math.min(min, Math.sqrt(distance(pt1, pt3)) * Math.sqrt(distance(pt2, pt3)));
         }
       }
-    }    
+    }
     return min == Double.MAX_VALUE ? 0 : min;
   }
   
-  private boolean isValid(int[] pt1, int[] pt2, int[] pt3) {
-    double x1 = pt3[0] - pt1[0];
-    double y1 = pt3[1] - pt1[1];
-    double x2 = pt2[0] - pt1[0];
-    double y2 = pt2[1] - pt1[1];
-    return x1*x2 + y1*y2 == 0;
-  }
-  
-  private int[] genPoint(int[] pt1, int[] pt2, int[] pt3) {
-    return new int[] { pt3[0] - pt1[0] + pt2[0], pt3[1] - pt1[1] + pt2[1] };
-  }
-  
-  private double getArea(int[] pt1, int[] pt2, int[] pt3) {
-    double x1 = pt3[0] - pt1[0];
-    double y1 = pt3[1] - pt1[1];
-    double x2 = pt2[0] - pt1[0];
-    double y2 = pt2[1] - pt1[1];
-    return Math.sqrt(x1*x1 + y1*y1) * Math.sqrt(x2*x2 + y2*y2);
+  private int distance(int[] pt1, int[] pt2) {
+    int a = pt1[0] - pt2[0];
+    int b = pt1[1] - pt2[1];
+    return a*a + b*b;
   }
 }

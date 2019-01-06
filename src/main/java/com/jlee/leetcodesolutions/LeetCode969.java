@@ -34,29 +34,28 @@ public class LeetCode969 {
         continue;
       }
       
-      int[] temp = new int[A.length];
       // flip max to front
       if(pos != 0) {
         result.add(pos+1);
-        for(int j = 0, l = pos; j <= pos; j++, l--)
-          temp[j] = A[l];
-        
-        for(int j = pos+1; j < k; j++)
-          temp[j] = A[j];
-        
-        A = temp;
+        flip(A, 0, pos);
       }
         
       // then flip max to the end
-      temp = new int[A.length];
       result.add(k);
-      for(int j = 0, l = k-1; j < k; j++, l--)
-        temp[j] = A[l];
-      
-      A = temp;
+      flip(A, 0, k-1);
       
       k--;
     }
     return result;
+  }
+  
+  private void flip(int[] A, int left, int right) {
+    while(left < right) {
+      int temp = A[left];
+      A[left] = A[right];
+      A[right] = temp;
+      left++;
+      right--;
+    }
   }
 }

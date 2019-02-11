@@ -20,6 +20,7 @@ public class LeetCode990 {
     }
     
     // Now check every != equations to see if there is any conflicts
+    // If we check all matches and var1 == var2, then there's a conflict
     HashSet<Character> visited = new HashSet<>();
     for(String eq : equations) {
       if(eq.charAt(1) == '!') {
@@ -30,6 +31,7 @@ public class LeetCode990 {
         if(var1 == var2)
           return false;
         
+        // var1 or var2 have no == mappings, skip equation
         if(!map.containsKey(var1) || !map.containsKey(var2))
           continue;
         
@@ -39,7 +41,6 @@ public class LeetCode990 {
           return false;
         
         visited.remove(var1);
-        
       }
     }
     return true;

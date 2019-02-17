@@ -243,7 +243,9 @@ import org.junit.runners.Suite;
   TestLeetCode977.class,
   TestLeetCode984.class,
   TestLeetCode985.class,
-  TestLeetCode989.class
+  TestLeetCode989.class,
+  TestLeetCode993.class,
+  TestLeetCode994.class
 })
 
 public class LeetCodeEasyTestSuite {

@@ -173,6 +173,7 @@ import org.junit.runners.Suite;
   TestLeetCode992.class,
   TestLeetCode995.class,
   TestLeetCode996.class,
+  TestLeetCode1000.class,
   TestLeetCode1001.class
 })
   

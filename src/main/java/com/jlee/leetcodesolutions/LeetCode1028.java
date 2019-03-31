@@ -14,7 +14,7 @@ public class LeetCode1028 {
     // 146 % -3 --> -48 remainder 2
     // -48 % -3 -->  16 remainder 0
     //  16 % -3 -->  -5 remainder 1
-    //  -5 % -3 -->   2 remainder 1
+    //  -5 % -3 -->   2 remainder 1 (1 remainder -2)
     //   2 % -3 -->   0 remainder 2
     while(N != 0) {
       int r = N % -2;

@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-public class LeetCode1023 {
+public class LeetCode1016 {
   /*
    * https://leetcode.com/problems/binary-string-with-substrings-representing-1-to-n/
    */

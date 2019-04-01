@@ -1,11 +1,11 @@
 package com.jlee.leetcodesolutions;
 
-import com.jlee.leetcodesolutions.LeetCode1030;
+import com.jlee.leetcodesolutions.LeetCode1019;
 import com.jlee.leetcodesolutions.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestLeetCode1030 {
+public class TestLeetCode1019 {
   @Test
   public void testProblemCase1() {
     // 2,1,5
@@ -13,7 +13,7 @@ public class TestLeetCode1030 {
     head.next = new ListNode(1);
     head.next.next = new ListNode(5);
 
-    LeetCode1030 solution = new LeetCode1030();
+    LeetCode1019 solution = new LeetCode1019();
     Assert.assertArrayEquals(new int[] {5,5,0}, solution.nextLargerNodes(head));
   }
 
@@ -26,7 +26,7 @@ public class TestLeetCode1030 {
     head.next.next.next = new ListNode(3);
     head.next.next.next.next = new ListNode(5);
 
-    LeetCode1030 solution = new LeetCode1030();
+    LeetCode1019 solution = new LeetCode1019();
     Assert.assertArrayEquals(new int[] {7,0,5,5,0}, solution.nextLargerNodes(head));
   }
 
@@ -42,7 +42,7 @@ public class TestLeetCode1030 {
     head.next.next.next.next.next.next = new ListNode(5);
     head.next.next.next.next.next.next.next = new ListNode(1);
 
-    LeetCode1030 solution = new LeetCode1030();
+    LeetCode1019 solution = new LeetCode1019();
     Assert.assertArrayEquals(new int[] {7,9,9,9,0,5,0,0}, solution.nextLargerNodes(head));
   }
 
@@ -55,7 +55,7 @@ public class TestLeetCode1030 {
     head.next.next.next = new ListNode(2);
     head.next.next.next.next = new ListNode(1);
 
-    LeetCode1030 solution = new LeetCode1030();
+    LeetCode1019 solution = new LeetCode1019();
     Assert.assertArrayEquals(new int[] {0,0,0,0,0}, solution.nextLargerNodes(head));
   }
 }

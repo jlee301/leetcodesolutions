@@ -1,24 +1,23 @@
 package com.jlee.leetcodesolutions;
 
-import java.util.HashMap;
-
 public class LeetCode1013 {
   /*
-   * https://leetcode.com/contest/weekly-contest-128/problems/pairs-of-songs-with-total-durations-divisible-by-60/
+   * https://leetcode.com/contest/weekly-contest-129/problems/partition-array-into-three-parts-with-equal-sum/
    */
-  public int numPairsDivisibleBy60(int[] time) {
-    // 30,20,150,100,40
-    // 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900, 960
-    int count = 0;
-    HashMap<Integer,Integer> map = new HashMap<>();
-    for(int t : time) {
-      // Check each increment of 60 to see if I have a value that is divisible
-      for(int inc = 60; inc <= 960; inc += 60)
-        count += map.getOrDefault(inc - t, 0);
-      
-      map.put(t, map.getOrDefault(t, 0) + 1);
-    }
+  public boolean canThreePartsEqualSum(int[] A) {
+    int N = A.length;
+    int[] presum = new int[N];
+    presum[0] = A[0];
+    for(int i = 1; i < N; i++)
+      presum[i] = presum[i-1] + A[i];
     
-    return count;
+    for(int i = 0; i < N-2; i++) {
+      for(int j = i+1; j < N-1; j++) {
+        // Check if the three parts are equal
+        if(presum[i] == presum[j] - presum[i] && presum[i] == presum[N-1] - presum[j])
+          return true;
+      }
+    }
+    return false;
   }
 }

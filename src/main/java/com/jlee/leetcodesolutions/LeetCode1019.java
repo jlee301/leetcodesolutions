@@ -4,7 +4,7 @@ import com.jlee.leetcodesolutions.ListNode;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class LeetCode1030 {
+public class LeetCode1019 {
   /*
    * https://leetcode.com/contest/weekly-contest-130/problems/next-greater-node-in-linked-list/
    */

@@ -2,31 +2,23 @@ package com.jlee.leetcodesolutions;
 
 public class LeetCode1014 {
   /*
-   * https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/ 
+   * https://leetcode.com/problems/best-sightseeing-pair/
    */
-  public int shipWithinDays(int[] weights, int D) {
-    // Find the largest element in weight
-    int max = 0;
-    for(int w : weights)
-      max = Math.max(max, w);
+  public int maxScoreSightseeingPair(int[] A) {
+    if(A.length < 2)
+      return 0;
     
-    // The worst case scenario, the bucket size is weights.length * max
-    int min = max;
-    boolean found = false;
-    while(!found) {
-      // Attempt to fill each bucket based on the min
-      int[] buckets = new int[D];
-      int i = 0;
-      for(int j = 0; j < buckets.length; j++) {
-        while(i < weights.length && buckets[j] + weights[i] <= min)
-          buckets[j] += weights[i++];
-      }
+    //  0,1,2,3,4
+    // {8,1,5,2,6}
+    int ans = 0;
+    int currMax = A[0];
+    for(int i = 1; i < A.length; i++) {
+      // Handle the distance between i and j
+      currMax--;
       
-      if(i == weights.length)
-        found = true;
-      
-      min++;
+      ans = Math.max(ans, currMax + A[i]);
+      currMax = Math.max(currMax, A[i]);
     }
-    return min-1;
+    return ans;
   }
 }

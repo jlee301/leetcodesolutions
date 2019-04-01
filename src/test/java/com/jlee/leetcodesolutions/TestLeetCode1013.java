@@ -7,15 +7,22 @@ import org.junit.Test;
 public class TestLeetCode1013 {
   @Test
   public void testProblemCase1() {
-    int[] time = {30,20,150,100,40};
+    int[] A = {0,2,1,-6,6,-7,9,1,2,0,1};
     LeetCode1013 solution = new LeetCode1013();
-    Assert.assertEquals(3, solution.numPairsDivisibleBy60(time));
+    Assert.assertTrue(solution.canThreePartsEqualSum(A));
   }
 
   @Test
   public void testProblemCase2() {
-    int[] time = {60,60,60};
+    int[] A = {0,2,1,-6,6,7,9,-1,2,0,1};
     LeetCode1013 solution = new LeetCode1013();
-    Assert.assertEquals(3, solution.numPairsDivisibleBy60(time));
+    Assert.assertFalse(solution.canThreePartsEqualSum(A));
+  }
+
+  @Test
+  public void testProblemCase3() {
+    int[] A = {3,3,6,5,-2,2,5,1,-9,4};
+    LeetCode1013 solution = new LeetCode1013();
+    Assert.assertTrue(solution.canThreePartsEqualSum(A));
   }
 }

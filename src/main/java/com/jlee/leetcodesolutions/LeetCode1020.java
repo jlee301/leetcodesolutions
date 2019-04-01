@@ -2,22 +2,46 @@ package com.jlee.leetcodesolutions;
 
 public class LeetCode1020 {
   /*
-   * https://leetcode.com/contest/weekly-contest-129/problems/partition-array-into-three-parts-with-equal-sum/
+   * https://leetcode.com/problems/number-of-enclaves/
    */
-  public boolean canThreePartsEqualSum(int[] A) {
-    int N = A.length;
-    int[] presum = new int[N];
-    presum[0] = A[0];
-    for(int i = 1; i < N; i++)
-      presum[i] = presum[i-1] + A[i];
-    
-    for(int i = 0; i < N-2; i++) {
-      for(int j = i+1; j < N-1; j++) {
-        // Check if the three parts are equal
-        if(presum[i] == presum[j] - presum[i] && presum[i] == presum[N-1] - presum[j])
-          return true;
+  private boolean canReachBorder;
+  private int[][] moves = { {-1,0}, {1,0}, {0,-1}, {0,1} };
+  
+  public int numEnclaves(int[][] A) {
+    int count = 0;
+    // Traverse every element of A to look for a land spot
+    for(int i = 0; i < A.length; i++) {
+      for(int j = 0; j < A[i].length; j++) {
+        canReachBorder = false;
+        int currCount = 0;
+        if(A[i][j] == 1)
+          currCount = dfs(A, i, j);
+          
+        count += canReachBorder ? 0 : currCount;        
       }
+    }    
+    return count;
+  }
+  
+  private int dfs(int[][] A, int i, int j) {
+    if(i < 0 || i == A.length || j < 0 || j == A[0].length) {
+      // If you reach the border, then all of the connected land will not count
+      canReachBorder = true;
+      return 0;
     }
-    return false;
+    
+    if(A[i][j] < 1)
+      return 0;
+    
+    // A[i][j] == -1 == visited
+    A[i][j] = -1;
+    // Check four-directional adjacent nodes
+    int count = 1;
+    for(int[] move : moves) {
+      int nextI = i + move[0];
+      int nextJ = j + move[1];
+      count += dfs(A, nextI, nextJ);
+    }
+    return count;
   }
 }

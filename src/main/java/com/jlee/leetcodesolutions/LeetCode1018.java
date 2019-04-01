@@ -3,7 +3,7 @@ package com.jlee.leetcodesolutions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCode1029 {
+public class LeetCode1018 {
   /*
    * https://leetcode.com/contest/weekly-contest-130/problems/binary-prefix-divisible-by-5/
    */

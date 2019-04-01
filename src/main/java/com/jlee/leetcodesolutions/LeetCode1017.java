@@ -1,6 +1,6 @@
 package com.jlee.leetcodesolutions;
 
-public class LeetCode1028 {
+public class LeetCode1017 {
   /*
    * https://leetcode.com/contest/weekly-contest-130/problems/convert-to-base-2/
    */

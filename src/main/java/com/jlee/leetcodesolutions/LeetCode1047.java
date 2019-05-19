@@ -1,26 +1,27 @@
 package com.jlee.leetcodesolutions;
 
+import java.util.Stack;
+
 public class LeetCode1047 {
   /*
    * https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
    */
   public String removeDuplicates(String S) {
-    String[] search = { "aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo", "pp",
-        "qq", "rr", "ss", "tt", "uu", "vv", "ww", "xx", "yy", "zz" };
-    
-    boolean adjacentFound = true;
-    while(adjacentFound) {
-      adjacentFound = false;
-      // Check to see if there are any adjacent duplicate letters
-      for(String term : search) {
-        int index = S.indexOf(term);
-        if(index > -1) {
-          // Build next iteration of String with the removal of the duplicate
-          S = S.substring(0, index) + S.substring(index+2);
-          adjacentFound = true;
-        }
+    Stack<Character> stack = new Stack<>();
+    for(int i = 0; i < S.length(); i++) {
+      char ch = S.charAt(i);
+      if(!stack.isEmpty() && stack.peek() == ch) {
+        stack.pop();
+        continue;
       }
+      stack.push(ch);
     }
-    return S;
+    
+    // Construct final output
+    String result = "";
+    while(!stack.isEmpty())
+      result = stack.pop() + result;
+    
+    return result;
   }
 }

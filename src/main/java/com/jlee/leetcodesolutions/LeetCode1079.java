@@ -22,8 +22,10 @@ public class LeetCode1079 {
         // Backtracking component
         sb.append(ch);
         used.add(i);
-        set.add(sb.toString());
-        dfs(tiles, set, used, sb);
+        // If the str is already in the set, we have already been down this path
+        if(set.add(sb.toString()))
+          dfs(tiles, set, used, sb);
+        
         used.remove(i);
         sb.deleteCharAt(sb.length()-1);
       }

@@ -434,6 +434,7 @@ import org.junit.runners.Suite;
   TestLeetCode1054.class,
   TestLeetCode1072.class,
   TestLeetCode1073.class,
+  TestLeetCode1079.class,
   TestLeetCode1080.class,
   TestLeetCode1081.class
 })

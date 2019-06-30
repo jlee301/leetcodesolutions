@@ -9,6 +9,11 @@ public class LeetCode1104 {
    * https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/
    */
   public List<Integer> pathInZigZagTree(int label) {
+    // Generate the ranges per level
+    // level 0: [1, 1]
+    // level 1: [2, 3]
+    // level 2: [4, 7]
+    // level 3: [8, 15]
     List<int[]> bRange = new ArrayList<>();
     int start = 1, end = 1;
     bRange.add(new int[] {start, end});
@@ -20,24 +25,22 @@ public class LeetCode1104 {
       bRange.add(new int[] {start, end});
     }
     
+    // Now work backwards to determine path taken
     List<Integer> list = new ArrayList<>();
     list.add(label);
     int i = bRange.size()-2;
-    boolean wrap = true;
     while(i >= 0) {
+      // Find what the label would be if it was entirely left to right
+      // Take the difference from the end range of that level and add it to the start
+      // to get the actual zigzag label
       label /= 2;
-      if(wrap) {
-        int[] curr = bRange.get(i);
-        int diff = curr[1] - label;
-        list.add(curr[0] + diff);
-      }
-      else {
-        list.add(label);
-      }
+      int[] curr = bRange.get(i);
+      int diff = curr[1] - label;
+      label = curr[0] + diff;
+      list.add(label);
       i--;
-      wrap = !wrap;
     }    
-    Collections.reverse(list);;
+    Collections.reverse(list);
     return list;
   }
 }
